@@ -25,5 +25,74 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
-  intent_profiles: []
-source_backends: {}
+  intent_profiles:
+    - tag: mdd-regen
+      description: 核心需求：材料驱动设计（MDD）与再生设计方法论，酶交联海洋废弃物升级回收，生物容受性材料城市热缓解与海洋修复，共创设计评估，以及设计教育推动循环经济。
+      enabled: true
+      paper_sources:
+        - arxiv
+        - biorxiv
+      keywords:
+        - keyword: material driven design
+          keyword_cn: 材料驱动设计
+          query: Material Driven Design methodology for sustainable bio-based materials
+        - keyword: regenerative design
+          keyword_cn: 再生设计
+          query: Regenerative design principles for ecological engineering
+        - keyword: fish skin gelatin
+          keyword_cn: 鱼皮明胶
+          query: Fish skin gelatin extracted from marine waste for bioplastic applications
+        - keyword: co-design framework
+          keyword_cn: 共创设计框架
+          query: Evaluation framework for co-design processes in regenerative design
+        - keyword: upcycling marine waste
+          keyword_cn: 海洋废弃物升级回收
+          query: Upcycling marine biowaste into high-performance biomaterials
+      intent_queries:
+        - query: >-
+            How can material driven design and microbial transglutaminase crosslinking upcycle fish skin gelatin into
+            sustainable design materials?
+          query_cn: 材料驱动设计与微生物转谷氨酰胺酶交联如何将鱼皮明胶升级回收为可持续设计材料？
+          enabled: true
+          source: manual
+          note: ''
+        - query: >-
+            Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological
+            restoration.
+          query_cn: 生物容受性材料系统用于城市热岛缓解和海洋人工珊瑚礁生态修复。
+          enabled: true
+          source: manual
+          note: ''
+        - query: Evaluating co design processes and educational experiments for advancing circular economy in design.
+          query_cn: 评估共创设计过程和教育实验以推进设计中的循环经济。
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-11T08:35:32.857Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
+  biorxiv:
+    papers_table: biorxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_biorxiv_papers_exact
+    vector_rpc_exact: match_biorxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_biorxiv_papers_bm25
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
