@@ -1,5 +1,11 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
+
+* Conference Papers
+  * NEURIPS 2024, 2025 <!--dpr-conference:neurips-2024-2025-->
+    * mdd-regen <!--dpr-conference-topic:neurips-2024-2025:query-mdd-regen-->
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/conference/neurips-2024-2025/openreview-neurips-2025-ahjspi4r22-glid2e-a-gradient-free-lightweight-fine-tune-approach-for-discrete-biological-sequence-design" data-sidebar-item="{&quot;title&quot;: &quot;GLID$^2$E: A Gradient-Free Lightweight Fine-tune Approach for Discrete Biological Sequence Design&quot;, &quot;link&quot;: &quot;https://openreview.net/forum?id=AHjspi4R22&quot;, &quot;score&quot;: &quot;4.0&quot;, &quot;selection_source&quot;: &quot;conference_retrieval&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;mdd-regen&quot;}], &quot;evidence&quot;: &quot;用于生物序列设计的无梯度微调方法，可应用于可持续材料中交联酶的优化。&quot;}">GLID$^2$E: A Gradient-Free Lightweight Fine-tune Approach for Discrete Biological Sequence Design</a>
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/conference/neurips-2024-2025/openreview-neurips-2024-dhfho90ink-implicitly-guided-design-with-propen-match-your-data-to-follow-the-gradient" data-sidebar-item="{&quot;title&quot;: &quot;Implicitly Guided Design with PropEn: Match your Data to Follow the Gradient&quot;, &quot;link&quot;: &quot;https://openreview.net/forum?id=dhFHO90INk&quot;, &quot;score&quot;: &quot;4.0&quot;, &quot;selection_source&quot;: &quot;conference_retrieval&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;mdd-regen&quot;}], &quot;evidence&quot;: &quot;面向数据稀缺场景的引导设计框架，可应用于数据稀缺的可持续材料设计。&quot;}">Implicitly Guided Design with PropEn: Match your Data to Follow the Gradient</a>
 * Daily Papers
   * 2026-05-13 ~ 2026-06-11 <!--dpr-date:20260513-20260611-->
     * 精读区

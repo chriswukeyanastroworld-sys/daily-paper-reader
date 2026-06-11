@@ -1,0 +1,350 @@
+{
+  "top_k": 200,
+  "generated_at": "2026-06-11T10:41:53.609665+00:00",
+  "papers": [
+    {
+      "id": "openreview-neurips-2024-dhfho90ink",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "Implicitly Guided Design with PropEn: Match your Data to Follow the Gradient",
+      "abstract": "Across scientific domains, generating new models or optimizing existing ones while meeting specific criteria is crucial. Traditional machine learning frameworks for guided design use a generative model and a surrogate model (discriminator), requiring large datasets. However, real-world scientific applications often have limited data and complex landscapes, making data-hungry models inefficient or impractical. We propose a new framework, PropEn, inspired by ``matching'', which enables implicit guidance without training a discriminator. By matching each sample with a similar one that has a better property value, we create a larger training dataset that inherently indicates the direction of improvement. Matching, combined with an encoder-decoder architecture, forms a domain-agnostic generative framework for property enhancement. We show that training with a matched dataset approximates the gradient of the property of interest while remaining within the data distribution, allowing efficient design optimization. Extensive evaluations in toy problems and scientific applications, such as therapeutic protein design and airfoil optimization, demonstrate PropEn's advantages over common baselines. Notably, the protein design results are validated with wet lab experiments, confirming the competitiveness and effectiveness of our approach. Our code is available at https://github.com/prescient-design/propen.",
+      "authors": [
+        "Natasa Tagasovska",
+        "Vladimir Gligorijevic",
+        "Kyunghyun Cho",
+        "Andreas Loukas"
+      ],
+      "primary_category": "matching",
+      "categories": [
+        "matching",
+        "property enhancement",
+        "gradient approximation",
+        "design optimization",
+        "shape optimization",
+        "antibodies"
+      ],
+      "published": "2024-09-25T18:15:16.434+00:00",
+      "link": "https://openreview.net/forum?id=dhFHO90INk",
+      "pdf_url": null,
+      "tags": [
+        "keyword:mdd-regen"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-ahjspi4r22",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "GLID$^2$E: A Gradient-Free Lightweight Fine-tune Approach for Discrete Biological Sequence Design",
+      "abstract": "The design of biological sequences is essential for engineering functional biomolecules that contribute to advancements in human health and biotechnology. Recent advances in diffusion models, with their generative power and efficient conditional sampling, have made them a promising approach for sequence generation. To enhance model performance on limited data and enable multi-objective design and optimization, reinforcement learning (RL)-based fine-tuning has shown great potential. However, existing post-sampling and fine-tuning methods either lack stability in discrete optimization when avoiding gradients or incur high computational costs when employing gradient-based approaches, creating significant challenges for achieving both control and stability in the tuning process.\nTo address these limitations, we propose GLID$^2$E, a gradient-free RL-based tuning approach for discrete diffusion models. Our method introduces a clipped likelihood constraint to regulate the exploration space and implements reward shaping to better align the generative process with design objectives, ensuring a more stable and efficient tuning process. \nBy integrating these techniques, GLID$^2$E mitigates training instabilities commonly encountered in RL and diffusion-based frameworks, enabling robust optimization even in challenging biological design tasks. In the DNA sequence and protein sequence design systems, GLID$^2$E achieves competitive performance in function-based design while maintaining computational efficiency and a flexible tuning mechanism.",
+      "authors": [
+        "Hanqun Cao",
+        "Haosen Shi",
+        "Chenyu Wang",
+        "Sinno Jialin Pan",
+        "Pheng-Ann Heng"
+      ],
+      "primary_category": "Deep learning",
+      "categories": [
+        "Deep learning",
+        "Protein design",
+        "Diffusion Model",
+        "Reinforcement learning",
+        "DNA design",
+        "Protein inverse folding"
+      ],
+      "published": "2025-09-18T17:31:26.817+00:00",
+      "link": "https://openreview.net/forum?id=AHjspi4R22",
+      "pdf_url": null,
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "type": "intent_query",
+      "tag": "mdd-regen",
+      "paper_tag": "query:mdd-regen",
+      "query_text": "Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.",
+      "sim_scores": {},
+      "ranked": [
+        {
+          "paper_id": "openreview-neurips-2025-ahjspi4r22",
+          "score": 0.29792429792429775,
+          "star_rating": 3
+        }
+      ]
+    },
+    {
+      "type": "intent_query",
+      "tag": "mdd-regen",
+      "paper_tag": "query:mdd-regen",
+      "query_text": "Evaluating co design processes and educational experiments for advancing circular economy in design.",
+      "sim_scores": {},
+      "ranked": [
+        {
+          "paper_id": "openreview-neurips-2024-dhfho90ink",
+          "score": 0.578503688092729,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-ahjspi4r22",
+          "score": 0.32035835650293487,
+          "star_rating": 3
+        }
+      ]
+    },
+    {
+      "type": "intent_query",
+      "tag": "mdd-regen",
+      "paper_tag": "query:mdd-regen",
+      "query_text": "How can material driven design and microbial transglutaminase crosslinking upcycle fish skin gelatin into sustainable design materials?",
+      "sim_scores": {
+        "openreview-neurips-2025-ahjspi4r22": {
+          "score": 0.011235955056179775,
+          "rank": 29
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-neurips-2025-ahjspi4r22",
+          "score": 0.8422090729783037,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-dhfho90ink",
+          "score": 0.5213675213675214,
+          "star_rating": 4
+        }
+      ]
+    },
+    {
+      "type": "keyword",
+      "tag": "mdd-regen",
+      "paper_tag": "keyword:mdd-regen",
+      "query_text": "Evaluation framework for co-design processes in regenerative design",
+      "sim_scores": {
+        "openreview-neurips-2024-dhfho90ink": {
+          "score": 0.010416666666666666,
+          "rank": 36
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "mdd-regen",
+      "paper_tag": "keyword:mdd-regen",
+      "query_text": "Fish skin gelatin extracted from marine waste for bioplastic applications",
+      "sim_scores": {}
+    },
+    {
+      "type": "keyword",
+      "tag": "mdd-regen",
+      "paper_tag": "keyword:mdd-regen",
+      "query_text": "Material Driven Design methodology for sustainable bio-based materials",
+      "sim_scores": {
+        "openreview-neurips-2024-dhfho90ink": {
+          "score": 0.011764705882352941,
+          "rank": 25
+        },
+        "openreview-neurips-2025-ahjspi4r22": {
+          "score": 0.009345794392523364,
+          "rank": 47
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "mdd-regen",
+      "paper_tag": "keyword:mdd-regen",
+      "query_text": "Regenerative design principles for ecological engineering",
+      "sim_scores": {}
+    },
+    {
+      "type": "keyword",
+      "tag": "mdd-regen",
+      "paper_tag": "keyword:mdd-regen",
+      "query_text": "Upcycling marine biowaste into high-performance biomaterials",
+      "sim_scores": {}
+    },
+    {
+      "type": "keyword",
+      "tag": "mdd-regen",
+      "paper_tag": "keyword:mdd-regen",
+      "query_text": "co-design framework",
+      "sim_scores": {}
+    },
+    {
+      "type": "keyword",
+      "tag": "mdd-regen",
+      "paper_tag": "keyword:mdd-regen",
+      "query_text": "material driven design",
+      "sim_scores": {}
+    }
+  ],
+  "global_candidate_ids": [
+    "openreview-neurips-2025-bpsgn4perp",
+    "openreview-neurips-2025-uhvd08xpbo",
+    "openreview-neurips-2025-eziqkdf8m2",
+    "openreview-neurips-2024-udxpjko2f9",
+    "openreview-neurips-2025-qqcv9si0x3",
+    "openreview-neurips-2024-g4vfnmraxj",
+    "openreview-neurips-2025-86ivzmy26s",
+    "openreview-neurips-2025-b5ffinnlhz",
+    "openreview-neurips-2024-gb5a0rryuv",
+    "openreview-neurips-2025-b6dhwv3dzo",
+    "openreview-neurips-2025-tejdm1emxk",
+    "openreview-neurips-2024-0bfxbemz8e",
+    "openreview-neurips-2025-lmxuq0gnec",
+    "openreview-neurips-2025-zwhkkspght",
+    "openreview-neurips-2025-x6djszdkps",
+    "openreview-neurips-2024-i3kiejoon6",
+    "openreview-neurips-2025-ijmzfmvylf",
+    "openreview-neurips-2025-5ofjyjgrth",
+    "openreview-neurips-2025-trnb08kuhk",
+    "openreview-neurips-2025-9qynyxkekr",
+    "openreview-neurips-2025-uo0ehn4eme",
+    "openreview-neurips-2025-woxyoivd4b",
+    "openreview-neurips-2024-pspr4noirc",
+    "openreview-neurips-2025-saebmgjegn",
+    "openreview-neurips-2025-t6tobhgzst",
+    "openreview-neurips-2025-z01gnso9sw",
+    "openreview-neurips-2025-ccbxvvcdf9",
+    "openreview-neurips-2025-wsde3karof",
+    "openreview-neurips-2025-jmq90n6lle",
+    "openreview-neurips-2025-knd7h1kd53",
+    "openreview-neurips-2025-xwmdund6io",
+    "openreview-neurips-2024-wyvtj77kev",
+    "openreview-neurips-2025-cljfumtwli",
+    "openreview-neurips-2025-xll01vw606",
+    "openreview-neurips-2025-pnwifucata",
+    "openreview-neurips-2025-mpjkazwutl",
+    "openreview-neurips-2025-lu4cgylish",
+    "openreview-neurips-2024-o6yraofhgt",
+    "openreview-neurips-2024-88rbnotaez",
+    "openreview-neurips-2024-cfrdld1wfo",
+    "openreview-neurips-2024-fa3rmml8ii",
+    "openreview-neurips-2024-fsdb3i9y24",
+    "openreview-neurips-2025-jcueeqf7up",
+    "openreview-neurips-2025-jpoqca8csg",
+    "openreview-neurips-2025-e6gwptwjb1",
+    "openreview-neurips-2025-m6l3pyvufr",
+    "openreview-neurips-2025-igtjrqfght",
+    "openreview-neurips-2024-lqblsgeogm",
+    "openreview-neurips-2024-gipftlvff1",
+    "openreview-neurips-2025-0rgjzktqms",
+    "openreview-neurips-2024-5k9xehik3l",
+    "openreview-neurips-2024-483ipg0hwl",
+    "openreview-neurips-2025-tfcxlp0jgo",
+    "openreview-neurips-2025-znrm5rgrgr",
+    "openreview-neurips-2025-qoifdfzujv",
+    "openreview-neurips-2025-ypc9zmkqgg",
+    "openreview-neurips-2024-re2jpcnzka",
+    "openreview-neurips-2025-bl5r7hu9gd",
+    "openreview-neurips-2025-6wbykapw7a",
+    "openreview-neurips-2025-gofyiruvaz",
+    "openreview-neurips-2025-txqlxhlb8z",
+    "openreview-neurips-2025-sks03tzynw",
+    "openreview-neurips-2025-ed0lygqkn0",
+    "openreview-neurips-2025-3p4272zl7q",
+    "openreview-neurips-2024-nanestxyfy",
+    "openreview-neurips-2024-llsomvjbbm",
+    "openreview-neurips-2025-vzsjsue0bz",
+    "openreview-neurips-2025-u7jtlj46i9",
+    "openreview-neurips-2025-n7vg94l0ga",
+    "openreview-neurips-2025-nzwjvpco4f",
+    "openreview-neurips-2024-dg3ti3c2b1",
+    "openreview-neurips-2024-5x69cl2w3f",
+    "openreview-neurips-2025-frqd4noq16",
+    "openreview-neurips-2024-56q0qggdlp",
+    "openreview-neurips-2025-7k7cubl1il",
+    "openreview-neurips-2025-yvgl2hp7pu",
+    "openreview-neurips-2024-dhfho90ink",
+    "openreview-neurips-2025-oeawm2cont",
+    "openreview-neurips-2025-lh5sxugfk8",
+    "openreview-neurips-2025-faiirmviwy",
+    "openreview-neurips-2024-iokluxb05h",
+    "openreview-neurips-2025-zftxlb1aoo",
+    "openreview-neurips-2024-heorsnad44",
+    "openreview-neurips-2025-1lppmaulat",
+    "openreview-neurips-2025-swik6kvv4u",
+    "openreview-neurips-2025-r42o6v84cx",
+    "openreview-neurips-2025-z5pd8ihp2q",
+    "openreview-neurips-2025-bim1m6vxsd",
+    "openreview-neurips-2025-mmiap3cvs0",
+    "openreview-neurips-2024-paywtpbpyz",
+    "openreview-neurips-2025-svopanxywt",
+    "openreview-neurips-2025-ahjspi4r22",
+    "openreview-neurips-2024-tusponzidb",
+    "openreview-neurips-2025-49ejzytlus",
+    "openreview-neurips-2025-qku7g56awf",
+    "openreview-neurips-2024-jhg9enuw6p",
+    "openreview-neurips-2025-t3df4yxcpz",
+    "openreview-neurips-2024-18fgrnd0wz",
+    "openreview-neurips-2025-rrpyi2h0yn",
+    "openreview-neurips-2024-skeopn3q5y",
+    "openreview-neurips-2024-5aelrxb9sq",
+    "openreview-neurips-2024-3gzbgbglbf",
+    "openreview-neurips-2024-xgp5ynlzwf",
+    "openreview-neurips-2025-0yowbbk6tt",
+    "openreview-neurips-2025-g2vviuevds",
+    "openreview-neurips-2025-lg2rp98otf",
+    "openreview-neurips-2024-i8jaxy7tdi",
+    "openreview-neurips-2024-iaqnjuje8q",
+    "openreview-neurips-2025-wjujf9an5l",
+    "openreview-neurips-2025-brv7u7svgs",
+    "openreview-neurips-2025-i9bjnovjub",
+    "openreview-neurips-2025-qs3wgmgs9s",
+    "openreview-neurips-2024-bjh4mcys20",
+    "openreview-neurips-2024-sjq1iiqpfu",
+    "openreview-neurips-2025-1esfejmubs",
+    "openreview-neurips-2025-4mkiahbmgo",
+    "openreview-neurips-2025-cu4ow1odre",
+    "openreview-neurips-2025-x9vcgxmrd0",
+    "openreview-neurips-2025-yb5l6ryikb",
+    "openreview-neurips-2024-4ab54h21qg"
+  ],
+  "global_pool_lane_top_k": 30,
+  "global_pool_limit": 120,
+  "global_pool_guaranteed_per_lane": 2,
+  "global_pool_effective_size": 120,
+  "reranked_at": "2026-06-11T10:42:45.441813+00:00",
+  "llm_ranked": [
+    {
+      "paper_id": "openreview-neurips-2025-ahjspi4r22",
+      "score": 4.0,
+      "evidence_en": "Gradient-free fine-tuning for biological sequence design, applicable to enzyme optimization for crosslinking in sustainable materials.",
+      "evidence_cn": "用于生物序列设计的无梯度微调方法，可应用于可持续材料中交联酶的优化。",
+      "canonical_evidence": "用于生物序列设计的无梯度微调方法，可应用于可持续材料中交联酶的优化。",
+      "tldr_en": "GLID^2E introduces a gradient-free RL-based fine-tuning approach for diffusion models to design biological sequences with multi-objective optimization, applicable to protein engineering.",
+      "tldr_cn": "针对生物序列设计中现有方法在离散优化时不稳定或计算成本高的问题，本文提出GLID^2E，一种基于强化学习的无梯度微调方法，通过扩散模型实现多目标序列设计。该方法在多个生物序列生成任务中表现了高效优化能力，为功能生物分子设计提供了实用工具。",
+      "title_zh": "GLID^2E：一种用于离散生物序列设计的无梯度轻量级微调方法",
+      "motivation_cn": "离散生物序列设计对工程有益，但现有优化方法在稳定性与效率上存在不足。",
+      "method_cn": "采用强化学习微调扩散模型，无需梯度计算，实现稳定的离散序列多目标优化。",
+      "result_cn": "在生物序列生成中展示高效多目标优化，超越现有方法。",
+      "conclusion_cn": "为数据有限的生物序列设计提供了一种稳定且计算高效的微调策略。",
+      "matched_requirement_id": "req-6",
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "How can material driven design and microbial transglutaminase crosslinking upcycle fish skin gelatin into sustainable design materials?"
+    },
+    {
+      "paper_id": "openreview-neurips-2024-dhfho90ink",
+      "score": 4.0,
+      "evidence_en": "Guided design framework for limited-data scenarios, applicable to sustainable material design where data is scarce.",
+      "evidence_cn": "面向数据稀缺场景的引导设计框架，可应用于数据稀缺的可持续材料设计。",
+      "canonical_evidence": "面向数据稀缺场景的引导设计框架，可应用于数据稀缺的可持续材料设计。",
+      "tldr_en": "PropEn achieves implicit guidance by matching samples with better property values, enabling design optimization without large datasets, suitable for scientific applications like material design.",
+      "tldr_cn": "针对传统引导设计模型依赖大数据的局限，PropEn通过匹配样本与属性更好的相似样本来隐式指明改进方向，无需训练判别器。在多个科学设计任务中，该方法在数据有限时表现优越，为资源受限的可持续设计等场景提供了新思路。",
+      "title_zh": "隐式引导设计方法PropEn：匹配数据以跟随梯度",
+      "motivation_cn": "科学设计常面临数据有限与复杂景观，传统数据驱动模型效率低。",
+      "method_cn": "通过匹配每个样本与属性更佳的相似样本，构建增强数据集以隐式引导优化。",
+      "result_cn": "在有限数据下，多个设计任务中表现优于传统方法。",
+      "conclusion_cn": "提供了一种无需大数据的隐式引导设计框架，广泛适用于科学发现。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Material Driven Design methodology for sustainable bio-based materials"
+    }
+  ],
+  "llm_ranked_at": "2026-06-11T10:45:50.948682+00:00",
+  "display_min_score": 4.0,
+  "pruned_at": "2026-06-11T10:45:50.987497+00:00"
+}
