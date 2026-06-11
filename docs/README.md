@@ -6,52 +6,34 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-13 ~ 2026-06-11
-- 运行时间：2026-06-11 08:53:21 UTC
+- 最新运行日期：2026-06-02 ~ 2026-06-11
+- 运行时间：2026-06-11 14:38:02 UTC
 - 运行状态：成功
-- 本次总论文数：10
-- 精读区：3
-- 速读区：7
+- 本次总论文数：4
+- 精读区：2
+- 速读区：2
 
 ### 今日简报（AI）
-沉浸式精读“混凝土微生物群落分化”和“再生计算中的关系美学”，速览AI架构教学、行星边界内AI设施、海草修复等前沿交叉研究。
-亮点聚焦：滨海混凝土表面竟同时存在腐蚀与自愈微生物，颠覆传统防护思路；用废弃硬件搭建太阳能网站的“朴素关系美学”为低能耗网络提供新范式。
-去看那些“活”的材料与系统——无论是会疗伤的混凝土，还是由旧零件驱动的绿能网站，它们正重新定义技术与生态的共生边界。
-- 详情：[/20260513-20260611/README](/20260513-20260611/README)
+本期聚焦海洋塑料生物降解动态、海上风电人工栖息地，以及废弃物转化为生物塑料的交叉研究。  
+最值得关注：可降解塑料在海洋中需微生物与无脊椎动物协同才能真实降解，而海上单桩补水孔正意外形成新的生态廊道；另一亮点是用工程菌混菌体系将废甘油和PET同步转化为高值油脂与PHA。  
+建议读者从日常减少一次性塑料入手，同时关注循环经济中“废物变资源”的前沿方案。
+- 详情：[/20260602-20260611/README](/20260602-20260611/README)
 
 ### 精读区论文标签
-1. [Differentiation of Bacterial, Fungal, and Algal Communities on Coastal Concrete Versus Drainage Pipes and the Coexistence of Corrosion and Healing Potentials](/20260513-20260611/biorxiv-10-64898-2026-06-03-729873-v1-differentiation-of-bacterial-fungal-and-algal-communities-on-coastal-concrete-versus-drainage-pipes-and-the-coexistence-of-corrosion-and-healing-potentials)  
-   标签：评分：10.0/10、query:mdd-regen
-   evidence：沿海混凝土微生物群落分析揭示腐蚀与愈合潜力，适用于生物容受性应用
-2. [Relational Aesthesis in Permacomputing Practice: Building a Solar Powered Website from Reclaimed Materials](/20260513-20260611/2605.30706v2-relational-aesthesis-in-permacomputing-practice-building-a-solar-powered-website-from-reclaimed-materials)  
+1. [Biodegradable Plastics in the Marine Environment: Comparative Analyses of Bacterial Biofilms, Macroinvertebrate Colonization, and Degradation Patterns](/20260602-20260611/biorxiv-10-64898-2025-12-22-696091-v2-biodegradable-plastics-in-the-marine-environment-comparative-analyses-of-bacterial-biofilms-macroinvertebrate-colonization-and-degradation-patterns)  
    标签：评分：8.0/10、query:mdd-regen
-   evidence：基于回收材料的永续计算实践，体现再生设计的韧性和生态极限原则
-3. [Hierarchical spatial organization stabilizes algal-fungal living materials and enables sustained carbon fixation](/20260513-20260611/biorxiv-10-64898-2026-05-29-728589-v1-hierarchical-spatial-organization-stabilizes-algal-fungal-living-materials-and-enables-sustained-carbon-fixation)  
+   evidence：对海洋环境中可生物降解塑料与非可降解塑料的生物污损群落比较研究，直接为人工鱼礁等生态修复用生物接受性材料设计提供依据。
+2. [Renewable energy caves: water replenishment holes in offshore monopiles create novel marine habitats](/20260602-20260611/biorxiv-10-64898-2026-06-03-729839-v1-renewable-energy-caves-water-replenishment-holes-in-offshore-monopiles-create-novel-marine-habitats)  
    标签：评分：8.0/10、query:mdd-regen
-   evidence：分层空间设计创建稳定活体材料用于碳固定，体现再生生态工程
+   evidence：补水孔创造海洋栖息地的研究直接呼应生物接受性材料系统用于海洋生态修复
 
 ### 速读区论文标签
-1. [Gen-AI-tecture: using generative AI to support architectural students in design tasks](/20260513-20260611/2605.21361v1-gen-ai-tecture-using-generative-ai-to-support-architectural-students-in-design-tasks)  
+1. [Integrated valorization of glycerol and PET into lipids and PHAs using an engineered Yarrowia lipolytica strain and a Pseudomonas-Comamonas consortium](/20260602-20260611/biorxiv-10-64898-2026-06-02-729029-v1-integrated-valorization-of-glycerol-and-pet-into-lipids-and-phas-using-an-engineered-yarrowia-lipolytica-strain-and-a-pseudomonas-comamonas-consortium)  
    标签：评分：7.0/10、query:mdd-regen
-   evidence：评估生成式AI融入建筑设计教育以提升创造力与包容性
-2. [From Stacks to Circuits: A Regenerative Socio-Technical Roadmap for AI Infrastructure within Planetary Boundaries](/20260513-20260611/2606.10544v1-from-stacks-to-circuits-a-regenerative-socio-technical-roadmap-for-ai-infrastructure-within-planetary-boundaries)  
-   标签：评分：7.0/10、query:mdd-regen
-   evidence：提出以系统思维为核心的再生社会技术路线图，可迁移至生态工程的再生设计
-3. [REFINING THE USE OF SEED BALLS TO SUPPORT SEAGRASS RESTORATION](/20260513-20260611/biorxiv-10-64898-2026-06-03-729958-v1-refining-the-use-of-seed-balls-to-support-seagrass-restoration)  
-   标签：评分：7.0/10、query:mdd-regen
-   evidence：利用种子球作为防护粘土基质，实现海草可规模化修复
-4. [Topological texture analysis of microscopy images of dynamic casein gelation and its relation to rheological properties](/20260513-20260611/2606.02048v1-topological-texture-analysis-of-microscopy-images-of-dynamic-casein-gelation-and-its-relation-to-rheological-properties)  
+   evidence：将废弃甘油和PET升级转化为生物塑料PHA，与废料升级为高性能生物材料的要求一致。
+2. [Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials](/20260602-20260611/2606.03816v1-learning-finite-viscoelasticity-with-davis-a-supervised-framework-for-generalized-standard-materials)  
    标签：评分：6.0/10、query:mdd-regen
-   evidence：连接蛋白质凝胶微结构与流变性的计算工具箱，可应用于鱼皮明胶生物塑料
-5. [CEON: Circular Economy Ontology Network](/20260513-20260611/2606.02253v1-ceon-circular-economy-ontology-network)  
-   标签：评分：6.0/10、query:mdd-regen
-   evidence：提出循环经济本体网络以支持语义互操作，助力循环设计流程
-6. [PolyGraphPy: A unified Python framework for atomistic simulation and machine learning-driven polymer design](/20260513-20260611/2606.06415v1-polygraphpy-a-unified-python-framework-for-atomistic-simulation-and-machine-learning-driven-polymer-design)  
-   标签：评分：6.0/10、query:mdd-regen
-   evidence：集成原子模拟与机器学习的聚合物设计Python框架
-7. [Reconstructing living materials as a computable design space with multi-agent reasoning](/20260513-20260611/biorxiv-10-64898-2026-02-15-705954-v2-reconstructing-living-materials-as-a-computable-design-space-with-multi-agent-reasoning)  
-   标签：评分：6.0/10、query:mdd-regen
-   evidence：多智能体框架为活体材料创建可计算设计空间，支持生物基材料的材料驱动设计
+   evidence：可迁移至三文鱼皮明胶力学表征的通用粘弹性建模框架
 
 
 <div class="dpr-home-promo-card">

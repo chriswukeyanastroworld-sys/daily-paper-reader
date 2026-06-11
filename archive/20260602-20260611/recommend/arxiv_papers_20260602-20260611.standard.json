@@ -1,0 +1,177 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-11T14:34:40.452778+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "biorxiv-10-64898-2025-12-22-696091-v2",
+      "source": "biorxiv",
+      "title": "Biodegradable Plastics in the Marine Environment: Comparative Analyses of Bacterial Biofilms, Macroinvertebrate Colonization, and Degradation Patterns",
+      "abstract": "Floating debris in the ocean recruits microbes and marine invertebrates to its surface, resulting in rafting communities. As biodegradable plastics increase in prevalence as alternatives to petroleum-based plastics, their properties may impact the dynamics of rafting communities by influencing the composition of bacterial biofilms and attached invertebrates. We compared attached biofouling communities of bacteria and marine invertebrates on biodegradable surfaces and nonbiodegradable petroleum-based plastics and naturally occurring substrata. Six surface types: polypropylene plastic (PP), polystyrene (PS), polylactic acid plastic (PLA), polyhydroxyalkanoates plastic (PHA), maple wood veneer, and propagules of the mangrove Rhizophora mangle, were examined to determine if plastic type affected biofilm composition on the surfaces and their degradation patterns. Biofilm analyses were conducted at twelve weeks, and degradation analyses were conducted at twenty-two weeks of immersion. Using digital image analysis, 16S rRNA sequencing, and metagenomic analyses, we found that microbial biofilms, marine invertebrate inhabitants, and degradation patterns differed across the various substrate types tested. Microbial communities on PLA were more similar to those on the two non-biodegradable plastics, while communities on PLA were more like those on the natural substrata. The biodegradable PLA showed signs of degradation within 22 weeks of immersion, suggesting that biodegradable plastics behave variably in the natural environment. Results of this study bring forth the importance of designing biodegradable plastics with careful consideration of the environmental conditions in which they are likely to persist.",
+      "authors": [
+        "Montpetit, K. M.",
+        "Nedved, B. T.",
+        "Hadfield, M. G.",
+        "Freckelton, M. L."
+      ],
+      "primary_category": "ecology",
+      "categories": [
+        "ecology"
+      ],
+      "published": "2026-06-09T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2025.12.22.696091v2.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Comparative study of biofouling communities on biodegradable and nonbiodegradable plastics in marine environment directly informs design of bioreceptive materials for artificial reefs and ecological restoration.",
+      "llm_evidence_cn": "对海洋环境中可生物降解塑料与非可降解塑料的生物污损群落比较研究，直接为人工鱼礁等生态修复用生物接受性材料设计提供依据。",
+      "llm_evidence": "对海洋环境中可生物降解塑料与非可降解塑料的生物污损群落比较研究，直接为人工鱼礁等生态修复用生物接受性材料设计提供依据。",
+      "canonical_evidence": "对海洋环境中可生物降解塑料与非可降解塑料的生物污损群落比较研究，直接为人工鱼礁等生态修复用生物接受性材料设计提供依据。",
+      "llm_tldr_en": "This study compares bacterial biofilms and macroinvertebrate colonization on biodegradable vs petroleum-based plastics in the ocean, finding that material type significantly influences rafting community composition; these insights are crucial for designing bioreceptive materials for marine artificial reefs and ecological restoration.",
+      "llm_tldr_cn": "该研究比较了可生物降解塑料（PLA, PHA）与传统石油基塑料（PP, PS）以及天然基质在海洋中的细菌生物膜和大型无脊椎动物附着情况，发现材料类型显著影响生物污损群落组成。结果表明，可降解塑料可能改变海洋漂移群落动态，为设计用于人工鱼礁和生态恢复的具有生物接受性的材料提供了关键生态学依据。",
+      "llm_tldr": "该研究比较了可生物降解塑料（PLA, PHA）与传统石油基塑料（PP, PS）以及天然基质在海洋中的细菌生物膜和大型无脊椎动物附着情况，发现材料类型显著影响生物污损群落组成。结果表明，可降解塑料可能改变海洋漂移群落动态，为设计用于人工鱼礁和生态恢复的具有生物接受性的材料提供了关键生态学依据。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-06-03-729839-v1",
+      "source": "biorxiv",
+      "title": "Renewable energy caves: water replenishment holes in offshore monopiles create novel marine habitats",
+      "abstract": "The expansion of offshore renewable energy introduces artificial hard substrate, but the ecological effects may change depending on design features. For example, water replenishment holes, implemented for internal water refreshment and corrosion control, also allow colonisation of previously inaccessible monopile interiors, creating a novel semi-enclosed habitat. This study compared epifaunal communities on the interior and exterior walls of four water replenishment hole-equipped monopiles in the southern North Sea and modelled internal water quality to better understand factors shaping these communities. Vertical video transects were used to quantify percentage cover along depth gradients, while a coupled hydrodynamic-water quality model predicted vertical patterns in dissolved oxygen and particulate organic carbon over one year. Monopile interiors function as semi-enclosed, cave-like habitats with distinct environmental conditions, including darkness, restricted water flow, and vertical gradients in dissolved oxygen and particulate organic carbon. Compared to the external cover, interior communities showed reduced dominance of typical North Sea hard-substrate taxa and increased heterogeneity, with higher contributions of sponges, calcareous tube worms, and brittle stars, resembling communities reported from marine cave environments. Overall epifaunal cover was lower on the interior walls and broadly reflected vertical patterns in water quality. Organic matter accumulated on the interior seafloor, with indications of microbial mat formation. These findings suggest that the internal environmental conditions influence community development. Water replenishment hole design may therefore shape community composition inside monopiles, with implications for possible use as nature-inclusive design and environmental management.\n\nGraphical abstract\n\nO_FIG O_LINKSMALLFIG WIDTH=200 HEIGHT=78 SRC=\"FIGDIR/small/729839v1_ufig1.gif\" ALT=\"Figure 1\">\nView larger version (43K):\norg.highwire.dtl.DTLVardef@18f2055org.highwire.dtl.DTLVardef@193c9f8org.highwire.dtl.DTLVardef@1b0ebdaorg.highwire.dtl.DTLVardef@4c74a7_HPS_FORMAT_FIGEXP  M_FIG C_FIG",
+      "authors": [
+        "Kornau, L. M.",
+        "Leutelt, B.",
+        "van Sluis, C. J.",
+        "Bruinsma, N.",
+        "Mascini, M. D.",
+        "Olie, R. A.",
+        "Jacobs, F. A.",
+        "van den Akker, S.",
+        "de Haan, E.",
+        "van Onselen, E.",
+        "Strigin, N.",
+        "Nijland, R.",
+        "Coolen, J. W."
+      ],
+      "primary_category": "ecology",
+      "categories": [
+        "ecology"
+      ],
+      "published": "2026-06-05T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.03.729839v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Studying water replenishment holes creating marine habitats directly aligns with bioreceptive material systems for marine ecological restoration",
+      "llm_evidence_cn": "补水孔创造海洋栖息地的研究直接呼应生物接受性材料系统用于海洋生态修复",
+      "llm_evidence": "补水孔创造海洋栖息地的研究直接呼应生物接受性材料系统用于海洋生态修复",
+      "canonical_evidence": "补水孔创造海洋栖息地的研究直接呼应生物接受性材料系统用于海洋生态修复",
+      "llm_tldr_en": "This study examines how water replenishment holes in offshore monopiles create novel semi-enclosed habitats, comparing interior and exterior epifaunal communities and modeling water quality. It provides insights for designing marine infrastructure to support ecological restoration.",
+      "llm_tldr_cn": "现有海上可再生能源扩张引入人工硬基底，补水孔原本用于内部水交换和防腐，却也允许生物定居单桩内部，创造半封闭生境。本研究通过垂直视频横断面量化附着生物覆盖度，结合水动力-水质模型分析内部环境，发现补水孔设计导致独特的群落组成和深度格局，表明工程特征可主动调控生态效应，为海上人工礁生态修复和生物接受性材料系统设计提供依据。",
+      "llm_tldr": "现有海上可再生能源扩张引入人工硬基底，补水孔原本用于内部水交换和防腐，却也允许生物定居单桩内部，创造半封闭生境。本研究通过垂直视频横断面量化附着生物覆盖度，结合水动力-水质模型分析内部环境，发现补水孔设计导致独特的群落组成和深度格局，表明工程特征可主动调控生态效应，为海上人工礁生态修复和生物接受性材料系统设计提供依据。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "biorxiv-10-64898-2026-06-02-729029-v1",
+      "source": "biorxiv",
+      "title": "Integrated valorization of glycerol and PET into lipids and PHAs using an engineered Yarrowia lipolytica strain and a Pseudomonas-Comamonas consortium",
+      "abstract": "The accumulation of plastic waste necessitates innovative strategies that convert polymer carbon into value-added products. Here, we present a sequential yeast-bacterial workflow for the integrated valorisation of glycerol and amorphous polyethylene terephthalate (amPET) into triacyl glyceride (TAGs) and polyhydroxyalkanoates (PHAs). First, an engineered obese strain of Yarrowia lipolytica was cultivated on glycerol, for the simultaneous production of intracellular lipids, up to 42.9% of its cell dry weight, and secretion of a PET-depolymerizing enzymatic cocktail, composed of the cutinase from Mycothermus thermophilus (HiC) and the lipase B from Moesziomyces antarcticus (CALB). The resulting enzymatic crude hydrolysed amPET, and the released degradation products--terephthalic acid (TPA) and ethylene glycol (EG)-- served as feedstocks for a bacterial consortium composed of Comamonas testosteroni RW31 and Pseudomonas putida JM37, which naturally assimilate TPA and EG, respectively. This consortium successfully upcycled the released monomers into intracellular polyhydroxybutyrate (PHB) and medium-chain-length PHAs. Furthermore, fluorescent strains of both bacteria enabled the development of a semi-quantitative method for monitoring the consortium population dynamics. Overall, this study provides a robust proof-of-concept for a circular bioeconomy approach, successfully coupling glycerol-based enzyme and lipid production with the downstream biological conversion of PET-derived monomers into valuable bioplastics.\n\nGraphical abstract\n\nO_FIG O_LINKSMALLFIG WIDTH=200 HEIGHT=142 SRC=\"FIGDIR/small/729029v1_ufig1.gif\" ALT=\"Figure 1\">\nView larger version (24K):\norg.highwire.dtl.DTLVardef@1ad2880org.highwire.dtl.DTLVardef@13e0e36org.highwire.dtl.DTLVardef@1170a39org.highwire.dtl.DTLVardef@1a04fd3_HPS_FORMAT_FIGEXP  M_FIG C_FIG",
+      "authors": [
+        "Molpeceres-Garcia, F. J.",
+        "Garcia-Miro, A.",
+        "Prieto, A.",
+        "Sanz-Mata, D.",
+        "Barriuso, J."
+      ],
+      "primary_category": "synthetic biology",
+      "categories": [
+        "synthetic biology"
+      ],
+      "published": "2026-06-03T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.02.729029v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Integrated valorization of glycerol and PET into bioplastics (PHA) aligns with upcycling waste into high-performance biomaterials.",
+      "llm_evidence_cn": "将废弃甘油和PET升级转化为生物塑料PHA，与废料升级为高性能生物材料的要求一致。",
+      "llm_evidence": "将废弃甘油和PET升级转化为生物塑料PHA，与废料升级为高性能生物材料的要求一致。",
+      "canonical_evidence": "将废弃甘油和PET升级转化为生物塑料PHA，与废料升级为高性能生物材料的要求一致。",
+      "llm_tldr_en": "This study presents a sequential yeast-bacterial workflow to convert glycerol and PET into lipids and PHAs, demonstrating an integrated approach to waste valorization into bioplastics.",
+      "llm_tldr_cn": "针对塑料废物增值需求，提出了一种酵母-细菌序贯生物转化工艺，以甘油和PET为原料生产脂质和PHA。首先，工程化耶氏酵母将甘油转化为胞内脂质并分泌PET水解酶；随后，假单胞菌-丛毛单胞菌联合体利用水解产物合成PHA。该方法实现了混合废物向高价值生物塑料的高效转化，为废塑料循环利用提供了新路径。",
+      "llm_tldr": "针对塑料废物增值需求，提出了一种酵母-细菌序贯生物转化工艺，以甘油和PET为原料生产脂质和PHA。首先，工程化耶氏酵母将甘油转化为胞内脂质并分泌PET水解酶；随后，假单胞菌-丛毛单胞菌联合体利用水解产物合成PHA。该方法实现了混合废物向高价值生物塑料的高效转化，为废塑料循环利用提供了新路径。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Upcycling marine biowaste into high-performance biomaterials",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.03816v1",
+      "source": "arxiv",
+      "title": "Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials",
+      "abstract": "This work revisits the recently proposed data-adaptive viscoelasticity (DAVIS) framework, a spline-based formulation of finite viscoelasticity within the generalized standard materials setting. DAVIS enables a data-driven representation of equilibrium and non-equilibrium constitutive functions while retaining thermodynamic consistency and supporting parameter identification via finite element model updating. The present contribution focuses on improving the robustness and identifiability of non-equilibrium branches in generalized Maxwell-type models. To this end, two extensions of the original formulation are introduced. First, the spline representation is reformulated in terms of curvature-based variables, which is especially convenient to enforce monotonicity and convexity constraints by construction through a smooth parameter mapping. Second, the adaptation of interpolation domains is decoupled from the inner parameter identification by means of a staggered, block-alternating strategy: spline coefficients are optimized for fixed domain endpoints, while the endpoints are updated in an outer loop based on smooth statistics of sampled invariants. This separation alleviates an inherent scaling ambiguity between interpolation domains and spline coefficients that can impair conditioning in viscoelastic inverse problems. The underlying constitutive model remains the finite strain viscoelasticity framework of Reese and Govindjee. The proposed identification strategy is assessed for homogeneous uniaxial loading-unloading tests, which facilitates the study of identifiability and robustness of non-equilibrium branches.",
+      "authors": [
+        "Simon Wiesheier",
+        "Paul Steinmann",
+        "Miguel Angel Moreno-Mateos"
+      ],
+      "primary_category": "cs.CE",
+      "categories": [
+        "cs.CE"
+      ],
+      "published": "2026-06-02T15:58:04+00:00",
+      "link": "https://arxiv.org/pdf/2606.03816v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "General viscoelastic modeling framework transferable to characterize salmon skin gelatin mechanics",
+      "llm_evidence_cn": "可迁移至三文鱼皮明胶力学表征的通用粘弹性建模框架",
+      "llm_evidence": "可迁移至三文鱼皮明胶力学表征的通用粘弹性建模框架",
+      "canonical_evidence": "可迁移至三文鱼皮明胶力学表征的通用粘弹性建模框架",
+      "llm_tldr_en": "This paper enhances the DAVIS framework for data-driven finite viscoelasticity by introducing curvature-based spline variables and spectral decomposition regularization, improving robustness and identifiability. The method learns viscoelastic models from limited data and can be applied to characterize bio-based materials like salmon skin gelatin.",
+      "llm_tldr_cn": "针对数据驱动粘弹性建模中非平衡支路辨识困难的问题，本文对DAVIS框架进行了两项扩展：引入基于曲率的样条变量，并采用谱分解正则化策略。改进后的方法提升了从数据中学习粘弹性本构模型的鲁棒性，使得即使在少量实验数据下也能可靠地辨识材料参数。该通用框架适用于各类粘弹性材料，包括三文鱼皮明胶等生物基聚合物，为新型生物材料的力学性能表征提供了有效的计算工具。",
+      "llm_tldr": "针对数据驱动粘弹性建模中非平衡支路辨识困难的问题，本文对DAVIS框架进行了两项扩展：引入基于曲率的样条变量，并采用谱分解正则化策略。改进后的方法提升了从数据中学习粘弹性本构模型的鲁棒性，使得即使在少量实验数据下也能可靠地辨识材料参数。该通用框架适用于各类粘弹性材料，包括三文鱼皮明胶等生物基聚合物，为新型生物材料的力学性能表征提供了有效的计算工具。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "analysis of salmon-based materials",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

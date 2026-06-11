@@ -1,0 +1,1249 @@
+Title: Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials
+
+URL Source: https://arxiv.org/pdf/2606.03816v1
+
+Published Time: Wed, 03 Jun 2026 01:24:45 GMT
+
+Number of Pages: 26
+
+Markdown Content:
+# LEARNING FINITE VISCOELASTICITY WITH DAVIS: A 
+
+# SUPERVISED FRAMEWORK FOR GENERALIZED STANDARD MATERIALS 
+
+A P REPRINT 
+
+Simon Wiesheier ∗
+
+Institute of Applied Mechanics Friedrich-Alexander-Universität Erlangen–Nürnberg 91058, Erlangen, Germany 
+
+simon.wiesheier@fau.de 
+
+Paul Steinmann 
+
+Institute of Applied Mechanics Friedrich-Alexander-Universität Erlangen–Nürnberg 91058, Erlangen, Germany Glasgow Computational Engineering Centre University of Glasgow G12 8QQ, United Kingdom 
+
+Miguel Angel Moreno-Mateos †
+
+Institute of Applied Mechanics Friedrich-Alexander-Universität Erlangen–Nürnberg 91058, Erlangen, Germany 
+
+miguel.moreno@fau.de 
+
+June 3, 2026 
+
+# ABSTRACT 
+
+This work revisits the recently proposed data-adaptive viscoelasticity (DAVIS) framework, a spline-based formulation of finite viscoelasticity within the generalized standard materials setting. DAVIS enables a data-driven representation of equilibrium and non-equilibrium constitutive functions while retaining thermodynamic consistency and supporting parameter identification via finite element model updating. The present contribution focuses on improving the robustness and identifiability of non-equilibrium branches in generalized Maxwell-type models. To this end, two extensions of the original formulation are introduced. First, the spline representation is reformulated in terms of curvature-based variables, which is especially convenient to enforce monotonicity and convexity constraints by construction through a smooth parameter mapping. Second, the adaptation of interpolation domains is decoupled from the inner parameter identification by means of a staggered, block-alternating strategy: spline coefficients are optimized for fixed domain endpoints, while the endpoints are updated in an outer loop based on smooth statistics of sampled invariants. This separation alleviates an inherent scaling ambiguity between interpolation domains and spline coefficients that can impair conditioning in viscoelastic inverse problems. The underlying constitutive model remains the finite strain viscoelasticity framework of Reese and Govindjee. The proposed identification strategy is assessed for homogeneous uniaxial loading–unloading tests, which facilitates the study of identifiability and robustness of non-equilibrium branches. 
+
+Keywords Data-driven methods | Supervised learning | Constitutive models | Finite strain incompressible viscoelasticity 
+
+| Automated model discovery | Inverse problems 
+
+> ∗
+
+Corresponding author: simon.wiesheier@fau.de 
+
+> †
+
+Corresponding author: miguel.moreno@fau.de 
+
+> arXiv:2606.03816v1 [cs.CE] 2 Jun 2026
+
+Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+# 1 Introduction 
+
+Finite deformations, pronounced nonlinearity, and rate dependence are characteristic features of soft material behavior. Their constitutive modeling therefore requires a framework that combines hyperelasticity [ 1, 2 ] with viscous dissipation at finite strains [ 3 ]. Among the available approaches, internal-variable formulations based on a multiplicative decompo-sition of the deformation gradient have proven particularly successful [ 4, 5, 6, 7 ]. In this class of models, the finite strain viscoelasticity theory of Reese and Govindjee [ 6 , 8 ] has emerged as a widely adopted constitutive backbone. Despite differences in formulation, many of these models can be shown to be closely related when expressed in a common configuration [9]. While these formulations provide a sound mechanical basis, the identification of suitable constitutive functions remains a central challenge. Classical approaches require the analyst to commit a priori to specific functional forms, often leading to a trade-off between expressiveness, robustness, and interpretability. This limitation has motivated increasing interest in data-driven constitutive modeling [ 10 ], where constitutive relations are inferred directly from data. For hyperelasticity, a wide range of approaches has emerged, including neural networks [ 11 , 12 , 13 , 14 , 15 , 16 , 17 ], Gaussian processes [ 18 ], symbolic regression [ 19 ], neural ordinary differential equations [ 20 ], EUCLID [ 21 ], material fingerprinting [ 22 ], and spline-based methods, included our framework based on spline-based strain-energy density functions [23, 24, 25, 26, 27, 28]. For viscoelasticity, however, the task is more demanding: both equilibrium and non-equilibrium contributions must be identified together with a thermodynamically admissible evolution law. In this context, the framework of generalized standard materials (GSM), introduced by [ 29 ] and rooted in the fundamental results developed, amongst others, by [ 30 , 31 ], provides a natural foundation. GSM describes material behavior through two scalar functions, the free energy and a dissipation potential . The latter can equivalently be expressed in dual form, parameterized in terms of thermodynamic forces, with both formulations linked via the Legendre–Fenchel transformation. It was shown by [ 32 ]that internal-variable formulations of finite strain viscoelasticity based on multiplicative decompositions can be recast within this framework, thereby highlighting its generality and thermodynamic consistency. This structure is particularly attractive for data-driven modeling, as it allows physical constraints to be enforced by construction. Early data-driven approaches within this framework include variational Onsager neural networks [ 33 , 34 ], which parameterize both energy and dissipation potentials. These studies, however, were limited to one-dimensional settings. More recent GSM-based approaches remained restricted to geometrically linear theory and therefore cannot describe soft material behavior [35, 36]. For finite deformations, most current data-driven viscoelasticity models instead rely on the multiplicative decomposition. Representative examples include neural ODE formulations [ 20 ] and recent neural-network-based models by Kalina et al. [ 37 ], and Holthusen et al. [ 38 , 39 ]. These approaches enforce key physical principles, such as incompressibility of the total deformation ( J = 1 ), isochoric inelastic flow ( Jv = 1 ), and thermodynamic admissibility within a learning framework. Other directions include formulations based on external-state variables [ 40 , 41 ], where thermodynamic admissibility is enforced via inequality constraints during training, as well as approaches building on generalized Prony series [42]. In contrast, to the best of the authors’ knowledge, the DAVIS framework (Data-Adaptive VIScoelasticity) is the first approach that combines a data-driven representation of the two GSM potentials with constitutive functions based on the multiplicative decomposition for finite viscoelasticity . It was also the first to achieve this through an unsupervised calibration of the potentials within the GSM formalism [ 43 ]. 3 Similar to neural-network-based approaches, DAVIS enforces incompressibility of the total deformation and isochoric inelastic flow, employs implicit time integration, and satisfies polyconvexity requirements. The original DAVIS formulation demonstrated that data-adaptive spline representations can be successfully embedded into a thermodynamically consistent finite strain viscoelasticity framework. Importantly, unlike black-box models (including non-interpretable neural-network models), the direct data-driven identification of free-energy and dissipation-potential functions as spline interpolants endows DAVIS with inherent mechanical and physical interpretability . When extending the approach to richer generalized Maxwell structures, however, challenges arise; they are primarily related to identifiability [ 47 ] and numerical conditioning. In particular, the simultaneous optimization of spline coefficients and interpolation-domain endpoints introduces a scaling ambiguity between constitutive response and parameter domain. While manageable for moderate model complexity, this coupling becomes increasingly restrictive as the number of Maxwell branches grows. In addition, the value-based spline representation requires explicit inequality constraints to enforce polyconvexity [48, 49], which increases the complexity of the inverse problem.  
+
+> 3The original DAVIS framework leveraged finite element model updating [ 44 ] together with reaction forces and heterogeneous full-field displacement measurements [45, 46] to enrich the invariant space that is sampled.
+
+2Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+The present work builds on DAVIS and introduces several enhancements that improve the robustness, scalability, and interpretability of the identification procedure, i.e., • First, the spline representation is reformulated in terms of curvature-like variables and boundary slopes, ensuring polyconvexity by construction and eliminating the need for explicit inequality constraints. • Second, the adaptation of interpolation domains is decoupled from the parameter identification through a block-alternating strategy based on smooth statistics of sampled invariants. • Third, a group-wise sparsity regularization is introduced to promote the automatic selection of relevant Maxwell branches, cf. Figure 1. In contrast to the original DAVIS work, which focused on full finite element model updating, the present study deliber-ately restricts attention to homogeneous uniaxial loading–unloading experiments. In machine learning terminology, this corresponds to supervised training based on stress–strain data. This provides a controlled setting to systemati-cally investigate identifiability, assess the effect of the proposed reformulation, and study the automatic selection of non-equilibrium branches. 
+
+# 2 Finite strain incompressible viscoelasticity 
+
+The present formulation is based on the finite strain viscoelasticity theory of Reese and Govindjee [ 6 ], specialized to incompressible isotropic materials. It is recast here in the language of generalized standard materials [ 29 ]: the constitutive model is fully characterized by a free energy Ψ governing the recoverable response and branch-wise 
+
+dissipation potentials {Φα} governing the irreversible evolution. These two ingredients are sufficient to derive all constitutive equations from a single variational principle at the material point. The separation into (Ψ , Φα) is particularly valuable in the present data-adaptive setting, as it identifies precisely the constitutive functions to be represented by splines. 
+
+2.1 Constitutive setting 
+
+The present formulation employs the following notation for the principal kinematic, stress, and thermodynamic quantities: 
+
+> Table 1: Principal notation used in the finite-strain viscoelastic formulation.
+
+Symbol Meaning / property 
+
+F, J = det( F) = 1 deformation gradient and incompressibility 
+
+C = F⊤ · F, ¯C = J−2/3C right Cauchy–Green tensor and its isochoric part 
+
+¯I1, ¯I2 invariants of the isochoric total strain tensor 
+
+F = Fe,α · Fv,α multiplicative decomposition for branch α
+
+Fv,α , J v( α) = det( Fv,α ) = 1 viscous distortion for branch α
+
+Fe,α , J e( α) = det( Fe,α ) = 1 elastic distortion for branch α
+
+Ce,α = F⊤ 
+
+> e,α
+
+· Fe,α , be,α = Fe,α · F⊤ 
+
+> e,α
+
+elastic right and left Cauchy–Green tensors 
+
+¯Ce,α = det( Ce,α )−1/3Ce,α isochoric elastic right Cauchy–Green tensor 
+
+¯I1,e,α , ¯I2,e,α invariants of the isochoric elastic branch tensor 
+
+Lv,α , Dv,α = sym( Lv,α ), Wv,α = skw( Lv,α ) viscous velocity gradient and its symmetric/skew parts 
+
+τneq ,α , dev( τneq ,α ) = τneq ,α purely deviatoric non-equilibrium Kirchhoff stress 
+
+I1,τ,α , I 2,τ,α , J τ,α invariants of the non-equilibrium Kirchhoff stress 
+
+de,α , tr( de,α ) = 0 purely deviatoric viscous deformation-type rate 
+
+Ψ, ¯Ψeq , ¯Ψneq  
+
+> α
+
+free energy, equilibrium and non-equilibrium contributions 
+
+Πα, Φα primal and dual dissipation potentials 
+
+p, bΨ = Ψ − p[J − 1] hydrostatic pressure and augmented free energy 
+
+cW, D ≥ 0 augmented rate potential and reduced dissipation 
+
+Me,α , S, P = F · S Mandel, Piola–Kirchhoff and Piola stresses 3Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT Value-Based (Original DAVIS) Curvature-Based (New DAVIS) Reconstruction via double integration c i
+
+> d (initial slope) (Monotone & convex curve)
+
+Interpolating function values y i
+
+directly, linear constraints needed 
+
+y i
+
+Free parameters Softplus mapping 
+
+Positive coefficients 
+
+A: Curvature-based spline parameterization 
+
+Controls second derivative f''(x) via B-spline control points c i ,ensuring monotonicity & convexity per construction 
+
+## Robust Data-Adaptive Spline-Based Viscoelasticity: Enhancing the DAVIS framework B: Block-alternating optimization Outer loop: 
+
+domain adoption 
+
+Inner loop: 
+
+parameter optimization optimize free variables for fixed domain     
+
+> [x 1,x end ]
+> Linear projection for basis changes
+> transfer old parameters (c,d) between old and new spline
+
+domains to maintain constitutive response invariant samples  Domain Adaption via Log-Sum-Exp 
+
+Updates domain endpoints using Log-Sum-Exp statistics of sampled invariants 
+
+The Dual-Loop strategy 
+
+Optimization is decoupled into an inner loop for parameter fitting on a fixed domain and an outer loop for adopting the domain endpoints 
+
+C: Automated model selection D ata-adaptive generalized standard material structure Sparsity penalty 
+
+(L p regularization) Equilibrium branch 
+
+Active 
+
+branch 2 
+
+Group-wise sparsity pruning 
+
+eliminates redundant branches 
+
+Active 
+
+branch 1 
+
+Automated branch pruning 
+
+Identifies and removes redundant branches, leading to parsimonious models that balance data fidelity with minimal complexity 
+
+Figure 1. Schematic overview of the proposed extensions to the DAVIS framework. (a) Curvature-based spline representation of the constitutive functions, in which convexity and monotonicity are enforced by construction through non-negative curvature coefficients and boundary slopes. (b) Block-alternating identification strategy, separating the optimization of spline parameters from the adaptation of the interpolation domains. (c) Group-wise sparsity promotion across Maxwell branches, enabling automatic identification of a parsimonious viscoelastic model by selectively activating relevant branches. 
+
+4Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+2.1.1 Kinematics and invariants 
+
+We consider a generalized Maxwell model with one equilibrium branch and Nmw non-equilibrium branches arranged in parallel. All branches share the total deformation, whereas branch-wise internal variables describe viscous effects. For each non-equilibrium branch α = 1 , . . . , N mw , the deformation gradient is multiplicatively decomposed as 
+
+F = Fe,α · Fv,α . (1) This decomposition introduces an intermediate (stress-free) configuration associated with the viscous mapping Fv,α ,separating reversible (elastic) and dissipative (viscous) mechanisms. Equivalently, the internal state may be described by the inverse viscous tensor C−1v,α = F−1v,α · F−⊤  
+
+> v,α
+
+, which induces the elastic right and left Cauchy–Green tensors 
+
+Ce,α = F−⊤  
+
+> v,α
+
+· C · F−1v,α , be,α = F · C−1v,α · F⊤, (2) with C = F⊤ · F.The branch-wise viscous velocity gradient and its symmetric and skew-symmetric parts are 
+
+Lv,α := ˙Fv,α · F−1v,α , Dv,α := sym( Lv,α ), Wv,α := skw( Lv,α ). (3) Differentiating Ce,α = F−⊤  
+
+> v,α
+
+· C · F−1v,α with respect to time yields the kinematic identity 
+
+˙Ce,α = F−⊤  
+
+> v,α
+
+· ˙C · F−1v,α − L⊤ 
+
+> v,α
+
+· Ce,α − Ce,α · Lv,α (4) which links the rate of the elastic strain measure to the observable rate ˙C and the viscous velocity gradient Lv,α .To enforce incompressibility and isolate isochoric deformation, we apply the Flory split [50] 
+
+¯C = J−2/3C, ¯Ce,α = det( Ce,α )−1/3Ce,α , J = det( F). (5) Assuming isotropy, the constitutive functions depend on these tensors only through their principal invariants. For the isochoric total tensor, we introduce 
+
+¯I1 = tr( ¯C), ¯I2 = tr(cof ¯C)3/2 − 3√3, (6) and for the isochoric elastic branch tensors 
+
+¯I1,e,α = tr( ¯Ce,α ), ¯I2,e,α = tr(cof ¯Ce,α )3/2 − 3√3, (7) where cof( ·) denotes the cofactor. The transformed second invariant follows [ 48 , 49 ] and is particularly convenient for constructing polyconvex constitutive functions. 
+
+2.1.2 Rate-type variational potential 
+
+The constitutive equations are derived from a rate-type variational principle at the material point, in the spirit of [51 , 52 , 53 , 54 , 55 ]. In this framework, the model is governed by a scalar rate potential whose stationarity conditions simultaneously yield the internal variable evolution and identify the stress. The observable rate ˙C enters as a prescribed external input and is not subject to variation at the material-point level; the internal variable rates are the free quantities. 
+
+Augmented free energy and rate potential. The incompressibility constraint J = 1 is incorporated into the variational structure by introducing the Lagrange multiplier p (hydrostatic pressure) and defining the augmented free energy 
+
+bΨ  ¯C, { ¯Ce,α }, p  := Ψ   ¯C, { ¯Ce,α } − p [J − 1] , (8) where Ψ is the free energy defined in Equation (22) below, and p is not a constitutive parameter but a reactive field determined by the incompressibility condition. In the present setting, it is determined by an additional problem-specific constraint, e.g., a vanishing transverse stress component under homogeneous uniaxial loading. We collect the constitutive state in 
+
+z :=  C, {Fv,α }Nmw  
+
+> α=1
+
+, p , (9) and define the augmented rate potential at fixed state z as 4
+
+cW  ˙C, {Lv,α }, ˙p; z := ˙bΨ + 
+
+> Nmw
+
+X
+
+> α=1
+
+Πα
+
+ Dv,α 
+
+. (10) 
+
+> 4
+
+At fixed state, the mapping ˙Fv,α 7 → Lv,α = ˙Fv,α · F−1v,α is linear and invertible, so Lv,α is used as the branch rate variable in place of ˙Fv,α .
+
+5Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+Here Πα is the branch-wise dissipation potential specified in Section 2.1.3 below. 
+
+Reduced rate potential. To make the stationarity conditions explicit, we need the material time derivative of bΨ. At this stage, we keep the free energy Ψ generic, assuming only that it depends on the total strain measure C and on the branch-wise elastic strain measures {Ce,α }; the specific functional forms are introduced later in Section 2.1.3. Differentiating Equation (8) with respect to time and applying the chain rule gives 
+
+˙bΨ = −[J − 1] ˙ p − p ˙J + ∂Ψ
+
+∂C : ˙C +
+
+> Nmw
+
+X
+
+> α=1
+
+∂Ψ
+
+∂Ce,α 
+
+: ˙Ce,α . (11) The key step is to substitute the kinematic identity Equation (4) into the last sum. Each branch term splits immediately into two physically distinct contributions: 
+
+∂Ψ
+
+∂Ce,α 
+
+: ˙Ce,α =
+
+h
+
+F−1v,α · ∂Ψ
+
+∂Ce,α 
+
+· F−⊤ 
+
+> v,α
+
+i
+
+: ˙C
+
+| {z }
+
+> stress contribution
+
+− ∂Ψ
+
+∂Ce,α 
+
+: L⊤ 
+
+> v,α
+
+· Ce,α + Ce,α · Lv,α 
+
+| {z }
+
+> dissipation contribution
+
+. (12) The first group is proportional to ˙C and contributes to the stress, while the second group is proportional to Lv,α and drives the viscous dissipation. It can be simplified further: since Ce,α is symmetric and Ψ is isotropic in Ce,α , the tensor ∂Ψ/∂ Ce,α is symmetric and coaxial with Ce,α . We therefore introduce the symmetric Mandel-type branch stress [56] 
+
+Me,α := 2 Ce,α · ∂Ψ
+
+∂Ce,α 
+
+= 2 ∂Ψ
+
+∂Ce,α 
+
+· Ce,α , (13) in terms of which the dissipation contribution reads 
+
+∂Ψ
+
+∂Ce,α 
+
+: L⊤ 
+
+> v,α
+
+· Ce,α + Ce,α · Lv,α 
+
+ = Me,α : Dv,α , (14) where only the symmetric part Dv,α = sym( Lv,α ) survives because Me,α is symmetric; the skew part Wv,α drops out entirely. Inserting Equations (12) and (14) into Equation (11) and using ˙J = 12 J C−1 : ˙C to absorb the −p ˙J term into the ˙C-coefficient gives 
+
+˙bΨ = −[J − 1] ˙ p + 12 S : ˙C −
+
+> Nmw
+
+X
+
+> α=1
+
+Me,α : Dv,α , (15) where S is the Piola–Kirchhoff stress, defined as the total coefficient of 12 ˙C:
+
+S := −Jp C−1 + 2 ∂Ψ
+
+∂C + 2 
+
+> Nmw
+
+X
+
+> α=1
+
+F−1v,α · ∂Ψ
+
+∂Ce,α 
+
+· F−⊤  
+
+> v,α
+
+. (16) The three terms represent, respectively, the reactive pressure contribution, the stress from the total strain energy, and the non-equilibrium branch stresses pulled back from the intermediate configuration to the reference configuration. The explicit form of S in terms of the specific free energy contributions ¯Ψeq and { ¯Ψneq  
+
+> α
+
+} follows once those functions are introduced in Section 2.1.3. The Piola stress is given by P = F · S.Substituting Equation (15) into Equation (10) yields the reduced augmented rate potential 
+
+cW = −[J − 1] ˙ p + 12 S : ˙C +
+
+> Nmw
+
+X
+
+> α=1
+
+h
+
+Πα(Dv,α ) − Me,α : Dv,α 
+
+i
+
+. (17) 6Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+Stationarity conditions. The constitutive equations follow from stationarity of cW with respect to the internal rates 
+
+{Lv,α }5 and the multiplier rate ˙p, and from differentiation with respect to the rate ˙C:Incompressibility: δ ˙p cW = −[J − 1] δ ˙p = 0 ∀ δ ˙p
+
+=⇒ J = 1 , (18a) Evolution equations: δLv,α 
+
+cW =
+
+h ∂Πα
+
+∂Dv,α 
+
+− Me,α 
+
+i
+
+: δLv,α = 0 ∀ δLv,α , α = 1 , . . . , N mw 
+
+=⇒ Me,α = ∂Πα
+
+∂Dv,α 
+
+, α = 1 , . . . , N mw , (18b) Stress relation: ∂ cW
+
+∂ ˙C = 12 S. (18c) Equation (18b) is the flow rule for each non-equilibrium branch: the Mandel stress Me,α is thermodynamically conjugate to the viscous rate Dv,α and is balanced by the dissipative resistance ∂Πα/∂ Dv,α . Equation (18a) enforces the incompressibility constraint. The stress Equation (18c) is not obtained by variation but by differentiation, cf. [52]. 
+
+Remark 1. The variation with respect to ˙C would correspond to varying the applied load, which has no meaning at the material-point level. The comparison of the material variational principle utilized in this work with a global (or structural) variational principle clarifies this. At the structural level one varies the displacement field u (or equivalently 
+
+˙u) over the body B, which yields the weak form of linear momentum balance, R 
+
+> B
+
+P : ∇δ ˙u dV = R 
+
+> ∂B
+
+¯t · δ ˙u dA, or equivalently Div P = 0 in strong form. There, ˙u is the unknown, and its variation drives the equilibrium equations. However, at the material point, ˙u (or ˙C) is an input , not an unknown. The stress is therefore identified by differentiation with respect to ˙C, rather than by variation as in a global variational principle. The reduced dissipation takes the form 
+
+D =
+
+> Nmw
+
+X
+
+> α=1
+
+Me,α : Dv,α ≥ 0, (19) confirming that (Me,α , Dv,α ) is the natural force–rate pair in the intermediate configuration. 
+
+Remark 2 (Equivalent spatial representation) . For the specific constitutive forms introduced in Section 2.1.3, it is convenient to rewrite the branch equations in the spatial configuration. Introducing the non-equilibrium Kirchhoff stress 
+
+> 6
+
+τneq ,α = 2 Fe,α · ∂ ¯Ψneq 
+
+> α
+
+∂Ce,α 
+
+· F⊤
+
+> e,α
+
+, (20) and the spatial viscous deformation-type rate 7
+
+de,α := − 12 L(be,α ) · b−1e,α , (21) one verifies the equivalence Me,α : Dv,α = τneq ,α : de,α , so that (τneq ,α , de,α ) is an alternative conjugate pair for the same dissipative mechanism. The spatial form of the evolution Equation (18b) then reads τneq ,α = ∂Πα/∂ de,α , which is the form used in the incremental update of Section 2.2. 
+
+2.1.3 Constitutive model 
+
+Having established the variational structure, we now specify the two constitutive ingredients of the generalized standard material: the free energy Ψ and the dissipation potentials {Φα}. Together, these functions completely define the model; all stress and evolution expressions follow from the framework of Section 2.1.2. 
+
+Free energy: The free energy is additively decomposed into an equilibrium contribution and Nmw non-equilibrium branch contributions, 
+
+Ψ  ¯C, { ¯Ce,α } = ¯Ψeq ( ¯C) + 
+
+> Nmw
+
+X
+
+> α=1
+
+¯Ψneq  
+
+> α
+
+( ¯Ce,α ), (22) 
+
+> 5
+
+Although Πα depends on Dv,α = sym( Lv,α ), the variation is taken with respect to Lv,α . Since δDv,α = sym( δLv,α ) and 
+
+∂Πα/∂ Dv,α is symmetric, one has ∂Πα 
+
+> ∂Dv,α
+
+: sym( δLv,α ) = ∂Πα 
+
+> ∂Dv,α
+
+: δLv,α , so the skew part of δLv,α does not contribute. 
+
+> 6
+
+In the present incompressible setting, the Kirchhoff stress coincides with the Cauchy stress. 
+
+> 7
+
+L(•) denotes the Lie derivative, representing the objective rate of the elastic left Cauchy–Green tensor. 
+
+7Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+where the dependence on the isochoric tensors ¯C and ¯Ce,α defined in Equation (5) guarantees objectivity and invariance with respect to arbitrary rotations of the intermediate configuration. Using the invariants in Equations (6) and (7), each contribution is further split as 
+
+¯Ψeq ( ¯C) = ¯Ψeq 1 ( ¯I1) + ¯Ψeq 2 ( ¯I2), (23) 
+
+¯Ψneq  
+
+> α
+
+( ¯Ce,α ) = ¯Ψneq 1,α ( ¯I1,e,α ) + ¯Ψneq 2,α ( ¯I2,e,α ). (24) The use of invariant-based representations ensures objectivity and material symmetry. The scalar functions ¯Ψeq 1 , ¯Ψeq 2 ,
+
+¯Ψneq 1,α , ¯Ψneq 2,α are the constitutive functions to be identified from data; in the present work, they are represented by splines. 
+
+Dissipation potentials: We now specify the branch-wise dissipation potential Πα introduced in the rate potential Equa-tion (10). In the material description, Πα is a convex function of the viscous rate Dv,α ; in the equivalent spatial description of remark 2 it is expressed as a convex primal dissipation potential φα(de,α ), with Πα(Dv,α ) = φα(de,α )
+
+under the push-forward equivalence Me,α : Dv,α = τneq ,α : de,α . Equivalently, one may work with the dual dissipation potential obtained by the Legendre–Fenchel transform, 
+
+Φα(τneq ,α ) = sup 
+
+> de,α
+
+n
+
+τneq ,α : de,α − φα(de,α )
+
+o
+
+, (25) from which the complementary viscous evolution reads 
+
+de,α = ∂Φα
+
+∂τneq ,α 
+
+. (26) In the present work, we adopt the dual dissipation potential because it allows the dissipative response to be parameterized directly in terms of stress invariants 8. Thermodynamic admissibility requires Φα to be convex, non-negative, and normalized so that Φα(0) = 0 .For isotropic materials in the incompressible setting, volumetric dissipation is excluded, and the potential depends only on the deviatoric part of τneq ,α [58]. Introducing the stress invariants 
+
+I1,τ,α = tr( τneq ,α ), I2,τ,α = tr(cof τneq ,α ), Jτ,α = I21,τ,α − 3 I2,τ,α , (27) we take 
+
+Φα = Φ α(Jτ,α ). (28) The invariant Jτ,α admits the equivalent form Jτ,α = 32 dev τneq ,α : dev τneq ,α , confirming that it captures purely deviatoric information and vanishes for volumetric states. Furthermore, Jτ,α is convex in τneq ,α [20 ], so any convex scalar function Φα(Jτ,α ) defines a thermodynamically admissible dual potential. As with the free energy, Φα is represented by a spline in the present work. 
+
+Remark 3. More generally, the dual dissipation potential may be expressed as an isotropic scalar function of the deviatoric part of τneq ,α , which admits two independent invariants since det τneq ,α = 1 . The single-invariant form Equa-tion (28) is adopted here for parsimony; numerical results did not indicate the need for a richer representation. 
+
+Remark 4. For a compressible extension of the framework including volumetric dissipation, the reader is referred to [59, 60]. 
+
+2.2 Implicit incremental branch update 
+
+The temporal evolution of each non-equilibrium branch is integrated by means of an exponential mapping algorithm. This choice preserves symmetry and positive definiteness of be,α throughout the update. As shown below, the present formulation yields a purely isochoric viscous flow, so that the viscous deformation remains unimodular, consistent with standard assumptions for incompressible materials. 
+
+> 8
+
+Both the primal and dual dissipation potentials provide equivalent thermodynamic descriptions of the inelastic process. However, the dual formulation is often preferred because it yields an explicit evolution law and is typically more convenient for numerical implementation [57]. 
+
+8Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+Trial state and exponential update 
+
+Given the internal state at time tn and the deformation Fn+1 at the end of the current increment, one first forms the trial elastic state 
+
+btr e,α = Fn+1 · C−1v,α,n · F⊤
+
+> n+1
+
+. (29) This trial state corresponds to freezing the viscous evolution during the increment. The updated elastic left Cauchy– Green tensor is obtained by correcting the trial state through the viscous flow via the exponential map, 
+
+be,α,n +1 = exp   − 2∆ t de,α 
+
+ · btr e,α , (30) where de,α is given by the dual flow rule Equation (26). 
+
+Spectral local problem 
+
+By isotropy, be,α , btr e,α and τneq ,α are coaxial and the update Equation (30) can be performed in their common principal basis. Denoting principal quantities by superscripts (·)A, A = 1 , 2, 3, the viscous evolution reduces component-wise to 
+
+(de,α )A = ∂Φα/∂τ Aα , and the residual equations read 
+
+rAα = εA 
+
+> e,α
+
+− (εtr e,α )A + ∆ t (de,α )A = 0 , A = 1 , 2, 3, (31) where εA 
+
+> e,α
+
+= ln( λA
+
+> e,α
+
+) are the logarithmic principal elastic strains from the spectral decomposition be,α =
+
+P
+
+> A
+
+(λA
+
+> e,α
+
+)2 nA ⊗ nA. The residual is implicit because τ Aα depends on the updated elastic state, and the resulting three-dimensional nonlinear system is solved by a local Newton method at each material point. 
+
+Isochoric viscous flow 
+
+Since Φα depends only on the deviatoric invariant Jτ,α , the dual flow rule Equation (26) yields a traceless rate, 
+
+tr( de,α ) = 0 . Consequently, 
+
+det  exp( −2∆ t de,α ) = 1 , (32) and the exponential update preserves det( be,α ):
+
+det( be,α,n +1 ) = det( btr e,α ). (33) For incompressible loading starting from a unimodular state, this implies det( be,α ) = 1 throughout, which via 
+
+be,α = F · C−1v,α · F⊤ is equivalent to 
+
+det( Fv,α ) = 1 , (34) i.e., the viscous deformation remains unimodular, consistent with the incompressible framework. 
+
+# 3 Robust data-adaptive spline-based viscoelasticity 
+
+The constitutive framework of Section 2 reduces the material description to a finite collection of scalar functions within the GSM formalism, namely the equilibrium and non-equilibrium energy contributions and the branchwise dissipation potentials: • Equilibrium contributions: 
+
+¯Ψeq 1 ( ¯I1), ¯Ψeq 2 ( ¯I2),
+
+• Non-equilibrium energy contributions for each branch α = 1 , . . . , N mw :
+
+¯Ψneq 1,α ( ¯I1,e,α ), ¯Ψneq 2,α ( ¯I2,e,α ),
+
+• Dual dissipation potentials, also for each branch α = 1 , . . . , N mw :
+
+Φα(Jτ,α ).
+
+9Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+In the DAVIS framework [ 43 ], these potentials are not prescribed analytically, but represented in a data-adaptive manner by spline functions defined on invariant spaces . The present section first recalls this basic philosophy and then introduces the modifications that form the core of this work. In the original DAVIS formulation for finite strain viscoelasticity, the constitutive functions were represented by B-spline interpolants [ 61 , 62 ] whose function values at interpolation sites served as optimization variables. The interpolation domains were adapted together with the spline parameters, and calibration was performed in an unsupervised setting by finite element model updating using reaction forces and full-field displacement data. While this strategy proved effective for moderately sized models, it revealed robustness issues for richer generalized Maxwell structures. In particular, the simultaneous optimization of spline values and domain endpoints introduces an ambiguity between the scaling of the constitutive functions and the scaling of the interpolation domains. Moreover, the value-based representation requires explicit inequality constraints to enforce polyconvexity. The present contribution revisits DAVIS from this perspective. We retain the constitutive backbone of Section 2 and the central idea of representing the scalar constitutive ingredients by splines on invariant spaces, but reformulate the identification problem in three respects: • The spline representation is recast in terms of curvature-like quantities and boundary slopes, so that the required structural properties are enforced by construction. • The adaptation of the interpolation domains is decoupled from the inner parameter fit by a block-alternating strategy based on invariant samples generated by the current forward solution. • The resulting robust parameterization enables a sparsity-promoting extension for automatic branch selection. In contrast to the original DAVIS setting, we restrict attention here to homogeneous uniaxial loading–unloading experiments, i.e., supervised training. The simplicity of the calibration data as stress-strain data provides a clean benchmark for studying the identifiability of the viscoelastic branches. 
+
+3.1 Curvature-based spline representation 
+
+Let 
+
+f : [ x1, x end ] → R (35) denote a generic scalar constitutive function. In the present context, f stands for one of the functions 
+
+¯Ψeq 1 , ¯Ψeq 2 , ¯Ψneq 1,α , ¯Ψneq 2,α , Φα.
+
+We consider the spline space Sp(Ξ) of degree p on the interval [x1, x end ], defined by the knot vector 
+
+Ξ = {ξ1, . . . , ξ m}, ξ1 = · · · = ξp+1 = x1 ≤ · · · ≤ ξm−p = · · · = ξm = xend . (36) Let {Ni}nb 
+
+> i=1
+
+denote the associated B-spline basis. Then any f ∈ S p(Ξ) admits the representation 
+
+f (x) = 
+
+> nb
+
+X
+
+> i=1
+
+aiNi(x). (37) In the original DAVIS formulation, the constitutive function is parameterized by its values at interpolation sites, 
+
+f (xi) = yi, i = 1 , . . . , n, (38) which induces the representation 
+
+f (x) = 
+
+> n
+
+X
+
+> i=1
+
+yi ˜Ni(x) (39) in an interpolation basis { ˜Ni}. While this provides direct control over function values, structural properties such as convexity and monotonicity are not intrinsic and must be enforced by additional inequality constraints on y.To overcome this limitation, we adopt a curvature-based parameterization. Instead of representing f itself, we prescribe its second derivative via free variables ϑi,
+
+f ′′ (x) = 
+
+> nc
+
+X
+
+> i=1
+
+ciNi(x), ci = softplus( ϑi), (40) 10 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+and reconstruct the function by integration, 
+
+f ′(x) = d +
+
+Z xx1
+
+f ′′ (s) d s, d = softplus( ϑ0),f (x) = f (x1) + 
+
+Z xx1
+
+f ′(s) d s. 
+
+(41) The additive constant f (x1) is fixed by constitutive normalization. This representation yields the following structural properties: • Ni(x) ≥ 0, ci ≥ 0 ⇒ f ′′ (x) ≥ 0, hence f is convex. • d ≥ 0 ⇒ f ′(x) ≥ 0, hence f is monotone. Thus, convexity and monotonicity are enforced by construction, without explicit inequality constraints. For each scalar constitutive function f , we introduce the parameter vector 
+
+ϑ(f ) = ( ϑ0, ϑ 1, . . . , ϑ nc )⊤ ∈ Rnc+1 , (42) where ϑ0 defines the boundary slope and the remaining entries determine the curvature. The global parameter vector is obtained by concatenation, 
+
+ϑ =  ϑ( ¯Ψeq 1 ), ϑ( ¯Ψeq 2 ), {ϑ( ¯Ψneq 1,α )}Nmw  
+
+> α=1
+
+, {ϑ( ¯Ψneq 2,α )}Nmw  
+
+> α=1
+
+, {ϑ(Φ α)}Nmw 
+
+> α=1
+
+. (43) Compared to the value-based formulation, admissibility constraints are embedded directly into the representation, and the optimization variables are unconstrained up to simple numerical bounds preventing overflow of the softplus mapping. 
+
+3.2 Adaptive spline domains: Block-alternation decoupling 
+
+In the original DAVIS framework, the right endpoint xend of each spline domain was optimized together with the spline parameters utilizing Kernel-Density-Estimation [ 63 ]. For convex increasing constitutive functions, however, this leads to an inherent scaling ambiguity. Indeed, consider a linear function f (x) = ax on [0 , x end ]. A rescaling of the domain x 7 → ˜x = γx can be compensated by scaling the function values, so that the slope over the rescaled domain remains unchanged. Consequently, different combinations of domain endpoints and spline coefficients may produce nearly identical responses over the invariant range activated by the data. This results in flat directions in the objective function and deteriorates identifiability. 
+
+Remark 5. For the equilibrium energy, the admissible invariant range is directly determined by the calibration data, so that the spline domain can be fixed a priori, cf. [ 28 , 64 ]. In contrast, the non-equilibrium contributions depend on the internal evolution and are therefore only implicitly defined through the local constitutive update. This makes the effective invariant range solution-dependent and motivates the adaptive domain strategy. For arguments beyond the spline domain, we employ a controlled extrapolation by keeping the curvature constant, i.e., 
+
+f ′′ (x) = f ′′ (xend ) for x > x end . This yields a linear continuation of f ′(x) and avoids uncontrolled growth of the constitutive response. To remove this coupling, we decouple parameter identification and domain adaptation. Instead of solving a monolithic optimization problem in (ϑ, x end ), we employ a block-alternating strategy. Given a current domain endpoint x(k)end , we first solve the inner problem 
+
+ϑ(k+1) = arg min  
+
+> ϑ
+
+J  ϑ, x (k)end 
+
+, (44) where J denotes the loss functional introduced later. The resulting forward solution yields a set of sampled invariants 
+
+X (k+1) = {x(k+1)  
+
+> q
+
+}Nsamp  
+
+> q=1
+
+, (45) collected over all evaluation points and, in the general setting, all datasets. These samples characterize the activated region of the invariant space and are used to update the spline domain in an outer step, 
+
+x(k+1) end = U
+
+
+
+x(k)end , X (k+1) 
+
+. (46) 11 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+To define the update operator U, we employ a smooth upper-tail statistic based on the log-sum-exp functional, 
+
+xact = 1
+
+α log 
+
+ 1
+
+Nsamp 
+
+> Nsamp
+
+X
+
+> q=1
+
+exp( αx q )
+
+ , (47) where α > 0 is a smoothing parameter. For large α, this quantity approaches the sample maximum, whereas for moderate values it remains differentiable and less sensitive to isolated extreme values. The updated endpoint is then taken as 
+
+x(k+1) end = [1 − η] x(k)end + η x act , (48) where η ∈ (0 , 1] is a relaxation parameter. This choice allows gradual expansion or contraction of the spline domain over the outer iterations. After updating the endpoint xend , the spline domain [x1, x end ] is linearly rescaled, which induces a change of the underlying spline basis. As a consequence, the current representation of the constitutive function must be transferred to the updated domain. The derivative admits the representation 
+
+f ′(x) = d +
+
+> nc
+
+X
+
+> i=1
+
+ci
+
+Z xx1
+
+Ni(s) d s. (49) To transfer the representation, we preserve the slope over the sampled invariants X = {xq }Nsamp  
+
+> q=1
+
+,
+
+f ′
+
+> new
+
+(xq ) ≈ f ′
+
+> old
+
+(xq ), q = 1 , . . . , N samp . (50) This leads to the non-negative least-squares problem: find q = ( d, c) ≥ 0 such that 
+
+q = arg min 
+
+> q≥0
+> Nsamp
+
+X
+
+> q=1
+
+"
+
+d +
+
+> nc
+
+X
+
+> i=1
+
+ci
+
+Z xq
+
+> x1
+
+Ni(s) d s − f ′
+
+> old
+
+(xq )
+
+#2
+
+. (51) 
+
+Remark 6. The projection is carried out in the physical parameters (d, c) to retain a linear least-squares problem. Performing it in the free variables would result in a non-linear problem without benefit. The resulting algorithm alternates between parameter optimization on fixed domains and domain updates informed by the current invariant samples. By separating spline shape from domain scaling, this strategy removes a major source of non-identifiability and improves the conditioning of the inverse problem. The algorithmic structure is summarized in Algorithm 1. 
+
+3.3 Loss function: Identification from homogeneous uniaxial loading–unloading data 
+
+In contrast to the original DAVIS formulation, which relied on finite element model updating with reaction forces and full-field displacement data, we focus here on homogeneous uniaxial loading–unloading experiments, i.e., supervised training. This setting provides a transparent benchmark for studying the identifiability of the branchwise constitutive functions and the effect of the proposed reformulation. Let 
+
+D = {1, . . . , N set } (52) denote the set of experimental datasets. For each s ∈ D , a prescribed stretch history λ(s)(t) and measured Piola stresses P exp ,(s)(t(s) 
+
+> i
+
+) at discrete times {t(s) 
+
+> i
+
+}Ns 
+
+> i=1
+
+are given. Under homogeneous uniaxial loading in direction e1, the deformation gradient is 
+
+F =
+
+> ∧
+
+diag( λ, λ ⊥, λ ⊥), λλ 2 
+
+> ⊥
+
+= 1 . (53) For a given parameter vector ϑ, the constitutive update of Section 2 yields the model prediction 
+
+P mod ,(s)(t(s) 
+
+> i
+
+; ϑ) = P11 . (54) The identification problem is formulated as 
+
+min  
+
+> ϑ
+
+Jdata (ϑ), (55) 12 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+Algorithm 1 Block-alternating spline domain adaptation 
+
+1: Initialize ϑ(0) and spline-domain endpoints x(0) end 
+
+2: Set k ← 0
+
+3: repeat 
+
+4: Inner step: 
+
+ϑ(k+1) = arg min  
+
+> ϑ
+
+J  ϑ, x (k)end 
+
+
+
+5: Perform forward simulations with ϑ(k+1) 
+
+6: Collect sampled invariants X (k+1) 
+
+7: Compute smooth upper-tail statistics x(k+1) act 
+
+8: Update spline-domain endpoints 
+
+x(k+1) end = U x(k)end , x (k+1) act 
+
+
+
+9: if x(k+1) end ̸ = x(k)end then 
+
+10: Convert ϑ(k+1) to physical parameters (c, d )
+
+11: Project (c, d ) onto the updated spline basis by non-negative least squares 
+
+12: Map the projected physical parameters back to ϑ(k+1) 
+
+13: end if 
+
+14: k ← k + 1 
+
+15: until the relative decrease of J and the change of xend are both below prescribed tolerances 
+
+16: Final refinement: 
+
+min  
+
+> ϑ
+
+J  ϑ, x (k)end 
+
+
+
+with fixed spline domains with the dataset-wise normalized least-squares functional 
+
+Jdata (ϑ) = 12
+
+X
+
+> s∈D
+
+PNs
+
+> i=1
+
+h
+
+P mod ,(s)(t(s) 
+
+> i
+
+; ϑ) − P exp ,(s)(t(s) 
+
+> i
+
+)
+
+i2
+
+PNs
+
+> i=1
+
+P exp ,(s)(t(s) 
+
+> i
+
+)2 . (56) This normalization ensures comparable contributions of all datasets. The optimization is performed over ϑ, while the spline domains are updated in an outer loop. 
+
+Remark 7. The optimization problems were solved using a gradient-based least-squares method (M ATLAB lsqnonlin ). No numerical instabilities such as NaNs or Infs were observed during the identification process. This contrasts with recent neural-network-based viscoelastic models, where such issues may arise due to highly nonlinear parameterizations and poorly controlled initializations. In the present approach, the curvature-based spline representation admits simple and physically meaningful initial guesses, leading to a well-conditioned optimization problem. Compared to the original DAVIS formulation, the present approach differs in two essential respects. First, the constitutive functions are represented by the curvature-based parameterization rather than by spline values, so that convexity and monotonicity are enforced intrinsically. Second, the interpolation domains are not part of the inner optimization variables, but are adapted from invariant samples generated by the current forward solve. 
+
+3.4 Sparsity-promoting branch selection 
+
+Once the inverse problem is robust with respect to the spline representation and domain adaptation, one may further address the question of model complexity. In particular, the number of non-equilibrium Maxwell branches need not be fixed a priori if redundant branches can be pruned automatically during identification. To this end, we augment the data misfit by a group-wise sparsity term acting at the level of whole Maxwell branches, 
+
+Jtot (ϑ) = Jdata (ϑ) + λsparse 
+
+> Nmw
+
+X
+
+> α=1
+
+Gα(ϑ), (57) where λsparse ≥ 0 is a regularization parameter. For each branch α, the penalty acts on the physical parameters of the associated constitutive functions 
+
+¯Ψneq 1,α , ¯Ψneq 2,α , Φα,
+
+13 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+that is, on the curvature coefficients and boundary slopes defining these functions. Collecting these physical parameters into a vector 
+
+qα =  d1,α , c1,α , d 2,α , c2,α , d Φ,α , cΦ,α 
+
+, (58) we define the normalized group penalty as a smooth ℓp-type quasi-norm, 
+
+Gα =
+
+" nq
+
+X
+
+> i=1
+
+[qα,i + δ]p
+
+#1/p 
+
+, 0 < p ≤ 1, (59) where δ > 0 is a small smoothing parameter and nq denotes the number of parameters in qα. This choice promotes sparsity at the level of entire branches rather than individual spline coefficients. 
+
+Remark 8. The smoothing parameter δ > 0 ensures differentiability of the penalty and thus enables the use of gradient-based optimization methods. In the limit δ → 0, the formulation approaches a non-smooth ℓp quasi-norm, which promotes stronger sparsity but is not compatible with the present gradient-based solver. After identification, branch activity is assessed from the derivatives of the identified constitutive functions evaluated over the sampled invariant values {xq }Nsamp  
+
+> q=1
+
+. For branch α, we define 
+
+A21,α = 1
+
+Nsamp 
+
+> Nsamp
+
+X
+
+> q=1
+
+ ddx ¯Ψneq 1,α (xq )
+
+2
+
+, (60) 
+
+A22,α = 1
+
+Nsamp 
+
+> Nsamp
+
+X
+
+> q=1
+
+ ddx ¯Ψneq 2,α (xq )
+
+2
+
+, (61) 
+
+A2Φ,α = 1
+
+Nsamp 
+
+> Nsamp
+
+X
+
+> q=1
+
+ ddx Φα(xq )
+
+2
+
+, (62) and set 
+
+Aα = A21,α + A22,α + A2Φ,α 
+
+1/2 . (63) over the activated invariant range. A branch is classified as inactive if 
+
+Aα
+
+max k Ak
+
+< ε act , (64) with prescribed threshold εact .
+
+Remark 9. If the derivatives of the non-equilibrium constitutive functions vanish over the activated invariant range, the corresponding branch does not contribute to the stress response. The quantity Aα therefore provides a natural measure of branch activity. 
+
+# 4 Numerical examples and discussion 
+
+We consider a set of homogeneous uniaxial loading–unloading experiments at different stretch rates. Each dataset s ∈ D 
+
+consists of a prescribed stretch history λ(s)(t) and Piola stress P exp ,(s)(t). Specifically, we employ experimental data for VHB Tape 4910 reported in [ 65 ], which comprise loading rates of ˙λ = 0 .01 s −1, ˙λ = 0 .03 s −1 and ˙λ = 0 .05 s −1
+
+for different maximum prescribed stretches. 9
+
+The identification problem is formulated as described in Section 3, where all datasets are incorporated simultaneously through the normalized least-squares functional. The calibration is performed using the block-alternating strategy introduced above. For later discussion, we denote by 
+
+I(f ) := [ x(f )1 , x (f )end ] (65) the final spline domain associated with a scalar constitutive function f . In the present formulation, x(f )1 is fixed by the constitutive normalization, whereas x(f )end is adapted during the outer iterations. In the following, we analyze the robustness, interpretability, and scalability of the proposed formulation. 
+
+> 9
+
+The experimental data were taken from the repository https://github.com/ConstitutiveANN/vCANN .
+
+14 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT Curvature   
+
+> Figure 2. Multi-start robustness study. Final objective values obtained from a deterministic tensor grid of initializations for the original value-based DAVIS formulation and for the proposed method. The value-based formulation exhibits a pronounced spread of final objective values, whereas enhanced DAVIS consistently converges to the same solution.
+
+4.1 Original DAVIS formulation exhibits robustness limitations 
+
+As a baseline, we consider the original DAVIS formulation based on value parameterization of spline functions combined with a joint optimization of spline values and domain endpoints. We deliberately choose a minimal, yet representative model consisting of a single Maxwell element and n = 5 
+
+interpolation values per spline for each constitutive function 
+
+¯Ψneq 1,1 ( ¯I1,e,1), ¯Ψneq 2,1 ( ¯I2,e,1), Φ1(Jτ, 1).
+
+This setup is not intended to yield an optimal physical model but rather to isolate the behavior of the optimization procedure. A robust formulation should converge to the same solution for a wide range of initializations. To assess robustness, we perform a deterministic multi-start study . The initial splines are constructed as piecewise linear functions with zero reference value and constant slope increments. The slope increments of the three constitutive contributions ¯Ψneq 1,1 , ¯Ψneq 2,1 , Φ1
+
+are scaled independently using 
+
+(sI1 , s I2 , s Φ) ∈ { 0.3, 1, 3}3,
+
+resulting in 27 deterministic initializations probing both magnitude and relative shape variations. For each initialization, the constrained nonlinear least-squares problem is solved and the final objective value is recorded. The results in Figure 2 show a pronounced sensitivity of the value-based formulation to the initial guess, with a wide spread of final objective values. None of the runs converges to the solution obtained by the proposed method. A closer inspection reveals that the optimization typically does not terminate based on first-order optimality conditions. Instead, the step size is progressively reduced until stagnation occurs. This behavior indicates the presence of nearly flat directions in the objective landscape. Flat directions in the objective landscape arise from the simultaneous optimization of spline values and domain endpoints, which introduces a scaling ambiguity between function magnitude and domain size. As a result, different parameter combinations yield almost identical model responses, leading to ill-conditioning and unreliable convergence. In addition, the enforcement of convexity and monotonicity by linear inequality constraints further complicates the optimization landscape. 
+
+4.2 Enhanced DAVIS yields robust and well-conditioned optimization 
+
+We now consider the proposed formulation with curvature-based spline representation and adaptive spline domains. The block-alternating scheme is configured with seven outer iterations and 20 inner optimization steps per outer iteration. During each inner loop, the spline domains are fixed. After completion of the outer iterations, a final refinement phase 15 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+of 50 inner iterations is performed. Furthermore, a multi-start study analogous to the previous subsection shows that all initializations converge to the same solution, indicating that the proposed reformulation removes the dominant source of ill-conditioning observed in the original DAVIS approach. The resulting calibrated model is shown in Figure 3. The identified constitutive behavior exhibits a clear physical structure. The equilibrium branch shows significant activity in both ¯Ψeq 1 ( ¯I1) and ¯Ψeq 2 ( ¯I2), with the latter being nearly linear and the former exhibiting more pronounced convexity. The corresponding final invariant windows are approximately 
+
+I( ¯Ψeq 1 ) ≈ [3 , 10] , I( ¯Ψeq 2 ) ≈ [0 , 10] .
+
+These values are consistent with the maximum invariant values induced by the loading. For incompressible uniaxial tension, 
+
+¯I1 = λ2 + 2 λ−1, ¯I2 = 2λ + λ−23/2 − 3√3. (66) Insertion of λmax = 3 yields ¯I1 ≈ 9.6667 , ¯I2 ≈ 9.9109 ,
+
+which agrees very well with the identified equilibrium windows. The non-equilibrium branches display smaller energy magnitudes and reduced invariant windows. In particular, the second Maxwell branch operates over 
+
+I( ¯Ψneq 1,2 ) ≈ [3 , 6] , I( ¯Ψneq 2,2 ) ≈ [0 , 5] ,
+
+whereas for the first Maxwell branch the corresponding windows are much narrower, 
+
+I( ¯Ψneq 1,1 ) ≈ [3 , 3.02] , I( ¯Ψneq 2,1 ) ≈ [0 , 0.05] .
+
+This indicates that the first Maxwell branch captures highly localized viscous effects, while the second Maxwell branch contributes over a broader, yet still distinctly non-equilibrium, range of invariants. This behavior is consistent with the identified dissipation potentials. A steeper slope of Φα(Jτ,α ) implies stronger viscous relaxation and therefore larger deviations from the elastic trial state in the local branch update. Conversely, a flatter dissipation potential corresponds to more elastic behavior and broader invariant windows. In the present study, the dissipation potential of the Maxwell branch 2 is steeper than that of branch 1, consistent with the observed separation of roles. The evolution of the spline domains over the outer iterations is shown in Figure 3d. The dashed lines represent the log-sum-exp targets, while the solid lines denote the actual domain endpoints. The final windows reported above correspond to the state after the seven outer iterations and the final refinement phase. The results show that the domain endpoints align rapidly with the activated invariant range while remaining stable under the outer updates. The model predictions show excellent agreement with the experimental data across both loading rates included in the calibration, with mean squared errors of 4.28 × 10 −7 for ˙λ = 0 .05 s −1 and 1.74 × 10 −7 for ˙λ = 0 .01 s −1. The model predictions for training data not included in the calibration set are shown in Figure 4, indicating a fairly good match to the experimental data. Deviations are observed for λmax = 2 .5, which, however, has already been reported by other authors, e.g., [37]. Importantly, the results are convincingly insensitive to the number of spline coefficients. Increasing the spline resolution from n = 5 to n = 20 yields nearly identical constitutive responses, as shown in Figure 5. Although the reader may notice that the two non-equilibrium branches appear interchanged, this is not problematic: the generalized Maxwell response depends only on the sum of all branch contributions. Different discretizations may therefore lead to a different allocation of roles among the branches without changing the overall constitutive behavior. The stability of both the constitutive functions and their invariant windows indicates that the proposed formulation yields a robust and well-conditioned identification problem. 
+
+4.3 Enhanced DAVIS scales to highly overparameterized models 
+
+In the previous subsection, we observed that a comparatively small model with two Maxwell elements and n = 5 spline coefficients per function already provides an excellent fit to the data. We now increase the model complexity to assess the scalability and robustness of the proposed formulation under strong overparameterization. First, we consider a model with five Maxwell elements and n = 5 spline coefficients per scalar constitutive function. Compared to the two-branch model, the constitutive response is distributed across multiple Maxwell elements, indicating redundancy in the representation. The results are presented in Figure 6. 16 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT soft maximum sampling density spline interpolation (n = 5) 
+
+a) Rheological schematic d) Endpoint evolution (outer loop) b) Stress-stretch fitting results 
+
+Equilibrium branch Maxwell branch 1 Maxwell branch 2 
+
+c) Learned constitutive functions Equilibrium energy Dissipation potential Non-equilibrium energy 
+
+x start (undeformed state) xend (iterative endpoint) ... xi = linspace( xstart ,xend )
+
+Figure 3. Calibration results for a model with two Maxwell elements and n = 5 spline coefficients per scalar constitutive function. (a) Rheological schematic. (b) Stress–stretch curves for both datasets together with the identified model response. (c) Identified constitutive spline functions; rug plots indicate the sampled invariant values obtained from the forward simulation with the calibrated model, and the soft-maximum target values are highlighted. (d) Evolution of the domain endpoints x(f )end during the seven outer iterations; dashed lines denote the log-sum-exp targets and solid lines the actual endpoint values. Colors introduced in panel (a) consistently identify the branches of the rheological model and their associated contributions throughout the figure. 
+
+17 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT predictions               
+
+> Figure 4. Validation against unseen experimental data. Comparison of the numerical predictions obtained with the learned constitutive functions from Figure 3b and the experimental loading–unloading data of VHB Tape 4910 from [ 65 ] (not included during calibration) for different maximum stretches λmax ={1.5,2.0,2.5}and stretch rates ˙λmax ={0.01 ,0.03 ,0.05 }s−1.
+
+The equilibrium branch remains essentially unchanged compared to the simpler model. In particular, the two equilibrium functions ¯Ψeq 1 ( ¯I1) and ¯Ψeq 2 ( ¯I2) are identified very similarly to the two-branch case, with ¯Ψeq 2 remaining nearly linear and ¯Ψeq 1 retaining its more pronounced convexity. This indicates that the equilibrium response is stably identified by the data and is largely unaffected by the additional non-equilibrium branches. The interpretation of the non-equilibrium branches becomes less straightforward in the overparameterized setting, since the response is now distributed across five Maxwell elements. Nevertheless, a consistent pattern remains visible. One branch again operates over a very narrow invariant range and therefore captures the strongly viscous effects. The remaining branches exhibit broader windows and more elastic-like behavior. In all cases, the invariant windows of the non-equilibrium energies remain smaller than those of the equilibrium branch, which is consistent with the role of the dissipation potentials: unless a branch behaves purely elastically, viscous evolution reduces the range of elastic invariants sampled by that branch. This point is particularly transparent in the present spline-based setting, since the invariant windows are identified explicitly as part of the constitutive representation. In contrast, such information is often not directly accessible in black-box neural network models. Next, we increase the spline resolution to n = 20 while maintaining five Maxwell elements, resulting in a model with more than 300 optimization parameters. The results are shown in Figure 7. The identified constitutive behavior remains consistent with the lower-dimensional cases. Again, the equilibrium branch is identified very similarly to the n = 5 model, and the non-equilibrium spline functions remain of comparable magnitude. One branch carries the strongly viscous effects through very narrow windows in ¯I1,e,α and ¯I2,e,α , whereas the remaining branches are more elastic-like and operate on broader windows. This separation is again reflected in the identified dissipation potentials, which exhibit different slopes from flatter to steeper profiles. While the interpretation of individual branch contributions becomes less unique in this regime, the overall response remains stable and physically meaningful. These findings highlight the scalability of the proposed framework to high-dimensional identification problems. 
+
+4.4 Group-wise sparsity identifies a parsimonious Maxwell structure 
+
+In the previous subsections, the number of Maxwell elements was fixed and the calibration was performed without sparsity promotion. The purpose of those studies was to demonstrate that the proposed formulation remains robust for different spline resolutions and overall model complexities. We now turn to the sparsity-promoting extension in order to address model selection. Starting from an overparameterized model with five Maxwell elements, we activate the sparsity term and vary λsparse 
+
+over several orders of magnitude. Each run is initialized from the previous solution in order to ensure continuity along the sparsity path and to improve numerical efficiency. For each value of λsparse , the data misfit is evaluated separately from the sparsity term. In addition, branch activity is assessed using the measure 
+
+Aα = A21,α + A22,α + A2Φ,α 
+
+1/2 ,
+
+18 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT a) Rheological schematic d) Endpoint evolution (outer loop) b) Stress-stretch fitting results 
+
+Equilibrium branch Maxwell branch 1 Maxwell branch 2 
+
+c) Learned constitutive functions Equilibrium energy Non-equilibrium energy 
+
+soft maximum sampling density spline interpolation (n = 20) xstart (undeformed state) xend (iterative endpoint) ... xi = linspace( xstart ,xend )
+
+Dissipation potential 
+
+Figure 5. Calibration results for the same rheological structure as in Figure 3, but with n = 20 spline coefficients per scalar constitutive function. (a) Rheological schematic. (b) Stress–stretch curves for both datasets together with the identified model response. (c) Identified constitutive spline functions and sampled invariant values. (d) Evolution of the domain endpoints over the outer iterations. Despite the increased spline resolution, the identified constitutive behavior remains essentially unchanged. Colors introduced in panel (a) consistently identify the branches of the rheological model and their associated contributions throughout the figure. 
+
+19 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT a) Rheological schematic d) Endpoint evolution (outer loop) b) Stress-stretch fitting results c) Learned constitutive functions Equilibrium energy Non-equilibrium energy 
+
+Equilibrium branch Maxwell branch 1 Maxwell branch 2 Maxwell branch 3 Maxwell branch 4 Maxwell branch 5 soft maximum sampling density spline interpolation (n = 5) xstart (undeformed state) xend (iterative endpoint) ... xi = linspace( xstart ,xend )
+
+Dissipation potential 
+
+Figure 6. Calibration results for a model with five Maxwell elements and n = 5 spline coefficients per scalar constitutive function. (a) Rheological schematic. (b) Stress–stretch curves for both datasets together with the identified model response. (c) Identified constitutive spline functions; rug plots indicate the sampled invariant values and markers denote the soft-maximum targets for the adaptive domain endpoints. (d) Evolution of the domain endpoints x(f )end over the outer iterations. Colors introduced in panel (a) consistently identify the branches of the rheological model and their associated contributions throughout the figure. 
+
+20 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT a) Rheological schematic d) Endpoint evolution (outer loop) b) Stress-stretch fitting results c) Learned constitutive functions Equilibrium energy 
+
+Equilibrium branch Maxwell branch 1 Maxwell branch 2 Maxwell branch 3 Maxwell branch 4 Maxwell branch 5 x start (undeformed state) xend (iterative endpoint) ... xi = linspace( xstart ,xend )
+
+Non-equilibrium energy Dissipation potential 
+
+soft maximum sampling density spline interpolation (n = 20) 
+
+Figure 7. Calibration results for a highly overparameterized model with five Maxwell elements and n = 20 spline coefficients per scalar constitutive function. (a) Rheological schematic. (b) Stress–stretch curves for both datasets together with the identified response. (c) Identified constitutive spline functions and sampled invariant values. (d) Evolution of the adaptive domain endpoints. The macroscopic response remains stable despite the high-dimensional parameter space. Colors introduced in panel (a) consistently identify the branches of the rheological model and their associated contributions throughout the figure. 
+
+21 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT Number Maxwell elements 
+
+b ) Objective vs. active Maxwell elements a) Branch activity along sparsity path 
+
+pruning       
+
+> Figure 8. Sparsity analysis. (a) Heat map of the branch activity measures along the sparsity path for all five Maxwell elements. (b) Data loss Jdata as a function of λsparse together with the corresponding number of active Maxwell branches.
+
+and a branch is classified as active if 
+
+Aα
+
+max k Ak
+
+> ε act , εact = 10 −3.
+
+The results are shown in Figure 8. For small values of λsparse , all branches remain active, indicating that the regularization is too weak to suppress redundant contributions. As λsparse increases, the activity becomes concentrated in fewer branches, and the less relevant Maxwell elements are progressively pruned. The right panel of Figure 8 shows the corresponding trade-off between the misfit of the data and the complexity of the model. For very small values of λsparse , the data loss remains close to its minimum while several Maxwell branches are active. Increasing λsparse first reduces the number of active branches with only a moderate change in data mismatch. However, beyond this regime, further pruning leads to a rapid deterioration of the fit. Based on this trade-off, we select λsparse = 10 −4, for which the model reduces to two active non-equilibrium Maxwell branches while still retaining a data misfit close to the minimum achieved by the fully populated model. This confirms that two Maxwell elements provide a favorable compromise between accuracy and parsimony for the present dataset. 
+
+# 5 Conclusion 
+
+In this work, we revisited the data-adaptive spline-based (DAVIS) framework for finite strain viscoelasticity and identified key sources of non-robustness in its original formulation. In particular, the combination of value-based spline representation and the simultaneous optimization of spline values and domain endpoints was shown to introduce structural ambiguities and ill-conditioning. To address these issues, two modifications were proposed. First, the spline representation was reformulated in terms of a curvature-based parameterization, in which convexity and monotonicity are enforced by construction through non-negative curvature coefficients and boundary slopes. Second, the adaptation of the interpolation domains was decoupled from the inner parameter identification and treated within a block-alternating scheme driven by invariant samples obtained from the forward solution. Enhanced DAVIS is a well-conditioned and robust identification problem. Our method was shown to be largely insensitive to the spline resolution and to remain stable even in highly overparameterized settings involving multiple Maxwell branches and several hundred parameters. Multi-start studies demonstrated convergence to a unique solution across a wide range of initializations, in contrast to the original DAVIS approach. Beyond robustness, the spline-based representation provides direct insight into the constitutive structure through the identified invariant windows. These windows reveal a clear separation of roles among the Maxwell branches, with strongly viscous effects confined to narrow invariant ranges and more elastic contributions acting over broader domains. This level of interpretability is a distinctive advantage of the proposed approach. Finally, the robustness of the formulation enables the incorporation of a group-wise sparsity regularization, which allows for the automatic identification of a parsimonious Maxwell structure. The resulting models achieve a favorable balance between accuracy and complexity without requiring a priori selection of the number of branches. 22 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+# Code availability 
+
+The code for the calibration is publicly available in https://github.com/swiesheier/ davis-viscoelasticity-robust .
+
+# Acknowledgments 
+
+Simon Wiesheier, Paul Steinmann, and Miguel Angel Moreno-Mateos acknowledge support from the European Research Council (ERC) under the Horizon Europe program (Grant-No. 101052785, project: SoftFrac). Funded by the European Union. Views and opinions expressed are, however, those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them. 
+
+# Competing Interests 
+
+The Authors declare no Competing Financial or Non-Financial Interests. 23 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+# References 
+
+[1] Steinmann, P., Hossain, M. & Possart, G. Hyperelastic models for rubber-like materials: consistent tangent operators and suitability for Treloar’s data. Archive of Applied Mechanics 82 , 1183–1217 (2012). [2] Ricker, A. & Wriggers, P. Systematic Fitting and Comparison of Hyperelastic Continuum Models for Elastomers. 
+
+Archives of Computational Methods in Engineering 30 (2023). [3] Holzapfel, G. Nonlinear solid mechanics. A Continuum Approach for Engineering (John Wiley & Sons, 2001), second print edn. [4] Le Tallec, P., Rahier, C. & Kaiss, A. Three-dimensional incompressible viscoelasticity in large strains: Formulation and numerical approximation. Computer Methods in Applied Mechanics and Engineering 109 , 233–258 (1993). [5] Lion, A. A physically based method to represent the thermo-mechanical behaviour of elastomers. Acta Mechanica 
+
+123 , 1–25 (1997). [6] Reese, S. & Govindjee, S. A theory of finite viscoelasticity and numerical aspects. International Journal of Solids and Structures 35 , 3455–3482 (1998). [7] Lubliner, J. A model of rubber viscoelasticity. Mechanics Research Communications 12 , 93–99 (1985). [8] Govindjee, S. & Reese, S. A Presentation and Comparison of Two Large Deformation Viscoelasticity Models. 
+
+Journal of Engineering Materials and Technology 119 , 251–255 (1997). [9] Gouhier, F. & Diani, J. A comparison of finite strain viscoelastic models based on the multiplicative decomposition. 
+
+European Journal of Mechanics - A/Solids 108 , 105424 (2024). [10] Kirchdoerfer, T. & Ortiz, M. Data-driven computational mechanics. Computer Methods in Applied Mechanics and Engineering 304 , 81–101 (2016). [11] Fuhg, J. N. et al. A Review on Data-Driven Constitutive Laws for Solids. Archives of Computational Methods in Engineering 32 , 1841–1883 (2025). [12] Kalina, K. A., Linden, L., Brummund, J., Metsch, P. & Kästner, M. Automated constitutive modeling of isotropic hyperelasticity based on artificial neural networks. Computational Mechanics 69 , 1–20 (2022). [13] Klein, D. K., Fernández, M., Martin, R. J., Neff, P. & Weeger, O. Polyconvex anisotropic hyperelasticity with neural networks. Journal of the Mechanics and Physics of Solids 159 , 104703 (2022). [14] Klein, D. K. et al. Neural networks meet hyperelasticity: A monotonic approach (2025). ArXiv:2501.02670 [cs]. [15] Linden, L. et al. Neural networks meet hyperelasticity: A guide to enforcing physics. Journal of the Mechanics and Physics of Solids 179 , 105363 (2023). [16] Thakolkaran, P. et al. Can KAN CANs? Input-convex Kolmogorov-Arnold Networks (KANs) as hyperelastic constitutive artificial neural networks (CANs). Computer Methods in Applied Mechanics and Engineering 443 ,118089 (2025). [17] Abdolazizi, K. P., Aydin, R. C., Cyron, C. J. & Linka, K. Constitutive Kolmogorov–Arnold Networks (CKANs): Combining accuracy and interpretability in data-driven material modeling. Journal of the Mechanics and Physics of Solids 203 , 106212 (2025). [18] Frankel, A. L., Jones, R. E. & Swiler, L. P. Tensor Basis Gaussian Process Models of Hyperelastic Materials. 
+
+ArXiv (2019). Abs/1912.10872. [19] Abdusalamov, R., Hillgärtner, M. & Itskov, M. Automatic generation of interpretable hyperelastic material models by symbolic regression. International Journal for Numerical Methods in Engineering 124 , 2093–2104 (2023). [20] Taç, V., Rausch, M. K., Sahli Costabal, F. & Tepole, A. B. Data-driven anisotropic finite viscoelasticity using neural ordinary differential equations. Computer Methods in Applied Mechanics and Engineering 411 , 116046 (2023). [21] Flaschel, M., Kumar, S. & De Lorenzis, L. Automated discovery of generalized standard material models with EUCLID. Computer Methods in Applied Mechanics and Engineering 405 , 115867 (2023). [22] Flaschel, M., Moreno-Mateos, M. A., Wiesheier, S., Steinmann, P. & Kuhl, E. Unsupervised Material Fingerprint-ing: Ultra-fast hyperelastic model discovery from full-field experimental measurements (2026). Version Number: 1. [23] Sussman, T. & Bathe, K.-J. A model of incompressible isotropic hyperelastic material behavior using spline interpolations of tension–compression test data. Communications in numerical methods in engineering 25 , 53–63 (2009). 24 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+[24] Dal, H., Denli, F. A., Açan, A. K. & Kaliske, M. Data-driven hyperelasticity, Part I: A canonical isotropic formulation for rubberlike materials. Journal of the Mechanics and Physics of Solids 179 , 105381 (2023). [25] Tikeno˘ gulları, O. Z., Açan, A. K., Kuhl, E. & Dal, H. Data-driven hyperelasticity, Part II: A canonical framework for anisotropic soft biological tissues. Journal of the Mechanics and Physics of Solids 181 , 105453 (2023). [26] Wiesheier, S., Moreno-Mateos, M. A. & Steinmann, P. Versatile data-adaptive hyperelastic energy functions for soft materials. Computer Methods in Applied Mechanics and Engineering 430 , 117208 (2024). [27] Moreno-Mateos, M. A., Wiesheier, S., Esmaeili, A., Hossain, M. & Steinmann, P. Biaxial characterization of soft elastomers: experiments and data-adaptive configurational forces for fracture (2025). ArXiv:2505.20244 [cond-mat]. [28] Wiesheier, S., Moreno-Mateos, M. A. & Steinmann, P. Data-adaptive spline surfaces for non-separable hyperelastic energy functions (2026). ArXiv:2604.10059 [cs]. [29] Halphen, B. & Nguyen, Q. S. Sur les matériaux standard généralisés. Journal de Mécanique 14 , 39–63 (1975). [30] Ziegler, H. Thermodynamik und rheologische Probleme. Ingenieur-Archiv 25 , 58–70 (1957). [31] Ziegler, H. An attempt to generalize Onsager’s principle, and its significance for rheological problems. ZAMP Zeitschrift für Angewandte Mathematik und Physik 9, 748–763 (1958). [32] Kumar, A. & Lopez-Pamies, O. On the two-potential constitutive modeling of rubber viscoelastic materials. 
+
+Comptes Rendus. Mécanique 344 , 102–112 (2016). [33] Yu, H., Tian, X., E, W. & Li, Q. OnsagerNet: Learning stable and interpretable dynamics using a generalized Onsager principle. Physical Review Fluids 6, 114402 (2021). [34] Huang, S., He, Z., Chem, B. & Reina, C. Variational Onsager Neural Networks (VONNs): A thermodynamics-based variational learning strategy for non-equilibrium PDEs. Journal of the Mechanics and Physics of Solids 163 ,104856 (2022). [35] Flaschel, M., Kumar, S. & De Lorenzis, L. Automated discovery of generalized standard material models with EUCLID. Computer Methods in Applied Mechanics and Engineering 405 , 115867 (2023). [36] Rosenkranz, M., Kalina, K. A., Brummund, J., Sun, W. & Kästner, M. Viscoelasticty with physics-augmented neural networks: model formulation and training methods without prescribed internal variables. Computational Mechanics 74 , 1279–1301 (2024). [37] Kalina, K. A., Brummund, J. & Kästner, M. A physics-augmented neural network framework for finite strain incompressible viscoelasticity. Computer Methods in Applied Mechanics and Engineering 455 , 118892 (2026). [38] Holthusen, H. & Kuhl, E. A complement to neural networks for anisotropic inelasticity at finite strains. Computer Methods in Applied Mechanics and Engineering 450 , 118612 (2026). [39] Holthusen, H., Linka, K., Kuhl, E. & Brepols, T. A generalized dual potential for inelastic Constitutive Artificial Neural Networks: A JAX implementation at finite strains. Journal of the Mechanics and Physics of Solids 206 ,106337 (2026). [40] Upadhyay, K., Fuhg, J. N., Bouklas, N. & Ramesh, K. T. Physics-informed data-driven discovery of constitutive models with application to strain-rate-sensitive soft materials. Computational Mechanics (2024). [41] Upadhyay, K., Subhash, G. & Spearot, D. Visco-hyperelastic constitutive modeling of strain rate sensitive soft materials. Journal of the Mechanics and Physics of Solids 135 , 103777 (2020). [42] Abdolazizi, K. P., Linka, K. & Cyron, C. J. Viscoelastic constitutive artificial neural networks (vCANNs) – A framework for data-driven anisotropic nonlinear finite viscoelasticity. Journal of Computational Physics 499 ,112704 (2024). [43] Wiesheier, S., Moreno-Mateos, M. A. & Steinmann, P. Data-adaptive spline-based viscoelasticity for soft solids. 
+
+Computer Methods in Applied Mechanics and Engineering 451 , 118705 (2026). [44] Mahnken, R. & Stein, E. A unified approach for parameter identification of inelastic material models in the frame of the finite element method. Computer methods in applied mechanics and engineering 136 , 225–258 (1996). [45] Sutton, M., Wolters, W., Peters, W., Ranson, W. & McNeill, S. Determination of displacements using an improved digital correlation method. Image and vision computing 1, 133–139 (1983). [46] Avril, S. et al. Overview of Identification Methods of Mechanical Parameters Based on Full-field Measurements. 
+
+Experimental Mechanics 48 , 381–402 (2008). [47] Hartmann, S. & Gilbert, R. Identifiability of material parameters in solid mechanics. Archive of Applied Mechanics 
+
+88 , 3–26 (2018). 25 Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials A P REPRINT 
+
+[48] Hartmann, S. & Neff, P. Polyconvexity of generalized polynomial-type hyperelastic strain energy functions for near-incompressibility. International Journal of Solids and Structures 40 , 2767–2791 (2003). [49] Schröder, J. & Neff, P. Invariant formulation of hyperelastic transverse isotropy based on polyconvex free energy functions. International Journal of Solids and Structures 40 , 401–445 (2003). [50] Flory, P. Thermodynamic relations for high elastic materials. Transactions of the Faraday Society 57 , 829–838 (1961). [51] Ortiz, M. & Stainier, L. The variational formulation of viscoplastic constitutive updates. Computer Methods in Applied Mechanics and Engineering 171 , 419–444 (1999). [52] Fancello, E., Ponthot, J.-P. & Stainier, L. A variational formulation of constitutive models and updates in non-linear finite viscoelasticity. International Journal for Numerical Methods in Engineering 65 , 1831–1864 (2006). [53] Fancello, E., Ponthot, J. & Stainier, L. A variational framework for nonlinear viscoelastic models in finite deformation regime. Journal of Computational and Applied Mathematics 215 , 400–408 (2008). [54] Mosler, J. Variationally consistent modeling of finite strain plasticity theory with non-linear kinematic hardening. 
+
+Computer Methods in Applied Mechanics and Engineering 199 , 2753–2764 (2010). [55] Miehe, C., Schotte, J. & Lambrecht, M. Homogenization of inelastic solid materials at finite strains based on incremental minimization principles. Application to the texture analysis of polycrystals. Journal of the Mechanics and Physics of Solids 50 , 2123–2167 (2002). [56] Platen, J. et al. A nonlinear finite viscoelastic formulation relative to the viscous intermediate configuration applied to plants. International Journal for Numerical Methods in Engineering 125 , e7483 (2024). [57] Leuschner, M., Fritzen, F., Van Dommelen, J. & Hoefnagels, J. Potential-based constitutive models for cohesive interfaces: Theory, implementation and examples. Composites Part B: Engineering 68 , 38–50 (2015). [58] Stewart, E. M. & Anand, L. A large deformation viscoelasticity theory for elastomeric materials and its numerical implementation in the open-source finite element program FEniCSx. International Journal of Solids and Structures 
+
+303 , 113023 (2024). [59] Li, X., Tao, J., Landauer, A. K., Franck, C. & Henann, D. L. Large-deformation constitutive modeling of viscoelastic foams: Application to a closed-cell foam material. Journal of the Mechanics and Physics of Solids 
+
+161 , 104807 (2022). [60] Liu, Z., Ortigosa, R., Gil, A. J. & Bonet, J. Large strain constitutive modelling of soft compressible and incompressible solids: Generalised isotropic and anisotropic viscoelasticity. Journal of the Mechanics and Physics of Solids 203 , 106194 (2025). [61] d. Boor, C. A Practical Guide to Splines (Springer Verlag, 1978). [62] Butterfield, K. R. The Computation of all the Derivatives of a B-spline Basis. IMA Journal of Applied Mathematics 
+
+17 , 15–25 (1976). [63] Silverman, B. Density Estimation for Statistics and Data Analysis (Routledge, 2018), 1 edn. [64] Moreno-Mateos, M. A., Wiesheier, S., Steinmann, P. & Kuhl, E. Learning ultra-compressible hyperelasticity with splines: Constitutive asymmetries and non-unique representations (2026). ArXiv:2604.14264 [cs]. [65] Hossain, M., Vu, D. K. & Steinmann, P. Experimental study and numerical modelling of VHB 4910 polymer. 
+
+Computational Materials Science 59 , 65–74 (2012). 26
