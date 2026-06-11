@@ -1,0 +1,578 @@
+Title: PolyGraphPy: A unified Python framework for atomistic simulation and machine learning-driven polymer design
+
+URL Source: https://arxiv.org/pdf/2606.06415v1
+
+Published Time: Fri, 05 Jun 2026 01:28:24 GMT
+
+Number of Pages: 27
+
+Markdown Content:
+# PolyGraphPy: A unified Python framework for atomistic simulation and machine learning-driven polymer design 
+
+João G. C. S. Duarte a, Shruti Venkatram c, Morgan Cencer c, Traian Dumitricˇ aa,b , Ketson R. M. dos Santos a
+
+> aDepartment of Civil, Environmental, and Geo- Engineering, University of Minnesota, Minneapolis, MN, 55455-0116, USA
+> bDepartment of Mechanical Engineering, University of Minnesota, Minneapolis, MN, 55455-0116, USA
+> c3M Company, 3M Center, St. Paul, MN, 55144-1000, USA
+
+Abstract 
+
+Polymers are indispensable materials with daily applications ranging from electronics to medicine, owing to their versatility, which can be tailored by adjusting their chemical composition and archi-tecture. The design space for these compounds is vast and governed by factors such as monomer classes, copolymer configurations (e.g., linear, branched, random, and alternating), chain size, sto-ichiometry, and material properties (e.g., density, refractive index, solubility, and Poisson’s ratio). Thus, its exploration requires efficient computational methodologies for polymer science. To ad-dress this challenge, this paper introduces PolyGraphPy, an open-source, unified Python framework that integrates atomistic simulations with machine learning for accurate property prediction and property-guided polymer design. The framework automates quantum mechanics calculations us-ing Density Functional Tight Binding (DFTB+) to efficiently construct structured datasets for monomers, homopolymers, and alternating copolymers. For property prediction, PolyGraphPy em-ploys Bayesian Graph Neural Networks (GNNs) utilizing stochastic graph representations to predict target properties—such as static polarizability, while providing robust uncertainty quantification. Furthermore, the platform incorporates two complementary generative models for the de novo design of targeted molecules: a SELFIES-based Generative Pretrained Transformer (GPT) and a Genetic Algorithm (GA) based on BRICS graph fragmentation. Demonstrated on a dataset of acrylates, PolyGraphPy provides a highly customizable, end-to-end pipeline that reduces computational costs and accelerates data-driven polymer informatics. 
+
+Keywords: High-throughput generation, graph neural networks, polymer design, DFTB+ simulations, machine learning 
+
+1. Introduction 
+
+Recently, machine learning (ML) has emerged as a potent tool for enabling the discovery of new polymers due to its ability to learn chemical patterns from data. However, identifying an appropriate polymer representation remains a central challenge in developing ML models for polymer property prediction and property-guided generation [1, 2]. To this end, several text-based representations tailored to polymer chemistry have been proposed, including SMILES [3], BigSMILES [4], InChI [5], and PolyGrammar [6]. Nevertheless, learning their semantics is challenging for ML models, and generative models often produce invalid molecules. Alternatively, SELFIES provides a robust string-based representation [7]. Furthermore, a graph representation offers a natural manner to encode molecular structures, where atoms and bonds are modeled as nodes and edges, respectively [8]. 
+
+> arXiv:2606.06415v1 [cond-mat.mtrl-sci] 4 Jun 2026
+
+Polymer informatics is a highly interdisciplinary field that integrates ML and atomistic simula-tions to accelerate both property prediction and property-guided design of polymers. Several com-putational tools have been developed to enable efficient analysis and design of polymers. Among the existing ones, the Polymer Genome [9, 10] is a web-based ML platform for near-instantaneous prediction of polymer physicochemical properties. Built with Python and PHP, it provides an in-tuitive interface and a robust backend infrastructure for rapid screening of candidate polymers. Additionally, Chemprop is a versatile ML package that employs a Directed Message Passing Neural Network (D-MPNN) architecture for property prediction. Initially developed for small molecules, Chemprop has since been extended to polymers [11, 8, 12, 13, 14]. DeepMol is an open-source framework that leverages automated machine learning (AutoML) to predict molecular physical and chemical properties [15]. Polymerexpert [16] is a system designed to support de novo polymer de-sign by integrating domain knowledge (polymer chemistry heuristics, synthesizability rules) with data-driven predictions of polymer properties. The rapid development of generative tools has further accelerated the discovery of new chemical species and materials. In this regard, the package SPACIER [17] is a fully automated system that in-tegrates all-atom classical MD simulations with ML to enable property-guided molecular generation via Bayesian optimization. SELF-BART [18] is an encoder–decoder model built upon the BART architecture [19], designed to learn robust molecular representations and generate novel molecules directly from SELFIES strings. This approach combines the syntactic robustness of SELFIES with the generative power of BART to effectively explore valid chemical space. In addition, genetic-guided GFlowNets [20] combine generative flow networks with domain-informed genetic algorithms, allow-ing the generative policy to incorporate expert knowledge and improve sample efficiency. MG 2N2
+
+[21] adopts a sequential graph generation strategy based on graph neural networks (GNNs), in-crementally constructing molecules by adding nodes (atoms or substructures) and corresponding edges, thus enabling a flexible and interpretable molecular generation process. These examples il-lustrate the expanding ecosystem of data-driven platforms that are transforming polymer research by significantly reducing the time and computational cost of materials discovery and optimization. Given the current advances in ML-based polymer analysis and design, we propose an open-source Python-based computational framework, PolyGraphPy , for efficient and accurate property prediction of polymers, combined with property-guided generation. The proposed Python toolbox leverages density functional tight binding (DFTB) quantum mechanics calculations [22, 23] to effi-ciently build a large dataset for training graph-based predictive models endowed with uncertainty quantification capabilities and two generative models: one SELFIES-based generative pretrained transformer (GPT) model [24] and (ii) a property-guided genetic algorithm (GA) [25, 26]. The 
+
+PolyGraphPy toolbox, including all scripts and examples discussed in this manuscript, is freely available on GitHub at https://github.com/SASP-lab/PolyGraphPy. 
+
+2. Materials and Methods 
+
+2.1. Computational Framework Overview 
+
+PolyGraphPy is a Python toolbox for the efficient property prediction and property-guided design of polymers, which integrates the following tools into a unified platform: 1. DFTB-based quantum mechanics calculations through a user-friendly interface with efficient atomistic simulations that leverage parallel processing to enhance its computational perfor-mance. 2. Homopolymer and copolymer property prediction and uncertainty quantification with Bayesian graph neural networks [27, 28, 29]. 2PolyGraphPy 
+
+Atomistic 
+
+simulation 
+
+Predective 
+
+model 
+
+Generative 
+
+model 
+
+smiles_to_xyz.py 
+
+dftb_input.py 
+
+dftb_simulation.py 
+
+polarizability_trace.py 
+
+- XyzGeneratorBase 
+
+- MonomerXyzGenerator 
+
+- PolymerXyzGenerator {
+
+- DFTBInputGenerator {
+
+- DFTBSimulation {
+
+- PolarizabilityTrace {
+
+pre_processing.py 
+
+train.py 
+
+prediction.py 
+
+- PreProcess {
+
+- Train {
+
+- Prediction {
+
+gpt.py 
+
+- GenerativePreprocess 
+
+- SelfiesDataset 
+
+- GenerativeTrainer 
+
+- MoleculeGenerator 
+
+- GaDataLoader 
+
+- FragmentGA {ga.py 
+
+# {Figure 1: Architecture, core Python scripts, and associated classes of PolyGraphPy .
+
+3. Property-guided generation of homopolymers using a SELFIES-based GPT [7] and a GA based on graph fragmentation using breaking of retro-synthetically interesting chemical sub-structures (BRICS) decomposition algorithm [30]. 
+
+PolyGraphPy is based on PyTorch [31] and PyTorch Geometric [32], and its implementation follows an object-oriented programming (OOP) paradigm, allowing efficient maintenance and rapid adaptation and retraining for the analysis of polymeric materials and small molecules. The main modules of PolyGraphPy (i.e., atomistic simulation, predictive model, and generative model) and their classes are shown in Fig. 1. The atomistic simulation module provides user-friendly encapsulation for quantum mechanics computations employing the third-party DFTB+ software [33, 34]. To this end, a set of smiles is provided and converted into the corresponding .xyz file with smiles_to_xyz.py , which serves to build the input file of DFTB+ with dftb_input.py . In addition, the DFTB start is initiated with dftb_simulation.py . Although any physical-chemical property can be considered in the analysis and design of polymers with PolyGraphPy , this paper focuses on the determination of the static polarizability of acrylates. To this end, polarizability_trace.py extracts the necessary information from the results of the atomistic simulations performed with DFTB+ to calculate the static polarizability. The module containing the predictive model is composed of classes implemented in pre_-processing.py , train.py , and prediction.py , which are responsible for the operationalization of the proposed Bayesian GNN model. Furthermore, two proposed generative models, the SELFIES-based GPT ( gpt.py ) and the property-guided GA ( ga.py ), are included in a dedicated module. It is also important to emphasize that the predictive model is integrated into the generative module to determine the acceptance or rejection of generated molecules. The modularity of this open-source platform makes it highly customizable, allowing users to re-train the developed models to meet their specific objectives. For example, hybrid generative models can be easily constructed by combining existing methods. In addition, active learning methodolo-gies can be developed and integrated into local implementations of the proposed computational framework. 32.2. Atomistic Simulations 
+
+The accuracy offered by Density Functional Theory (DFT) [35, 36] makes it an attractive choice for reliable quantum mechanics simulations of molecules. However, its inherent high computational cost limits its application in the construction of structured datasets from atomistic simulations of polymers. In contrast, force field (FF) methods [37] provide a more efficient approach for poly-mer simulations but lack an explicit representation of the electronic structure, which can result in inaccurate estimations of polymer properties. Alternatively, the semi-empirical DFTB method [23] approximates the electronic structure of molecules using precomputed DFT Slater–Koster (SK) parameters, offering a substantial improvement in computational efficiency while retaining quantum-mechanical fidelity. This capability makes DFTB a promising tool for efficiently generating large, well-structured datasets for training machine learning models. Consequently, integrating DFTB+ into PolyGraphPy provides seamless access to a powerful platform for efficient atomistic simulations. Next, an overview of this technique is provided based on the detailed discussion in Ref. 33, and it covers the main concepts related to diverse DFTB formulations and their relationship with the expansion of the total energy functional. 
+
+2.2.1. Density Functional Tight Binding 
+
+In the DFTB formulation, the total energy functional ( E[ρ0]) is expanded around a reference electron density ρ0 (e.g., a superposition of neutral atomic densities), where the ground state density 
+
+ρ(r) = ρ0(r) + δρ (r) is determined as a perturbation of ρ0, which leads to a Taylor expansion of the total energy functional in terms of the density fluctuation δρ [33]: 
+
+E[ρ0 + δρ ] = E0[ρ0] + E1[ρ0, δρ ] + E2[ρ0, (δρ )2] + E3[ρ0, (δρ )3] + · · · (1) The appropriate truncation of this expansion determines different DFTB methods, such as DFTB1, DFTB2, and DFTB3 [38, 22, 39, 23]. The DFTB1 method is obtained by keeping only the first two terms of this expansion (e.g., E0[ρ0], E1[ρ0, δρ ]), which are approximated by projecting the Kohn-Sham orbitals Ψi(r) onto a basis of confined atomic orbitals ϕμ(r) computed with the atomic Kohn-Sham equations, while considering an additional compression with respect to the free atomic wave function. Therefore, Ψi(r) is written as follows: 
+
+Ψi(r) = X
+
+> μ
+
+ciμ ϕμ(r) (2) where ciμ are unknown coefficients. Considering the calculated Hamiltonian H0 
+
+> μν
+
+= ⟨ϕμ| ˆH[ρ0]|ϕν ⟩,and assuming that E0[ρ0] is determined by fast-decaying two-body repulsive potentials ( V rep AB ), 
+
+EDF T B 1 = E0[ρ0] + E1[ρ0, δρ ] is obtained as follows: 
+
+EDF T B 1 = X
+
+> i
+
+X
+
+> AB
+
+X
+
+> μ∈A,ν ∈B
+
+c⋆iμ ciν H0 
+
+> μν
+
++ 12
+
+X
+
+> AB
+
+V rep AB (3) In this regard, the construction of precomputed integral tables via Slater-Koster transformation [40] for ⟨ϕμ| ˆH[ρ0]|ϕν ⟩ enables an efficient determination of the Hamiltonian H0 
+
+> μν
+
+[34]. The previously shown DFTB1 formulation is non-self-consistent because it depends only on a single diagonalization of the Hamiltonian matrix to determine the unknown coefficients ciν and 
+
+EDF T B 1. However, including higher-order terms in the expansion leads to the construction of a self-consistent method. Therefore, keeping up until the third-order term leads to the following approximation: 
+
+EDF T B 3 = EDF T B 1 + 12
+
+X
+
+> AB
+
+∆qA∆qB γAB + 13
+
+X
+
+> AB
+
+∆q2
+
+> A
+
+∆qB ΓAB (4) 4where integrals are analytically estimated as two-body functions γAB describing the interaction of atomic point charges ∆qA, where ΓAB is the derivative of γAB with respect to atomic charges [34]. The software DFTB+ allows users to utilize these DFTB formulations, and PolyGraphPy considers DFTB3 its default option. 
+
+2.2.2. Input data preparation and DFTB simulation 
+
+PolyGraphPy automates DFTB+ input generation using the classes MonomerXyzGenerator and 
+
+PolymerXyzGenerator , which take monomer SMILES strings and generate .xyz files for both monomers and polymers via the generate method. With a focus on acrylates, two methods are implemented for the construction of the .xyz files of homopolymers and copolymers. For a homopolymer acrylate with a prescribed chain length (e.g., 1, 2, and 3), the construction of the .xyz files, as shown in Fig. 2, consists of cleaving the vinyl group of each monomer, enabling the introduction of a placeholder atom (e.g., Br or I) at the resulting single bond ( C–C ). Read input dataset of 
+
+> acrylate SMILES
+> Cleave the vinyl group
+> (C=C) double bond
+> Introduce a placeholder
+> atom (Br or I) at the
+> resulting single C–C bond
+> Perform
+> polymerization
+> Generate .xyz
+> structure files
+> Figure 2: Steps for the construction of acrylate homopolymers.
+
+In the case of alternating copolymers, the construction of .xyz files, illustrated in Fig. 3, involves the pairwise combination of monomers in the form ( A, B ), where A and B are the selected monomers. To promote structural diversity in the constructed dataset, the monomers are first partitioned into multiple clusters using a recursive coordinate bisection (RCB) method applied to the molecular descriptors, including molecular weight, complexity, and polar surface area. Four recursive levels are considered when running the RCB method, yielding sixteen clusters. Monomers are then randomly selected from these clusters to generate unique copolymer pairs. For each monomer in a pair ( A, B ), the vinyl groups ( C=C ) are cleaved, and placeholder halogen atoms (Br or I) are introduced at the resulting single C–C bonds, resembling the same process for homopolymers construction. Alternating AB polymer chains are subsequently assembled using the STK library[41], followed by geometry optimization via Hamiltonian Monte Carlo. The finalized copolymer structures are then exported as .xyz files. Read input dataset of acrylate 
+
+> SMILES
+> Cleave both vinyl groups
+> (C=C) double bond
+> Introduce a placeholder atom (Br or
+> I) at the resulting single C–C bond
+> Perform
+> polymerization
+> Generate .xyz
+> structure files
+> Perform RCB
+> partitioning
+> Sample candidates from
+> clusters
+> Generate SMILES pairs
+> (A, B)
+> Figure 3: Steps for the construction of acrylate copolymers.
+
+For example, constructing a set of .xyz files from a collection of SMILES in input_csv consists of using the following commands to instantiate the classes, either for creating monomers:   
+
+> xyz_creator =MonomerXyzGenerator ( input_csv )
+
+or polymers:     
+
+> xyz_creator =PolymerXyzGenerator ( input_csv , polymer_chain_size = polymer_chain_size , polymer_type = polymer_type )
+
+5The obtained .xyz files are created with the command xyz_data = xyz_creator.generate() ,where the polymer_chain_size determines the number of pairs of repeating units in the chain and polymer_type determines the construction of monomer, homopolymer, and copolymer. In the proposed framework, each polymer size is associated with a flag f , which maps directly to the index in the chain list representation. The chain size Sc is defined by the relation Sc = 2 f , resulting in a size mapping of f = 0 → Sc = 1 , f = 1 → Sc = 2 , f = 2 → Sc = 4 , and so on. The created .xyz files are used to construct the input file for DFTB+ ( .hsd ) using the class 
+
+DFTBInputGenerator and the method prepare_input(xyz_file) . After creating the input files, the atomistic simulations are performed by running the method run of the class DFTBSimulation ,as shown in the following code snippet.   
+
+> dftb_simulation =DFTBSimulation ( dftbplus_path = dftbplus_path ) dftb_simulation . run ()
+
+2.2.3. Postprocessing 
+
+In this paper, we use DFTB+ to calculate the electric polarizability via a coupled-perturbed linear response approach, which is expressed as follows[42]: 
+
+μ(ω) = α(ω)E(ω) (5) where μ(ω) is the molecule’s dipole moment tensor, α(ω) is the polarizability tensor, and E(ω) is the static electric field. In the proposed framework, the static polarizability is assumed to be the isotropic value, and we determine the static polarizability α for ω = 0 as: 
+
+α = αxx + αyy + αzz 
+
+3 (6) where αxx , αyy , and αzz are the entries of the diagonal of the polarizability tensor. To this end, the class PolarizabilityTrace can be used to estimate α as:   
+
+> static_polarizability =PolarizabilityTrace () . run ( input_csv )
+
+It is important to mention that the proposed open-source toolbox is highly customizable and allows user-defined methods focused on diverse properties. 
+
+2.2.4. Dataset construction 
+
+In the PolyGraphPy toolbox, DFTB is used to generate a dataset of atomistic simulations for training and testing the machine learning models. The pre-processing workflow is initiated by instantiating the PreProcess class and executing its run method, as shown below:       
+
+> pre_process_engine =PreProcess ( input_csv = input_csv , train_input_data_path = train_input_data_path , polymer_type = polymer_type , target = prediction_target , gnn_output_path = gnn_output_path ) data =pre_process_engine . run ()
+
+The pre-processing stage begins with reading the molecular dataset, provided as a table con-taining the following fields: monomer identifiers ( id_A , id_B ); SMILES strings for each monomer (smiles_A , smiles_B ); the polymer chain length ( chain_size ); the xx , yy , and zz components of the polarizability tensor; the static polarizability ( static_polarizability ); and the molecular type ( type , i.e., monomer, homopolymer, or copolymer). A subsequent outlier-detection step is applied to identify anomalous entries. 6Furthermore, RDKit is employed to extract atom- and bond-level features. Atom features in-clude the atomic symbol, atomic number, degree, atomic mass, total degree, total valence, aromatic-ity, formal charge, and chain size. Bond features include bond type, conjugation, and aromaticity. All categorical and numerical features are encoded using a OneHotEncoder to ensure compatibility with machine-learning pipelines. The molecular structure is then converted into a graph representa-tion using PyTorch Geometric, with atoms as nodes and bonds as edges, yielding (i) an atom-feature matrix, (ii) an edge-index matrix defining graph connectivity, (iii) matrices of bond attributes, and (iv) edge weights. Finally, the processed molecular graphs are stored as .pt files for downstream use in the GNN model. Each output file contains the atom-feature matrix ( x), edge connectivity ( edge_index ), bond attributes ( edge_attr ), target property ( y), edge weights ( edge_weight ), molecular identifiers (id_A , id_B ), and chain length ( chain_size ). For homopolymers and monomers, id_B is assigned 
+
+None , while for monomers, chain_size is set to 0. These conventions ensure a consistent and faithful graph-based representation across all molecular types. 
+
+2.3. GNN-Based Property Prediction 
+
+A natural way to represent molecules is as graphs, where atoms correspond to vertices and chemical bonds to edges (see Fig. 4). This representation enables the use of methodologies developed for non-Euclidean data structures, such as graph neural networks (GNNs) [43, 44, 45]. GNNs have achieved remarkable success in predicting a wide range of polymer properties [46, 47, 48], providing a powerful framework for learning directly from molecular graph structures. In this work, we adopt a graph-based representation of polymers following the strategy proposed by [8], which enables an efficient encoding of non-structured data structures representing polymers and accurate prediction of properties of interest. This representation is particularly suitable for polymers, as it naturally captures the sequence of repeating units through the use of stochastic bonds corresponding to edges that mathematically describe the frequency with which the repeating units appear in the polymer chain. Each stochastic bond is assigned a weight w ∈ (0 , 1] , which can connect either identical monomers (e.g., A–A) to represent homopolymers or distinct monomers (e.g., A–B) to represent copolymers, as illustrated in Fig. 5. Therefore, uncovering hidden patterns within a complex, unstructured dataset of graphs requires the use of appropriate computational tools. To this end, we propose a Bayesian graph convolutional network (GCN) (see [49] for a discussion on graph convolutions) to enable the accurate prediction of the properties of polymers. 
+
+2.3.1. Bayesian graph neural networks 
+
+Any neural network is a model designed to be accurate and reliable. However, the limited knowledge about the functional relationship between the molecular structure and the property of interest (i.e., static polarizability) undermines the reliability of predictions, which is determined through the appropriate quantification of epistemic uncertainties [50]. Therefore, determining how this uncertainty influences the predictions made with the trained GNN models used in this work is a necessary step for ensuring the reliability of the obtained outcomes. Mathematically, a GNN is represented as a model α = f (G; w)—where w are the GNN weights—that maps the input graphs G = {G 1, G2, . . . , GN } to output properties α = {α1, α 2, . . . , α N };which, without loss of generality, can be assumed to be the static polarizability α. Therefore, we aim to determine the predictive probability p(α∗|G ∗, G, α) of α∗ for an unseen input graph G∗, given the training dataset {G, α}. This probability is approximated as follows: 
+
+p(α∗|G ∗, G, α) ≈
+
+Z
+
+p(α∗|f ) p(f |G ∗, w)p(w|G, α) df d w. (7) 7Figure 4: Graph representation of a methyl acrylate molecule. Gray circles represent hydrogen (H) atoms, black circles represent carbon (C) atoms, and red circles represent oxygen (O) atoms. Black solid lines indicate single bonds, while red solid lines denote double bonds. 
+
+As the direct calculation of the posterior distribution p(w|G, α) is intractable due to the di-mensionality of the integral, a variational approach is sought as an alternative. To this end, we approximate this posterior distribution with a variational distribution q(w) that minimizes the Kullback–Leibler (KL) divergence KL[ q(w) ∥ p(w|G, α)] [51]. The predictive probability then be-comes 
+
+p(α∗|G ∗) ≈
+
+Z
+
+p(α∗|f ) p(f |G ∗, w) q(w) df d w. (8) Assuming the model form f (·, w) is known (i.e., either GNN or MLP with weights w), the propagation of uncertainty from w to the static polarizability α∗ is determined as follows: 
+
+p(α∗|G ∗) ≈
+
+Z
+
+p(α∗|G ∗, w) q(w) dw. (9) This equation forms the theoretical foundation for Bayesian neural networks. Therefore, to deter-mine the uncertainty in the predicted static polarizability for a given graph p(α∗|G ∗), we assume that the GNN f (·, w) is a neural network with random weights. Since the true variational distribution q(w) is generally unknown, it is often approximated using a regularization scheme applied to the network’s point estimates, effectively treating the regularization as a prior for q(w) [52, 53]. A common variational approximation assumes that the weights w follow a Bernoulli distribution: 
+
+zi,j ∼ Bernoulli( pj ) = 
+
+(1, with probability pj ,
+
+0, with probability 1 − pj , (10) where j = 1 , . . . , n indexes the network weights, and mj are their corresponding magnitudes such that wi,j = mj zi,j . Using this representation, the integral in Eq. (9) can be approximated via Monte Carlo integration as 
+
+p(α∗|G ∗) ≈ 1
+
+NdNdX
+
+> i=1
+
+p(y∗|x∗; wi), (11) 8Figure 5: Stochastic connection representation showing the frequency of links between repeating units (e.g., AA for homopolymers, AB for copolymers). Stochastic edges represent bonds weighted by their occurrence frequency in the polymer chain: w = 1 .0 for homopolymers and w = 0 .5 for alternating copolymers. 
+
+where Nd denotes the number of neural networks sampled via dropout to form an ensemble. Prac-tically, this is achieved by keeping dropout layers active with a given probability pdrop at inference time, enabling a Monte Carlo dropout procedure. This approach produces Nd stochastic forward passes on the same input, allowing the estimation of statistical moments such as the mean and variance of predictions, and providing valuable insights into the reliability of the model’s outputs. Specifically, the GNN f (·, w) has an architecture composed of a sequence of spectral graph convolutional layers (see [49] for a detailed discussion) for updating the hidden states (features) Xl
+
+in layer l. This process is determined by the following propagation rule: 
+
+Xl+1 = σ
+
+ ¯D− 12 ¯A ¯ D− 12 XlWl
+
+
+
+(12) where σ is an activation function (i.e., hyperbolic tangent); ¯A = A+I denotes the adjacency matrix of the undirected graph G; ¯D is the node degree matrix; and Wl is the trainable matrix of weights subjected to dropout operations for performing uncertainty quantification. The reference GNN predictive model implemented in PolyGraphPy consists of a graph-based U-Net architecture (see [29, 54]), referred to as GraphUNet. This architecture enables effective graph embeddings that are subsequently processed by a sequence of MLP layers to predict the target property, such as the static polarizability α. The model architecture, illustrated in Fig. 6, comprises GCN layers interleaved with top-k pooling operations to downsample the graph while preserving the most informative nodes. The network is configured with five layers, a pooling ratio of 0.5, and summation-based skip connections to integrate multi-scale representations. In the upsampling phase, the GraphUNet reconstructs the graph by restoring pooled nodes to their original positions using the indices recorded during pooling, effectively reversing the downsam-pling operation to recover spatial information. This reconstruction, combined with skip connections, enables the model to capture both local and global structural features that are critical for accurately predicting the properties of interest. Furthermore, a global mean pooling operation aggregates the node embeddings, which are then used as a polymer “fingerprint”, which is used as input of an MLP network for property prediction. 9Graph  
+
+> inputs
+> Graph U-Net
+> 5 channels
+> Graph U-Net channels Embedding
+> Linear
+> Dropout
+> Tanh
+> Linear
+> Dropout
+> Tanh
+> Linear
+> Tanh
+> Multilayer perceptron channels
+> Polarizability
+> Target Figure 6: Graph U-Net model architecture.
+
+2.4. Property-guided molecular generation 
+
+Generative models have emerged as powerful tools in computational chemistry for the de novo 
+
+design of molecules with targeted properties. Originally developed for natural language processing [55, 24], generative pretrained transformers (GPT) have been adapted for molecular discovery by exploiting text-like representations of chemical structures. Trained on large molecular datasets, these models learn the syntactic and semantic rules underlying chemical representations, enabling them to generate novel and chemically valid structures [56, 57]. However, some challenges persist, especially when related to the non-uniqueness of formats such as SMILES, which complicates the generation of consistently valid molecules. As an alternative, genetic algorithms (GA), inspired by the concept of biological evolution, have long been used for molecular optimization [58, 59]. GAs iteratively evolve a population of candidate molecules through selection, crossover, and mutation, guided by a fitness function that encodes the desired property (e.g., static polarizability). Although both GPT-based approaches and GAs have proven effective for generating molecules with tailored characteristics, they rely on fundamentally different search strategies: GPT models generate candidates probabilistically by sampling from a learned distribution, whereas GAs perform heuristic optimization driven by explicit evolutionary operations. In the current version of PolyGraphPy , we integrate these complementary generative paradigms to design monomers with improved static polarizability, using graph neural network (GNN) predic-tions to evaluate and filter generated structures. In fact, monomers are employed herein as surro-gates for homopolymers. The GPT-based workflow employs a transformer architecture trained on SELFIES-encoded monomers annotated with polarizability values, enabling sampling-based genera-tion from the learned latent chemical space. In parallel, the GA-based workflow evolves a population of monomer candidates, with GNN-predicted polarizability serving as the fitness measure that di-rects the evolutionary search toward high-performing structures. By combining generative modeling and predictive GNN frameworks, PolyGraphPy offers a unified platform for exploring and optimizing chemical spaces of polymers, thus facilitating systematic discovery of structures with enhanced target properties. Next, a detailed description of such models and their integration with PolyGraphPy is provided. 
+
+2.4.1. Generative Pretrained Transformer 
+
+The GPT-2 model has a decoder-only open source architecture and was released in 2019 [24, 60]. It serves as a foundation for the development of more recent large language models (LLMs) in the GPT family, including GPT-5. In this work, the small GPT-2 model is incorporated into 
+
+PolyGraphPy as a generative engine trained on SELFIES representations of monomers. The GPT-2 model was selected primarily for its low VRAM footprint, which optimized resource utilization. In this context, the model contains 124 million parameters distributed across 12 transformer blocks, with a hidden size of 768, 12 attention heads, and a feed-forward network of width 3072. 10 Within the PolyGraphPy framework, the LLM encodes molecular graphs into a latent space from which novel monomer structures can be sampled. The training procedure involves fine-tuning the pretrained GPT-2 model to prioritize monomers whose static polarizability values fall within a desired target range. These values are filtered using the predictive GNN models described earlier, retaining only monomers with the smallest discrepancy between the target polarizability and the GNN-predicted value. This fine-tuning step leverages GNN-predicted polarizability to guide the generative model toward chemically valid monomers aligned with the specified property. The GPT model adopted here processes input sequences, such as SELFIES strings paired with polarizability values formatted as “polarizability: X selfies: Y” to generate molecular structures, where X denotes the desired polarizability target, and Y is the corresponding SELFIES pattern. Its core component is the multi-head self-attention mechanism, which computes attention scores for a token sequence x = [ x1, x 2, . . . , x n] as follows: Attention (Q, K, V) = softmax 
+
+ QK T
+
+√dk
+
++ M
+
+
+
+V, (13) where Q = XW Q, K = XW K , and V = XW V are the query, key, and value matrices, respectively, which are derived from the input embeddings X via learned weight matrices WQ, WK , WV . In addition, dk is the dimension of the key vectors and M is a mask. The multi-head attention mech-anism concatenates multiple attention outputs, allowing the model to capture diverse relationships within the sequence: MultiHead (X) = concat (head 1, . . . , head h)WO, (14) where head i = Attention (XW Q,i , XW K,i , XW V,i ), h is the number of heads, and WO is a projec-tion matrix. The transformer stacks multiple layers of multi-head attention, feed-forward networks, and layer normalization to produce a transition probability density function (PDF) over the next token in the sequence: 
+
+P(xt+1 |x1: t) = softmax (Wout ht), (15) where ht is the hidden state at position t, and Wout maps it to the vocabulary size. During training, the model minimizes the cross-entropy loss over the SELFIES dataset: 
+
+L = −
+
+> n
+
+X
+
+> t=1
+
+log P(xt|x1: t−1, θ ), (16) with θ representing the model parameters. Figure 7 illustrates the preprocessing, training, and generation pipeline for the GPT-based model. The process begins with SMILES strings from the molecular dataset, which are encoded into SELFIES representations using the run method from GenerativePreprocess class, as shown in the following code snippet:    
+
+> prep =GenerativePreprocess ( input_csv , generative_data_path ) prep . run ()
+
+The SELFIES strings, paired with normalized polarizability values, are used to fine-tune a pretrained GPT-2 model via the GenerativeTrainer class and its run method, as shown below:      
+
+> trainer =GenerativeTrainer ( generative_data_path , model_path , batch_size , learning_rate , epochs ) trainer . run ()
+
+11 SMILES   
+
+> inputs
+> SMILES
+> encoding
+> Input polarizability
+> SELFIES
+> inputs GPT 2 SELFIES
+> outputs
+> SMILES
+> decoding
+> SMILES
+> outputs
+> GNN
+> prediction
+> Error
+> measurement
+> Filtered
+> SMILES set Figure 7: GPT model pretraining, training, and generation process.
+
+During training, the model learns to associate SELFIES strings with target polarizability values, optimizing its parameters using the AdamW [61] optimizer and a mean squared error loss function. For property-guided generation, the MoleculeGenerator class takes the target polarizability values as input prompts, guiding the GPT-2 model to produce SELFIES strings, which are decoded into SMILES strings. This class is instantiated as follows:     
+
+> generator =MoleculeGenerator ( model_path , output_path , monomers_number_per_target , threshold ) generator . run ( targets )
+
+The generated SMILES are verified for chemical validity using RDKit and selected based on struc-tural properties, such as the presence of an acrylate substructure and the absence of multiple neutral fragments. The validated SMILES are converted into graph representations and passed through a pretrained GNN model to predict their static polarizability. Finally, a predetermined relative error threshold is applied to retain only monomers with a given error tolerance between the target and the predicted static polarizability Pstatic and ˆPstatic , respectively. Then, the accepted SMILES are stored as generated molecules. 
+
+2.4.2. Genetic algorithm 
+
+An alternative generative approach contained in the PolyGraphPy toolbox consists of the use of GA for generating monomers with targeted static polarizability. The GA iteratively optimizes a population of molecular structures through appropriate selection and crossover, guided by a fitness function that minimizes the deviation between predicted ˆPstatic and target static polarizability 
+
+Pstatic . This approach is well-suited for exploring the chemical space of monomers, generating structures that align with the desired target value. The GA pipeline, which is depicted in Fig. 8, begins by invoking the GaModelLoader class and its method get_components . This is a loader tool that facilitates the preparation of all necessary components for the genetic algorithm, such as atoms and bond features, and loading the pretrained GNN model. This task is done in PolyGraphPy by using the following command:           
+
+> loader =GaModelLoader ( input_csv , gnn_output_path , train_input_data_path , polymer_type , prediction_target ) model , preprocess , atom_encoder , bond_encoder =loader . get_components ()
+
+Next, the preprocessing is initialized by invoking the constructor of FragmentGA class, as shown below, to enable the appropriate selection of monomers with polarizability values within 90–110% of the target and limit the number of atoms to at most 40 atoms. Moreover, molecular frag-12 ments are extracted using the BRICS algorithm and ensuring the presence of an acrylate backbone (C=C-C(=O)O-[*] ).             
+
+> ga =FragmentGA ( input_csv , model , preprocess , atom_encoder , bond_encoder , population_size , prediction_target , t ) fitness_scores =ga . run_parallel ( generations , t ) SMILES
+> inputs
+> Filtering
+> process
+> Input polarizability
+> Fragments
+> extraction
+> Create
+> population
+> Fitness
+> evaluation
+> N smiles
+> outputted
+> Envolve
+> Figure 8: GA-based generative algorithm pipeline implemented in PolyGraphPy .t
+
+The evolution process in the GA is executed with the function run_parallel in class FragmentGA ,and it consists of the following steps: 1. Initialization: A population of N = 100 molecules is generated by the build_molecule func-tion as a default quantity, which randomly combines BRICS fragments to form chemically valid structures containing an acrylate backbone. 2. Fitness evaluation: Each molecule is converted into a PyTorch Geometric Data object via the 
+
+_mol_to_data method. The pretrained GNN model predicts the static polarizability, and the fitness score is calculated as: fitness = −| ˆPstatic − Pstatic |. Invalid molecules are assigned a fitness of −1.0.3. Selection: The population is sorted by fitness, and the top 50% ( N/ 2 = 50 ) of molecules are selected as parents for the next generation. 4. Crossover: Fragments from the top-performing molecules are extracted using BRICS decom-position and recombined to form a new population of N molecules, ensuring chemical validity and the presence of the acrylate backbone. Furthermore, 250 fragments are kept in the pool of fragments to balance computational overhead and maintain diversity. 5. Iteration: The process iterates over 50 generations as a default value, and it consists of refining the population through repeated fitness evaluation, selection, and crossover. After this process, the best molecules (higher fitness) are accepted, and their SMILES are stored accordingly. 
+
+3. Results and Discussion 
+
+3.1. Input data: Acrylates 
+
+Given the limited availability of publicly accessible datasets for monomers and polymers with computed polarizability values, two datasets were generated via atomistic simulations using DFTB+. The first dataset comprises 1,264 acrylate monomers with corresponding SMILES extracted from PubChem [62, 63], which includes compounds such as methyl acrylate, butyl acrylate, ethyl acrylate, 13 and acrylic acid, each characterized by the C=C-C(=O)O substructure critical for polymer applications [64]. Fig. 9 shows the some molecular descriptors showin the diversity of this dataset. The monomers from the first dataset were used to construct a second dataset of monomers and homopolymers, where 3,808 DFTB atomistic simulations were performed to compute the static polarizability α. For this dataset, the chain size was varied to include molecules with 1 monomer, 2 monomers, and 4 monomers. The simulated polarizability and chain size distributions are plotted in Fig. 10, and it reveals a clear trend in Fig. 10c between the chain size and α. This can be attributed to the approximately linear relationship between the number of atoms in a molecule and its polarizability [64]. 500 1000 050 100 a) Molecular weight                  
+
+> 25 50 75 025 50 75 100 b) Polarizability
+> 250 500 750 025 50 75 100 c) Van der Waals volume
+> 1.25 1.50 1.75 050 100 150 d) Refractive index
+> Figure 9: Histograms of numeric molecular descriptors found in the first dataset: (a) molecular weight computed using RDKit, (b) polarizability determined through the proposed atomistic simulation module, (c) Van der Waals volume, and (d) refractive index, with the latter two computed in the post-processing phase. 124Polymer chain size 1260 1280 1300 a) 0200 400 600 Polarizability (˚ A3)0250 500 750 b) 0200 400 600 Polarizability per chain size (˚ A3)0100 200 c) 124
+> Figure 10: Plot showing the distribution of polymers per chain size (a), alongside histograms of static polarizability for the entire dataset (b) and stratified by chain size (c).
+
+Additionally, a third dataset focusing on copolymers was also constructed with the monomers from the first dataset. Initially, to reduce computational overhead and limit the chemical space, only monomers with 25 or fewer atoms were retained. Furthermore, molecules containing metallic elements were excluded to ensure compatibility with the DFTB+ parameters. The resulting data were then partitioned into 16 clusters using the Recursive Coordinate Bisection (RCB) method, based on a 3D feature space comprising molecular weight, complexity, and polar surface area, all computed using RDKit. To ensure structural diversity, 9 monomers were randomly sampled from each of the 16 clusters, resulting in a diverse pool of n = 144 representative monomers. Every monomer in this pool was then paired with every other monomer, yielding n(n−1) 2 = 10 , 296 unique 14 copolymer combinations. These copolymer pairs were subsequently simulated using DFTB+ to compute their static polarizability, resulting in 8,627 successfully completed atomistic simulations with chain_size set to 1 (representing a single A-B copolymer unit). The polarizability distribution, illustrated in Figure 11, shows a high concentration of the polar-izability values for copolymers in the interval [9 .65 , 42 .91] , contrasting with the broader distribution observed in the homopolymer dataset. This concentration is primarily due to the exclusion of monomers with more than 25 atoms. 0 200 400 600 Polarizability (˚ A3)050 100 150 200 Homopolymers Copolymers 
+
+> Figure 11: Distributions of static polarizability for the copolymer and homopolymer/monomer datasets.
+
+3.2. Polarizability prediction 
+
+Following the construction of the datasets, two predictive models were trained using the Graph U-Net architecture (illustrated in Figure 6) to predict static polarizability. One model was trained specifically on the monomer/homopolymer dataset, while the second was trained on the copolymer dataset. The monomer/homopolymer dataset, comprising 3,808 graphs, was partitioned into 3,427 molecular graphs for training and 381 for validation (a 90/10 split). Similarly, the copolymer dataset, totaling 8,627 graphs, was divided into 7,764 graphs for training and 863 for validation. Both models demonstrated strong predictive capabilities and good generalization on their re-spective validation sets. The GNN model trained on the monomer/homopolymer data achieved MAPE = 11 .83% , R2 = 0 .9739 , and MSE = 0 .0015 . The copolymer GNN model exhibited even lower error margins, achieving MAPE = 5 .19% , R2 = 0 .9745 , and MSE = 0 .00093 .Figure 12 shows the training and validation losses for both GNN models. Additionally, Figure 13 illustrates the predicted versus ground truth polarizability plots for the validation sets, further reinforcing the robustness of both models. Furthermore, both models employ dropout regularization to mitigate overfitting. in this con-text, uncertainty quantification was conducted to assess prediction variability, thereby enhancing the overall reliability of the calculated static polarizabilities. This is achieved by interpreting stan-dard dropout as approximate variational inference in a deep Gaussian process, which enables the computation of a predictive mean and variance through multiple stochastic forward passes during inference [65, 66]. The comparison between ground truth polarizability and predictions from 100 Monte Carlo (MC) runs with dropout enabled is shown in Figure 14. The GNN models produce varying predic-tions across runs, yet the variance remains well-controlled, indicating robust model performance. Moreover, the mean predictions closely align with the ground truth values for both the monomer/ho-15 50 100 150 200 Epochs 
+
+0.00 
+
+0.01 
+
+0.02 
+
+0.03 
+
+0.04 MSE Loss 
+
+a) Monomer and Homopolymer Train Validation 
+
+50 100 150 200 Epochs 
+
+0.00 
+
+0.01 
+
+0.02 
+
+0.03 MSE Loss 
+
+b) Copolymer Train Validation Figure 12: Training and validation losses for (a) the monomer and homopolymer dataset, and (b) the copolymer dataset. 20 40 60 80 100 Ground Truth (˚ A3)
+
+20 
+
+40 
+
+60 
+
+80 
+
+100 Predictions (˚ A3)
+
+a) Monomer and Homopolymer 
+
+10 15 20 25 30 Ground Truth (˚ A3)
+
+10 
+
+15 
+
+20 
+
+25 
+
+30 Predictions (˚ A3)
+
+b) Copolymer 
+
+Figure 13: Predicted versus ground truth polarizability for the validation sets of (a) the monomer and homopolymer dataset, and (b) the copolymer dataset. 0 100 200 300 Molecule ID 025 50 75 100 Static Polarizability (˚ A3) a) Monomer and Homopolymer Ground Truth Single Prediction Mean Prediction 0 200 400 600 800 Molecule ID 10 15 20 25 30 Static Polarizability (˚ A3) b) Copolymer 
+
+> Ground Truth Single Prediction Mean Prediction
+
+Figure 14: Comparison of ground truth and predicted static polarizability from 100 Monte Carlo runs with dropout enabled, showing controlled variance and close alignment of mean predictions for (a) the monomer/homopolymer dataset and (b) the copolymer validation dataset. 
+
+mopolymer and copolymer validation datasets, reinforcing the reliability of the proposed computa-tional framework. 16 Additionally, Figure 15 shows the polarizability standard deviation (STD) per molecule, derived from 100 MC runs with dropout activated during the validation phase. The STD remains below 0.9 for copolymers and below 3.8 for monomers/homopolymers. This discrepancy in uncertainty can be directly attributed to the amount of data used to train each model: the substantially larger copolymer dataset provides more training evidence, which correspondingly reduces the model’s epistemic uncertainty compared to the smaller monomer/homopolymer dataset. 0 100 200 300 Molecule ID      
+
+> 2
+> 3Standard Deviation (˚ A3) a) Monomer and Homopolymer
+> 0200 400 600 800 Molecule ID
+> 0.2
+> 0.4
+> 0.6
+> 0.8Standard Deviation (˚ A3) b) Copolymer
+> Figure 15: Scaled polarizability standard deviation (STD) per molecule from 100 Monte Carlo runs with dropout enabled during validation, showing the STD for (a) the monomer/homopolymer dataset and (b) the copolymer dataset.
+
+Figure 16 presents the PDFs of the MAPE, R 2, and MSE metrics computed for the validation datasets over 100 runs, for monomers/homopolymers (panels a–c) and copolymers (panels d–f). The PDFs in panels a–c exhibit a high concentration around their respective means with short tails, closely approximating Gaussian distributions. A similar behavior is observed for the PDFs shown in panels d–f. 
+
+3.3. Polarizability-guided high-throughput generation 
+
+Following the training and validation of the GNN models, we proceeded to evaluate the two generative models implemented in PolyGraphPy : the GA-based and the GPT-based models. To assess the robustness of the GA-based generative model, the following strategy was adopted: 1. A set of 100 target polarizability values was generated using np.linspace(P01, P75, 100) ,where P01 = df[’target_scaled’].quantile(0.01) and P75 = df[’target_scaled’].quantile(0.75) .This interval was selected to optimize computational efficiency while covering a considerable range of scaled polarizability values, as initial tests revealed that the BRICS algorithm exhibits reduced performance for molecules with 40 or more atoms. 2. For each target value i, the GA-based model was executed following the methodology detailed in the previous sections. 3. For each target i, 100 candidate monomers were generated based on the defined population size, yielding a total of 10,000 raw candidate monomers. Following the initial generation phase, we evaluated the performance and yield of the GA-based model. Out of the 10,000 candidates, 730 valid and unique SMILES strings were successfully gen-erated. Notably, 89.99% of these were entirely absent from the original acrylate monomer dataset, highlighting the strong exploratory and generative capacity of the GA model. Figure 17 illustrates the distribution of the corresponding fitness scores as a function of static polarizability, indicating that the model successfully generates acrylate monomers with very low 17 10 12 14 0.00 0.25 0.50 Homopolymers Density a) MAPE 0.965 0.970 0.975 0100 200 b) R ²            
+
+> 0.125 0.150 0.175 0.200 020 40 c) MSE 56012Copolymers Density d) MAPE 0.970 0.975 0.980 0200 e) R ²
+> 0.08 0.10 050 100 f) MSE Figure 16: Estimated PDFs of MAPE, R 2, and MSE for 100 validation runs, showing concentrated means and near-Gaussian behavior for monomers/homopolymers (a–c) and copolymers (d–f). 10 15 20 25 30 Static Polarizability (˚ A3)
+> −0.3
+> −0.2
+> −0.1
+> 0.0Fitness Score
+> Figure 17: Scatter plot showing the fitness score as a function of the static polarizability for the generated monomers.
+
+error for polarizability values ≤ 20 Å3. Additionally, Figure 18a summarizes the frequency of generated monomers by static polarizability, showing that the genetic algorithm approach produces a higher volume of valid and unique acrylates at ≥ 22 Å3. Finally, Figure 18b displays the distribution of the fitness scores, revealing a sharp concentration around ≈ 0. This demonstrates the high reliability and precision of the GA algorithm when operating in tandem with the predictive GNN model. To assess the robustness and reliability of the GPT-based generative model, the following strat-egy was adopted: 1. A set of 200 target polarizability values was created using np.linspace(0, 1, 200) to thor-oughly explore the scaled polarizability range. 2. For each target value i, the GPT-based model was executed following the methodology detailed in previous sections, generating five SELFIES strings per polarizability target, yielding a total of 1,000 raw generations. 3. For each generation, RDKit was utilized to validate the SMILES strings decoded from the SELFIES, ensuring both chemical validity and the presence of the required C=C-C(=O)O sub-structure. This filtering process resulted in a final dataset comprising 126 valid monomers. 18 10 15 20 25 30 Static Polarizability (˚ A3)020 40 60 Frequency a) Distribution of Static Polarizability    
+
+> −0.3−0.2−0.10.0Fitness Score 0100 200 Frequency b) Distribution of Fitness Figure 18: Distributions of (a) static polarizability and (b) fitness scores for the valid generated monomers.
+
+The performance of the GPT-based model was evaluated in parallel with the GA-based model. Out of the 126 valid monomers, 99.2% were unique (125 distinct SMILES strings), demonstrating high generational diversity. Moreover, 78.23% of these valid, generated SMILES were entirely absent from the original acrylate monomer training dataset, highlighting the model’s strong capability for exploring novel chemical space. In addition, Fig. 19 presents the results obtained with the GPT-based approach, where panel (a) illustrates the distribution of generated monomers by their static polarizability, while panel (b) displays the relative error distribution. Although the GPT-based approach is capable of generating valid monomers more uniformly and exploring a broader range of static polarizability values than the GA approach, its relative errors are noticeably larger in comparison with the GA-based approach. As a highly complex probabilistic framework, the GPT-based model struggles to precisely match specific target polarizability values, an issue amplified by the relatively small size of the training dataset. To address this limitation in future iterations, a potential strategy involves expanding the training dataset to include homopolymers and copolymers. By treating these larger structures as “super monomers” within the generative framework, the model could achieve better coverage and accuracy across higher polarizability ranges. 0 20 40 60 80 100 Static Polarizability (˚ A3)024Frequency a) Distribution of Static Polarizability    
+
+> 0123Error 0510 15 Frequency b) Distribution of Error
+> Figure 19: Distributions of (a) static polarizability and (b) relative error for the valid monomers generated by the GPT-based model.
+
+Furthermore, Figure 20 presents the application of t-distributed Stochastic Neighbor Embedding (t-SNE [67]) to visualize the chemical space and assess where the generative approaches effectively explore new monomers. This 2D embedding was constructed using four key physical features: molecular weight, static polarizability, Van der Waals volume, and refractive index. The projection 19 reveals that both models successfully generate monomers across nearly the entire baseline chemical space. However, a noticeable gap exists in the region bounded approximately by [22 , 40] × [30 , 40] 
+
+(in t-SNE components 1 and 2, respectively), an area typically characterized by higher refractive indices. Additionally, the GA-based algorithm demonstrates a strong capacity to densely populate the region defined by [−17 , 42] × [−50 , −20] , which corresponds predominantly to monomers with lower refractive index values. −80 −60 −40 −20 0 20 40 60 t-SNE component 1  
+
+> −60
+> −40
+> −20
+> 0
+> 20
+> 40 t-SNE component 2 Training GA Generated GPT Generated
+> 1.31.41.51.61.71.8Refractive Index ( n)
+> Figure 20: t-SNE visualization of the chemical space comparing the original acrylate dataset with the valid monomers generated by the GA-based and GPT-based models. The embedding maps the high-dimensional space defined by molecular weight, static polarizability, Van der Waals volume, and refractive index into a 2D plane.
+
+4. Conclusions 
+
+PolyGraphPy , an open-source, modular Python framework designed to streamline the discovery and design of polymeric materials, is introduced with a specific focus on acrylate monomers exhibit-ing tailored static polarizability. To address the scarcity of public datasets containing both molecular structures and static polarizability values, we generated two extensive datasets using DFTB+ sim-ulations: (A) 3,427 monomer/homopolymer simulations and (B) 8,627 copolymer simulations. The construction of these large-scale datasets was made feasible by the computational efficiency of Den-sity Functional Tight Binding (DFTB) compared to more expensive quantum mechanics methods, such as Density Functional Theory (DFT) or traditional Force Fields (FF). Specifically, by lever-aging DFTB’s ability to approximate electronic structures using precomputed Slater-Koster (SK) parameters, datasets (A) and (B) were constructed in approximately 12 and 38 hours, respectively. 20 By integrating atomistic simulations with advanced predictive and generative models, PolyGraphPy 
+
+addresses critical challenges in polymer informatics. The framework utilizes the computational power of DFTB+ to enable large-scale screenings and to train Bayesian Graph Neural Networks (GNNs). These GNNs, which utilize stochastic graph representations of polymers, are designed to predict material properties—such as static polarizability in the optical domain—while provid-ing robust uncertainty quantification. We developed and trained two models based on the Graph U-Net architecture to predict the static polarizability of monomers/homopolymers and copoly-mers. Both models demonstrated high predictive accuracy: the monomer/homopolymer model achieved MAPE = 11 .83% , R2 = 0 .9739 , and MSE = 0 .0015 , while the copolymer model achieved MAPE = 5 .19% , R2 = 0 .9745 , and MSE = 0 .00093 .Furthermore, PolyGraphPy enables efficient property-guided de novo design via two comple-mentary generative approaches: a SELFIES-based Generative Pretrained Transformer (GPT) and a Genetic Algorithm (GA) utilizing BRICS fragmentation. These models facilitate the exploration of the polymer chemical space to discover materials with targeted properties. The GA-based model generated 730 unique polymers, 89.99% of which were entirely absent from the original acrylate dataset, highlighting its strong exploratory capacity. Similarly, the GPT-based model generated 126 valid monomers, of which 99.2% were unique (125 distinct SMILES strings) and 78.23% were novel compared to the training set, further demonstrating the model’s ability to explore new chem-ical domains. Due to its object-oriented and open-source philosophy, PolyGraphPy possesses a high level of customization and accessibility. It offers a unified, end-to-end pipeline that significantly reduces the time and computational costs associated with materials discovery, facilitating the systematic design of polymers with tailored architectures and functionalities. 
+
+Conclusions 
+
+PolyGraphPy , an open-source, modular Python framework designed to streamline the discovery and design of polymeric materials, is introduced with a specific focus on acrylate monomers exhibit-ing tailored static polarizability. To address the scarcity of public datasets containing both molecular structures and static polarizability values, we generated two extensive datasets using DFTB+ sim-ulations: (A) 3,427 monomer/homopolymer simulations and (B) 8,627 copolymer simulations. The construction of these large-scale datasets was made feasible by the computational efficiency of Den-sity Functional Tight Binding (DFTB) compared to more expensive quantum mechanics methods, such as Density Functional Theory (DFT) or traditional Force Fields (FF). Specifically, by lever-aging DFTB’s ability to approximate electronic structures using precomputed Slater-Koster (SK) parameters, datasets (A) and (B) were constructed in approximately 12 and 38 hours, respectively. By integrating atomistic simulations with advanced predictive and generative models, PolyGraphPy 
+
+addresses critical challenges in polymer informatics. The framework utilizes the computational power of DFTB+ to enable large-scale screenings and to train Bayesian Graph Neural Networks (GNNs). These GNNs, which utilize stochastic graph representations of polymers, are designed to predict material properties—such as static polarizability in the optical domain—while provid-ing robust uncertainty quantification. We developed and trained two models based on the Graph U-Net architecture to predict the static polarizability of monomers/homopolymers and copoly-mers. Both models demonstrated high predictive accuracy: the monomer/homopolymer model achieved MAPE = 11 .83% , R2 = 0 .9739 , and MSE = 0 .0015 , while the copolymer model achieved MAPE = 5 .19% , R2 = 0 .9745 , and MSE = 0 .00093 .Furthermore, PolyGraphPy enables efficient property-guided de novo design via two comple-mentary generative approaches: a SELFIES-based Generative Pretrained Transformer (GPT) and 21 a Genetic Algorithm (GA) utilizing BRICS fragmentation. These models facilitate the exploration of the polymer chemical space to discover materials with targeted properties. The GA-based model generated 730 unique polymers, 89.99% of which were entirely absent from the original acrylate dataset, highlighting its strong exploratory capacity. Similarly, the GPT-based model generated 126 valid monomers, of which 99.2% were unique (125 distinct SMILES strings) and 78.23% were novel compared to the training set, further demonstrating the model’s ability to explore new chem-ical domains. Due to its object-oriented and open-source philosophy, PolyGraphPy possesses a high level of customization and accessibility. It offers a unified, end-to-end pipeline that significantly reduces the time and computational costs associated with materials discovery, facilitating the systematic design of polymers with tailored architectures and functionalities. 
+
+CRediT authorship contribution statement J. G. C. S. Duarte : Writing – review & editing, Writing – original draft, Validation, Methodol-ogy, Investigation, Formal analysis, Data curation, Conceptualization. S. Venkatram : Validation, Methodology, Investigation, Formal analysis, Data curation. M. Cencer : Validation, Methodol-ogy, Investigation, Formal analysis, Data curation. T. Dumitricˇ a: Writing – review & editing, Supervision, Project administration, Funding acquisition. K. R. M. dos Santos : Writing – review & editing, Supervision, Project administration, Funding acquisition. 
+
+Declaration of competing interest 
+
+The authors declare the following financial interests/personal relationships, which may be con-sidered potential competing interests: K. R. M. dos Santos, T. Dumitricˇ a, and J. G. C. S. Duarte report that financial support was provided by 3M. S. Venkatram and M. Cencer report employ-ment by 3M. If there are other authors, they declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. 
+
+Acknowledgements 
+
+The authors gratefully acknowledge the technical and financial assistance received from 3M (Award No. CON000000109024). Furthermore, the computational resources from the Minnesota Supercomputing Institute are greatly acknowledged. 
+
+Appendix A. Supplementary data 
+
+Supplementary material related to this article can be found online. 
+
+Data availability 
+
+The data that support the findings of this study are openly available in GitHub at https: //github.com/SASP-lab/PolyGraphPy .22 References 
+
+[1] S. Wu, H. Yamada, Y. Hayashi, M. Zamengo, R. Yoshida, Potentials and challenges of polymer informatics: exploiting machine learning for polymer design, 2020. URL: https://arxiv.org/ abs/2010.07683 . arXiv:2010.07683 .[2] J. S. Peerless, N. J. B. Milliken, T. J. Oweida, M. D. Manning, Y. G. Yingling, Soft matter informatics: Current progress and challenges, Advanced Theory and Simulations 2 (2019) 1800129. [3] D. Weininger, Smiles, a chemical language and information system. 1. introduction to method-ology and encoding rules, Journal of Chemical Information and Computer Sciences 28 (1988) 31–36. [4] T.-S. Lin, C. W. Coley, H. Mochigase, H. K. Beech, W. Wang, Z. Wang, E. Woods, S. L. Craig, J. A. Johnson, J. A. Kalow, K. F. Jensen, B. D. Olsen, Bigsmiles: A structurally-based line notation for describing macromolecules, ACS Central Science 5 (2019) 1523–1531. PMID: 31572779. [5] S. R. Heller, A. McNaught, I. Pletnev, S. Stein, D. Tchekhovskoi, Inchi, the iupac international chemical identifier, Journal of Cheminformatics 7 (2015) 23. [6] M. Guo, W. Shou, L. Makatura, T. Erps, M. Foshey, W. Matusik, Polygrammar: Grammar for digital polymer representation and generation, Advanced Science 9 (2022) 2101864. [7] M. Krenn, F. Häse, A. Nigam, P. Friederich, A. Aspuru-Guzik, Self-referencing embedded strings (selfies): A 100% robust molecular string representation, Machine Learning: Science and Technology 1 (2020) 045024. [8] M. Aldeghi, C. W. Coley, A graph representation of molecular ensembles for polymer property prediction, Chemical Science 13 (2022) 10486–10498. [9] C. Kim, A. Chandrasekaran, T. D. Huan, D. Das, R. Ramprasad, Polymer genome: A data-powered polymer informatics platform for property predictions, The Journal of Physical Chem-istry C 122 (2018) 17575–17585. [10] H. Doan Tran, C. Kim, L. Chen, A. Chandrasekaran, R. Batra, S. Venkatram, D. Kamal, J. P. Lightstone, R. Gurnani, P. Shetty, M. Ramprasad, J. Laws, M. Shelton, R. Ramprasad, Machine-learning predictions of polymer properties with polymer genome, Journal of Applied Physics 128 (2020) 171104. [11] K. Yang, K. Swanson, W. Jin, C. Coley, P. Eiden, H. Gao, A. Guzman-Perez, T. Hopper, B. Kelley, M. Mathea, A. Palmer, V. Settels, T. Jaakkola, K. Jensen, R. Barzilay, Analyzing learned molecular representations for property prediction, Journal of Chemical Information and Modeling 59 (2019) 3370–3388. PMID: 31361484. [12] E. Heid, K. P. Greenman, Y. Chung, S.-C. Li, D. E. Graff, F. H. Vermeire, H. Wu, W. H. Green, C. J. McGill, Chemprop: A machine learning package for chemical property prediction, Journal of Chemical Information and Modeling 64 (2024) 9–17. PMID: 38147829. [13] G. Ignacz, M. I. Baig, K. Gopalsamy, A. Villa, S. Nunes, B. Ghanem, T. Shastry, S. K. Kumar, G. Szekely, A data-driven approach to interfacial polymerization exploiting machine learning for predicting thin-film composite membrane formation, Materials Horizons 12 (2025) 9009–9025. 23 [14] S. Sun, F. Tian, C. Zhao, M. Xie, W. Li, W. Yu, K. Cui, L. Li, Directed message passing neural networks enhanced graph convolutional learning for accurate polymer density prediction, The Journal of Chemical Physics 163 (2025). [15] J. Correia, J. Capela, M. Rocha, Deepmol: an automated machine and deep learning framework for computational chemistry, Journal of Cheminformatics 16 (2024) 136. [16] J. Bicerano, D. Rigby, C. Freeman, B. LeBlanc, J. Aubry, Polymer expert – a software tool for de novo polymer design, Computational Materials Science 235 (2024) 112810. [17] S. Nanjo, Arifin, H. Maeda, Y. Hayashi, K. Hatakeyama-Sato, R. Himeno, T. Hayakawa, R. Yoshida, Spacier: On-demand polymer design with fully automated all-atom classical molecular dynamics integrated into machine learning pipelines, npj Computational Materi-als 11 (2025) 16. [18] I. Priyadarsini, S. Takeda, L. Hamada, E. V. Brazil, E. Soares, H. Shinohara, Self-bart: Atransformer-based molecular representation model using selfies, 2024. URL: https://arxiv. org/abs/2410.12348 . arXiv:2410.12348 .[19] M. Lewis, Y. Liu, N. Goyal, M. Ghazvininejad, A. Mohamed, O. Levy, V. Stoyanov, L. Zettlemoyer, Bart: Denoising sequence-to-sequence pre-training for natural language gen-eration, translation, and comprehension, 2019. URL: https://arxiv.org/abs/1910.13461 .
+
+arXiv:1910.13461 .[20] H. Kim, M. Kim, S. Choi, J. Park, Genetic-guided gflownets for sample efficient molecular optimization, 2024. URL: https://arxiv.org/abs/2402.05961 . arXiv:2402.05961 .[21] P. Bongini, M. Bianchini, F. Scarselli, Molecular generative graph neural networks for drug discovery, Neurocomputing 450 (2021) 242–252. [22] M. Elstner, Scc-dftb: What is the proper degree of self-consistency?, The Journal of Physical Chemistry A 111 (2007) 5614–5621. PMID: 17564420. [23] B. Hourahine, B. Aradi, V. Blum, F. Bonafé, A. Buccheri, C. Camacho, C. Cevallos, M. Y. Deshaye, T. Dumitrică, A. Dominguez, S. Ehlert, M. Elstner, T. van der Heide, J. Hermann, S. Irle, J. J. Kranz, C. Köhler, T. Kowalczyk, T. Kubař, I. S. Lee, V. Lutsker, R. J. Maurer, S. K. Min, I. Mitchell, C. Negre, T. A. Niehaus, A. M. N. Niklasson, A. J. Page, A. Pecchia, G. Penazzi, M. P. Persson, J. Řezáč, C. G. Sánchez, M. Sternberg, M. Stöhr, F. Stuckenberg, A. Tkatchenko, V. W.-z. Yu, T. Frauenheim, Dftb+, a software package for efficient approxi-mate density functional theory based atomistic simulations, The Journal of Chemical Physics 152 (2020) 124101. [24] A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, I. Sutskever, Language models are unsu-pervised multitask learners, OpenAI (2019). Accessed: 2024-11-15. [25] J. H. Holland, Genetic algorithms, Scientific American 267 (1992) 66–73. [26] S. Katoch, S. S. Chauhan, V. Kumar, A review on genetic algorithm: past, present, and future, Multimedia Tools and Applications 80 (2021) 8091–8126. [27] F. Scarselli, M. Gori, A. C. Tsoi, M. Hagenbuchner, G. Monfardini, The graph neural network model, IEEE Transactions on Neural Networks 20 (2009) 61–80. 24 [28] T. N. Kipf, M. Welling, Variational graph auto-encoders, 2016. URL: https://arxiv.org/ abs/1611.07308 . arXiv:1611.07308 .[29] H. Gao, S. Ji, Graph u-nets, 2019. URL: https://arxiv.org/abs/1905.05178 .
+
+arXiv:1905.05178 .[30] J. Degen, C. Wegscheid-Gerlach, A. Zaliani, M. Rarey, On the art of compiling and using ’drug-like’ chemical fragment spaces, ChemMedChem 3 (2008) 1503–1507. [31] A. Paszke, S. Gross, F. Massa, A. Lerer, J. Bradbury, G. Chanan, T. Killeen, Z. Lin, N. Gimelshein, L. Antiga, A. Desmaison, A. Köpf, E. Yang, Z. DeVito, M. Raison, A. Te-jani, S. Chilamkurthy, B. Steiner, L. Fang, J. Bai, S. Chintala, Pytorch: An imperative style, high-performance deep learning library, 2019. URL: https://arxiv.org/abs/1912.01703 .
+
+arXiv:1912.01703 .[32] M. Fey, J. E. Lenssen, Fast graph representation learning with pytorch geometric, 2019. URL: 
+
+https://arxiv.org/abs/1903.02428 . arXiv:1903.02428 .[33] DFTB+ Development Team, DFTB+: A software package for efficient approximate density functional theory based atomistic simulations, https://dftbplus.org , 2025. Accessed: 2025-07-12. [34] B. Hourahine, M. Berdakin, J. A. Bich, F. P. Bonafé, C. Camacho, Q. Cui, M. Y. Deshaye, G. Díaz Mirón, S. Ehlert, M. Elstner, T. Frauenheim, N. Goldman, R. A. González León, T. van der Heide, S. Irle, T. Kowalczyk, T. Kubař, I. S. Lee, C. R. Lien-Medrano, A. Maryewski, T. Melson, S. K. Min, T. Niehaus, A. M. N. Niklasson, A. Pecchia, K. Reuter, C. G. Sánchez, C. Scheurer, M. A. Sentef, P. V. Stishenko, V. Q. Vuong, B. Aradi, Recent developments in dftb+, a software package for efficient atomistic quantum mechanical simulations, The Journal of Physical Chemistry A 129 (2025) 5373–5390. [35] P. Hohenberg, W. Kohn, Inhomogeneous electron gas, Phys. Rev. 136 (1964) B864–B871. [36] W. Kohn, L. J. Sham, Self-consistent equations including exchange and correlation effects, Phys. Rev. 140 (1965) A1133–A1138. [37] S. U. Patil, M. S. Radue, W. A. Pisani, P. Deshpande, H. Xu, H. Al Mahmud, T. Dumitrică, G. M. Odegard, Interfacial characteristics between flattened cnt stacks and polyimides: Amolecular dynamics study, Computational Materials Science 185 (2020) 109970. [38] M. Elstner, T. Frauenheim, E. Kaxiras, G. Seifert, S. Suhai, A self-consistent charge density-functional based tight-binding scheme for large biomolecules, physica status solidi (b) 217 (2000) 357–376. [39] M. Gaus, X. Lu, M. Elstner, Q. Cui, Parameterization of dftb3/3ob for sulfur and phosphorus for chemical and biological applications, Journal of Chemical Theory and Computation 10 (2014) 1518–1537. PMID: 24803865. [40] J. C. Slater, G. F. Koster, Simplified lcao method for the periodic potential problem, Physical Review 94 (1954) 1498–1524. [41] L. Turcani, E. Berardo, K. E. Jelfs, stk: A python toolkit for supramolecular assembly, Journal of Computational Chemistry 39 (2018) 1456–1465. 25 [42] M. B. Oviedo, C. F. A. Negre, C. G. Sánchez, Dynamical simulation of the optical response of photosynthetic pigments, Phys. Chem. Chem. Phys. 12 (2010) 6706–6711. [43] S. Kearnes, K. McCloskey, M. Berndl, V. Pande, P. Riley, Molecular graph convolutions: Moving beyond fingerprints, Journal of Computer-Aided Molecular Design 30 (2016) 595–608. [44] J. M. Stokes, K. Yang, K. Swanson, W. Jin, A. Cubillos-Ruiz, N. M. Donghia, C. R. MacNair, S. French, L. A. Carfrae, Z. Bloom-Ackermann, V. M. Tran, A. Chiappino-Pepe, A. H. Badran, I. W. Andrews, E. J. Chory, G. M. Church, E. D. Brown, T. S. Jaakkola, R. Barzilay, J. J. Collins, A deep learning approach to antibiotic discovery, Cell 180 (2020) 688–702.e13. [45] D. Jiang, Z. Wu, C.-Y. Hsieh, G. Chen, B. Liao, Z. Wang, C. Shen, D. Cao, J. Wu, T. Hou, Could graph neural networks learn better molecular representation for drug discovery? a com-parison study of descriptor-based and graph-based models, Journal of Cheminformatics 13 (2021) 12. [46] M. Zeng, J. N. Kumar, Z. Zeng, R. Savitha, V. R. Chandrasekhar, K. Hippalgaonkar, Graph convolutional neural networks for polymers property prediction, 2018. URL: https://arxiv. org/abs/1811.06231 . arXiv:1811.06231 .[47] R. Gurnani, C. Kuenneth, A. Toland, R. Ramprasad, Polymer informatics at scale with mul-titask graph neural networks, Chemistry of Materials 35 (2023) 1560–1567. [48] F. Wang, W. Guo, M. Cheng, S. Yuan, H. Xu, Z. Gao, Mmpolymer: A multimodal multitask pretraining framework for polymer property prediction, 2024. URL: https://arxiv.org/abs/ 2406.04727 . arXiv:2406.04727 .[49] T. N. Kipf, M. Welling, Semi-supervised classification with graph convolutional networks, 2017. URL: https://arxiv.org/abs/1609.02907 . arXiv:1609.02907 .[50] L. Wasserman, Bayesian model selection and model averaging, Journal of Mathematical Psychology 44 (2000) 92–107. [51] D. M. Blei, A. Kucukelbir, J. D. McAuliffe, Variational inference: A review for statisticians, Journal of the American Statistical Association 112 (2017) 859–877. [52] Y. Gal, Z. Ghahramani, Bayesian convolutional neural networks with bernoulli approximate variational inference, 2015. URL: https://arxiv.org/abs/1506.02158 . doi: 10.48550/ARXIV. 1506.02158 .[53] L. V. Jospin, H. Laga, F. Boussaid, W. Buntine, M. Bennamoun, Hands-on bayesian neural networks—a tutorial for deep learning users, IEEE Computational Intelligence Magazine 17 (2022) 29–48. [54] O. Ronneberger, P. Fischer, T. Brox, U-net: Convolutional networks for biomedical image segmentation, 2015. URL: https://arxiv.org/abs/1505.04597 . arXiv:1505.04597 .[55] A. Vaswani, N. Shazeer, N. Parmar, J. Uszoreit, L. Jones, A. N. Gomez, L. Kaiser, I. Polosukhin, Attention is all you need, Advances in Neural Information Processing Systems 30 (2017) 5998– 6008. [56] C. Bilodeau, W. Jin, T. Jaakkola, R. Barzilay, K. F. Jensen, Generative models for molecular discovery: Recent advances and challenges, Wiley Interdisciplinary Reviews: Computational Molecular Science 12 (2022) e1608. 26 [57] N. C. Frey, V. Gadepally, S. Samsi, A. Speth, B. Subramanian, Scalable generative models for molecular design, Journal of Chemical Information and Modeling 63 (2023) 1905–1915. [58] A. Nigam, R. Pollice, M. F. D. Hurley, R. J. Hickman, M. Aldeghi, N. Yoshikawa, S. Chithrananda, A. Aspuru-Guzik, Artificial intelligence in chemistry: Current trends and future directions, Journal of Chemical Information and Modeling 60 (2020) 6025–6041. [59] J. H. Jensen, A graph-based genetic algorithm and generative model/monte carlo tree search for the exploration of chemical space, Chemical Science 10 (2019) 3567–3572. [60] Hugging Face, Gpt-2: Language models are unsupervised multitask learners, Hugging Face Model Hub, 2019. Available at https://huggingface.co/openai-community/gpt2 .[61] I. Loshchilov, F. Hutter, Decoupled weight decay regularization, 2019. URL: https://arxiv. org/abs/1711.05101 . arXiv:1711.05101 .[62] S. Kim, J. Chen, T. Cheng, A. Gindulyte, J. He, S. He, Q. Li, B. A. Shoemaker, P. A. Thiessen, B. Yu, L. Zaslavsky, J. Zhang, E. E. Bolton, Pubchem in 2021: New data content and improved web interfaces, Nucleic Acids Research 49 (2021) D1388–D1395. [63] National Center for Biotechnology Information (NCBI), Pubchem, https://pubchem.ncbi. nlm.nih.gov/ , 2025. Accessed: [Current Date]. [64] R. J. Young, P. A. Lovell, Introduction to polymers, Chapman and Hall (1999). [65] Y. Gal, Z. Ghahramani, Dropout as a bayesian approximation: Representing model uncertainty in deep learning, 2016. URL: https://arxiv.org/abs/1506.02142 . arXiv:1506.02142 .[66] Y. Gal, Z. Ghahramani, Dropout as a bayesian approximation: Appendix, 2016. URL: https: //arxiv.org/abs/1506.02157 . arXiv:1506.02157 .[67] L. van der Maaten, G. Hinton, Visualizing data using t-sne, Journal of Machine Learning Research 9 (2008) 2579–2605. 27

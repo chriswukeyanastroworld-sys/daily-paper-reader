@@ -1,0 +1,768 @@
+Title: Gen-AI-tecture: using generative AI to support architectural students in design tasks
+
+URL Source: https://arxiv.org/pdf/2605.21361v1
+
+Published Time: Thu, 21 May 2026 01:23:59 GMT
+
+Number of Pages: 26
+
+Markdown Content:
+Gen-AI-tecture: using generative AI to support architectural students in design tasks 
+
+# Authors 
+
+Timo Kapsalis [ORCID: 0000-0003-1598-6426] (1) 
+
+(1): College of Science & Engineering, University of Derby, UK 
+
+# Abstract 
+
+The Gen-AI-tecture project embeds a locally executed, discipline-specific tool into a 
+
+mixed-methods focus-group design, structured around three research objectives: (RO1) to evaluate how generative AI tools impact students’ creativity in design-thinking processes and outcomes, (RO2) to assess whether these tools enhance inclusivity in learning processes, and (RO3) to examine how they develop students’ AI-handling skills with a view to boosting future employability. Findings indicate enhanced creative 
+
+fluency, broadened participation across diverse learner profiles, and strengthened confidence in AI -supported design processes. The study contributes evidence-based guidance for integrating generative-AI workflows into architectural pedagogy, 
+
+demonstrating how such tools can operationalise constructivist principles of learner-led meaning-making, support connectivist understandings of learning as participation in human-AI networks, and advance universal learning theories by promoting more 
+
+inclusive, flexible and accessible educational pract ices for contemporary learners. 1
+
+# 1. Introduction 
+
+The rapid advancement of generative artificial intelligence ( GenAI ) offers transformative 
+
+potential for architectural education, yet empirical studies on bespoke, discipline-
+
+specific tools remain limited. Much existing scholarship concentrates on generic 
+
+platforms, leaving a gap around custom AI systems aligned with arch itectural workflows 
+
+and studio cultures. By developing and evaluating tailored GenAI tools, recent work 
+
+addresses four recurring needs: robust technical development, demonstrable effects 
+
+on students’ creativity, contribution to inclusive learning environments, and cultivation of AI-handling skills linked to employability (Aly et al., 2025; Jin et al., 2024; Sadek & 
+
+Mohamed, 2023). 
+
+Generic AI platforms enhance accessibility but often lack architectural specificity and 
+
+contextual awareness (Aly et al., 2025). Bespoke systems trained on architectural 
+
+datasets and embedded within design workflows can support automated design 
+
+generation, targeted feedback and basic code-compliance checking (Aly et al., 2025; Jin 
+
+et al., 2024). Alamasi et al. (2026) offer ed controlled evidence from a supervised studio project in which GenAI integration improved performance relative to a control group, particularly in design form and aesthetics, with a 14% gain and associated 
+
+improvements in time efficiency and design quality. Their framework proposes graded 
+
+levels of GenAI use across design stages to preserve critical engagement. 
+
+Empirical studies suggest that generative AI can augment creativity and task efficiency when carefully integrated into studio pedagogy. Sadek & Mohamed (2023) showed that 
+
+students using AI-driven image-generation tools produced more innovative conceptual designs than those relying on traditional methods, while Jin et al. (2024) reported improved problem-solving and conceptual understanding in an AI-assisted course. Choo, Park & Hong’s (2025) two-year analysis of courses using Stable Diffusion 
+
+demonstrated that, as students combined generative tools with conventional software like Photoshop, Rhino, Revit and SketchUp, AI shifted from a peripheral visualiser to a central part of the creative process, strengthening understanding of architectural 
+
+workflows. Nonetheless, these studies highlight persistent challenges, including steep 
+
+learning curves, fragmented toolchains and unpredictable outputs, which point to the 
+
+need for scaffolded training and explicit studio protocols. 
+
+AI’s adaptive capabilities can personalise feedback and accommodate diverse learning 
+
+preferences, potentially reducing barriers for novices and students with different learning profiles (Melo -López et al., 2025). Generative tools help students with weaker drafting or visualisation skills articulate complex spatial ideas, democratising 
+
+participation (Aly et al., 2025; Paananen, Oppenlaender & Visuri, 2023). Huh, Miri & 
+
+Tracy’s (2025) exploratory study of architecture and interior architecture students reported strong enthusiasm for generative image tools in early-stage design, where they 2
+
+were perceived as boosting creative confidence and professional competitiveness. Yet 
+
+acceptance declined in later stages, where originality and critical judgement were seen as paramount, and participants stressed the importance of transparent acknowledgeme nt of AI use. These findings resonate with concerns that unequal 
+
+access to high-performance hardware and algorithmic bias may exacerbate rather than 
+
+alleviate inequities if not proactively managed (Melo -López et al., 2025). 
+
+Finally, the architecture, engineering and construction (AEC) sector’s growing reliance on AI foregrounds the importance of cultivating “AI-handling” competencies within architectural curricula. Jin et al. (2024) showed that structured exposure to AI workflows 
+
+develops conceptual and practical skills, while survey evidence indicates that nearly 70% of architecture students already use AI tools independently, despite more than 95% reporting no formal AI education (Dullinja & Jashanica, 2025). The recent “AI Report” from the Royal Institute of British Architects (RIBA, 2025) notes that over half of practices now integrate AI into projects. Taken together, these studies suggest that embedding AI literacy into design education is increasingly essential for employability, provided that pedagogic models also foreground ethics, inclusivity and critical 
+
+reflection. 
+
+It is within this landscape that the Gen-AI-tecture project situates itself, examining a bespoke, locally run generative-AI workflow designed to support creativity, inclusivity 
+
+and AI-handling skills in undergraduate architectural education. The developed tool enables students to rapidly generate and revise visualisations of interior spaces by describing their ideas in natural language and making targeted adjustments to existing images. Rather than replacing design thinking, the system acts as a visual co-pilot. That is, it helps students explore multiple alternatives, compare options, and refine aesthetic 
+
+and spatial decisions. In doing so, the developed tool lowers technical barriers to high-
+
+quality visual output while foregrounding reflection, iteration and critical judgement. 
+
+# 2. Methodology 
+
+# 2.1. Description of the developed tool and workflows 
+
+The Gen-AI-tecture intervention centres on a bespoke generative-AI image creation and 
+
+editing workflow designed specifically for architectural education. Technically, the 
+
+system is implemented as a localised ComfyUI workflow . ComfyUI (ComfyUI, 2025) is a node-based software application, in which AI models and operations are connected visually. From a user’s point of view, it functions as a relatively simple web-like environment in which students upload or select images, describe desired changes in natural language, and receive multiple visual alternatives in response. 
+
+The workflow is powered by the Flux 1 Kontext (dev) diffusion model (Black Forest Labs, 2025) , which has been fine -tuned with a curated set of interior-design images. In this 3
+
+context, fine -tuning refers to the process of “teaching” a general AI model a specialty (Fullan et al., 2018) - i.e., in this case, urban design imagery - using an add-on method called Low Rank Adaptation (LoRA) . LoRA works like a lightweight plug-in, as it adapts the base model to the specialty domain without retraining it from scratch (Luo et al. 
+
+2025). For the fine -tuning process, we used the InteriorNet dataset (Li et al., 2018), which includes 20 million interior shots so that our system is more adept at rendering room-scale spatial qualities, materials, lighting conditions and furniture arrangements 
+
+typical of residential interiors. As a result, the system can produce coherent bedroom 
+
+and living/dining room scenes with sufficient fidelity to support ea rly design discussions without claiming the status of resolved architectural drawings. 
+
+In practical use, the workflow has been designed to generate new images or edit user-provided images conditioned on text or visual input using “in-painting”, which is a 
+
+widespread AI technique that replaces content inside a selected region while preserving surrounding context (Zhang et al. 2023). As such, users load a photo of an interior setting (the base image ), brush over the area they want to change (the “ mask ”), and then instruct the AI model what to reconstruct in that masked area using text (the “prompt ”) or a reference image or both. The rest of the picture stays untouched; in this 
+
+way, scale, perspective, and context remain unmodified. The tool includes three modes to generate or edit interior imagery: 
+
+• Mode A – Text-driven . Through text instructions or prompts, the user generates new imagery or brushes a region to edit a given image. 
+
+• Mode B – Reference image-driven . Through providing an example image or render (for instance, of a particular furniture style or material palette) as a stylistic guide, the user drives the system to edit a region in a given image via masks or generate new imagery. 
+
+• Mode C – Hybrid . Through combining a textual description with a reference image, users can achieve more precise transfers of style or atmosphere to generate new images or edit regions of given ones. 
+
+Across all modes the system can generate several alternatives per run, making it possible to compare and iterate rapidly in a way akin to sketching on tracing paper. 
+
+Figures 1  and  2 contain diagrammatic presentations of the developed workflow s for 
+
+generating and editing images, respectively.  Figure 3  illustrates an example instance of 
+
+the workflow in the ComfyUI digital environment. 4
+
+Figure 1: Our workflow for generating new images using the developed tool 5   
+
+> Figure 2: Our workflow for editing images using the developed tool
+
+Pedagogically, the tool is aligned with constructivist principles and Universal Design for Learning (UDL). By allowing students to manipulate design ideas directly through visual experimentation and natural language, the system supports learning by doing and provides multiple means of representation and expression. It lowers technical barriers to high-quality visual output, particularly for students who may be less confident with conventional rendering software, while still requiring reflection, judgement a nd iteration in line with studio pedagogy. 6
+
+> Figure 3 : An example use of the developed tool in a ComfyUI digital environment
+
+# 2.2. Study design and ethics 
+
+The study adopts a focus-group based, mixed-methods design, explicitly structured to evaluate the educational impact of the Gen-AI-tecture tool on creativity, inclusivity and AI-handling skills relevant to employability. Two focus groups, each comprising 5-8 participants, are conducted with Level 3–5 students enrolled on architecture courses at 
+
+the University of Derby. The cohort thus reflects the actual teaching context in which the 
+
+tool is deployed. 
+
+Sampling is purposive and recruitment is carried out via email invitations and in-class announcements, with the aim of achieving diversity in academic level, international status, declared disability and gender, alongside variation in prior digital design familiarity (for example, experience with CAD or visualisation software). Inclusion criteria were current enrolment on a relevant programme, sufficient English language proficiency to participate in group discussion, and the ability to provide informed 
+
+consent. There are no exclusion criteria beyond inability to consent. 
+
+Each focus-group session is designed to last approximately 90 minutes and follows a stepwise structure: 
+
+a) Warm-up and consent (5–10 minutes) 
+
+Participants are welcomed and introduced to the aims of the project as a research-focused evaluation of a teaching innovation, separate from summative assessment. The participant information sheet is reviewed, covering procedures, voluntary participation, the right to withdraw, and audio recording. Written 7
+
+informed consent is collected before any data are generated. A brief ice-breaker invites each student to describe “one memorable digital tool you have used in your design process”, establishing rapport and surfacing baseline familiarity with digital media. 
+
+b) Main module – AI image tool exploration (60 minutes)  
+
+> o
+
+Showcase (10-15 minutes) 
+
+The facilitator (i.e., the academic researcher) demonstrates the Gen-AI-
+
+tecture workflow in real time, using example prompts (e.g. “Create three 
+
+interior design variations for a small living room in a typical UK semi-detached house” or “Generate an interior concept for a small building using Brutalist influences”) to illustrate the three modes ( A-C) and core functions.  
+
+> o
+
+Interactive prompting – individual work (45-50 minutes) 
+
+Students then undertake a two-phase design task using the tool, working individually at computer workstations but in a shared space where they can converse informally:  
+
+> 
+
+Phase A – Master bedroom (Create) 
+
+In Phase A, students design a master bedroom from scratch for a 
+
+fictional house. They are free to experiment with any interior style or atmosphere they wish, using Mode A (Text) to generate new 
+
+imagery. They are encouraged to iterate, compare multiple AI outputs, and refine their prompts. Towards the end of this phase, they are asked to identify two or three “Phase A final outputs” that 
+
+best represent their design intent.  
+
+> 
+
+Phase B – Living/dining room (Edit) 
+
+In Phase B, students are provided with CAD-based visualisations and photographs of the living/dining room of the same house. The brief is to adapt this second space so that it is either stylistically coherent with, or deliberately contrasted against, their Phase A 
+
+bedroom design. Here, students use Mode B (Reference Image) and/or Mode C (Text + Reference) to edit the provided images via 
+
+in-painting: they can, for example, transfer material palettes, lighting atmospheres or furniture typologies from their Phase A inspirations into the living/dining room, or apply new styling decisions while maintaining spatial consistency. This explicit linkage between Phase A (create) and Phase B (edit) is central to examining how the AI supports both open-ended ideation and context-sensitive refinement. 8
+
+c) Reflective discussion and usability (20 –25 minutes) 
+
+After the hands-on activity, the group engages in a semi-structured discussion focusing on (i) perceived impacts of the tool on the breadth, depth and originality of their design ideas (creativity); (ii) whether the tool made the design process feel more a ccessible or inclusive, particularly for those less confident in drawing, language or software; and (iii) how using the tool affected their confidence in 
+
+managing AI tools more broadly and their sense of preparedness for professional practice (employability). Participants complete the “Usability Evaluation” 
+
+questionnaire .
+
+d) Wrap-up and debrief (5 minutes) 
+
+To conclude, participants are invited to offer one or two suggestions for 
+
+improving the tool. A debrief reiterates the voluntary nature of participation, restates the timeline for withdrawing data, and provides contact details for the researcher, academic supervisor and relevant support services. 
+
+Ethically, the study operates under approved institutional protocols (University of Derby Engineering Ethics Committee, reference ETH2425-3722). Participation is strictly voluntary and unrelated to grading decisions. All audio recordings, prompt logs, image 
+
+outputs and questionnaires are stored on secure, password -protected University servers, accessible only to the research team. Data are pseudonymised using 
+
+participant codes; names and other direct identifiers are removed from transcripts and 
+
+reporting. AI-generated images used in dissemination are presented without personal 
+
+identifiers and are always labelled as “Conceptual Visualisation” to avoid confusion 
+
+with formal assessed work. The 90-minute session length and structure are designed to minimise fatigue, and the small-group format allows the facilitator to monitor well-being and provide support where needed. Collectively, these measures ensure that the study design is not only aligned with the Study Design document but also proportionate, ethically robust and pedagogically grounded. 
+
+# 2.3. Data collection methods and tools 
+
+Data was generated using two complementary methods: a post-session “Usability Evaluation” questionnaire administered individually to all participants and a semi-
+
+structured, reflexive group discussion conducted immediately after the hands-on activity. This mixed approach allowed the study to capture both standardised, comparable responses and richer, interactional accounts of students’ experiences with the AI tool. 
+
+The questionnaire ( Table 1 ) comprised eleven Likert-type items (1 = strongly disagree; 5 
+
+= strongly agree), grouped into three subscales aligned with the research objectives – 
+
+i.e., students’ creative skills and outcomes (RO1), inclusivity and equality (RO2), AI -handling skills and employability (RO3) – plus two global items on the overall usability of 9
+
+the session and the tool. These items provided a concise quantitative indication of 
+
+perceived impact across the three domains of interest.    
+
+> Table 1: A copy of the Usability Evaluation questionnaire administered to participants. Items are rated in an 1-5 Likert scale, with 1= Strongly disagree , 2=Disagree, 3= Neither agree nor disagree , 4=Agree, 5= Strongly
+> agree
+
+In parallel, a set of open-ended prompts ( Table 2 ) was used to guide the semi-
+
+structured, reflexive discussion, inviting participants to elaborate on how the AI workflow influenced their creativity, supported or constrained inclusive participation, 
+
+and shaped their sense of preparedness for AI-rich professional practice. These discussions were audio-recorded and transcribed verbatim to enable subsequent qualitative analysis. 10  
+
+> Table 2: E xample questions used in the reflexive, semi -structured discussion with focus groups
+
+# 3.4. Data analysis methods and tools 
+
+Data analysis followed a convergent mixed-methods strategy to examine how the 
+
+locallyrun GenAI workflow shaped design processes and appraisals across phases. All datasets (questionnaire responses, transcripts, prompt logs, masks and image 
+
+selections) were keyed by shared identifiers (participant/focus -group IDs, operation mode A/B/C, phase, generation index and room) to support triangulation and auditability. 11 
+
+Qualitative analysis was conducted in NVivo (Lumivero, version 15) using reflexive thematic analysis (i.e., familiarisation, coding, theme construction, review, definition 
+
+and reporting) following Braun and Clarke’s (2006) framework, with attention to patterns in how students narrated creativity, inclusivity and AI-handling skills. 
+
+Quantitative analysis was carried out in Python (Python, version 3.14), using the NumPy and Matplotlib libraries. For each questionnaire subscale we calculated descriptive statistics (means, standard deviations, frequencies and percentage distributions) and 
+
+visualised them using simple plots. 
+
+Finally, to explore convergent validity between questionnaire subscales and qualitative indices derived from the reflexive discussions, we computed Spearman’s 
+
+ρ rank-order correlations with Holm-adjusted p-values within families of related tests. For pairs without ties, 
+
+where, n : the number of paired observations being correlated (i.e. the sample size for that 
+
+specific correlation). 
+
+𝑖𝑖 : the index for each observation, running from 1to 𝑛𝑛 .
+
+𝑑𝑑 𝑖𝑖 : the difference between the two ranks for observation 𝑖𝑖 .
+
+# 3. Results 
+
+# 3.1. Sample characteristics and interaction with tool 
+
+Participants were drawn from Levels 3-5 and allocated to two focus groups (n = 8 per session ). The cohort thus reflected a spread of prior studio experience, with a slight 
+
+predominance of Level 4 students. Around one-third declared a disability, including almost one-fifth of the overall sample reporting a specific learning difficulty, and the 
+
+eth nic and gender composition was mixed. This configuration aligns with the project’s concern to probe inclusivity across diverse learner profiles rather than a narrowly defined subgroup.  Table 3  presents the study sample characteristics. 
+
+(1) 12    
+
+> Table 3: Sample characteristics (n = 16) . (*) e.g. dyslexia, ADHD (self -
+> reported). Percentages may not total 100% due to rounding.
+
+Log data show that students engaged intensively with the workflow in both focus 
+
+groups, producing around 80 images per session (approximately ten per student) within the planned 90-minute window. All three operation modes were used substantively, with a modest preference for text-only prompting (Mode A) but continued reliance on 
+
+reference-image and hybrid modes, indicating that participants combined verbal and visual strategies to steer the AI. Acceptance rates above 60% in both sessions suggest that most o utputs were considered valuable enough to retain for critique or further 
+
+iteration.  Table 4  outlines data from students’ interactions with the developed tool. 
+
+Figures 4  and  5 include examples of generated or edited images, which were produced 
+
+by student participants from both focus groups. 13 
+
+Table 4: Interaction with the GenAI tool by focus-group session. (*) Acceptance 
+
+rate = number of AI outputs that participants chose to keep, annotate or build on / total images generated in that session. 
+
+Figure 4 : An example output from focus groups. Student s were given an 
+
+image of an empty dining room (a), which they then edited using the developed tool (b). 14     
+
+> Figure 5 : An example output from focus groups. Student s generated an image of a living room (a), and then used it as a reference to transfer the interior style to a bedroom area (b).
+
+# 3.2. Objective-related findings 
+
+Questionnaire analysis ( Figure 6 ) across both sessions indicated consistently high 
+
+ratings on creativity-related items (A1-A3), with particularly strong endorsement for the tool as a stimulus for new ideas (A1 = 4.5) and experimentation (A2 = 4.2), and a slightly lower, but still positive, score for depth of exploration (A3 = 3.7). Inclusivity-oriented items (B1-B3) cluster around the upper-mid range (3.8-4.1), suggesting that students 
+
+generally experienced the workflow as supportive of participation, confidence and access, rather than exacerbating existing inequalities. AI -handling and process items (C1-C3) show a more differ entiated pattern: C1 and C2 remain positive (3.7 and 3.5), whereas C3 ( concerning confidence in transferring these skills beyond the studio ) is notably lower (2.6), pointing to residual uncertainty about external applicability. Overall, outcome items (O1-O2) sit in the high range (3.9 and 4.2), implying that students perceived the bespoke GenAI workflow as beneficial for their learning and as 
+
+contributing, at least in part, to their future employability. 15    
+
+> Figure 6: Questionnaire item-level mean scores across both focus-group sessions
+
+# 3.2.1. Creative skills and outcomes 
+
+The creative-skills questionnaire subscale ( Figure 6 ; A1-A3) showed some of the highest 
+
+scores, indicating that students generally felt the GenAI workflow enhanced idea 
+
+generation and design development. At participant level, the mean A-subscale score 
+
+correlated strongly with qualitative indices for “more ide as than usual” ( ρ = .76, p < .01) and “trying unfamiliar styles/materials” ( ρ = .71, p < .01), evidencing convergent validity 
+
+between questionnaire ratings and reflexive accounts. Students scoring highly on A1 frequently described expanded ideation: “norma lly I would stop after two or three 
+
+options, but with the AI I felt I could quickly push five or six quite different room layouts 
+
+before choosing one” (Participant 03/Group 1). By contrast, a lower-scoring student remarked that “It gave me some variations, but they were quite similar to what I already 
+
+had in mind” (P06/G2). 
+
+Higher A2 scores aligned with richer descriptions of stylistic experimentation; participants reported using the tool to “test atmospheres I do not usually draw, like very 
+
+dark, moody lighting or much richer textures” (P06/G1) or to “swap between quite 
+
+minimal and very layered interiors without re-modelling everything” (P05/G2), with a very strong correlation between A2 and the index “experimenting beyond usual repertoire” ( ρ = .79, p < .01). A3, concerning refinement of design decisions, was more 
+
+moderate (3.7) and thematically nuanced. Some students noted that “the AI helped me spot combinations I had not thought of, but I still had to decide what really works for the 
+
+brief” (P02/G1), while others felt that “Sometimes it refined things, other times it 16 
+
+distracted me with details that looked cool but did not fit the concept” (P08/G2). Still, A3 correlated strongly with references to “using AI images to justify or adjust final 
+
+choices” ( ρ = .64, p < .01). Overall, the convergent quantitative and qualitativ e evidence 
+
+suggests that the workflow most robustly expanded students’ creative search space, while supporting, though less uniformly, the refinement of final design decisions. 
+
+# 3.2.2. Inclusivity and equality 
+
+Questionnaire mean scores on the inclusivity subscale ( Figure 6 ; B1-B3) were 
+
+consistently high, indicating broadly positive perceptions of accessibility and equitable 
+
+participation. The mean B-subscale score correlated strongly with qualitative indices 
+
+for feeling the session was “approachable/welcoming” ( ρ = .74, p < .01) and for “keeping up regardless of prior AI use” ( ρ = .81, p < .001), evidencing clear convergent validity 
+
+between questionnaire ratings and reflexive narratives. 
+
+For B1, higher scores aligned with accounts of the workflow fitting students’ preferred 
+
+ways of working. As one participant observed, “ I liked that I could talk through ideas first, then use the prompts almost like annotations on my sketches rather than starting from a blank screen ” (P02/G1). Another contrasted the format with conventional crits: “Usually I feel a bit on the spot in crits, but here I could try things quietly, then only show the versions I was happy with ” (P04/G2). 
+
+B2 and B3, focused on equitable engagement and expression regardless of prior AI or drawing skills, also showed strong correlations with qualitative indices (ρ = .78 and ρ = .72, respectively, p < .01). Students with limited AI experience frequently report ed not feeling disadvantaged: “ I came in worried that people who already use Midjourney would dominate, but the way the steps were broken down meant I did not feel behind ”
+
+(P01/G1). Those less confident in drawing similarly described the tool as levelling: 
+
+“Normally my rough sketches do not look like what is in my head, but here the AI helped me show the idea without needing perfect linework ” (P02/G2), and “ It felt fairer because we were all editing photos rather than comparing who can render best ” (P07/G1). 
+
+Together, these convergent quantitative and qualitative signals suggest that the bespoke GenAI workflow operated as a modest equalising mechanism , cultivating a culture of inclusion in the classroom. 
+
+# 3.2.3. AI-handling skills and employability 
+
+Scores on the AI-handling and employability subscale ( Figure 6 ; C1-C3) were more 
+
+moderate than in other domains (C1 = 3.7; C2 = 3.5; C3 = 2.6), indicating increased 
+
+confidence in using the tool within the session but more hesitation about longer -term transfer and employment. The mean C-subscale score correlated strongly with a 
+
+qualitative index on “clearer step -by-step understanding of how to work with AI” ( ρ = 
+
+.71, p < .01), supporting convergent validity between ratings and reported procedural learning. 17 
+
+Higher C1 scores aligned with accounts of strengthened workflow literacy. As one participant reflected, “ Before today I just typed random prompts into whatever AI was available; now I feel I understand how to structure the prompt and tweak things instead of starting over each time ” (P04/G1). Another observed that “ Seeing the mask, prompt and seed together helped me think of the AI as another tool in the workflow, not a magic black box ” (P05/ G2), comments that were frequently co -coded with a “procedural 
+
+confi dence” index strongly associated with C1 ( ρ = .68, p < .01). 
+
+C2 and C3, focused on future usefulness and employability, were more cautious but 
+
+still positively associated with relevant qualitative indices. Higher C2 scores correlated 
+
+strongly with references to concrete professional scenarios ( ρ = .72, p < .01), such as “quick visuals for client meetings when you need to test alternative finishes on the spot ”(P06/G2) or “ mocking up options for retrofit projects without doing full 3D models straight away ” (P08/G1). The lower mean on C3 matched more tentative employability narratives, despite a strong correlation with an index on “awareness of employer expectations around AI” ( ρ = .63, p < .05). As one student noted, “ I can see this kind of tool becoming standard in offices, but I am not yet sure I could explain the technical side confidently in an interview ” (P03/G1), while another added, “ It makes me feel slightly more prepared, but I also realise how much more I would need to learn about data, ethics and settings before using it with real clients ” (P07/G2). 
+
+Overall, the convergent quantitative and qualitative evidence suggests that the session 
+
+positively contributed to immediate AI-handling skills and prompted reflection on AI -
+
+related employability, while also making visible perceived gaps that would require more sustained, curriculum-level provision. 
+
+# 4. Discussion 
+
+Our findings suggest that the bespoke, locally run GenAI workflow functions as a 
+
+constructionist “ microworld ” for architectural ideation rather than as a mere image generator. Strong correlations between the creative-process subscales and the 
+
+qualitative indices of divergent exploration, iterative refinement and risk -taking in the 
+
+reflexive discussions indicate that students who rated the tool as enhancing their 
+
+creativity were also those who, in practice, used it to branch, recombine and challenge initial design ideas. This resonates with Papert’s notion of digital artefacts as “ objects -to-think -with ” and subsequent work on AI -rich microworlds, where learning is evidenced by cycles of making, inspecting and remaking rather than by converging on a single “correct” outcome (Papert, 1980; Kahn and Winters, 2021). In line with art-education studies where GenAI images become stimuli for critical and experiential learning (Pavlik and Pavlik, 2024; Bian et al., 2025), participants in this study consistently described AI-edited images as provocations that “opened up” unforeseen 
+
+options, especially when switching between the different masking modes. The present 18 
+
+findings extend this line of work into architectural pedagogy by showing that a spatially 
+
+constrained, context-preserving in-painting workflow can sustain constructionist cycles 
+
+of experimentation at the scale of streets, interiors and public spaces, while remaining 
+
+legible as a design process rather than as opaque automation. In this sense, the tool 
+
+aligns with constructivist conceptions of AI as a cognitive artefact that supports active knowledge construction and design reasoning (Gibson et al., 2023; Guo , Yi and Liu, 
+
+2024; Gibson and Ifenthaler, 2024). 
+
+At the same time, the data point towards a distinctly socio-constructivist reading of 
+
+students’ creative engagement with the system. Reflexive accounts indicated that the AI 
+
+often acted as a “ more knowledgeable other ” that suggested plausible yet negotiable alternatives; prompting students to articulate constraints, precedents and values more 
+
+explicitly, particularly among those who initially reported lower confidence in drawing or 
+
+visualisation. This pattern, again supported by strong positive correlations between 
+
+perceived creative support and coded episodes of explanation, justification and self -
+
+correction, echoes recent work on GenAI as a scaffold within Vygotskian frameworks, 
+
+extending learners’ zones of proximal development when its outputs are interrogated 
+
+rather than accepted uncritically (Tran et al., 2025; Sánchez Muñoz et al., 2025). The workflow thereby operates as a cognitive mediator that elicits metacognitive talk about 
+
+design moves and trade-offs, in a way that parallels socratic AI tutors in text-based 
+
+domains (Degen and Asanov, 2025) and inquiry -oriented uses of GenAI in other 
+
+disciplines (Moundridou, Matzakos and Doukakis, 2024; Kotsis, 2024). Crucially, the 
+
+locally run, human-in-the-loop configuration observed here appears to preserve learn er agency; students framed the AI as a fast, suggestive collaborator rather than a judge, 
+
+and instances where AI outputs risked narrowing exploration were typically identified 
+
+and problematised in group discussion. In this respect, the study contributes an empirically grounded example of how a domain-specific GenAI tool can operationalise 
+
+human-centred, constructivist principles in studio-based architectural education (Anastasiades et al., 2024; Ouyang and Jiao, 2021; Owen, 2025), demonstrating that 
+
+quantit ative gains in perceived creativity are intertwined with richer dialogic and 
+
+reflective practices around design. 
+
+Results of this study suggest that the developed tool acted as a concrete instantiation of Universal Design for Learning (UDL) principles within an architectural context. Throughout the study, participants expressed increased confidence to share work, perceived “levelling of the playing field”, and reduced anxiety in crit -type situations. This is closely aligned with UDL’s emphasis on multiple means of representation, 
+
+engagement and action/expression (Meyer, Rose and Gordon, 2014) and with recent arguments that AI can operationalise UDL by diversifying media and pacing while supporting learner autonomy (Saborío-Taylor and Rojas-Ramírez, 2024; Hyatt and Owen, 2024). In our case, the combination of masked editing, text prompts and reference imagery provided alternative routes into spatial thinking for students who 19 
+
+reported difficulties with freehand drawing, technical English or traditional orthographic 
+
+representation, echoing accounts of AI as an assistive UDL-aligned technology for disabled and neurodivergent learners (Ayala, 2024; Pack, 2024). Importantly, students 
+
+did not describe the workflow as a bolt -on accommodation but as part of the “normal” design process, which resonates with UDL’s proactive, whole-cohort framing and with work on digital technologies as enablers of inclusive design when deliberately aligned 
+
+with UDL checkpoints rather than retrofitted after the fact (Veytia Bucheli et al., 2024; Meyer, Rose and Gordon, 2014). In this sense, the study extends largely text -focused AI-
+
+UDL research into the visual and spatial domain, demonstrating that a locally run, fine -
+
+tuned image workflow can support inclusive participation in design ideation by lowering representational and affective barriers while maintaining students’ authorship o ver design intent. 
+
+In contrast to strands of the inclusive-education literature that warn AI may exacerbate 
+
+existing inequities when layered onto already stratified classrooms (Melo -López et al., 2025; Gupta and Kaul, 2024; Pagliara, 2024), our data suggest that a carefully 
+
+scaffolded, locally controlled GenAI workflow, embedded within a UDL -informed session design, can enable students to “keep up” irrespective of prior AI or drawing 
+
+experience. This finding complements work on AI -based education tools as enablers of inclusive education (Šumak et al., 2024; Temirov et al., 2025) by providing fine -grained evidence from an architectural studio that students who entered the session worried about AI or their visual skills did not report feeling disadvantaged and, in many cases, 
+
+explicitly characterised the format as more equitable bec ause it focused on shared photo-editing tasks rather than on comparative rendering ability. In doing so, the project 
+
+offers a practice -based illustration of how inclusion-oriented AI design - attentive to access, representation and learner citizenship (Dieterle, Dede and Walker, 2022; Roshanaei, 2024) - can translate into experienced inclusion at the level of concrete 
+
+design tasks, thereby enriching largely conceptual policy debates on AI, equity and 
+
+participation in higher education (Varsik and Vosberg, 2024). 
+
+Our findings indicate that students’ developing AI-handling skills were closely bound up with their capacity to build, navigate and critically manage learning networks, in a manner that is well captured by connectivist theory. Specifically, it was reported that 
+
+students were not simply “using a feature” but actively orchestrating connections 
+
+between the GenAI workflow, their own design ideas, peer feedback and external 
+
+precedents. This resonates with Siemens’ (2005) and Downes’ (2022) view of learning as th e ongoing configuration of networks linking human and non -human nodes, where knowledge resides partly in “appliances” and learning involves pattern recognition and decision-making across those networks. Students’ reflexive descriptions of moving 
+
+iteratively between sketches, textual prompts, masked edits and ensuing AI variants align with the kind of connectivist “meta-skills” highlighted by Mukhlis et al. (2024), 
+
+filtering, evaluating and curating information flows in the digital age. In this sense, the 20 
+
+bespoke, locally run GenAI workflow functioned as an interaction agent within students’ personal learning environments rather than an opaque tutor, foregrounding what 
+
+Downes (2022) later calls personal rather than merely personalised learning, and echoing reports from other higher education contexts in which GenAI models are experienced as one node in a wider ecology of lectures, labs, peers and online sources (Gottipati, Shim and Shankararaman, 2023; De Silva et al., 2025). 
+
+Quantitative and qualitative signals around perceived employability likely interpret AI-handling skills as precisely the kind of connectivist competencies that contemporary practice in architecture and the built environment is likely to demand. The developed 
+
+workflow provided students with concrete strategies for integrating AI techniques into broader professional processes, rather than treating GenAI as a stand-alone shortcut. For example, using the masking and in-painting modes to probe design opportunity spaces, exploiting its rapid iteration cycles to test variations, and drawing on its traceable outputs to cross-check AI suggestions against professional standards and anticipated team input. This pattern parallels conceptual work in other domains that frames generative AI as an “interaction facilitator” and “interaction agent” in networked 
+
+learning and professional ecosystems (Liang and Bai, 2025; Yu, 2025), and aligns with 
+
+reviews arguing that employability in AI-saturated fields increasingly depends on the ability to orchestrate human-AI networks rather than to master isolated tools (Topham et al., 2025). Within a connectivist lens, the study thus contributes fine -grained evidence that a domain-specific GenAI workflow, embedded in a studio setting, can 
+
+foster students’ capacity to construct and manage meaningful connections between AI outputs, disciplinary knowledge and collaborative practices. Rather than undermining expertise, the locally controlled, human-in-the-loop configuration appears to have 
+
+enabled students to rehearse the connective, evaluative and ethical judgements that underpin both connectivist learning and future-facing professional practice. 
+
+This study has several limitations that should be acknowledged and that point towards directions for future work. First, the focus-group-based, mixed-methods design was implemented with a relatively small, purposively sampled cohort of Level 3-5 students from a single UK institution, which constrains statistical power and limits the 
+
+transferability of the findings to other programmes, disciplines and institutional 
+
+contexts. Second, the evaluation captured only a single 90-minute exposure to the Gen-AI-tectu re workflow and relied primarily on self -report questionnaires and reflexive 
+
+group discussion. As such, the durability of perceived gains in creativity, inclusivity and AI-handling skills, and their relationship to objective performance indicators (e.g. 
+
+assessed work, studio grades, portfolio quality) remain uncertain. Third, the bespoke workflow was fine -tuned for residential interior scenarios and deployed within a 
+
+carefully scaffolded session, which may not straightforwardly generalise to other design 
+
+typologies, levels of complexity or less supported studio environments. 21 
+
+Future research should therefore extend this work through larger, multi-cohort and multi-institutional studies; include comparison conditions using generic GenAI tools and non-AI teaching formats; and embed the workflow longitudinally across modules to 
+
+examine its impact on assessment outcomes, portfolio development, progression and retention. Longitudinal designs that follow students into placement or early professional practice would allow closer examination of how AI-handling skills rehearsed in the studio translate into employability. Additionally, co-designing further iterations of both the tool and the learning activities with disabled, neurodivergent and otherwise under-represented students, as well as with industry partners, and 
+
+undertaking more fine -grained analysis of prompt logs and image trajectories, could 
+
+deepen understanding of inclusivity, support iterative refinement of the workflow, and 
+
+yield richer insights into evolving design strategies over time. 
+
+# References 
+
+Alamasi, R., Asfour, O.S. and Ashmeel, R. (2026) ‘The impact of generative AI on architectural design education: insights from hands-on experience with architecture students’, Ain Shams Engineering Journal , 17(1), 103879. https://doi.org/10.1016/j.asej.2025.103879 
+
+Aly, A., Elazazy, A. and Sharaf, N. (2025) ‘Integrating generative AI in architectural education: a comparative study of traditional, stock LLMs, and custom tools’, in 
+
+Proceedings of the 20th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications (VISIGRAPP 2025) , pp. 415–420. 
+
+https://doi.org/10.5220/0013378000003912 
+
+Anastasiades, P., Kotsidis, K., Stratikopoulos, K. & Pananakakis, N. (2024) ‘Human -
+
+Centered Artificial Intelligence in Education: The critical role of the educational 
+
+community and the necessity of building a holistic pedagogical framework for the use of HCAI in education sector’, Open Education: The Journal for Open and Distance Education and Educational Technology , 20(1). doi:10.12681/jode.36612 
+
+Ayala, S. (2024) ‘ChatGPT as a Universal Design for Learning Tool: Supporting College Students with Disabilities’, Educational (Re)naissance , 12(1), pp. 23–41 
+
+Black Forest Labs (2025). Flux 1 Kontext Dev Model . Retrieved from 
+
+https://huggingface.co/black-forest-labs/FLUX.1-dev 
+
+Bian, C. et al. (2025) ‘Effects of AI -generated images in visual art education on student creativity and learning’, Humanities and Social Sciences Communications , article 58, 60–2. 
+
+Choo, S.-Y., Park, J. -H. and Hong, S.-W. (2025) ‘Consideration on Adopting Generative AI in Architectural Design Education-Focusing on the Analysis of Practical Courses in 22 
+
+Architecture Utilizing Stable Diffusion ’, Journal of the Architectural Institute of Korea ,41(9), pp. 57–68.  https://doi.org/10.5659/JAIK.2025.41.9.57 
+
+ComfyUI (2025). ComfyUI . Retrieved from 
+
+https://github.com/comfyanonymous/ComfyUI  .
+
+Degen, P-B. & Asanov, I. (2025) ‘Beyond Automation: Socratic AI, Epistemic Agency, and 
+
+the Implications of the Emergence of Orchestrated Multi -Agent Learning Architectures’, 
+
+arXiv preprint arXiv:2508.05116. 
+
+De Silva, G.H.B.A. et al. (2025) ‘ChatGPT in higher education: A review of its impact on student research’, Journal of Business and Technology , 9(5), pp. 129–138. 
+
+Dieterle, E., Dede, C. and Walker, M. (2022) ‘The cyclical ethical effects of using artificial 
+
+intelligence in education’, AI & Society , 39, pp. 633–643. 
+
+Downes, S. (2022) ‘Connectivism’, Asian Journal of Distance Education , 17(1), pp. 1–6. 
+
+Dullinja, E. and Jashanica, K. (2025) ‘Examining the knowledge level and opinions of 
+
+architecture students about artificial intelligence’, Social Sciences & Humanities Open ,12, 101720.  https://doi.org/10.1016/j.ssaho.2025.101720 
+
+Fullan, M., Quinn, J. and McEachen, J., (2018). Deep learning: engage the world change the world . Thousand Oaks, CA: Corwin/SAGE. ISBN 978 -1-5443-6137-6. 
+
+Gibson, D. Kovanovic, V., Ifenthaler, D., Dexter, S., Feng, S. (2023) ‘Learning theories for 
+
+artificial intelligence promoting learning processes’, British Journal of Educational Technology , 54, pp. 1125–1146.  https://doi.org/10.1111/bjet.13341  .
+
+Gibson, D.C. & Ifenthaler, D. (eds.) (2024) Computational Learning Theories: Models for Artificial Intelligence Promoting Learning Processes . Cham: Springer. 
+
+Gottipati, S., Shim, K.J. and Shankararaman, V. (2023) ‘AI for Connectivism Learning – Undergraduate Students’ Experiences of ChatGPT in Advanced Programming Courses’, in Proceedings of the 29th Americas Conference on Information Systems (AMCIS 2023) .Panama City: Association for Information Systems. 
+
+Guo, H., Yi, W. & Liu, K. (2024) ‘Enhancing constructivist learning: The role of generative 
+
+AI in personalised learning experiences’, in Filipe, J. et al. (eds.) Proceedings of the 26th International Conference on Enterprise Information Systems (ICEIS 2024) . Angers: SciTePress, vol. 1, pp. 767–770. doi:10.5220/0012688700003690 
+
+Gupta, M. and Kaul, S. (2024) ‘AI in Inclusive Education: A Systematic Review of 
+
+Opportunities and Challenges in the Indian Context’, MIER Journal of Educational 
+
+Studies, Trends and Practices , 14(2), pp. 429–461. 23 
+
+Huh, M.B., Miri, M. and Tracy, T. (2025) ‘Students’ perceptions of generative AI image 
+
+tools in design education: insights from architectural education’, Education Sciences ,15(9), 1160.  https://doi.org/10.3390/educsci15091160 
+
+Hyatt, S.E. and Owenz, M.B. (2024) ‘Using Universal Design for Learning and Artificial 
+
+Intelligence to Support Students with Disabilities’, College Teaching , pp. 1–8 
+
+Jin, S., Tu, H., Li, J., Fang, Y., Qu, Z., Xu, F. et al. (2024) ‘Enhancing architectural 
+
+education through artificial intelligence: a case study of an AI -assisted architectural programming and design course’, Buildings , 14(6), 1613. 
+
+https://doi.org/10.3390/buildings14061613 
+
+Kahn, K. & Winters, N. (2021) ‘Constructionism and AI: A history and possible futures’, 
+
+British Journal of Educational Technology , 52(3), pp. 1130–1142. doi:10.1111/bjet.13088. 
+
+Kotsis, K.T. (2024) ‘Integrating ChatGPT into the inquiry -based science curriculum for primary education’, European Journal of Education and Pedagogy , 5(6), pp. 28–34. doi:10.24018/ejedu.2024.5.6.891. 
+
+Li, W., Saeedi, S., McCormac, J., Clark, R., Tzoumanikas, D., Ye, Q., Huang, Y., Tang, R. 
+
+and Leutenegger, S., (2018) . InteriorNet: mega -scale multi-sensor photo-realistic indoor scenes dataset. arXiv preprint arXiv:1809.00716. 
+
+Liang, E.S. and Bai, S. (2025) ‘Generative AI and the future of connectivist learning in higher education’, Journal of Asian Public Policy , 18(2), pp. 329–351. 
+
+Lumivero. (2024). NVivo (Version 15) [Software].  https://lumivero.com/products/nvivo/ 
+
+Luo, J., Zhao, M. and Zhang, H., (2025). Low-rank adaptation for parameter-efficient fine -tuning in composed image retrieval. In: Proceedings of the 2025 International Conference on Multimedia Retrieval (ICMR ’25) . Association for Computing Machinery, 
+
+pp. 963–971. doi:10.1145/3731715.3733377. 
+
+Melo -López, V.-A., Basantes-Andrade, A.V., Gudiño -Mejía, C. -B. and Hernández-
+
+Martínez, E. (2025) ‘The impact of artificial intelligence on inclusive education: a 
+
+systematic review’, Education Sciences , 15(5), 539. 
+
+https://doi.org/10.3390/educsci15050539 
+
+Meyer, A., Rose, D.H. and Gordon, D. (2014) Universal Design for Learning: Theory and 
+
+Practice . Wakefield, MA: CAST 
+
+Moundridou, M., Matzakos, N. & Doukakis, S. (2024) ‘Generative AI tools as educators’ assistants: Designing and implementing inquiry -based lesson plans’, Computers and 
+
+Education: Artificial Intelligence , 7, 100277. doi:10.1016/j.caeai.2024.100277. 24 
+
+Mukhlis, H. et al. (2024) ‘Connectivism and digital age education: Insights, challenges, 
+
+and future directions’, Kasetsart Journal of Social Sciences , 45, pp. 803–814. 
+
+Ouyang, F. & Jiao, P. (2021) ‘Artificial intelligence in education: The three paradigms’, 
+
+Computers and Education: Artificial Intelligence , 2.  ScienceDirect+1 
+
+Owen, A. (2025) ‘The role of generative AI in shifting the paradigm of constructivist learning models’, preprint available via ResearchGate. 
+
+Paananen, V., Oppenlaender, J. and Visuri, A. (2024) ‘Using text-to-image generation for architectural design ideation’, International Journal of Architectural Computing , 22(3), pp. 458–474.  https://doi.org/10.1177/14780771231222783 
+
+Pack, J. (2024) ‘Using AI to Enhance Universal Design for Learning’, Edutopia , 1 April. 
+
+Pagliara, S.M. (2024) ‘The Integration of Artificial Intelligence in Inclusive Education: A 
+
+Scoping Review’, Preprints. 
+
+Papert, S. (1980) Mindstorms: Children, Computers, and Powerful Ideas . New York: 
+
+Basic Books. 
+
+Pavlik, J.V. & Pavlik, O.M. (2024) ‘Art education and generative AI: An exploratory study in 
+
+constructivist learning and visualization automation for the classroom’, Creative Education , 15(4), pp. 601–616. doi:10.4236/ce.2024.154037. 
+
+Python. (2025). Python (Version 3.14). [Software].  https://www.python.org/ 
+
+Roshanaei, M. (2024) ‘Towards Best Practices for Mitigating Artificial Intelligence Implicit Bias in Shaping Diversity, Inclusion and Equity in Higher Education’, Education 
+
+and Information Technologies , 29, pp. 18959–18984. 
+
+Royal Institute of British Architects (RIBA) (2025) RIBA AI report 2025 . London: Royal Institute of British Architects. 
+
+Saborío-Taylor, S. and Rojas-Ramírez, F. (2024) ‘Universal Design for Learning and 
+
+Artificial Intelligence in the Digital Era: Fostering Inclusion and Autonomous Learning’, 
+
+International Journal of Professional Development, Learners and Learning , 6(2), ep2408. 
+
+Sánchez Muñoz, J.A. et al. (2025) ‘GenAI as a cognitive mediator: A critical -
+
+constructivist inquiry into computational thinking in pre -university education’, Frontiers in Education , 10, 1597249. doi:10.3389/feduc.2025.1597249. 
+
+Sadek, M.R. and Mohamed, N.A.G. (2023) ‘Artificial intelligence as a pedagogical tool for 
+
+architectural education: what does the empirical evidence tell us?’, MSA Engineering 
+
+Journal , 2(2), pp. 133–148.  https://doi.org/10.21608/msaeng.2023.291867 
+
+Siemens, G. (2005) ‘Connectivism: A learning theory for the digital age’, International Journal of Instructional Technology and Distance Learning , 2(1). 25 
+
+Šumak, B. et al. (2024) ‘AI-Based Education Tools for Enabling Inclusive Education: 
+
+Challenges and Benefits’, in 2024 47th MIPRO ICT and Electronics Convention (MIPRO) ,pp. 472–477. 
+
+Temirov, K., Kapanova, D., Kariyeva, K., Jakina, A. and Kopeyev, Z. (2025) ‘Educational AI Tools for Ensuring Inclusive Education’, International Journal of Innovative Research and Scientific Studies , 8(5), pp. 408–416. 
+
+Topham, L. et al. (2025) ‘Artificial intelligence in educational technology: A systematic 
+
+review of datasets and applications’, ACM Computing Surveys , 58(3), Article 82. 
+
+Tran, M. et al. (2025) ‘Generative artificial intelligence: The “more knowledgeable other” 
+
+in a social constructivist framework of medical education’, npj Digital Medicine , 8, 430. doi:10.1038/s41746-025-01823-8. 
+
+Varsik, S. and Vosberg, L. (2024) The Potential Impact of Artificial Intelligence on Equity and Inclusion in Education . OECD Artificial Intelligence Papers, No. 23. Paris: OECD 
+
+Publishing. 
+
+Veytia Bucheli, M.G., Gómez -Galán, J., Cáceres Mesa, M.L. (2024) Digital technologies as enablers of universal design for learning: higher education students' perceptions in the context of SDG4. Discov Sustain 5, 473 (2024).  https://doi.org/10.1007/s43621-024-
+
+00699-0 
+
+Yu, G. (2025) ‘Toward understanding the role of generative AI in entrepreneurship 
+
+education: A conceptual framework’, Teaching and Teacher Education: Leadership and Professional Development (in press).

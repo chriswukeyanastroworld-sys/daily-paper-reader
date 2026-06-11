@@ -1,0 +1,432 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-11T08:46:39.880603+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 7,
+    "quick_skim_target": 11,
+    "quick_selected": 7
+  },
+  "deep_dive": [
+    {
+      "id": "biorxiv-10-64898-2026-06-03-729873-v1",
+      "source": "biorxiv",
+      "title": "Differentiation of Bacterial, Fungal, and Algal Communities on Coastal Concrete Versus Drainage Pipes and the Coexistence of Corrosion and Healing Potentials",
+      "abstract": "Coastal concrete structures and drainage pipes are prone to microbially influenced deterioration. However, differences in microbial communities and their corrosion/healing potentials between these habitats remain unclear. Here, we compared bacterial(16S), fungal (ITS) and algal(18S) communities on coastal concrete(C) and drainage pipe(P) surfaces. Fungal and algal -diversity were significantly higher in P than in C, while bacterial diversity did not differ. {beta}-Diversity strongly separated bacterial and algal communities between habitats, but not fungi. A shared core \"seed bank\" of 575 bacterial, 520 fungal and 40 algal ASVs was identified. Students t-test revealed that P enriched oligotrophic degraders (Sphingomonas) and acid-producing fungi (Arxiella, Bisifusarium), whereas C selected for halotolerant EPS-producing bacteria (Tunicatimonas, Muricauda) and the extremotolerant alga Coelastrella. db-RDA linked these differences to salinity, NH4+-N, NO3--N, and COD. Functional prediction indicated a shift from metabolism pathways in C to signaling in P. Co-occurrence networks revealed cross-kingdom competition and within-kingdom cooperation, especially among algae. Importantly, both habitats harbored microorganisms with documented corrosion and healing potentials, but under natural conditions, net deterioration dominated, microbial healing is hardly to counteract the negative effects. This study provides a functional taxonomic framework for understanding and managing concrete microbiomes in coastal and sewer infrastructure.\n\nImportanceConcrete is the most widely used construction material, and its deterioration in coastal and sewer environments poses significant economic and safety challenges. Microorganisms play a dual role in concrete durability -- they can both corrode and heal concrete, but the net outcome under natural conditions is poorly understood. Most studies have focused on bacteria alone, overlooking the contributions of fungi and algae, and few reports on the of coastal concrete which also exist the microbially influenced concrete corrosion (MICC) similar to sewer. Here, we simultaneously analyzed all three microbial kingdoms on coastal concrete and drainage pipes. We found that while concrete surfaces harbor a diverse \"seed bank\" of microorganisms potentially involved in both corrosion and healing, under natural conditions, net deterioration dominated, indicating microbial healing is hard to counteract the negative effects from the environment and microbial. Our work provides a functional framework to guide the development of microbiome-based strategies for enhancing concrete durability, such as activating rare healing taxa in drainage pipes or selecting for endogenous healers in marine environments.",
+      "authors": [
+        "Yao, S.",
+        "Zhao, M.",
+        "Xiang, J.",
+        "Liao, X.",
+        "Jiang, Q.",
+        "Sun, C.",
+        "Wang, Y."
+      ],
+      "primary_category": "microbiology",
+      "categories": [
+        "microbiology"
+      ],
+      "published": "2026-06-03T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.03.729873v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "microbial community analysis on coastal concrete revealing corrosion and healing potentials for bioreceptive applications",
+      "llm_evidence_cn": "沿海混凝土微生物群落分析揭示腐蚀与愈合潜力，适用于生物容受性应用",
+      "llm_evidence": "沿海混凝土微生物群落分析揭示腐蚀与愈合潜力，适用于生物容受性应用",
+      "canonical_evidence": "沿海混凝土微生物群落分析揭示腐蚀与愈合潜力，适用于生物容受性应用",
+      "llm_tldr_en": "This study compares microbial communities on coastal concrete and drainage pipes, finding a shared core microbiome and coexisting corrosion and healing potentials, informing bioreceptive concrete design for marine restoration.",
+      "llm_tldr_cn": "该研究对比了沿海混凝土与排水管表面的细菌、真菌和藻类群落，发现二者共享核心微生物库，且同时存在腐蚀与愈合潜力，为设计用于海洋生态修复的生物容受性混凝土提供了微生物生态学依据。",
+      "llm_tldr": "该研究对比了沿海混凝土与排水管表面的细菌、真菌和藻类群落，发现二者共享核心微生物库，且同时存在腐蚀与愈合潜力，为设计用于海洋生态修复的生物容受性混凝土提供了微生物生态学依据。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30706v2",
+      "source": "arxiv",
+      "title": "Relational Aesthesis in Permacomputing Practice: Building a Solar Powered Website from Reclaimed Materials",
+      "abstract": "Permacomputing is a nascent concept and community of practice concerned with developing alternative computing systems grounded in principles of resilience, reuse, sufficiency, and ecological limits. However, research engaging with permacomputing remains in an early stage of development, raising concerns about whether permacomputing can move beyond reflective critique to become a meaningful alternative practice. Through a research-through-design case study, we documented our experience moving a personal website from a data centre in Texas to a self-hosted solar-powered server built from reclaimed electronics. Guided by permacomputing principles and relational aesthesis, we explore what it takes for permacomputing to reconfigure material and perceptual relations. Our findings reveal the frictions of moving away from a maximalist techno-aesthetic while attempting to re-use already existing technologies, potential ways to overcome these challenges through building a community of practice, and the transformative potential of visibilizing and visceralizing digital infrastructures to cultivate more responsible ways of relating to technology. This paper contributes to emerging research on permacomputing and its aesthetics by bringing it into dialogue with theories of non-place and relational aesthesis. Rather than functioning as a purely symbolic gesture, permacomputing practices can cultivate greater collective autonomy, agency, and responsibility in how communities engage and create meaning within digital infrastructures. In the context of socio-ecological crises and anti-colonial transformation, our research offers a situated approach to building and relating to computing technologies in the ashes of dominant technological paradigms.",
+      "authors": [
+        "Nadia Mariyan Smith",
+        "Nils Bonfils",
+        "Han Qiao",
+        "Christoph Becker"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC"
+      ],
+      "published": "2026-05-29T00:57:18+00:00",
+      "link": "https://arxiv.org/pdf/2605.30706v2",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "permacomputing practice with reclaimed materials, embodying regenerative design principles of resilience and ecological limits",
+      "llm_evidence_cn": "基于回收材料的永续计算实践，体现再生设计的韧性和生态极限原则",
+      "llm_evidence": "基于回收材料的永续计算实践，体现再生设计的韧性和生态极限原则",
+      "canonical_evidence": "基于回收材料的永续计算实践，体现再生设计的韧性和生态极限原则",
+      "llm_tldr_en": "This research-through-design case study documents building a solar-powered website from reclaimed electronics, guided by permacomputing and relational aesthesis, to explore alternative computing within ecological limits.",
+      "llm_tldr_cn": "该研究通过设计研究案例，记录将个人网站从数据中心迁移至自建太阳能服务器（使用回收电子元件）的过程，在永续计算和关系美学指导下，探索在生态界限内构建再生型计算系统的实践路径。",
+      "llm_tldr": "该研究通过设计研究案例，记录将个人网站从数据中心迁移至自建太阳能服务器（使用回收电子元件）的过程，在永续计算和关系美学指导下，探索在生态界限内构建再生型计算系统的实践路径。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Regenerative design principles for ecological engineering",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-05-29-728589-v1",
+      "source": "biorxiv",
+      "title": "Hierarchical spatial organization stabilizes algal-fungal living materials and enables sustained carbon fixation",
+      "abstract": "Engineering stable multicellular living materials remains difficult because distinct partners require incompatible local microenvironments, while sustained cooperation depends on integration across multiple spatial scales. Here we show that hierarchical spatial organization stabilizes algal-fungal living materials and enables sustained carbon fixation. Compartmentalized seed-seedcase units create partner compatible local niches for Chlorella vulgaris and Pleurotus ostreatus, while fungal outgrowth bridges neighboring units into an integrated artificial lichen. This transition converts localized coexistence into a mechanically coherent assembly that sustains net CO2 drawdown together with O2 production in closed systems and restores carbon fixation activity after repeated CO2 replenishment. A printable formulation further enables macroscopic architecture with enhanced volumetric carbon-fixation performance. Transcriptomics reveals division of labor between algal carbon fixation and fungal redox and matrix support functions, whereas perturbation assays demonstrate functional robustness. These results establish hierarchical spatial organization as a design principle for stable cooperative living materials.\n\nTeaserProgrammable algal-fungal assemblies turn spatial design into durable carbon capture.",
+      "authors": [
+        "jie, W. y.",
+        "chi, H.",
+        "jiao, L. j.",
+        "peng, C.",
+        "xi, Z.",
+        "xiang, Y. z.",
+        "Yu, Z."
+      ],
+      "primary_category": "bioengineering",
+      "categories": [
+        "bioengineering"
+      ],
+      "published": "2026-05-29T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.05.29.728589v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Hierarchical spatial design creates stable living materials for carbon fixation, embodying regenerative ecological engineering",
+      "llm_evidence_cn": "分层空间设计创建稳定活体材料用于碳固定，体现再生生态工程",
+      "llm_evidence": "分层空间设计创建稳定活体材料用于碳固定，体现再生生态工程",
+      "canonical_evidence": "分层空间设计创建稳定活体材料用于碳固定，体现再生生态工程",
+      "llm_tldr_en": "This work engineers stable algal-fungal living materials via hierarchical spatial organization, overcoming incompatibility between partners. The compartmentalized approach enables sustained CO2 drawdown and O2 production, demonstrating a regenerative material system for ecological engineering.",
+      "llm_tldr_cn": "该工作通过分层空间组织设计稳定的藻-真菌活体材料，解决了伙伴间的不相容问题。分离式单元与真菌桥接形成整合人工地衣，实现持续净二氧化碳吸收和氧气释放，为生态工程提供了一种再生材料系统。",
+      "llm_tldr": "该工作通过分层空间组织设计稳定的藻-真菌活体材料，解决了伙伴间的不相容问题。分离式单元与真菌桥接形成整合人工地衣，实现持续净二氧化碳吸收和氧气释放，为生态工程提供了一种再生材料系统。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Regenerative design principles for ecological engineering",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.21361v1",
+      "source": "arxiv",
+      "title": "Gen-AI-tecture: using generative AI to support architectural students in design tasks",
+      "abstract": "The \"Gen-AI-tecture\" project embeds a locally executed, discipline-specific tool into a mixed-methods focus-group design, structured around three research objectives: (a) to evaluate how generative AI tools impact students' creativity in design-thinking processes and outcomes, (b) to assess whether these tools enhance inclusivity in learning processes, and (c) to examine how they develop students' AI-handling skills with a view to boosting future employability. Findings indicate enhanced creative fluency, broadened participation across diverse learner profiles, and strengthened confidence in AI-supported design processes. The study contributes evidence-based guidance for integrating generative-AI workflows into architectural pedagogy, demonstrating how such tools can operationalise constructivist principles of learner-led meaning-making, support connectivist understandings of learning as participation in human-AI networks, and advance universal learning theories by promoting more inclusive, flexible and accessible educational practices for contemporary learners.",
+      "authors": [
+        "Timo Kapsalis"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC"
+      ],
+      "published": "2026-05-20T16:24:59+00:00",
+      "link": "https://arxiv.org/pdf/2605.21361v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "evaluation of generative AI integration in architectural design education to enhance creativity and inclusivity",
+      "llm_evidence_cn": "评估生成式AI融入建筑设计教育以提升创造力与包容性",
+      "llm_evidence": "评估生成式AI融入建筑设计教育以提升创造力与包容性",
+      "canonical_evidence": "评估生成式AI融入建筑设计教育以提升创造力与包容性",
+      "llm_tldr_en": "The Gen-AI-tecture project evaluates how a locally-run AI tool impacts architectural students' creativity, inclusivity, and AI skills, providing guidance for integrating generative AI into design pedagogy.",
+      "llm_tldr_cn": "“Gen-AI-tecture”项目通过混合方法焦点小组设计，评估本地部署的生成式AI工具对建筑学生创造力、学习包容性和AI操作技能的影响，为设计教育中整合生成式AI工作流提供实证依据。",
+      "llm_tldr": "“Gen-AI-tecture”项目通过混合方法焦点小组设计，评估本地部署的生成式AI工具对建筑学生创造力、学习包容性和AI操作技能的影响，为设计教育中整合生成式AI工作流提供实证依据。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Evaluating co design processes and educational experiments for advancing circular economy in design.",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.02048v1",
+      "source": "arxiv",
+      "title": "Topological texture analysis of microscopy images of dynamic casein gelation and its relation to rheological properties",
+      "abstract": "We propose a novel computational toolbox that integrates Topological Data Analysis (TDA), Differential Box Counting (DBC), Multifractal Partition (MFP), and Local Binary Patterns (LBP), applied to time-lapse super-resolution STED microscopy images of sodium caseinate gelation induced by glucono-delta-lactone (GDL) at 30 °C and 40 °C and two GDL concentrations (1.8% and 3.5% w/v).   TDA tracked topological loops, closed ring-like structures reflecting protein network interconnectivity, via max-Betti-1 curves, which revealed a lag phase of dispersed aggregates, a sharp decay coinciding with network percolation and the rheologically observed sol-gel transition, and a post-gelation increase corresponding to network rearrangements. These topological transitions were corroborated by DBC and MFP as these methods were able to resolve changes in structural complexity and spatial heterogeneity. The toolbox was validated on simulated fractal images prior to experimental application. Together, these descriptors provided sensitivity to subtle microstructural transitions that bulk rheology captured as averaged bulk mechanical responses. This integrated approach provides a robust quantitative tool for characterizing complex microstructure in food and material science with evolving microstructural dynamics. Code is available at https://github.com/Zahratabatabaei/Delifood_CV_paper.git",
+      "authors": [
+        "Zahra Tabatabaei",
+        "Diana Soto Aguilar",
+        "Jose C. Bonilla",
+        "Mathias P. Clausen",
+        "Jon Sporring"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "physics.bio-ph"
+      ],
+      "published": "2026-06-01T10:39:05+00:00",
+      "link": "https://arxiv.org/pdf/2606.02048v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "computational toolbox for linking protein gel microstructure to rheology, applicable to fish gelatin bioplastics",
+      "llm_evidence_cn": "连接蛋白质凝胶微结构与流变性的计算工具箱，可应用于鱼皮明胶生物塑料",
+      "llm_evidence": "连接蛋白质凝胶微结构与流变性的计算工具箱，可应用于鱼皮明胶生物塑料",
+      "canonical_evidence": "连接蛋白质凝胶微结构与流变性的计算工具箱，可应用于鱼皮明胶生物塑料",
+      "llm_tldr_en": "This paper proposes a computational toolbox integrating topological data analysis and texture analysis to characterize protein gel networks, linking microstructure to rheology, useful for designing fish skin gelatin-based biomaterials.",
+      "llm_tldr_cn": "该研究提出了一种计算工具箱，将拓扑数据分析、多重分形和纹理分析方法结合，应用于酪蛋白酸钠凝胶的显微图像分析。该工具箱能够揭示凝胶网络的形成过程，建立的微观结构参数与流变学凝胶点的相关性。此方法学可迁移用于鱼皮明胶生物材料的微观结构表征和材料驱动设计，为蛋白质基凝胶材料的性能优化提供了量化分析手段。",
+      "llm_tldr": "该研究提出了一种计算工具箱，将拓扑数据分析、多重分形和纹理分析方法结合，应用于酪蛋白酸钠凝胶的显微图像分析。该工具箱能够揭示凝胶网络的形成过程，建立的微观结构参数与流变学凝胶点的相关性。此方法学可迁移用于鱼皮明胶生物材料的微观结构表征和材料驱动设计，为蛋白质基凝胶材料的性能优化提供了量化分析手段。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "How can material driven design and microbial transglutaminase crosslinking upcycle fish skin gelatin into sustainable design materials?",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.10544v1",
+      "source": "arxiv",
+      "title": "From Stacks to Circuits: A Regenerative Socio-Technical Roadmap for AI Infrastructure within Planetary Boundaries",
+      "abstract": "Current scaling trajectories for Generative AI, typified by linear supply-side \"stacks,\" prioritize performance density while externalizing significant thermodynamic and material costs. As the \"Twin Transition\" of green and digital transformation accelerates, the industry faces technology gaps - including Scope 3 emissions and e-waste recycling - that impede sustainable scaling and lead to social tensions. This study proposes a Regenerative Socio-Technical roadmap that repurposes the Sustainable Production and Consumption system map to reframe artificial intelligence infrastructure as a system-of-systems governed ultimately by planetary limits. By integrating the Institute of Electrical and Electronics Engineers International Roadmap for Devices and Systems (IEEE IRDS) sustainability considerations for semiconductor facilities, the study proposes a metabolic circuit framework that centers \"Values and Needs\" within production and consumption relationship loops. This study identifies critical gaps in current Nvidia-centric roadmaps and proposes a competing reference architecture. It demonstrates how a spontaneous order of resource parsimony and planetary accountability can provide an actionable pathway for regulatory compliance and industrial resilience in the digital circular economy.",
+      "authors": [
+        "Han-Teng Liao",
+        "Karen Ang"
+      ],
+      "primary_category": "cs.SI",
+      "categories": [
+        "cs.SI",
+        "cs.CY",
+        "cs.NI",
+        "econ.GN",
+        "eess.SY"
+      ],
+      "published": "2026-06-09T08:11:25+00:00",
+      "link": "https://arxiv.org/pdf/2606.10544v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Proposes a regenerative socio-technical roadmap using systems thinking, providing transferable principles for regenerative design in ecological engineering.",
+      "llm_evidence_cn": "提出以系统思维为核心的再生社会技术路线图，可迁移至生态工程的再生设计",
+      "llm_evidence": "提出以系统思维为核心的再生社会技术路线图，可迁移至生态工程的再生设计",
+      "canonical_evidence": "提出以系统思维为核心的再生社会技术路线图，可迁移至生态工程的再生设计",
+      "llm_tldr_en": "This paper proposes a Regenerative Socio-Technical roadmap for AI infrastructure, reframing it as a system-of-systems governed by planetary boundaries. By integrating IEEE standards and the Sustainable Production and Consumption map, it shifts from linear stacks to circular circuits, providing a transferable regenerative design framework for ecological engineering.",
+      "llm_tldr_cn": "当前生成式AI基础设施的线性堆栈扩展模式优先性能密度而外部化大量热力学和材料成本，面临范围3温室气体排放与电子废弃物回收等技术缺口，阻碍可持续规模化并引发社会矛盾。该研究提出一种再生社会技术路线图，将AI基础设施重新构想为受行星边界约束的系统之系统，通过整合IEEE标准与可持续生产消费系统地图，构建由线性堆栈向循环回路转变的框架。该方法旨在将再生设计原则从生态工程延伸至数字基础设施领域，为绿色与数字转型的双重目标提供系统性解决方案，并为生态工程中的再生设计方法论提供可迁移的分析工具。",
+      "llm_tldr": "当前生成式AI基础设施的线性堆栈扩展模式优先性能密度而外部化大量热力学和材料成本，面临范围3温室气体排放与电子废弃物回收等技术缺口，阻碍可持续规模化并引发社会矛盾。该研究提出一种再生社会技术路线图，将AI基础设施重新构想为受行星边界约束的系统之系统，通过整合IEEE标准与可持续生产消费系统地图，构建由线性堆栈向循环回路转变的框架。该方法旨在将再生设计原则从生态工程延伸至数字基础设施领域，为绿色与数字转型的双重目标提供系统性解决方案，并为生态工程中的再生设计方法论提供可迁移的分析工具。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Regenerative design principles for ecological engineering",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.02253v1",
+      "source": "arxiv",
+      "title": "CEON: Circular Economy Ontology Network",
+      "abstract": "Increasing the circularity of resource use in our society has been recognized as a path to sustainability, i.e., transitioning into a more circular economy. There are many different circular strategies to do so, such as reusing products and components, refurbishing and remanufacturing used products, or recycling left-over or used materials. To enable these strategies, it is necessary to share information at the infrastructure level and to communicate between industry sectors along the product life cycle. Enabling semantic interoperability in this information sharing and communication is therefore a key to increasing circularity. However, knowledge representation for the circular economy (CE) domain, which involves many relevant industry sectors related to product life cycles, remains challenging. To bridge this gap, we developed the Circular Economy Ontology Network (CEON) within the Onto-DESIDE project. This ontology network aims to fill gaps in CE by defining cross-sectorial concepts and to enable semantics-aware data documentation. We demonstrate CEON through cross-industry data documentation scenarios spanning construction, electronics, and textile sectors.",
+      "authors": [
+        "Huanyu Li",
+        "Els de Vleeschauwer",
+        "Robin Keskisärkkä",
+        "Mikael Lindecrantz",
+        "Mina Abd Nikooie Pour",
+        "Ying Li",
+        "Ben De Meester",
+        "Patrick Lambrix",
+        "Eva Blomqvist"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-01T13:42:45+00:00",
+      "link": "https://arxiv.org/pdf/2606.02253v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Proposes an ontology network for circular economy to enable semantic interoperability, supporting circular design processes",
+      "llm_evidence_cn": "提出循环经济本体网络以支持语义互操作，助力循环设计流程",
+      "llm_evidence": "提出循环经济本体网络以支持语义互操作，助力循环设计流程",
+      "canonical_evidence": "提出循环经济本体网络以支持语义互操作，助力循环设计流程",
+      "llm_tldr_en": "To advance circular economy, the paper proposes the Circular Economy Ontology Network (CEON) for knowledge representation across product life cycles. It enables semantic interoperability between industry sectors, covering strategies like reuse, remanufacturing, and recycling. CEON supports circular design and education by providing a structured knowledge framework.",
+      "llm_tldr_cn": "为促进循环经济中跨行业信息共享，本文提出循环经济本体网络（CEON），解决产品全生命周期知识的语义互操作难题。CEON覆盖再利用、再制造和回收等循环策略，通过结构化知识表示，支持不同利益相关方在设计、使用和回收阶段的有效沟通。该本体为循环设计教育与评估提供了语义基础设施，有助于在材料驱动设计和共创流程中融入循环经济理念，提升设计实践的可持续性。",
+      "llm_tldr": "为促进循环经济中跨行业信息共享，本文提出循环经济本体网络（CEON），解决产品全生命周期知识的语义互操作难题。CEON覆盖再利用、再制造和回收等循环策略，通过结构化知识表示，支持不同利益相关方在设计、使用和回收阶段的有效沟通。该本体为循环设计教育与评估提供了语义基础设施，有助于在材料驱动设计和共创流程中融入循环经济理念，提升设计实践的可持续性。",
+      "llm_tags": [
+        "query:mdd-regen:composite"
+      ],
+      "matched_query_tag": "query:mdd-regen:composite",
+      "matched_query_text": "Papers central to 核心需求：材料驱动设计（MDD）与再生设计方法论，酶交联海洋废弃物升级回收，生物容受性材料城市热缓解与海洋修复，共创设计评估，以及设计教育推动循环经济。, especially work that connects or combines: Material Driven Design methodology for sustainable bio-based materials; Regenerative design principles for ecological engineering; Fish skin gelatin extracted from marine waste for bioplastic applications; Evaluation framework for co-design processes in regenerative design; Upcycling marine biowaste into high-performance biomaterials; How can material driven design and microbial transglutaminase crosslinking upcycle fish skin gelatin into sustainable design materials?; Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.; Evaluating co design processes and educational experiments for advancing circular economy in design..",
+      "matched_requirement_id": "req-composite-mdd-regen",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-06-03-729958-v1",
+      "source": "biorxiv",
+      "title": "REFINING THE USE OF SEED BALLS TO SUPPORT SEAGRASS RESTORATION",
+      "abstract": "Seagrass ecosystems are experiencing rapid global decline, and current seed-based restoration efforts are frequently hindered by severe early-life bottlenecks such as decapod predation and bioturbation. To bypass these ecological feedbacks, encasing Zostera marina seeds in protective clay matrices (seed balls) presents a promising, low-cost intermediate technology for scalable deployment. To refine this approach, a mesocosm experiment was conducted to evaluate the physical integrity, germination success, and early shoot development of Z. marina seeds across various clay formulations (fireclay, bentonite, and Kettering loam) and drying treatments. Seed balls were deployed either on the sediment surface or buried, and their performance was evaluated using a hurdle-style generalised additive modelling approach. Results indicated a clear trade-off between structural robustness and biological performance. While naked seeds (70.3% emergence) and buried fireclay balls (67.2% emergence) exhibited the highest overall emergence and post-emergence shoot length, surface-deployed seed balls formulated with higher proportions of bentonite and loam (e.g., 2:4:1 ratio) demonstrated the superior structural integrity necessary for resisting degradation during deployment. However, these denser matrices significantly reduced emergence probabilities and restricted shoot development compared to naked seeds. Formulations lacking loam (1:3) performed the poorest across all biological and structural metrics. Despite reduced emergence relative to buried treatments, surface-deployed seed balls still achieved high viability, outperforming typical field germination rates. Although further field-based refinement is required to test formulations under dynamic hydrodynamic and bioturbation pressures, seed balls offer a scientifically robust, scalable mechanism to bypass early-stage predation and support widespread seascape recovery.",
+      "authors": [
+        "Potter, H. L. H.",
+        "DenHaan, S.",
+        "Jones, B. L. H.",
+        "Yates, E.",
+        "Unsworth, R. K. F."
+      ],
+      "primary_category": "ecology",
+      "categories": [
+        "ecology"
+      ],
+      "published": "2026-06-09T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.03.729958v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Seagrass restoration using seed balls as protective clay matrices for scalable deployment",
+      "llm_evidence_cn": "利用种子球作为防护粘土基质，实现海草可规模化修复",
+      "llm_evidence": "利用种子球作为防护粘土基质，实现海草可规模化修复",
+      "canonical_evidence": "利用种子球作为防护粘土基质，实现海草可规模化修复",
+      "llm_tldr_en": "This study optimizes clay-based seed balls for protecting and germinating Zostera marina seeds, achieving higher germination and overcoming early-life bottlenecks, thus advancing scalable seagrass restoration.",
+      "llm_tldr_cn": "该研究针对海草种子早期受捕食和生物扰动瓶颈，通过优化种子球的粘土配方和干燥处理，提高了大叶藻种子的发芽率和早期发育，验证了粘土基质种子球作为低成本可规模化部署的海草修复技术的可行性，为海洋生态再生提供了可工程化的方法。",
+      "llm_tldr": "该研究针对海草种子早期受捕食和生物扰动瓶颈，通过优化种子球的粘土配方和干燥处理，提高了大叶藻种子的发芽率和早期发育，验证了粘土基质种子球作为低成本可规模化部署的海草修复技术的可行性，为海洋生态再生提供了可工程化的方法。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Regenerative design principles for ecological engineering",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.06415v1",
+      "source": "arxiv",
+      "title": "PolyGraphPy: A unified Python framework for atomistic simulation and machine learning-driven polymer design",
+      "abstract": "Polymers are indispensable materials with applications ranging from electronics to medicine owing to their versatility, which can be tailored by adjusting their chemical composition and architecture. The design space for these compounds is vast and governed by factors such as monomer classes, copolymer configurations (e.g., linear, branched, random, and alternating), chain size, stoichiometry, and material properties (e.g., density, refractive index, solubility, and Poisson's ratio). Exploring this space requires efficient computational methodologies for polymer science. To address this challenge, we introduce PolyGraphPy, an open-source Python framework that integrates atomistic simulations with machine learning for accurate property prediction and property-guided polymer design. The framework automates Density Functional Tight Binding calculations to efficiently construct structured datasets for monomers, homopolymers, and alternating copolymers. For property prediction, PolyGraphPy employs Bayesian Graph Neural Networks (GNNs) with stochastic graph representations to predict target properties, such as static polarizability, while providing robust uncertainty quantification. Furthermore, the platform incorporates two complementary generative models for the de novo design of targeted molecules: a SELFIES-based Generative Pretrained Transformer (GPT) and a Genetic Algorithm (GA) based on BRICS graph fragmentation. Demonstrated on a dataset of acrylates, PolyGraphPy provides a highly customizable end-to-end pipeline that reduces computational costs and accelerates data-driven polymer informatics.",
+      "authors": [
+        "João G. C. S. Duarte",
+        "Shruti Venkatram",
+        "Morgan Cencer",
+        "Traian Dumitricǎ",
+        "Ketson R. M. dos Santos"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-06-04T17:17:35+00:00",
+      "link": "https://arxiv.org/pdf/2606.06415v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Python framework integrating atomistic simulation and ML for polymer design",
+      "llm_evidence_cn": "集成原子模拟与机器学习的聚合物设计Python框架",
+      "llm_evidence": "集成原子模拟与机器学习的聚合物设计Python框架",
+      "canonical_evidence": "集成原子模拟与机器学习的聚合物设计Python框架",
+      "llm_tldr_en": "PolyGraphPy is an open-source Python framework that combines atomistic simulations and machine learning to explore vast polymer design spaces efficiently.",
+      "llm_tldr_cn": "PolyGraphPy是一个开源Python框架，整合原子模拟与机器学习，高效探索聚合物化学组成和拓扑结构的巨大设计空间，加速新材料发现。",
+      "llm_tldr": "PolyGraphPy是一个开源Python框架，整合原子模拟与机器学习，高效探索聚合物化学组成和拓扑结构的巨大设计空间，加速新材料发现。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Material Driven Design methodology for sustainable bio-based materials",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-02-15-705954-v2",
+      "source": "biorxiv",
+      "title": "Reconstructing living materials as a computable design space with multi-agent reasoning",
+      "abstract": "Artificial intelligence is increasingly used to accelerate scientific discovery, but most successful frameworks operate within well-defined molecular, protein or materials spaces. Living materials present a more formidable computational problem because functions emerge from context dependent coupling among cells, matrices, fabrication processes and evaluation conditions. Here we introduce LiveMat, a multi-agent reasoning framework that transforms unstructured literature into a computable design space for living materials. LiveMat standardizes 34,215 living material records, integrating 16,769 microorganism and 17,446 polymer entries into a knowledge graph linking living components, abiotic matrices, functional outputs, evaluation contexts and performance metrics. Benchmarking across five large language models shows that living material reasoning is limited mainly by cross-domain feature integration rather than coarse classification. LiveMat overcomes this limitation through constraint decomposition, provenance-aware extraction, consistency checking and expert-anchored ranking. In a prospective wound-healing task, it prioritizes a four-component design with state-of-the-art in vivo performance, establishing a scalable infrastructure for interpretable, evidence-grounded living material discovery.",
+      "authors": [
+        "Xiao, Y.",
+        "Zeng, X.",
+        "Yang, Z.",
+        "Gu, J.",
+        "Lu, Y.",
+        "Wang, Y.",
+        "Wen, H.",
+        "Chen, M.",
+        "Huang, Z.",
+        "Hu, J.",
+        "Liu, J.",
+        "Sha, C.",
+        "Xie, J.",
+        "Li, H.",
+        "Zhu, X.",
+        "Zheng, S.",
+        "Zhang, J.",
+        "Zong, W.",
+        "He, Z.",
+        "Xu, Y.",
+        "Zhou, X.",
+        "Li, F.",
+        "Liu, H.",
+        "He, Q.",
+        "Liu, L.",
+        "Yu, Z."
+      ],
+      "primary_category": "biochemistry",
+      "categories": [
+        "biochemistry"
+      ],
+      "published": "2026-06-09T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.02.15.705954v2.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multi-agent framework creates a computable design space for living materials, supporting material-driven design of bio-based materials",
+      "llm_evidence_cn": "多智能体框架为活体材料创建可计算设计空间，支持生物基材料的材料驱动设计",
+      "llm_evidence": "多智能体框架为活体材料创建可计算设计空间，支持生物基材料的材料驱动设计",
+      "canonical_evidence": "多智能体框架为活体材料创建可计算设计空间，支持生物基材料的材料驱动设计",
+      "llm_tldr_en": "The paper presents LiveMat, a multi-agent reasoning framework that standardizes literature into a knowledge graph of living materials, enabling a computable design space for bio-based material innovation.",
+      "llm_tldr_cn": "该研究针对活体材料功能源于多因素耦合导致难以计算化设计的难题，提出了LiveMat多智能体推理框架。该框架将3.4万余条活体材料文献记录标准化，整合微生物和聚合物数据构建知识图谱，链接生命组件、非生物基质、功能输出和评价条件。该工作为材料驱动设计提供了可查询、可推理的计算平台，有助于加速可持续生物基材料的发现与优化。",
+      "llm_tldr": "该研究针对活体材料功能源于多因素耦合导致难以计算化设计的难题，提出了LiveMat多智能体推理框架。该框架将3.4万余条活体材料文献记录标准化，整合微生物和聚合物数据构建知识图谱，链接生命组件、非生物基质、功能输出和评价条件。该工作为材料驱动设计提供了可查询、可推理的计算平台，有助于加速可持续生物基材料的发现与优化。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Material Driven Design methodology for sustainable bio-based materials",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
