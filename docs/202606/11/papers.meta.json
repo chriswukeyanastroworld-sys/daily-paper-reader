@@ -1,0 +1,54 @@
+{
+  "label": "2026-06-11",
+  "date": "2026-06-11",
+  "generated_at": "2026-06-11T21:41:54",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202606/11/biorxiv-10-64898-2026-06-07-730583-v1-preserving-native-cellulose-xylan-architecture-enables-structure-property-control-in-holocellulose-nanofibrils-and-high-performance-sustainable-materials",
+      "section": "deep",
+      "title_en": "Preserving Native Cellulose-Xylan Architecture Enables Structure-Property Control in Holocellulose Nanofibrils and High-Performance Sustainable Materials",
+      "authors": "Deralia, P. K., Cresswell, R., Yoshimi, Y., Kuga, T., Echevarria-Poza, A., Howell, P., Dickson, A., Le Guen, M.-J., Wagner, E., de Alcantara, A. C. S., Batista, C. G. T., Follain, N., Miller, A., Vendruscolo, M., Hill, S. J., Beaugrand, J., Skaf, M. S., Cosgrove, D. J., Brown, S. P., Elliott, J. A., Dupree, R., Dupree, P.",
+      "date": "2026-06-11",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.07.730583v1.full.pdf",
+      "score": "9.0",
+      "evidence": "保留天然纤维素-木聚糖构筑是材料驱动设计方法论在可持续高性能生物基材料中的典型实践",
+      "tldr": "传统纤维素纳米纤维制备因苛刻化学处理破坏天然纤维素-半纤维素结构，限制了性能转化。本研究通过优化全纤维素纳米纤维（hCNF）分离策略，保留原生纤维素-木聚糖结构域，利用拟南芥野生型、木聚糖糖醛酸化缺陷突变体及油菜秸秆模型系统，系统探究木聚糖含量与取代模式对纳米纤维化效率、胶体稳定性及界面相互作用的影响。结果显示，糖醛酸化调控水合与纤维间聚力，油菜hCNF膜兼具优异强度和延展性，证明保留天然结构即可实现高性能可持续材料。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "The hierarchical organization of cellulose microfibrils and their intimate interactions with hemicelluloses such as xylan underpin the exceptional mechanical performance of plant cell walls. However, translating these biological design principles into sustainable nanocellulosic materials remains limited by conventional cellulose nanofibril production routes, which rely on harsh chemical treatments that disrupt the native cellulose-hemicellulose architecture. Here, we present an optimized isolation strategy for holocellulose nanofibrils (hCNFs) that preserves native cellulose structure, xylan substitution and conformation, and cellulose-xylan interactions. Using wild-type Arabidopsis thaliana, a xylan glucuronidation-deficient gux1/2 mutant, and Brassica napus straw as model systems, we systematically elucidate how xylan content and substitution pattern govern nanofibril isolation, interfacial interactions, and macroscopic properties. Two-dimensional 13C magic-angle spinning NMR demonstrates retention of native cellulose glucosyl environments, the presence of two-fold and three-fold helical xylan conformations, and cellulose-associated two-fold helical xylan. Cryogenic transmission electron microscopy reveals fibril widths of {approx}3 nm, consistent with elementary cellulose I{beta} microfibrils. We show that xylan glucuronidation regulates colloidal stability, hydration behavior, and interfibrillar cohesion, whereas xylan content controls nanofibrillation efficiency. These multiscale structural features translate directly into moisture sorption, thermal behavior, and mechanical performance. Notably, Brassica napus hCNF films exhibit exceptional strength and extensibility, surpassing many chemically modified CNF systems. This work demonstrates that preserving the native cellulose-hemicellulose architecture enables high-performance, sustainable nanocellulosic materials without chemical reconstruction",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/11/biorxiv-10-64898-2026-06-09-731259-v1-a-computational-framework-for-domain-insertion-into-type-iv-pili-for-bacterial-display-and-living-material-assembly",
+      "section": "quick",
+      "title_en": "A Computational Framework for Domain Insertion into Type IV Pili for Bacterial Display and Living Material Assembly",
+      "authors": "Tesoriero, R. F., Harris, N. E., Suggs, O. D., Ajo-Franklin, C. M.",
+      "date": "2026-06-10",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.09.731259v1.full.pdf",
+      "score": "6.0",
+      "evidence": "通过细菌菌毛工程的计算设计方法开展活材料设计，与可持续生物基材料开发方向相符",
+      "tldr": "细菌表面展示系统宿主范围窄，IV型菌毛（TFP）普遍保守但展示潜力未挖掘。本研究开发计算框架预测主要菌毛蛋白稳定展示插入位点，以蓝细菌PilA1验证。融合SpyCatcher003的细胞悬浮水平较C端展示提升8倍，增大货物仍改善TFP组装；实现SpyTag003蛋白共价连接，活材料装载量提高四倍且无损材料性质。该框架为TFP工程和跨物种可编程表面展示提供通用方案。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "Bacterial surface structures have enabled display systems with broad impact across biotechnology, but their narrow host range limits their deployment into diverse species. Conversely, Type IV Pili (TFP) are ubiquitous, structurally conserved appendages found across bacteria, but have been minimally explored for display. Here, we describe a computational framework for predicting viable insertion sites in major pilins for stable TFP-mediated display, which we apply to the major pilin PilA1 of the cyanobacterium Synechocystis sp. PCC 6803 to enable covalent binding to living materials. By analyzing an Alphafold3-generated PilA1 monomer alongside known multimeric TFP multimers, our pipeline identifies non-interfacial, solvent-accessible, and flexible sites for optimal PilA1 display. We probe these sites with both full-length and truncated SpyCatcher003 at two different expression levels. We show that cells expressing these PilA1-SpyCatcher003 fusions maintain up to 8-fold higher levels of cell suspension than previous C-terminal PilA1 display platforms, suggesting improved TFP assembly despite more than a two-fold increase in cargo size. Additionally, we validate SpyCatcher003 reactivity across the engineered strains, enabling covalent attachment of SpyTag003-containing proteins on the Synechocystis surface. Lastly, we utilize this covalent patterning to achieve a four-fold increase in Synechocystis loading into a living material without compromising its viscoelastic or mechanical properties. Taken together, this work provides a predictive framework for TFP engineering, and opens the door towards programmable surface display across the breadth of bacterial species.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/11/biorxiv-10-64898-2026-06-09-731259-v2-a-computational-framework-for-domain-insertion-into-type-iv-pili-for-bacterial-display-and-living-material-assembly",
+      "section": "quick",
+      "title_en": "A Computational Framework for Domain Insertion into Type IV Pili for Bacterial Display and Living Material Assembly",
+      "authors": "Tesoriero, R. F., Harris, N. E., Suggs, O. D., Ajo-Franklin, C.",
+      "date": "2026-06-10",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.09.731259v2.full.pdf",
+      "score": "6.0",
+      "evidence": "通过细菌菌毛工程的计算设计方法开展活材料设计，与可持续生物基材料开发方向相符",
+      "tldr": "在生物技术中，细菌表面展示系统已广泛应用，但多数平台受宿主限制。IV型菌毛(TFP)普遍存在于细菌中，但作为展示工具开发不足。本研究建立计算框架，利用AlphaFold3预测主要菌毛蛋白PilA1中适合展示的插入位点，要求非界面、溶剂可及且柔性。实验表明，插入全长或截短SpyCatcher003的工程菌株悬浮性比C端展示高8倍，且保持反应性，能共价连接SpyTag003蛋白。最终将该蓝藻负载量提升4倍而不损害活体材料的机械性能，为TFP工程提供了预测框架，开启跨物种可编程表面展示的新途径，有望拓展至多种细菌。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "Bacterial surface structures have enabled display systems with broad impact across biotechnology, but their narrow host range limits their deployment into diverse species. Conversely, Type IV Pili (TFP) are ubiquitous, structurally conserved appendages found across bacteria, but have been minimally explored for display. Here, we describe a computational framework for predicting viable insertion sites in major pilins for stable TFP-mediated display, which we apply to the major pilin PilA1 of the cyanobacterium Synechocystis sp. PCC 6803 to enable covalent binding to living materials. By analyzing an Alphafold3-generated PilA1 monomer alongside known multimeric TFP multimers, our pipeline identifies non-interfacial, solvent-accessible, and flexible sites for optimal PilA1 display. We probe these sites with both full-length and truncated SpyCatcher003 at two different expression levels. We show that cells expressing these PilA1-SpyCatcher003 fusions maintain up to 8-fold higher levels of cell suspension than previous C-terminal PilA1 display platforms, suggesting improved TFP assembly despite more than a two-fold increase in cargo size. Additionally, we validate SpyCatcher003 reactivity across the engineered strains, enabling covalent attachment of SpyTag003-containing proteins on the Synechocystis surface. Lastly, we utilize this covalent patterning to achieve a four-fold increase in Synechocystis loading into a living material without compromising its viscoelastic or mechanical properties. Taken together, this work provides a predictive framework for TFP engineering, and opens the door towards programmable surface display across the breadth of bacterial species.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
