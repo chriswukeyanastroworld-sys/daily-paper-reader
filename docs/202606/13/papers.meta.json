@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-13",
+  "date": "2026-06-13",
+  "generated_at": "2026-06-13T20:51:43",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/13/2606.11574v1-range-aware-bayesian-optimization-for-discovering-diverse-designs-within-target-property-windows",
+      "section": "quick",
+      "title_en": "Range-Aware Bayesian Optimization for Discovering Diverse Designs within Target Property Windows",
+      "authors": "Shengli Jiang, Jason Wu, Charles M. Schroeder, Michael A. Webb",
+      "date": "2026-06-10",
+      "pdf": "https://arxiv.org/pdf/2606.11574v1",
+      "score": "6.0",
+      "evidence": "贝叶斯优化框架用于在目标性能窗口内发现多样化设计，可用于材料驱动设计方法论",
+      "tldr": "在许多材料与产品设计中，理想解往往需满足属性范围而非追求单一极值，且多样性对考量成本、可加工性等非目标因素至关重要。提出范围感知贝叶斯优化框架，采集函数评估候选满足目标范围的后验概率，支持平行多规格搜索。基准测试中，该方法比标准BO及目标搜索基线能发现更多样化有效设计；在优化高分子合成条件与序列定义寡聚物发现两个案例中验证。这为规格驱动设计提供样本高效基础，尤其当设计灵活性与解多样性重要时。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "In many materials and product design problems, desirable candidates exhibit properties that fall within an acceptable range rather than achieve a single optimum. Recovering multiple, distinct solutions that satisfy such specifications is also practically valuable, as some candidates may be preferred for reasons of cost, processability, or robustness that are difficult to encode directly in an objective function. Here, we develop a range-aware Bayesian optimization (BO) framework in which the acquisition function directly scores the posterior probability that a candidate satisfies a target range. The framework naturally extends to parallel pursuit of multiple distinct specifications over a shared candidate space. Across benchmark tasks, range-aware acquisition consistently recovers larger and more diverse sets of valid designs than standard BO baselines and recent goal-seeking methods. Its utility is further demonstrated in two practically motivated design case studies involving optimizing reaction conditions for polymer synthesis and sequence-defined oligomer discovery for prescribed optical absorption bands, supported by quantum chemical calculations. These results suggest that range-aware BO can provide a practical and sample-efficient foundation for specification-driven design, particularly when design flexibility and solution diversity are important considerations.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,58 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-13T20:48:39.120068+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.11574v1",
+      "source": "arxiv",
+      "title": "Range-Aware Bayesian Optimization for Discovering Diverse Designs within Target Property Windows",
+      "abstract": "In many materials and product design problems, desirable candidates exhibit properties that fall within an acceptable range rather than achieve a single optimum. Recovering multiple, distinct solutions that satisfy such specifications is also practically valuable, as some candidates may be preferred for reasons of cost, processability, or robustness that are difficult to encode directly in an objective function. Here, we develop a range-aware Bayesian optimization (BO) framework in which the acquisition function directly scores the posterior probability that a candidate satisfies a target range. The framework naturally extends to parallel pursuit of multiple distinct specifications over a shared candidate space. Across benchmark tasks, range-aware acquisition consistently recovers larger and more diverse sets of valid designs than standard BO baselines and recent goal-seeking methods. Its utility is further demonstrated in two practically motivated design case studies involving optimizing reaction conditions for polymer synthesis and sequence-defined oligomer discovery for prescribed optical absorption bands, supported by quantum chemical calculations. These results suggest that range-aware BO can provide a practical and sample-efficient foundation for specification-driven design, particularly when design flexibility and solution diversity are important considerations.",
+      "authors": [
+        "Shengli Jiang",
+        "Jason Wu",
+        "Charles M. Schroeder",
+        "Michael A. Webb"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cond-mat.mtrl-sci",
+        "physics.chem-ph",
+        "stat.ML"
+      ],
+      "published": "2026-06-10T01:58:30+00:00",
+      "link": "https://arxiv.org/pdf/2606.11574v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Bayesian optimization framework for discovering diverse designs within target property windows, applicable to material-driven design",
+      "llm_evidence_cn": "贝叶斯优化框架用于在目标性能窗口内发现多样化设计，可用于材料驱动设计方法论",
+      "llm_evidence": "贝叶斯优化框架用于在目标性能窗口内发现多样化设计，可用于材料驱动设计方法论",
+      "canonical_evidence": "贝叶斯优化框架用于在目标性能窗口内发现多样化设计，可用于材料驱动设计方法论",
+      "llm_tldr_en": "The paper develops range-aware Bayesian optimization to find diverse material designs meeting target property ranges, which can support material-driven design exploration for sustainable bio-based materials.",
+      "llm_tldr_cn": "现有材料设计优化通常追求单一最优，但实际中可接受性能落在某一范围即可满足要求，且多方案备选对成本、工艺性等考量至关重要。本文提出一种范围感知贝叶斯优化框架，直接以后验概率对候选方案满足目标范围的区间进行评分，并支持并行搜索多个不同的规格解。基准测试表明，该方法能在高性能材料设计空间中有效发现多样化设计，为可持续生物基材料的材料驱动设计提供了可迁移的探索工具。",
+      "llm_tldr": "现有材料设计优化通常追求单一最优，但实际中可接受性能落在某一范围即可满足要求，且多方案备选对成本、工艺性等考量至关重要。本文提出一种范围感知贝叶斯优化框架，直接以后验概率对候选方案满足目标范围的区间进行评分，并支持并行搜索多个不同的规格解。基准测试表明，该方法能在高性能材料设计空间中有效发现多样化设计，为可持续生物基材料的材料驱动设计提供了可迁移的探索工具。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Material Driven Design methodology for sustainable bio-based materials",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
