@@ -6,26 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-13
-- 运行时间：2026-06-13 20:51:37 UTC
+- 最新运行日期：2026-06-14
+- 运行时间：2026-06-14 20:51:30 UTC
 - 运行状态：成功
 - 本次总论文数：1
-- 精读区：0
-- 速读区：1
+- 精读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今日速读一篇材料设计优化论文：如何用贝叶斯优化在目标性能窗口内发现多样化结构。  
-核心结论是“范围感知”方法能更高效找到满足多个属性要求的不同设计方案，避免聚焦单一最优解。  
-如果你也在处理多目标材料筛选，可以了解这种“不只要最好、更要够多样”的优化思路。
-- 详情：[/202606/13/README](/202606/13/README)
+今日精读红茶菌衍生纤维素非织造布研究，发现“可喝的布料”竟能长得更韧还易回收。  
+核心结论：优化培养参数能让菌膜强度与致密度显著提升，并证实该材料具备机械回收可能。  
+下一步不妨关注这类“植物-微生物”共生织物的日常穿戴与循环再生潜力。
+- 详情：[/202606/14/README](/202606/14/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Kombucha-Derived Cellulose Non-wovens: Growth Optimization, Mechanics, and Recycling](/202606/14/biorxiv-10-64898-2026-06-09-730694-v1-kombucha-derived-cellulose-non-wovens-growth-optimization-mechanics-and-recycling)  
+   标签：评分：8.0/10、query:mdd-regen
+   evidence：通过康普茶纤维素生长优化和力学调控开发可持续生物基材料
 
 ### 速读区论文标签
-1. [Range-Aware Bayesian Optimization for Discovering Diverse Designs within Target Property Windows](/202606/13/2606.11574v1-range-aware-bayesian-optimization-for-discovering-diverse-designs-within-target-property-windows)  
-   标签：评分：6.0/10、query:mdd-regen
-   evidence：贝叶斯优化框架用于在目标性能窗口内发现多样化设计，可用于材料驱动设计方法论
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">

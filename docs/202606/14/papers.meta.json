@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-14",
+  "date": "2026-06-14",
+  "generated_at": "2026-06-14T20:51:38",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/14/biorxiv-10-64898-2026-06-09-730694-v1-kombucha-derived-cellulose-non-wovens-growth-optimization-mechanics-and-recycling",
+      "section": "deep",
+      "title_en": "Kombucha-Derived Cellulose Non-wovens: Growth Optimization, Mechanics, and Recycling",
+      "authors": "He, L. L., Lopez, J., Schiffman, J. D.",
+      "date": "2026-06-12",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.09.730694v1.full.pdf",
+      "score": "8.0",
+      "evidence": "通过康普茶纤维素生长优化和力学调控开发可持续生物基材料",
+      "tldr": "合成非织造材料带来严重环境问题，需开发可持续替代品。本研究通过优化康普茶纤维素非织造物的发酵生长条件，对比冻干、烘干和湿态后处理，发现冻干样品力学性能最优，拉伸强度达15 MPa、伸长率25%。进一步通过酶降解回收使用后材料并用静电纺丝再制造，展示了从生长到循环利用的全路径，为绿色非织造纺织品提供了新方案。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "The environmental impact of synthetic non-woven materials has prompted the search for sustainable and biodegradable alternatives. This study correlates the growth conditions used to produce kombucha-derived cellulose non-woven mats with their mechanical performance as a function of post-processing. Systematically, the fermentation and growth parameters of the non-wovens, including inoculum density, carbon-source loading, temperature, and pH value were investigated. Thick, uniform non-wovens were obtained using mildly acidic conditions that balanced nutrient availability and growth rate, moderate inoculum and carbon loading at 30C. Next, we used uniaxial tensile testing and rheology to thoroughly compare the mechanical properties of two post-processing routes, lyophilization and oven-drying against the as-produced wet non-wovens. Overall, the lyophilized non-wovens displayed the highest ultimate tensile strength (15 MPa) and elongation at break (25%), which were statistically greater than the oven-dried (2.5 MPa, 6.0%) and the wet non-wovens (1.7 MPa, 9.4%). We conclude by performing a proof-of-concept recyclability experiment: we showed that used cellulose non-wovens could be enzymatically degraded and then re-manufactured into new nanofibrous textiles by electrospinning. Together, these results demonstrate a circular pathway encompassing the growth and processing of mechanically robust kombucha-derived cellulose non-wovens, as well as their biodegradation and re-manufacturing.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

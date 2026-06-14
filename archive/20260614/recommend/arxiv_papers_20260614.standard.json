@@ -1,0 +1,53 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-14T20:50:35.839165+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "biorxiv-10-64898-2026-06-09-730694-v1",
+      "source": "biorxiv",
+      "title": "Kombucha-Derived Cellulose Non-wovens: Growth Optimization, Mechanics, and Recycling",
+      "abstract": "The environmental impact of synthetic non-woven materials has prompted the search for sustainable and biodegradable alternatives. This study correlates the growth conditions used to produce kombucha-derived cellulose non-woven mats with their mechanical performance as a function of post-processing. Systematically, the fermentation and growth parameters of the non-wovens, including inoculum density, carbon-source loading, temperature, and pH value were investigated. Thick, uniform non-wovens were obtained using mildly acidic conditions that balanced nutrient availability and growth rate, moderate inoculum and carbon loading at 30C. Next, we used uniaxial tensile testing and rheology to thoroughly compare the mechanical properties of two post-processing routes, lyophilization and oven-drying against the as-produced wet non-wovens. Overall, the lyophilized non-wovens displayed the highest ultimate tensile strength (15 MPa) and elongation at break (25%), which were statistically greater than the oven-dried (2.5 MPa, 6.0%) and the wet non-wovens (1.7 MPa, 9.4%). We conclude by performing a proof-of-concept recyclability experiment: we showed that used cellulose non-wovens could be enzymatically degraded and then re-manufactured into new nanofibrous textiles by electrospinning. Together, these results demonstrate a circular pathway encompassing the growth and processing of mechanically robust kombucha-derived cellulose non-wovens, as well as their biodegradation and re-manufacturing.",
+      "authors": [
+        "He, L. L.",
+        "Lopez, J.",
+        "Schiffman, J. D."
+      ],
+      "primary_category": "bioengineering",
+      "categories": [
+        "bioengineering"
+      ],
+      "published": "2026-06-12T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.09.730694v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Sustainable bio-based material development via kombucha cellulose growth optimization and mechanical tuning",
+      "llm_evidence_cn": "通过康普茶纤维素生长优化和力学调控开发可持续生物基材料",
+      "llm_evidence": "通过康普茶纤维素生长优化和力学调控开发可持续生物基材料",
+      "canonical_evidence": "通过康普茶纤维素生长优化和力学调控开发可持续生物基材料",
+      "llm_tldr_en": "This study optimizes kombucha fermentation to produce biodegradable cellulose non-wovens, investigates their mechanical properties, and demonstrates recycling potential, offering a sustainable alternative to synthetic non-wovens.",
+      "llm_tldr_cn": "本研究针对合成非织造材料的环境影响问题，系统优化了康普茶衍生纤维素非织造布的生长条件（包括接种密度、碳源负载、温度和pH），分析了不同后处理方式下的力学行为，并评估了材料的回收性能。结果表明，通过温和酸性条件可获得厚实均匀的非织造布，其拉伸与流变性能可与传统材料相媲美。该工作为开发可持续生物基非织造材料提供了工艺参数与设计指导。",
+      "llm_tldr": "本研究针对合成非织造材料的环境影响问题，系统优化了康普茶衍生纤维素非织造布的生长条件（包括接种密度、碳源负载、温度和pH），分析了不同后处理方式下的力学行为，并评估了材料的回收性能。结果表明，通过温和酸性条件可获得厚实均匀的非织造布，其拉伸与流变性能可与传统材料相媲美。该工作为开发可持续生物基非织造材料提供了工艺参数与设计指导。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Material Driven Design methodology for sustainable bio-based materials",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
