@@ -1,0 +1,928 @@
+Title: building_drift_acadia2026_deanon
+
+URL Source: https://arxiv.org/pdf/2606.19609v1
+
+Published Time: Fri, 19 Jun 2026 00:14:45 GMT
+
+Number of Pages: 17
+
+Markdown Content:
+Building Drift 1
+
+# Building Drift: Documenting On -Site Construction Adaptations Across 
+
+# Material Lifecycles 
+
+Ritik Batra, Martin Tamke, Tom Svilans, Jan Hüls, Amritansh Kwatra, Steven J. Jackson, Thijs 
+
+Roumen and Mette Ramsgaard Thomsen 
+
+Figure 1: Pentimento aligns the as -built structure as Gaussian splats with the as -designed 
+
+model using overlaid on -site adaptations and comments. 
+
+Abstract 
+
+In a circular economy for construction, reclaimed materials carry prior lives of use and go on to 
+
+have post -lives in future buildings. Yet working with such materials introduces unpredictability 
+
+that requires on -site improvisation, making their reuse chall enging to document and scale across 
+
+building lifetimes. Without documentation, the on -site adaptations that make construction with 
+
+reclaimed materials possible leave collaborators, evaluators, and inheritors without the information 
+
+they need to continue, a ssess, and reuse materials. We call the collective deviation of the physical 
+
+state from the digital model through these adaptations “building drift.” Through a case study, 
+
+ReShelter, a reclaimed timber pavilion constructed in the forest, we develop a taxonomy for 
+
+building drift that characterizes the collective deviation across building lifetimes: Tending the Site, 
+
+Foraging for Fit, Interpreting the Material, Marking Measurements, and Coordinating Across 
+
+Communities. 
+
+To put our taxonomy for building drift into practice , we present Pentimento, a documentation tool 
+
+that leverages video documentation and 3D Gaussian Splatting to spatially, temporally, and 
+
+semantically represent on -site adaptations in relation to the designed model. Pentimento enables 
+
+each stakeholder to navigate material histories in ways that reduce barriers to material reuse. 
+
+Together, these contributions open pathways towards computational tools that support the on -site 
+
+improvisation essential to construction with reclaimed materials, enabling more sustainable cycles 
+
+of recovery, repair, and reuse. Building Drift 2
+
+Keywords: Reclaimed Materials, Collaboration, Adaptation, Sustainability 
+
+1. Introduction 
+
+Imagining a circular economy of construction materials requires recovering, repairing, and reusing 
+
+materials across multiple building lifetimes. Yet buildings made from reclaimed materials, like 
+
+other forms of human endeavor, are rarely executed exactly to plan (Suchman 1987; Klemp et al. 
+
+2008). Unlike standardized and pre -processed materials with known properties (Gordon and Calvo 
+
+2021), reclaimed materials carry unique heterogeneities such as knots, surface contamination, and 
+
+embedded nails that render tr aditional models of tolerance, joinery, and geometry insufficient 
+
+(Pelin et al. 2024). The gap between the as -designed model and as -built state, referred to as the 
+
+sim -to -real gap (Peng et al. 2018), therefore exists before a construction project begins: how each 
+
+material was stored, how it was processed, and what it had become in a previous project. On site, 
+
+builders make adaptations and improvisations around such heterogeneiti es, further widening the 
+
+gap and compounding challenges for material reuse (Golp arvar -Fard et al. 2011). 
+
+We call the collective deviation of the physical state from the digital model through on -site 
+
+adaptations and improvisations building drift . Grounded in a case study of ReShelter [Reference 
+
+removed for review] , a reclaimed timber pavilion constructed in the forest, we characterize five 
+
+essential practices and sources of building drift: Tending the Site, Foraging for Fit, Interpreting 
+
+the Material, Marking Measurements, and Coordinating across Communities. To mak e these 
+
+sources explicit, we developed Pentime nto, a documentation tool that aligns on -site adaptations 
+
+with the original CAD model (shown in Figure 2) and makes them selectively legible to different 
+
+viewers. This work sits at the intersection of computational design, human -computer interaction, 
+
+and s cience and technology studies, demonstrating how 3D Gaussian Splatting (3DGS), voice 
+
+transcription, and LLM -powered categorization can be combined to document building drift and 
+
+therefore reduce barriers to using reclaimed materials in real -world construct ion projects. 
+
+Figure 2: Aligned on -site adaptation in Pentimento. Building Drift 3
+
+The sources of building drift are typically undocumented, creating critical consequences that 
+
+propagate across a material’s lifetime. Consider a reclaimed timber beam that arrives with a knot 
+
+where a screw hole was planned. The builders then drill a new ho le on site that can complete the 
+
+connection but avoids the knot. The beam may be successfully installed but its modified state is 
+
+not recorded. The consequences compound: a collaborator (another builder) drills another hole at 
+
+the original location, an eva luator (deconstruction crew) scraps the material, and an inheritor 
+
+(designer) models a connection assuming the original geometry only to discover the mismatch on 
+
+site , forcing yet another undocumented adaptation. Each of these stakeholders (collaborators, 
+
+evaluators, and inheritors) needs different information to maintain a sustainable ecosystem of 
+
+material reuse: collaborators need to know why, evaluators need to know h ow, and inheritors need 
+
+to know the final geometry (Browne and Popovic Larsen 2024). Wit hout this record, each 
+
+stakeholder is left to rediscover what others may already know (Orr 1990; Harper 1987), quietly 
+
+eroding the material's reuse potential. 
+
+These individual consequences compound further in a circular economy, where building drift 
+
+propagates beyond a single project's designers, builders, and engineers to encompass a material 
+
+lifecycle across projects and decades (Thomsen et al. 2026). Material s arrive with pre -lives of prior 
+
+engagements , change and evolve through the course of building lifetimes (Brand 1995) , and go on 
+
+to have post -lives in future construction projects, with each transition introducing new stakeholders 
+
+with different needs and incomplete knowledge (Tamke et al. 2025). Where sustainable 
+
+construction and fabrication is often imagined as static, or a fixed world that can be copied and 
+
+pasted across space and time, building drift highlights a dynamic world always in motion and 
+
+alway s being re -negotiated (Latour 2005; Bennett 2020). 
+
+To integrate our dynamic world with digital model s, we need tools for documenting on -site 
+
+construction work in ways that enable each stakeholder to act on the information relevant to them. 
+
+Existing approaches struggle with this complex task: capturing the outcome leaves stakeholders 
+
+without the context th ey need (Ward and Chapman 2008), while capturing everything produces 
+
+records too dense to navigate and too burdensome to create on site (Sun et al. 2017). What is 
+
+needed is a lightweight documentation tool that spatially and temporally grounds on -site 
+
+adap tations and makes them selectively legible to each stakeholder. With Pentimento, builders can 
+
+document their adaptations through video and audio recordings captured using a mobile device. 
+
+Pentimento then processes the videos by generating Gaussian splats ( Kerbl et al. 2023) and aligns 
+
+them with the original CAD model (Kwatra et al. 2025). Stakeholders separated by space and time 
+
+can navigate construction project states and adaptations spatially, temporally, and semantically to 
+
+further support the recovery, repair, and reuse of reclaimed materials across building lifetimes. 
+
+Through this work, we make two central contributions: (1) we present a taxonomy for the 
+
+sources of building drift from a case study of a reclaimed timber construction project and 
+
+(2) we develop Pentimento, a computational tool that demonstrates how to docu ment such 
+
+sources of building drift by aligning on -site adaptations with the original 3D model and 
+
+making them legible to stakeholders. In addition, we call attention to the in -situ aspects of 
+
+building practice that may be missed in “blueprint -first” imagi nations of design and that any 
+
+effective movement towards circularity must find ways to accommodate. Together, these 
+
+contributions create pathways towards computational tools that preserve and surface material 
+
+histories across their lifecycles and modes of architectural and building practice that can support Building Drift 4
+
+more sustainable cycles of recovery, repair, and reuse. 
+
+2. State of the Art 
+
+2.1 Computational Models for Reclaimed Materials 
+
+Computational models for architecture assume material homogeneity. Popular Computer -Aided 
+
+Design (CAD) software such as Rhino3D or Autodesk Fusion abstract materials away as uniform, 
+
+homogeneous surfaces . Abstract models reflect an implicit assumption that, for example, a timber 
+
+beam is always consistent in geometry, tolerance, and structural behavior. The resulting 
+
+construction process reflects what Ingold calls a hylomorphic model of making where form is 
+
+imposed onto passive matter (Ingold 2009). Reclaime d materials, however, break this abstraction: 
+
+a timber beam carries nails from prior connections, sparse regions of moisture damage, and 
+
+variable grain that render standard tolerance and joinery models insufficient (Tamke et al. 2024). 
+
+Unlike standardized materials that arrive with datasheets, reclaimed materials must have their 
+
+identity reconstructed from physical engagement as the builder “bind[s] their own pathways or 
+
+lines of becoming into the texture of material flows comprising the lifeworld” (Ingold 2009). 
+
+Heterogeneity is a defining characteristic of reclaimed materials and why they are often discarded 
+
+(Liboiron and Lepawsky 2022). This positions drift as an inevitable feature of construction with 
+
+reclaimed materials, as builders negotiate with materials, environments, and each other in ways 
+
+that computational models cannot antic ipate. 
+
+2.2 Construction as Collaborative Work 
+
+Architecture has long grappled with the gap between as -designed and as -built (Golparvar -Fard et 
+
+al. 2011; Wang et al. 2025). Brand describes buildings as living processes that evolve through use 
+
+(Brand 1995), and later Cairns and Jacobs build on that idea by describing architecture’s 
+
+“delusions of permanence,” arguing that decay and death are not failures but productive forces 
+
+that should reshape how we think about building (Cairns and Jacobs 2014). Research at the 
+
+intersection of architecture and repair st udies has emphasized the essential work of maintenance 
+
+and repair in shaping and reshaping buildings and their materials (Bovet and Ignaz 2019 ; Jackson 
+
+et al. 2024 ; Thomsen et al. 2024 ; DeSilvey 2017). As this work makes clear, connecting across 
+
+building lifetimes, from inception to end of life, requires the coordinated efforts of many actors, 
+
+including designers, builders, engineers, maintainers, managers, and inhabitants, each holding 
+
+partial knowledge of the whole (Orr 1996). Beyond this human cast, mat erials warp and degrade, 
+
+environment terrain shifts, and weather reworks the whole. Building drift is thus an accumulated 
+
+record of negotiation between human intent and the myriad resistances of the world. 
+
+2.3 Documentation for On -Site Adaptations 
+
+Existing approaches to documenting construction projects struggle with the complexity of drift. 
+
+Computer vision -based approaches assume controlled environments and generally struggle to 
+
+handle the heterogeneous materials and unpredictable conditions of rea l construction sites (Teizer 
+
+2015). Extended Reality (XR) guides builders by overlaying the digital model onto the physical 
+
+site (Alizadehsalehi et al. 2020) but assumes a perfect correspondence between model and reality 
+
+and therefore does not capture the deviations that occur. Documenting drift therefore requires Building Drift 5
+
+novel computational representations to capture and share the gaps between the assumed digital 
+
+model and the physical as -built state. 
+
+3DGS offers an alternative representation for documenting the as -built state of a construction 
+
+project (Kerbl et al. 2023). Splatting has been previously extended to contexts requiring in -situ 
+
+capture such as machine maintenance collaboration (Kwatra et al . 2025) and architectural heritage 
+
+preservation (Yu et al. 2025). Capturing improvisations requires a video recording using any 
+
+camera (Batra et al. 2025) without needing site connectivity (critical for remote construction sites 
+
+like forests) . E xisting spl atting workflows explored a spatially grounded reconstruction that can 
+
+be aligned with the original 3D model (Kwatra et al. 2025). We extend this method of geometric 
+
+alignment with Pentimento, integrating on -site voice -recorded adaptations spatially, temporally, 
+
+and semantically w ith the model -aligned splats of construction states. 
+
+3. Method 
+
+3.1 ReShelter Case Study 
+
+To explore how building drift can be made legible to stakeholders, we conducted a case study of 
+
+ReShelter , a shelter designed to investigate the use of reclaimed timber across multiple resource 
+
+streams. In ReShelter, complex double curved glulam members from previously deployed timber -
+
+related research projects [Reference removed for review] combined with solid timber profiles from 
+
+wind turbine transport crates and bark offcuts from a local sawmill (Figure 3). Prior to site 
+
+assembly, the pieces were fabricat ed to closely match the designed model (Figure 4) using a robotic 
+
+mill. To document the ReShelter construction process, the research team recorded videos using 
+
+mobile devices and Ray -Ban Meta AI glasses, participated in the construction project as builders ,
+
+and engaged with stakeholders to understand their information needs across material lifecycles. 
+
+We drew on principles of qualitative research (Glaser 1968) to analyze extensive field notes from 
+
+this case study conducted from January to May 2026. 
+
+Figure 3: Examples of reclaimed material sources and storage for ReShelter. Building Drift 6
+
+Figure 4: ReShelter design and components. 
+
+ReShelter's construction proceeded in two phases as shown in Figure 5. The structure was first 
+
+assembled as a dry fit in an auditorium over three days, which allowed the team to identify 
+
+challenges early and start using Pentimento. The structure was then disassembled and reassembled 
+
+in the forest site for final installation, where the unpredictability of the environment introduced 
+
+additional sources of drift missing in the indoor assembly. Both phases informed the taxonomy 
+
+and development of Pentimento for real -world construction environments. 
+
+Figure 5: ReShelter construction phases. 
+
+3.2 Building Drift Taxonomy 
+
+Tending the Site (Figure 6) describes drift arising from the environmental conditions of the 
+
+construction site and the preparation and negotiation work that precedes and underlies the 
+
+structure’s visible features. A construction site is rarely a blank canvas; it has its o wn conditions 
+
+with roots, slopes, weather patterns, and vegetation that must be worked with rather than simply 
+
+built upon. This hidden labor of clearing vegetation, leveling ground, bracing against wind, and 
+
+preparing foundations shapes the as -built state in ways the model cannot anticipate. For ReShelter 
+
+in the forest, the impact of these conditions was immediately apparent. An unexpected tree root 
+
+required breaking a concrete piece of the spine foot and repositioning it around the root, wh ich Building Drift 7
+
+became structurally integrated into the foot. Similar negotiations arose from uneven terrain, 
+
+vegetation requiring clearing, and excavating foundation holes for cement blocks. 
+
+Figure 6: Examples of Tending the Site. 
+
+Foraging for Fit (Figure 7) describes drift caused by working within the constraints of available 
+
+materials and tools on site. Unlike urban construction with ready access to suppliers, remote 
+
+settings require working with what is on hand: a beam too thick must be trimmed, a stone too tall 
+
+must be shimmed, and a precise cut is approximated with a jigsaw . For ReShelter, the bark 
+
+cladding was sourced from a nearby sawmill, but pieces varied significantly in thickness and 
+
+flexibility, requiring careful selectio n and trimming to match the design. Similar decisions arose 
+
+with the other resource streams, as wind turbine crate timber and old research project materials 
+
+each arrived with their own unexpected dimensions and conditions. 
+
+Figure 7: Examples of Foraging for Fit. 
+
+Interpreting the Material (Figure 8) describes drift arising from the inherent behavior and hidden 
+
+histories of reclaimed materials. Unlike standardized materials that arrive with known, predictable 
+
+properties, reclaimed materials carry tendencies that are often not visible at fir st encounter. They 
+
+require different kinds of sensemaking, such as physically examining a timber beam to find where 
+
+moisture has softened it, drilling in and discovering a hidden nail, or interpreting incoherent 
+
+markings left by prior owners. For ReShelter , the bark, having been stored outside for over a year, 
+
+expanded from moisture and grew mold in various regions, requiring joints and cut paths to shift 
+
+on site. The glulam spine pieces required heavy knocking to fit due to moisture -driven expansion, Building Drift 8
+
+revealing histories only apparent during construction. 
+
+Figure 8: Examples of Interpreting the Material. 
+
+Marking Measurements (Figure 9) describes drift arising from the natural imprecision of tool -
+
+constrained construction and the gap between fabrication -grade and on -site tools. Every pencil 
+
+mark and hand tool cut carries imprecision that compounds across a structure, and the physical 
+
+demands of balancing, reaching, and holding on site make precision challenging . ReShelter's 
+
+components were initially fabricated with a robotic mill capable of millimeter precision, but that 
+
+precision could not be replicated on s ite with portable hand tools. Rough cuts made with a portable 
+
+jigsaw required further refinement with a Japanese saw, and penciled markings from the indoor 
+
+dry fit indicating rib locations were difficult to interpret when moving to the forest. Local leveli ng 
+
+decisions at individual points of the platform also introduced errors that propagated through the 
+
+overall structure, as no single measurement tool could ensure level across the entire platform. 
+
+Figure 9: Examples of Marking Measurements. 
+
+Coordinating Across Communities (Figure 10) describes drift arising from navigating the 
+
+different knowledge, roles, and expectations of the communities surrounding a construction 
+
+project. Construction is rarely an isolated act; site owners, designers, builders, and inhabitants each 
+
+shape what gets built and where, often in ways that emerge once construction begins. These social 
+
+negotiations are as much a part of the as -built state as the material and environment conditions yet 
+
+are incompatible with existing digital models. Three distinct groups shaped ReShelter’s 
+
+construction: the core design team with full knowledge of the design intent, lab members coming Building Drift 9
+
+to help with partial context, and the landowners with their own relationship to the site and its use. 
+
+Each group introduced adaptations when expectations diverged on -site. For example, the site 
+
+landowners specified after fabrication had completed that the previously selected location was too 
+
+visible from the street, requiring the entire structure to be repositioned to a new area of the forest 
+
+with different slope and tree locations. This negotiation evolved into an ongoing collaboration, as 
+
+the landowners a lso shared offcuts from their local sawmill and frequently engaged with the team 
+
+during construction. Within the team, instructions to lab members were difficult to communicate, 
+
+introducing cumulative deviations that reflected the gap between those with the full vision of the 
+
+structure and those without. 
+
+Figure 10: Examples of Coordinating Across Communities. 
+
+3.3 Pentimento Implementation 
+
+Pentimento is designed around four considerations : be accessible to any stakeholder through a web 
+
+browser ; require no site infrastructure for capture; preserve all data but can be filtered based on 
+
+the drift taxonomy ; and have processing times under ten minutes per video given the volume of 
+
+recordings. 
+
+To realize these considerations, we developed Pentimento as a web interface with a backend 
+
+processing pipeline (Figure 11). Builders capture the current state and on -site adaptations by 
+
+recording video and audio on a smartphone or Meta Ray -Ban glasses for hands -free recording 
+
+while narrating what they did and why for each adaptation. These recordings are uploaded to a 
+
+remote GPU instance (Nvidia 4080S, 24GB VRAM), which extracts frames at 4fps to balance 
+
+reconstruction quality with processing time, runs a C OLMAP structure -from -motion pipeline to 
+
+calculate camera poses (Schonberger and Frahm 2016), and generates a 3DGS reconstruction using 
+
+the Python package, gsplat (Ye et al. 2025). Building Drift 10 
+
+Figure 11: Pentimento interface features. 
+
+To make on -site captured data legible, Pentimento represents sources of building drift across three 
+
+dimensions: spatially, through alignment of the Gaussian splat with the original model; temporally, 
+
+through a chronological record of when and under what co nditions adaptations were made; and 
+
+semantically, through transcribed voice recordings categorized into the sources of building drift. 
+
+For spatial representation, we extend the SplatOverflow methodology (Kwatra et al. 2025) of 
+
+placing ArUco marker stickers (Munoz -Salinas 2012) on the physical structure at locations 
+
+corresponding to marked squares in a glTF representation of the model (exported by CAD tools 
+
+such as Rhino). The backend detects these markers and calculates a weighted transform to align 
+
+the spl at to the model based on the number of markers detected and the diversity of viewing angles 
+
+across frames. For temporal representation, we use the videos' timestamps to place adaptations and 
+
+scenes in chronological order, allowing stakeholders to navigate the construction process and 
+
+understand how adaptations compounded. For semantic representation, voice recordings for 
+
+adaptations are transcribed using a local instance of OpenAI Whisper (Radford et al. 2023). The 
+
+transcripts along with the first, last, an d center frame of the video are then shared with the Claude 
+
+API (Anthropic 202 3), prompted with descriptions of the five sources of building drift and tasked 
+
+to categorize each adaptation into at least one of them. Both resulting categories and transcripts 
+
+can be manually edited in the interface. All project artifacts (CAD model, splat, adaptation videos, 
+
+video transcripts, calculated camera positions) are stored in a structured AWS S3 bucket (Amazon 
+
+Web Services 2024) . The frontend web interface pulls from the bucket to render these artifacts 
+
+together with Three.js (Cabello et al. 2010 ) and Spark (World Labs 2025) libraries . The full 
+
+workflow of Pentimento is shown in Figure 12. Building Drift 11 
+
+Figure 12: Pentimento workflow. 
+
+4. Results 
+
+4.1 Spatially 
+
+Pentimento’s spatial grounding enabled stakeholders to locate and interpret sources of drift relative 
+
+to the original model. In Figure 13a, a builder took a measurement of a bolt and documented it in 
+
+place, anchored to the designed geometry. An inheritor r eusing that timber beam would see not 
+
+just the measurement but how it was measured, information invisible in both the model and a 
+
+conventional site photograph. In Figure 13b, a builder described an acceptable tolerance for a joint, 
+
+combining spatial refere nce with reasoning in a way that neither text nor geometry can provide. 
+
+Video here acts as a spatial mechanism, allowing builders to gesture at specific parts of the 
+
+structure in ways that written annotations cannot replicate. 
+
+Figure 13: Examples of overlaid adaptation splats in Pentimento. Building Drift 12 
+
+4.2 Temporally 
+
+Pentimento’s temporal record enabled stakeholders to navigate the construction process as it 
+
+unfolded rather than as a single finished state. As shown in Figure 14, annotations were organized 
+
+chronologically and filtered by drift source, allowing a collabo rator to see what happened on a 
+
+given day and in what order. Referencing the sequence of assembly was crucial for understanding 
+
+why deviations occurred and how they compounded. For example, the team discovered during the 
+
+dry run that the spine setup sequen ce needed reversing, informing the forest installation. 
+
+Environmental conditions also become visible temporally: a rainy -day during forest installation 
+
+affected which components could be safely handled, and this context is recoverable through the 
+
+dated annotation record. An evaluator assessing a material’s reus e potential can therefore 
+
+understand not just what was built but under what conditions, distinguishing weather -driven drift 
+
+from deliberate design decisions. 
+
+Figure 14: Pentimento timeline with example sources of drift. 
+
+4.3 Semantically 
+
+Lastly, Pentimento’s semantic record captures the reasoning behind adaptations that spatial 
+
+reconstruction cannot convey. In Figure 15, the transcript preserves a tolerance judgement: “How 
+
+much off are we even? It’s even worse to move it.” A collaborator or evaluator can therefore 
+
+recover not just what was decided but why, distinguishing an intentional acceptance from an 
+
+overlooked error. Crucially, the inheritor can also use this record to confidently dismiss a deviation 
+
+rather than treatin g it as an unkno wn risk. The ability to also tag adaptations with multiple drift 
+
+sources further reflects the multidimensional nature of building drift: a single adaptation does not 
+
+necessarily belong to one category alone and forcing it into one would produce an incomple te and 
+
+partial record. The search and filter features shown in Figure 15 allow each stakeholder to navigate 
+
+only the annotations relevant to them, making the record legible via selectivity rather than 
+
+exhaustively dense. Building Drift 13 
+
+Figure 15: Search and filter features of Pentimento. 
+
+5. Discussion 
+
+5.1 Documenting on Site 
+
+Deploying Pentimento for ReShelter revealed that the same heterogeneity that makes building drift 
+
+inevitable also makes it difficult to document. ArUco markers often fell off timber surfaces due to 
+
+wood shavings and weather, requiring constant reattachment. Capturing complete splats requires 
+
+a steady loop around the structure, but navigating forest shrubs, uneven terrain, and snow led to 
+
+shaky video s and blurry splats. Participating as a builder also made timely documentation difficult 
+
+without interrupting the work. These challenges reflect a broader tension between the 
+
+improvisational and messy nature of construction sites and the stable, pristine conditions that 
+
+computer vision tools typically assume (Teizer 2015). Portable cameras offer a flexible pathway 
+
+to document improvisational working environments without modifying or intruding on the site, 
+
+even if the resulting captures are imperfect .
+
+5.2 Building Layered Digital Models 
+
+Pentimento's response to imperfect data capture points towards a different kind of digital model 
+
+for architecture. While standard CAD tools embody Ingold's hylomorphic model of making with 
+
+the outcomes of construction, Pentimento offers a layered architect ure for materials and 
+
+environments to “push back” against the designed model by preserving how builders responded to Building Drift 14 
+
+that resistance (Ingold 2009). The reasoning behind these responses in aggregate rather than 
+
+isolation is what stakeholders need to effectively reuse materials across multiple building lifetimes. 
+
+Pentimento maintains multiple partial (but not redundant) sp lats, videos, transcripts, and CAD 
+
+geometries that each stakeholder can draw on depending on what they need, together capturing 
+
+more than any single representation could. These layers carry a material's history across building 
+
+lifetimes, preserving not jus t what it became but how and why. 
+
+5.3 Designing for Drift 
+
+Embracing building drift could inform future computational workflows by guiding designers on 
+
+how drift may emerge during fabrication and on -site construction. On -site table t viewing of 
+
+material histories could enable collaborat ors to see the aligned model overlaid on the structure as 
+
+they wor k. Deploying drift -inspired tools at scale also requires research into how multiple 
+
+contributors can record simultaneously and how overlapping or contradictory records can be 
+
+reconciled. Finally, recent advances in AI could improve capture, analysis, and consolidation by 
+
+tailoring to each builder’s and stakeholder’s relationship to the project. 
+
+Integrating drift into CAD tools has broader implications for sustainable construction. While 
+
+architecture presumes control through an authoritative model , building drift reveals that buildings 
+
+are not entirely as planned, materials remain dynamic , and sustainable practices require thinking 
+
+further into the pre -lives and post -lives of materials. Materials have micro ecosystems, 
+
+environments change through the seasons, and local communities shift and flow; all these 
+
+considerations require design tools that a llow imperfections and adaptations to emerge in 
+
+conversation with the world, rather than treating them as failures to be corrected. A layered, 
+
+imperfect digital model such as Pentimento offers a record of these conversations in support of a 
+
+circular econom y in which materials travel across building lifetimes, human actors come and go, 
+
+and the vagaries of weather, chance, and environment reshape both wholes and parts. 
+
+6. Conclusion 
+
+Building drift is inevitable when working at a site, with a material, and across the communities 
+
+surrounding a construction project. In this paper, we introduce building drift as a critical concept 
+
+for sustainability and characterize five of its sources th rough the construction of ReShelter in a 
+
+forest. We demonstrate how to document these sources of drift through the development of 
+
+Pentimento. By spatially, temporally, and semantically representing on -site adaptations in relation 
+
+to the original digital mo del, this work begins to close the gap between what was designed and 
+
+what was built. Our vision for this work is to inspire construction and, more broadly, digital 
+
+fabrication practices that do not merely tolerate drift in every individual project but use drift as a 
+
+mechanism to connect them through the preserved history of adaptations made to each material 
+
+and go beyond geometry to preserve the social and ecological dimensions of how each material 
+
+came to be what it is. For a truly circular economy, that h istory supports making material repair, 
+
+recovery, and reuse practical for construction projects and meaningfully connected to the people 
+
+and places that shaped them. Building Drift 15 
+
+References 
+
+Books 
+
+Bennett, Jane. 2020. Vibrant Matter: A Political Ecology of Things . Duke University Press. 
+
+Brand, Stewart. 1995. How Buildings Learn: What Happens After They're Built . Penguin. 
+
+Cairns, Stephen and Jane Margaret Jacobs. 2014. Buildings Must Die: A Perverse View of 
+
+Architecture . MIT Press. 
+
+DeSilvey, Caitlin. 2017. Curated Decay: Heritage Beyond Saving . University of Minnesota Press. 
+
+Harper, Douglas A. 1987. Working Knowledge: Skill and Community in a Small Shop . University 
+
+of Chicago Press. 
+
+Latour, Bruno. 2005. Reassembling the Social: An Introduction to Actor -Network -Theory . Oxford 
+
+University Press .
+
+Liboiron, Max and Josh Lepawsky. 2022. Discard Studies: Wasting, Systems, and Power . MIT 
+
+Press. 
+
+Orr, Julian E. 1990. Talking About Machines: An Ethnography of a Modern Job . Cornell 
+
+University Press. 
+
+Suchman, Lucille Alice. 1987. Plans and Situated Actions: The Problem of Human -Machine 
+
+Communication . Cambridge University Press. 
+
+Book Chapters 
+
+Bovet, Alain and Ignaz Strebel. 2018. "Job Done: What Repair Does to Caretakers, Tenants and 
+
+Their Flats." In Repair Work Ethnographies: Revisiting Breakdown, Relocating Materiality ,
+
+89 –125. Springer Nature Singapore. 
+
+Browne, Xan and Olga Popovic Larsen. 2024. "Prototyping New Scenarios for Fabricating 
+
+Structural Components from Reclaimed Timber." In Fabricate 2024: Creating Resourceful 
+
+Futures , 114 –121. UCL Press. 
+
+Journal Articles 
+
+Alizadehsalehi, Sepehr, Ahmad Hadavi and Joseph Chuenhuei Huang. 2020. "From BIM to 
+
+Extended Reality in AEC Industry." Automation in Construction 116: 103254. 
+
+Glaser, Barney G., Anselm L. Strauss and Elizabeth Strutzel. 1968. 'The Discovery of Grounded 
+
+Theory: Strategies for Qualitative Research.' Nursing Research 17 (4): 364. 
+
+Golparvar -Fard, Mani, Feniosky Peña -Mora and Silvio Savarese. 2011. "Integrated Sequential As -
+
+Built and As -Planned Representation with D4AR Tools in Support of Decision -Making 
+
+Tasks in the AEC/FM Industry." Journal of Construction Engineering and Management 137 
+
+(12): 1099 –1116. 
+
+Ingold, Tim. 2010. "The Textility of Making." Cambridge Journal of Economics 34 (1): 91 –102. 
+
+Jackson, Steven J., Adnan Z. Morshed, Hélène Frichot, Lucy Benjamin, Caitlin DeSilvey, Zach 
+
+Mortice and Ivonne Santoyo -Orozco et al. 2024. "Field Notes on Repair: 1." Places Journal .Building Drift 16 
+
+Kerbl, Bernhard, Georgios Kopanas, Thomas Leimkühler and George Drettakis. 2023. "3D 
+
+Gaussian Splatting for Real -Time Radiance Field Rendering." ACM Transactions on 
+
+Graphics 42 (4): 139. 
+
+Klemp, Nathaniel, Ray McDermott, Jason Raley, Matthew Thibeault, Kimberly Powell and Daniel 
+
+J. Levitin. 2008. "Plans, Takes, and Mis -Takes." Outlines: Critical Practice Studies 10 (1): 
+
+4–21. 
+
+Sun, Chengshuang, Shaohua Jiang, Miroslaw J. Skibniewski, Qingpeng Man and Liyin Shen. 
+
+2017. "A Literature Review of the Factors Limiting the Application of BIM in the 
+
+Construction Industry." Technological and Economic Development of Economy 23 (5): 764 –
+
+779. 
+
+Teizer, Jochen. 2015. "Status Quo and Open Challenges in Vision -Based Sensing and Tracking of 
+
+Temporary Resources on Infrastructure Construction Sites." Advanced Engineering 
+
+Informatics 29 (2): 225 –238. 
+
+Thomsen, Mette Ramsgaard, Nicole Miller and Stine Dalager Nielsen. 2024. "Fragility: 
+
+Foundations for a Regenerative Architecture." Ardeth 15: 23 –31. 
+
+Thomsen, M.R., N. Miller, S.D. Nielsen and R.S. Chiujdea. 2026. "Built Ecologies: Metabolistic 
+
+Resource Thinking Through Biogenic Materials." The Journal of Architecture 1–21. 
+
+Pelin, Asa, Christelle El Feghali, Christian Steixner, Yasaman Tahouni, Hans Jakob Wagner, Jan 
+
+Knippers and Achim Menges. 2024. "Embraced Wood: Circular Construction Method for 
+
+Composite Long -Span Beams from Unprocessed Reclaimed Timber, Fibers and Clay." 
+
+Construction and Building Materials 416: 135096. 
+
+Wang, Boyu, Fangzhou Lin, Mingkai Li, Zhenyu Liang, Hongzhe Yue, Qian Wang and Jack CP 
+
+Cheng. 2025. "Aligning As -Built and As -Designed: Local Point Cloud to BIM Registration 
+
+via Hybrid Visibility Map Encoding for Construction Digital Twins." Automation in 
+
+Construction 180: 106551. 
+
+Ward, Stephen and Chris Chapman. 2008. "Stakeholders and Uncertainty Management in 
+
+Projects." Construction Management and Economics 26 (6): 563 –577. 
+
+Ye, Vickie, Ruilong Li, Justin Kerr, Matias Turkulainen, Brent Yi, Zhuoyang Pan and Otto 
+
+Seiskari et al. 2025. "gsplat: An Open -Source Library for Gaussian Splatting." Journal of 
+
+Machine Learning Research 26 (34): 1 –17. 
+
+Yu, Yingwen, Edward Verbree, Peter van Oosterom, Uta Pottgiesser, Yuyang Peng and Florent 
+
+Poux. 2025. "From Comparison to Integration: A Workflow Evaluation of 3D Gaussian 
+
+Splatting and LiDAR Point Cloud for Modern Architectural Heritage." Automation in 
+
+Construction 180: 106509. 
+
+Conference Papers 
+
+Batra, Ritik, Lydia Kim, Ilan Mandel, Amritansh Kwatra, Steven J. Jackson and Thijs Roumen. 
+
+2025. "(De)composing Craft: An Elementary Grammar for Sharing Expertise in Craft 
+
+Workflows." arXiv preprint arXiv:2506.10891. Building Drift 17 
+
+Gordon, M. C. and R. Vargas Calvo. 2021. "Digital Deconstruction and Design Strategies from 
+
+Demolition Waste." In Proceedings of the 41st Annual Conference of the Association for 
+
+Computer Aided Design in Architecture (ACADIA) . Online and Global: ACADIA. 346 –
+
+351. 
+
+Kwatra, Amritansh, Tobias M. Weinberg, Ilan Mandel, Ritik Batra, Peter He, Francois 
+
+Guimbretiere and Thijs Roumen. 2025. "SplatOverflow: Asynchronous Hardware 
+
+Troubleshooting." In Proceedings of the 2025 CHI Conference on Human Factors in 
+
+Computing Systems . New York: ACM. 1 –16. 
+
+Peng, Xue Bin, Marcin Andrychowicz, Wojciech Zaremba and Pieter Abbeel. 2018. "Sim -to -Real 
+
+Transfer of Robotic Control with Dynamics Randomization." In 2018 IEEE International 
+
+Conference on Robotics and Automation (ICRA) . IEEE. 3803 –3810. 
+
+Radford, Alec, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey and Ilya 
+
+Sutskever. 2023. "Robust Speech Recognition via Large -Scale Weak Supervision." In 
+
+International Conference on Machine Learning . PMLR. 28492 –28518. 
+
+Schonberger, Johannes L. and Jan -Michael Frahm. 2016. "Structure -from -Motion Revisited." In 
+
+Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition . 4104 –
+
+4113. 
+
+Tamke, Martin, Cameron Nelson, Shahriar Akbari and Mette Ramsgaard Thomsen. 2025. 
+
+"Durable Data Models for Circular Building Practices in Bio -based Construction: The 
+
+History Stack." In EC3 Conference 2025 , vol. 6. European Council on Computing in 
+
+Construction. 
+
+Tamke, Martin, Tom Svilans, Johannes AJ Huber, Wendy Wuyts and Mette Ramsgaard Thomsen. 
+
+2024. "Non -Destructive Assessment of Reclaimed Timber Elements Using CT Scanning: 
+
+Methods and Computational Modelling Framework." In The International Conference on 
+
+Net -Zero Civil Infrastructures (NTZR) . Cham: Springer Nature Switzerland. 1275 –1288. 
+
+Computer Software 
+
+Amazon Web Services. 2024. Amazon S3. Accessed May 2026. https://aws.amazon.com/s3/ 
+
+Anthropic. 2023 . Claude API (claude -haiku -4-5). Accessed May 2026. https://anthropic.com/ 
+
+Cabello, Ricardo et al . 2010. Three.js. Accessed May 2026. https://threejs.org/ 
+
+Munoz -Salinas, Rafael. 2012. "Aruco: A Minimal Library for Augmented Reality Applications 
+
+Based on OpenCV." Universidad de Córdoba 386. 
+
+World Labs. 2025. Spark: An Advanced 3D Gaussian Splatting Renderer for THREE.js. Accessed 
+
+May 2026. https://github.com/sparkjsdev/spark

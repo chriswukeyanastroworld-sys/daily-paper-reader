@@ -1,0 +1,60 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-21T20:37:59.732805+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.19609v1",
+      "source": "arxiv",
+      "title": "Building Drift: Documenting On-Site Construction Adaptations Across Material Lifecycles",
+      "abstract": "In a circular economy for construction, reclaimed materials carry prior lives of use and go on to have post-lives in future buildings. Yet working with such materials introduces unpredictability that requires on-site improvisation, making their reuse challenging to document and scale across building lifetimes. Without documentation, the on-site adaptations that make construction with reclaimed materials possible leave collaborators, evaluators, and inheritors without the information they need to continue, assess, and reuse materials. We call the collective deviation of the physical state from the digital model through these adaptations \"building drift.\" Through a case study, ReShelter, a reclaimed timber pavilion constructed in the forest, we develop a taxonomy for building drift that characterizes the collective deviation across building lifetimes: Tending the Site, Foraging for Fit, Interpreting the Material, Marking Measurements, and Coordinating Across Communities.   To put our taxonomy for building drift into practice, we present Pentimento, a documentation tool that leverages video documentation and 3D Gaussian Splatting to spatially, temporally, and semantically represent on-site adaptations in relation to the designed model. Pentimento enables each stakeholder to navigate material histories in ways that reduce barriers to material reuse. Together, these contributions open pathways towards computational tools that support the on-site improvisation essential to construction with reclaimed materials, enabling more sustainable cycles of recovery, repair, and reuse.",
+      "authors": [
+        "Ritik Batra",
+        "Martin Tamke",
+        "Tom Svilans",
+        "Jan Hüls",
+        "Amritansh Kwatra",
+        "Steven J. Jackson",
+        "Thijs Roumen",
+        "Mette Ramsgaard Thomsen"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.GR"
+      ],
+      "published": "2026-06-17T21:23:16+00:00",
+      "link": "https://arxiv.org/pdf/2606.19609v1",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "documents on-site adaptations in reclaimed material construction, providing a method to track material lifecycles in circular design",
+      "llm_evidence_cn": "记录回收材料施工中的现场适应性调整，为循环设计中的材料生命周期追踪提供方法",
+      "llm_evidence": "记录回收材料施工中的现场适应性调整，为循环设计中的材料生命周期追踪提供方法",
+      "canonical_evidence": "记录回收材料施工中的现场适应性调整，为循环设计中的材料生命周期追踪提供方法",
+      "llm_tldr_en": "This paper introduces 'building drift' to document deviations between digital models and physical construction when reusing materials, using a reclaimed timber pavilion case study to support future reuse and assessment in circular construction.",
+      "llm_tldr_cn": "在循环建筑中，回收材料因现场即兴调整而产生物理状态与数字模型的偏差，本文将此定义为‘建筑漂移’。通过对回用木材展亭ReShelter的案例研究，展示了如何记录这些适应性改动，以支持材料在全生命周期内的延续、评估与再利用，为再生设计实践提供了一种记录方法。",
+      "llm_tldr": "在循环建筑中，回收材料因现场即兴调整而产生物理状态与数字模型的偏差，本文将此定义为‘建筑漂移’。通过对回用木材展亭ReShelter的案例研究，展示了如何记录这些适应性改动，以支持材料在全生命周期内的延续、评估与再利用，为再生设计实践提供了一种记录方法。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Evaluation framework for co-design processes in regenerative design",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
