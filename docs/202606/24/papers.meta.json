@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-24",
+  "date": "2026-06-24",
+  "generated_at": "2026-06-24T21:36:51",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/24/biorxiv-10-64898-2026-02-21-707146-v2-a-unifying-thermodynamic-model-for-phase-separation-and-aging-of-biopolymers",
+      "section": "quick",
+      "title_en": "A Unifying Thermodynamic Model for Phase Separation and Aging of Biopolymers",
+      "authors": "Michels, J. J., Caria, J., Lemke, E. A.",
+      "date": "2026-06-16",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.02.21.707146v2.full.pdf",
+      "score": "6.0",
+      "evidence": "生物聚合物相分离的统一热力学模型，潜在可应用于蛋白质基材料设计",
+      "tldr": "蛋白质凝聚物相分离后老化与神经退行性疾病相关，但缺乏统一热力学模型。本文提出时间依赖的多组分关联聚合物理论，整合可逆折叠和相分离。该模型基于热力学第二定律，揭示老化动力学由关联位点平均价态的时间依赖性决定，计算结果与核孔蛋白Nup98类似物实验吻合。该框架统一了相分离与老化的热力学描述，验证了Nup98作为模型系统，并为退行性疾病研究提供工具。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "Protein condensates that form via phase separation typically become more viscous over time and can harden in a process referred to as \"molecular aging\". Several mechanisms have been identified for this phenomenon. Of these, the ones involving enhanced {beta}-sheet or -strand interactions are of pathological relevance since they have been associated with neurodegeneration. Although there is much understanding of biopolymer phase behavior, an inclusive thermodynamic framework that unifies phase separation and {beta}-sheet-based aging is lacking. We present a time-dependent, multi-component extension of associating polymer theory that describes phase separation and aging of an intrinsically disordered protein (IDP) capable of associating through local, reversible folding. The model shows how the Second Law of Thermodynamics applies throughout, whether phase separation precedes and encourages aging or, vice versa, whether the increase in \"stickiness\" during aging drives phase separation. Our calculations show how the time-dependence of the average valency of associating sites determines the aging kinetics and the development of viscoelastic properties of a biocondensate. The agreement between our calculations and the change in dynamics of condensates of  perfect repeat analogues of nucleoporin-98 not only validates the theory but also identifies these Nup98 variants as model systems for studying aging.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

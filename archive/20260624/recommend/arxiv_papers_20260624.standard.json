@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-24T21:35:44.492028+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "biorxiv-10-64898-2026-02-21-707146-v2",
+      "source": "biorxiv",
+      "title": "A Unifying Thermodynamic Model for Phase Separation and Aging of Biopolymers",
+      "abstract": "Protein condensates that form via phase separation typically become more viscous over time and can harden in a process referred to as \"molecular aging\". Several mechanisms have been identified for this phenomenon. Of these, the ones involving enhanced {beta}-sheet or -strand interactions are of pathological relevance since they have been associated with neurodegeneration. Although there is much understanding of biopolymer phase behavior, an inclusive thermodynamic framework that unifies phase separation and {beta}-sheet-based aging is lacking. We present a time-dependent, multi-component extension of associating polymer theory that describes phase separation and aging of an intrinsically disordered protein (IDP) capable of associating through local, reversible folding. The model shows how the Second Law of Thermodynamics applies throughout, whether phase separation precedes and encourages aging or, vice versa, whether the increase in \"stickiness\" during aging drives phase separation. Our calculations show how the time-dependence of the average valency of associating sites determines the aging kinetics and the development of viscoelastic properties of a biocondensate. The agreement between our calculations and the change in dynamics of condensates of  perfect repeat analogues of nucleoporin-98 not only validates the theory but also identifies these Nup98 variants as model systems for studying aging.",
+      "authors": [
+        "Michels, J. J.",
+        "Caria, J.",
+        "Lemke, E. A."
+      ],
+      "primary_category": "biophysics",
+      "categories": [
+        "biophysics"
+      ],
+      "published": "2026-06-16T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.02.21.707146v2.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Unified thermodynamic model for biopolymer phase separation, potentially applicable to protein-based materials design",
+      "llm_evidence_cn": "生物聚合物相分离的统一热力学模型，潜在可应用于蛋白质基材料设计",
+      "llm_evidence": "生物聚合物相分离的统一热力学模型，潜在可应用于蛋白质基材料设计",
+      "canonical_evidence": "生物聚合物相分离的统一热力学模型，潜在可应用于蛋白质基材料设计",
+      "llm_tldr_en": "Presents a thermodynamic model describing phase separation and beta-sheet aging of biopolymers, which may inform the design of sustainable protein-based materials such as gelatin.",
+      "llm_tldr_cn": "针对现有生物聚合物相分离与β-sheet老化缺乏统一热力学框架的问题，本文提出了一种时间依赖的多组分缔合聚合物理论扩展模型，描述了固有无序蛋白的相分离与老化过程。该模型可用于理解蛋白质基材料（如明胶）的长期行为与稳定性，为材料驱动设计中蛋白质材料的理性优化提供理论支持。",
+      "llm_tldr": "针对现有生物聚合物相分离与β-sheet老化缺乏统一热力学框架的问题，本文提出了一种时间依赖的多组分缔合聚合物理论扩展模型，描述了固有无序蛋白的相分离与老化过程。该模型可用于理解蛋白质基材料（如明胶）的长期行为与稳定性，为材料驱动设计中蛋白质材料的理性优化提供理论支持。",
+      "llm_tags": [
+        "query:mdd-regen:composite"
+      ],
+      "matched_query_tag": "query:mdd-regen:composite",
+      "matched_query_text": "Papers central to 核心需求：材料驱动设计（MDD）等设计方法论，三文鱼废料回收利用，三文鱼皮提取，三文鱼材料科学分析，三文鱼消费变化, especially work that connects or combines: Material Driven Design methodology for sustainable bio-based materials; Fish skin gelatin extracted from marine waste for bioplastic applications; Evaluation framework for co-design processes in regenerative design; Upcycling marine biowaste into high-performance biomaterials; analysis of salmon-based materials; changes in salmon consumption patterns; How can material driven design and microbial transglutaminase crosslinking upcycle fish skin gelatin into sustainable design materials?; Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.; What are the properties and applications of extracted salmon skin?; How do changes in salmon consumption impact waste management and material innovation?.",
+      "matched_requirement_id": "req-composite-mdd-regen",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
