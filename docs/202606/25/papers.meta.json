@@ -1,0 +1,54 @@
+{
+  "label": "2026-06-25",
+  "date": "2026-06-25",
+  "generated_at": "2026-06-25T21:50:34",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202606/25/biorxiv-10-64898-2026-06-24-733534-v1-coral-settlement-module-designs-for-scalable-reef-restoration",
+      "section": "deep",
+      "title_en": "Coral settlement module designs for scalable reef restoration",
+      "authors": "Reichert, J., Asbury, M., Argall, R., Chen, G. K., Ehrenberg, J., Huang, Z., Jones, B., Jorissen, H., Levy, J., Nims, A. D., Rottmueller, M. E., Rova, L. H., Thode, A., Wangpraseurt, D., The R3D Consortium, Madin, J. S.",
+      "date": "2026-06-25",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.24.733534v1.full.pdf",
+      "score": "10.0",
+      "evidence": "用于海洋人工礁生态恢复的珊瑚附着模块设计",
+      "tldr": "全球珊瑚礁衰退急需可规模化的恢复策略，幼虫被动招募因可大范围操作而成为重要杠杆。本研究将高效螺旋凹槽几何从实验黏土模块转移至可量产混凝土模块，在四种礁址进行一年附苗评估。结果螺旋模块附苗密度比无特征对照高约20倍，较自然礁基提升3至32倍，以缝隙长度标准化后量产与实验模块效果一致。已生产690个模块用于夏威夷混成礁修复，此被动招募方法无需幼虫培育，可兼容主动播种，极大改善大规模修复的物流与经济可行性。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "The global coral reef crisis has prompted restoration initiatives worldwide. Targeting the coral larval stage is among the most scalable approaches as recruitment operates over large spatial scales. It thus represents one of the best levers for coral population recovery. Active coral larval seeding has shown considerable success, and passive substrate engineering has emerged as a promising complementary strategy. Coral settlement modules featuring helix recesses have increased settlement and survival by up to 80-fold on small experimental units, but whether these results translate to tools deployable at the scale of thousands of units, remains yet an open question. Here, we transferred structural features from successful experimental coral settlement designs into production-ready concrete modules to (i) evaluate coral recruitment on five designs at four reef sites differing in flow regime and coral cover over one year; (ii) compare production-scale performance against experimental clay modules and natural reef substrate; and (iii) identify key parameters for large-scale production. The helix recess geometry of coral settlement modules outperformed the featureless control design approximately 20-fold and exceeded natural reef recruitment at least 3- to 32-fold. The helix features were successfully transferred from experimental clay to production-scale concrete modules, yielding comparable settlement densities when standardized to crevice length, which proved to be the biologically relevant unit of available habitat. Production feasibility was demonstrated by producing 690 modules for deployment on a hybrid reef on the west side of Oahu, Hawaii. The passive coral larval recruitment approach presented here could substantially improve the logistical and economic feasibility of large-scale coral reef restoration. This approach requires neither coral larval rearing, handling, nor coral fragmenting, and is compatible with active larval seeding where genetic diversity or larvae supply are limiting factors. The coral settlement modules can be cast in standardized concrete molds at precast facilities. Modules have demonstrated consistent coral recruitment enhancement across reef environments with contrasting flow and coral cover. Deploying mixed arrays of helix-recess structures with designs offering multi-level complexity and three-dimensional rugosity maximizes outcomes for coral, fish, and invertebrate communities simultaneously. Site selection is the most critical deployment decision and should consider larval supply, hydrodynamics, and substrate stability, which drive recruitment outcomes more than design choice alone. The modules offer a range of application potential, ranging from integration into existing coastal infrastructure over stand-alone reef restoration approaches, to substrate-consolidating interconnected arrangements.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/25/biorxiv-10-64898-2026-06-16-732662-v1-simultaneous-regeneration-of-skin-and-bone-in-full-thickness-cranial-composite-defects",
+      "section": "deep",
+      "title_en": "Simultaneous regeneration of skin and bone in full-thickness cranial composite defects",
+      "authors": "Kim, M., Zhu, Y., Adepu, S., Collins, C. P., Mendez-Santos, M., Sun, C., He, T.-C., Reid, R., Ameer, G. A.",
+      "date": "2026-06-17",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.16.732662v1.full.pdf",
+      "score": "8.0",
+      "evidence": "描述了一种'材料驱动的3D打印复合支架'用于组织再生，直接体现材料驱动设计原则。",
+      "tldr": "创伤性颅骨缺损常伴软硬组织缺失，传统自体移植需分期手术且组织工程多针对单一组织。本研究设计了一种无细胞3D打印复合支架，整合铜离子控释与柠檬酸盐基材料，实现皮肤与骨骼的同步再生。植入12周后，支架促进角质层组织、胶原沉积及成熟骨覆盖，效果媲美自体移植，且能抑菌。该平台为颅面复合缺损提供了一站式重建新策略。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "Traumatic cranial defects often involve concurrent loss of soft and hard tissues and can progress to chronic defects due to delayed healing associated with infection or other co-morbidities. Despite autologous reconstruction remaining the clinical standard, it requires staged procedures using heterogeneous tissues, increasing operative time, costs, and surgical risks. Moreover, current tissue engineering approaches focus on single tissues or acute tissue defect models, limiting their clinical applications. Herein, we describe an acellular, material-driven 3D-printed composite scaffold designed to regenerate both bone and skin within composite cranial defects. The scaffold integrates controlled copper ion release from both organic and inorganic components with 3D-printed citrate polymer and citrate polymer-ceramic composites. Integrated thermoresponsive citrate-based hydrogels further enable spatially defined dermoconductive and osteoconductive properties, supporting a one-step surgical approach. At 12 weeks post-implantation, our scaffold enhanced keratinocyte organization, collagen deposition, and defect coverage with mature bone, achieving histological outcomes comparable to autografts. Furthermore, the system suppressed bacterial burden. Thus, this acellular platform represents a clinically promising synchronized strategy to address the complex demands of traumatic craniofacial composite defects.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/25/biorxiv-10-64898-2026-06-15-732299-v1-from-molecular-lipidomics-to-interpretable-food-lipid-profiles-the-lipid-food-profile-module-in-lipidone",
+      "section": "quick",
+      "title_en": "From molecular lipidomics to interpretable food lipid profiles: the Lipid Food Profile module in LipidOne",
+      "authors": "Frongia Mancini, D., Alabed, H. B. R., Pellegrino, R. M.",
+      "date": "2026-06-19",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.15.732299v1.full.pdf",
+      "score": "7.0",
+      "evidence": "提供一种脂质组学数据分析工具，可用于表征三文鱼基材料的脂质谱。",
+      "tldr": "LC/MS食品脂质组学提供详细脂质分子信息，但数据难以直接解释为食品品质指标。Lipid Food Profile模块采用计算机模拟水解，重构酰基链并保留脂质类信息，生成食品相关脂质指数。在三个已发表数据集中，LFP不仅复现了原有结论，还提供了饱和度平衡、氧化稳定性等额外食品导向信息。该模块为复杂脂质组学数据增添了解释层，支持食品成分、加工效应及溯源分析。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "LC/MS-based food lipidomics provides detailed information on intact lipid species, but the resulting datasets are often difficult to translate into concepts directly useful for food quality, processing, nutritional profiling and authenticity assessment. Here, we present Lipid Food Profile (LFP), a module of the LipidOne platform designed to convert annotated LC/MS lipidomics data into interpretable food-relevant lipid indices. LFP applies an in silico hydrolysis strategy to reconstruct acyl, alkyl and alkenyl chains from intact lipid species while preserving their lipid-class origin. The reconstructed information is then summarized into index categories related to food lipid quality, compositional balance, omega balance, oxidative stability, chain remodelling and ether-linked chain contribution.\n\nThe interpretative value of LFP was evaluated using three published food lipidomics datasets addressing different analytical questions: X-ray-induced lipid remodelling in Chlorella vulgaris, spatial lipid heterogeneity in Mugil cephalus bottarga, and geographical-origin assessment of camel milk. Across these case studies, LFP recovered the main conclusions of the original lipidomics investigations, including treatment-associated lipid remodelling, inner-outer layer differences in bottarga and regional variation in camel milk. Importantly, LFP reorganized these findings into a smaller number of food-oriented indices, providing additional information on saturation balance, oxidative susceptibility, chain architecture and classification potential.\n\nOverall, LFP provides an interpretative layer for LC/MS food lipidomics that complement conventional fatty-acid analysis and molecular-species-based interpretation. By translating complex lipidomic tables into structured lipid index profiles, the module may support more accessible and chemically meaningful analysis of food composition, processing effects, lipid quality and exploratory traceability applications. LFP is freely accessible through the LipidOne web platform (LipidOne.eu).\n\nHighlightsO_LILipid Food Profile translates LC/MS food lipidomics into interpretable lipid indices.\nC_LIO_LIThe workflow preserves chain and lipid-class information without chemical hydrolysis.\nC_LIO_LIPublished case studies show that LFP recovers and extends previous interpretations.\nC_LIO_LILFP supports food quality, processing and exploratory origin/authenticity assessment.\nC_LIO_LIThe module complements conventional fatty-acid analysis and molecular lipidomics.\nC_LI",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

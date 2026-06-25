@@ -1,0 +1,146 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-25T21:47:31.485583+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "biorxiv-10-64898-2026-06-24-733534-v1",
+      "source": "biorxiv",
+      "title": "Coral settlement module designs for scalable reef restoration",
+      "abstract": "The global coral reef crisis has prompted restoration initiatives worldwide. Targeting the coral larval stage is among the most scalable approaches as recruitment operates over large spatial scales. It thus represents one of the best levers for coral population recovery. Active coral larval seeding has shown considerable success, and passive substrate engineering has emerged as a promising complementary strategy. Coral settlement modules featuring helix recesses have increased settlement and survival by up to 80-fold on small experimental units, but whether these results translate to tools deployable at the scale of thousands of units, remains yet an open question. Here, we transferred structural features from successful experimental coral settlement designs into production-ready concrete modules to (i) evaluate coral recruitment on five designs at four reef sites differing in flow regime and coral cover over one year; (ii) compare production-scale performance against experimental clay modules and natural reef substrate; and (iii) identify key parameters for large-scale production. The helix recess geometry of coral settlement modules outperformed the featureless control design approximately 20-fold and exceeded natural reef recruitment at least 3- to 32-fold. The helix features were successfully transferred from experimental clay to production-scale concrete modules, yielding comparable settlement densities when standardized to crevice length, which proved to be the biologically relevant unit of available habitat. Production feasibility was demonstrated by producing 690 modules for deployment on a hybrid reef on the west side of Oahu, Hawaii. The passive coral larval recruitment approach presented here could substantially improve the logistical and economic feasibility of large-scale coral reef restoration. This approach requires neither coral larval rearing, handling, nor coral fragmenting, and is compatible with active larval seeding where genetic diversity or larvae supply are limiting factors. The coral settlement modules can be cast in standardized concrete molds at precast facilities. Modules have demonstrated consistent coral recruitment enhancement across reef environments with contrasting flow and coral cover. Deploying mixed arrays of helix-recess structures with designs offering multi-level complexity and three-dimensional rugosity maximizes outcomes for coral, fish, and invertebrate communities simultaneously. Site selection is the most critical deployment decision and should consider larval supply, hydrodynamics, and substrate stability, which drive recruitment outcomes more than design choice alone. The modules offer a range of application potential, ranging from integration into existing coastal infrastructure over stand-alone reef restoration approaches, to substrate-consolidating interconnected arrangements.",
+      "authors": [
+        "Reichert, J.",
+        "Asbury, M.",
+        "Argall, R.",
+        "Chen, G. K.",
+        "Ehrenberg, J.",
+        "Huang, Z.",
+        "Jones, B.",
+        "Jorissen, H.",
+        "Levy, J.",
+        "Nims, A. D.",
+        "Rottmueller, M. E.",
+        "Rova, L. H.",
+        "Thode, A.",
+        "Wangpraseurt, D.",
+        "The R3D Consortium,",
+        "Madin, J. S."
+      ],
+      "primary_category": "ecology",
+      "categories": [
+        "ecology"
+      ],
+      "published": "2026-06-25T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.24.733534v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Design of coral settlement modules for marine artificial reef restoration",
+      "llm_evidence_cn": "用于海洋人工礁生态恢复的珊瑚附着模块设计",
+      "llm_evidence": "用于海洋人工礁生态恢复的珊瑚附着模块设计",
+      "canonical_evidence": "用于海洋人工礁生态恢复的珊瑚附着模块设计",
+      "llm_tldr_en": "Addresses scalable reef restoration by engineering coral settlement modules with helix recesses, achieving up to 80-fold increase in settlement and survival, demonstrating a path for large-scale marine ecological restoration.",
+      "llm_tldr_cn": "针对珊瑚礁生态恢复规模化难题，将具有螺旋凹槽的珊瑚幼虫附着设计从小型实验单元转移到可大规模部署的工具，验证其显著提高附着率和存活率，为海洋人工礁建设提供可行方案。",
+      "llm_tldr": "针对珊瑚礁生态恢复规模化难题，将具有螺旋凹槽的珊瑚幼虫附着设计从小型实验单元转移到可大规模部署的工具，验证其显著提高附着率和存活率，为海洋人工礁建设提供可行方案。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-06-16-732662-v1",
+      "source": "biorxiv",
+      "title": "Simultaneous regeneration of skin and bone in full-thickness cranial composite defects",
+      "abstract": "Traumatic cranial defects often involve concurrent loss of soft and hard tissues and can progress to chronic defects due to delayed healing associated with infection or other co-morbidities. Despite autologous reconstruction remaining the clinical standard, it requires staged procedures using heterogeneous tissues, increasing operative time, costs, and surgical risks. Moreover, current tissue engineering approaches focus on single tissues or acute tissue defect models, limiting their clinical applications. Herein, we describe an acellular, material-driven 3D-printed composite scaffold designed to regenerate both bone and skin within composite cranial defects. The scaffold integrates controlled copper ion release from both organic and inorganic components with 3D-printed citrate polymer and citrate polymer-ceramic composites. Integrated thermoresponsive citrate-based hydrogels further enable spatially defined dermoconductive and osteoconductive properties, supporting a one-step surgical approach. At 12 weeks post-implantation, our scaffold enhanced keratinocyte organization, collagen deposition, and defect coverage with mature bone, achieving histological outcomes comparable to autografts. Furthermore, the system suppressed bacterial burden. Thus, this acellular platform represents a clinically promising synchronized strategy to address the complex demands of traumatic craniofacial composite defects.",
+      "authors": [
+        "Kim, M.",
+        "Zhu, Y.",
+        "Adepu, S.",
+        "Collins, C. P.",
+        "Mendez-Santos, M.",
+        "Sun, C.",
+        "He, T.-C.",
+        "Reid, R.",
+        "Ameer, G. A."
+      ],
+      "primary_category": "bioengineering",
+      "categories": [
+        "bioengineering"
+      ],
+      "published": "2026-06-17T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.16.732662v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Describes a 'material-driven 3D-printed composite scaffold' for tissue regeneration, embodying material-driven design principles directly.",
+      "llm_evidence_cn": "描述了一种'材料驱动的3D打印复合支架'用于组织再生，直接体现材料驱动设计原则。",
+      "llm_evidence": "描述了一种'材料驱动的3D打印复合支架'用于组织再生，直接体现材料驱动设计原则。",
+      "canonical_evidence": "描述了一种'材料驱动的3D打印复合支架'用于组织再生，直接体现材料驱动设计原则。",
+      "llm_tldr_en": "Presents an acellular, material-driven 3D-printed scaffold that simultaneously regenerates bone and skin in cranial defects. The design integrates copper ion release, showcasing a material-driven approach for complex tissue engineering.",
+      "llm_tldr_cn": "本文提出一种无细胞、材料驱动的3D打印复合支架，可在全层颅骨复合缺损中同时实现骨与皮肤的再生。该支架整合有机与无机相，通过铜离子控释来协调组织修复，充分体现了材料驱动设计策略。这种一体化再生方法为复杂组织工程提供了新范式。",
+      "llm_tldr": "本文提出一种无细胞、材料驱动的3D打印复合支架，可在全层颅骨复合缺损中同时实现骨与皮肤的再生。该支架整合有机与无机相，通过铜离子控释来协调组织修复，充分体现了材料驱动设计策略。这种一体化再生方法为复杂组织工程提供了新范式。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Material Driven Design methodology for sustainable bio-based materials",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "biorxiv-10-64898-2026-06-15-732299-v1",
+      "source": "biorxiv",
+      "title": "From molecular lipidomics to interpretable food lipid profiles: the Lipid Food Profile module in LipidOne",
+      "abstract": "LC/MS-based food lipidomics provides detailed information on intact lipid species, but the resulting datasets are often difficult to translate into concepts directly useful for food quality, processing, nutritional profiling and authenticity assessment. Here, we present Lipid Food Profile (LFP), a module of the LipidOne platform designed to convert annotated LC/MS lipidomics data into interpretable food-relevant lipid indices. LFP applies an in silico hydrolysis strategy to reconstruct acyl, alkyl and alkenyl chains from intact lipid species while preserving their lipid-class origin. The reconstructed information is then summarized into index categories related to food lipid quality, compositional balance, omega balance, oxidative stability, chain remodelling and ether-linked chain contribution.\n\nThe interpretative value of LFP was evaluated using three published food lipidomics datasets addressing different analytical questions: X-ray-induced lipid remodelling in Chlorella vulgaris, spatial lipid heterogeneity in Mugil cephalus bottarga, and geographical-origin assessment of camel milk. Across these case studies, LFP recovered the main conclusions of the original lipidomics investigations, including treatment-associated lipid remodelling, inner-outer layer differences in bottarga and regional variation in camel milk. Importantly, LFP reorganized these findings into a smaller number of food-oriented indices, providing additional information on saturation balance, oxidative susceptibility, chain architecture and classification potential.\n\nOverall, LFP provides an interpretative layer for LC/MS food lipidomics that complement conventional fatty-acid analysis and molecular-species-based interpretation. By translating complex lipidomic tables into structured lipid index profiles, the module may support more accessible and chemically meaningful analysis of food composition, processing effects, lipid quality and exploratory traceability applications. LFP is freely accessible through the LipidOne web platform (LipidOne.eu).\n\nHighlightsO_LILipid Food Profile translates LC/MS food lipidomics into interpretable lipid indices.\nC_LIO_LIThe workflow preserves chain and lipid-class information without chemical hydrolysis.\nC_LIO_LIPublished case studies show that LFP recovers and extends previous interpretations.\nC_LIO_LILFP supports food quality, processing and exploratory origin/authenticity assessment.\nC_LIO_LIThe module complements conventional fatty-acid analysis and molecular lipidomics.\nC_LI",
+      "authors": [
+        "Frongia Mancini, D.",
+        "Alabed, H. B. R.",
+        "Pellegrino, R. M."
+      ],
+      "primary_category": "biochemistry",
+      "categories": [
+        "biochemistry"
+      ],
+      "published": "2026-06-19T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.15.732299v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Provides a lipidomics data analysis tool applicable to characterizing salmon-based materials' lipid profiles.",
+      "llm_evidence_cn": "提供一种脂质组学数据分析工具，可用于表征三文鱼基材料的脂质谱。",
+      "llm_evidence": "提供一种脂质组学数据分析工具，可用于表征三文鱼基材料的脂质谱。",
+      "canonical_evidence": "提供一种脂质组学数据分析工具，可用于表征三文鱼基材料的脂质谱。",
+      "llm_tldr_en": "Develops Lipid Food Profile module to convert LC/MS lipidomics data into interpretable indices for food quality. The method is transferable to analyze lipid composition of salmon-derived materials, aiding in material characterization.",
+      "llm_tldr_cn": "本文开发了Lipid Food Profile模块，可将LC/MS脂质组学数据转化为可解释的食品脂质指标。该方法可移植用于分析三文鱼源材料的脂质组成，为三文鱼材料表征提供技术支持，有助于评估其性质与应用潜力。",
+      "llm_tldr": "本文开发了Lipid Food Profile模块，可将LC/MS脂质组学数据转化为可解释的食品脂质指标。该方法可移植用于分析三文鱼源材料的脂质组成，为三文鱼材料表征提供技术支持，有助于评估其性质与应用潜力。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "analysis of salmon-based materials",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

@@ -6,26 +6,31 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-24
-- 运行时间：2026-06-24 21:36:44 UTC
+- 最新运行日期：2026-06-25
+- 运行时间：2026-06-25 21:50:27 UTC
 - 运行状态：成功
-- 本次总论文数：1
-- 精读区：0
+- 本次总论文数：3
+- 精读区：2
 - 速读区：1
 
 ### 今日简报（AI）
-今日速读一篇关于生物聚合物相分离与老化的热力学统一模型论文。  
-该模型用一个框架同时描述相分离和老化，有助于理解细胞内无膜细胞器的动态调控。  
-读者若感兴趣，可追踪该理论在蛋白质病理性聚集与神经退行性疾病中的验证研究。
-- 详情：[/202606/24/README](/202606/24/README)
+今日聚焦生态修复与再生医学双突破，精读满分珊瑚模块和颅骨皮肤骨骼同步再生研究，速递一项食品脂质分析工具。
+珊瑚定居模块设计为大规模珊瑚礁恢复给出可复制路径，皮肤骨骼同步再生则一次解决颅骨全层缺损两大难题。
+下步可留意这些实验室方案如何走向实地投放与临床转化。
+- 详情：[/202606/25/README](/202606/25/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Coral settlement module designs for scalable reef restoration](/202606/25/biorxiv-10-64898-2026-06-24-733534-v1-coral-settlement-module-designs-for-scalable-reef-restoration)  
+   标签：评分：10.0/10、query:mdd-regen
+   evidence：用于海洋人工礁生态恢复的珊瑚附着模块设计
+2. [Simultaneous regeneration of skin and bone in full-thickness cranial composite defects](/202606/25/biorxiv-10-64898-2026-06-16-732662-v1-simultaneous-regeneration-of-skin-and-bone-in-full-thickness-cranial-composite-defects)  
+   标签：评分：8.0/10、query:mdd-regen
+   evidence：描述了一种'材料驱动的3D打印复合支架'用于组织再生，直接体现材料驱动设计原则。
 
 ### 速读区论文标签
-1. [A Unifying Thermodynamic Model for Phase Separation and Aging of Biopolymers](/202606/24/biorxiv-10-64898-2026-02-21-707146-v2-a-unifying-thermodynamic-model-for-phase-separation-and-aging-of-biopolymers)  
-   标签：评分：6.0/10、query:mdd-regen
-   evidence：生物聚合物相分离的统一热力学模型，潜在可应用于蛋白质基材料设计
+1. [From molecular lipidomics to interpretable food lipid profiles: the Lipid Food Profile module in LipidOne](/202606/25/biorxiv-10-64898-2026-06-15-732299-v1-from-molecular-lipidomics-to-interpretable-food-lipid-profiles-the-lipid-food-profile-module-in-lipidone)  
+   标签：评分：7.0/10、query:mdd-regen
+   evidence：提供一种脂质组学数据分析工具，可用于表征三文鱼基材料的脂质谱。
 
 
 <div class="dpr-home-promo-card">
