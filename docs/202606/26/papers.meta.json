@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-26",
+  "date": "2026-06-26",
+  "generated_at": "2026-06-26T21:24:20",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/26/2606.23402v1-physics-informed-modeling-for-wood-thermal-analysis-and-prediction",
+      "section": "quick",
+      "title_en": "Physics-Informed Modeling for Wood Thermal Analysis and Prediction",
+      "authors": "Jingren Xie, Alex John Buckthal, Ryan Anthony O'Connor, Isak Worre Foged, Dim P. Papadopoulos",
+      "date": "2026-06-22",
+      "pdf": "https://arxiv.org/pdf/2606.23402v1",
+      "score": "6.0",
+      "evidence": "物理信息深度学习用于木材热性能预测，适用于生物基材料的材料驱动设计",
+      "tldr": "木材热特性存在复杂的空间异质性，传统均匀假设模型和纯数据驱动方法难以兼顾精度与可解释性。为此，提出物理信息深度学习框架，包括物理信息卷积网络（PICNN）和物理集成卷积网络（PInteCNN），分别以损失函数软约束和嵌入分析求解器的方式集成二维稳态热传导偏微分方程，利用木材RGB图像与测试台温度图实现像素级热响应预测。在Poplar、Grandis-CC、Grandis-RC三种木材数据集验证表明，物理嵌入方法在预测精度、物理可解释性和种内多样性间取得平衡，优于纯数据驱动方法，并可提取可解释物理参数。该工作为木材热分析提供了物理信息建模新范式。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "Wood materials exhibit complex, spatially varying thermal properties that challenge traditional architectural assumptions of material homogeneity. Although data-driven approaches can directly map wood RGB images to their corresponding thermal responses, they operate as uninterpretable black boxes that prioritize statistical correlation and may absorb experimental noise rather than thermodynamic plausibility. To address these limitations, we present physics-informed deep learning frameworks that integrate partial differential equations (PDEs) to predict pixel-level thermal responses of spatially heterogeneous wood materials using wood RGB images and testbed temperature maps. Specifically, we investigate two distinct approaches to enforcing a normalized 2D steady-state heat transfer equation derived from the general heat transfer equation: Physics-Informed Convolutional Neural Networks (PICNNs), which embed physics as a soft penalty term in the loss function, and Physics-Integrated Convolutional Neural Networks (PInteCNNs), which hard-code an analytical approximator-predictor-corrector solver directly into convolutional neural networks. To validate our proposed approaches, we collect three real-world multimodal datasets of Poplar, Grandis Cross-Cut (Grandis-CC), and Grandis Radial-Cut (Grandis-RC) wood samples. We further demonstrate that embedding physical inductive biases successfully balances predictive accuracy, physical interpretability, and intra-species diversity, outperforming data-driven approaches in handling complex wood material heterogeneity and enabling the extraction of interpretable physical parameters. Project: https://zekifayes.github.io/pim",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/26/biorxiv-10-64898-2026-06-15-732323-v1-nickel-driven-dynamics-of-urease-in-sporosarcina-pasteurii-integrated-computational-and-experimental-insights",
+      "section": "quick",
+      "title_en": "Nickel-Driven Dynamics of Urease in Sporosarcina pasteurii: Integrated Computational and Experimental Insights",
+      "authors": "Al-Thawadi, S. M.",
+      "date": "2026-06-19",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.15.732323v1.full.pdf",
+      "score": "6.0",
+      "evidence": "微生物诱导碳酸钙沉淀（MICP）是生态土壤稳定技术，可应用于构建生物容忍性人工礁体材料",
+      "tldr": "镍依赖性脲酶是微生物诱导碳酸钙沉淀的关键，但镍对菌株的双重效应机制不明。本研究通过结构生物信息学与分子对接分析Sporosarcina pasteurii中脲酶亚基与辅助蛋白的镍结合特性，结合实验发现高镍抑制生长却提升酶活性达六倍，并确定最佳生物矿化浓度范围。该工作揭示了镍调控脲酶活化与细菌适应性的平衡机制，为优化生物胶结技术提供了理论依据。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "Urease is a nickel-dependent enzyme that plays an important role in urea hydrolysis and in a process named as microbial-induced calcium carbonate precipitation (MICP), which is widely used in sustainable environmental biotechnology. Despite its ecological importance, urease powers Biogrout (biocementation), a promising green technology for soil stabilization and infrastructure repair. Yet, the relationship between nickel availability, enzyme activation, and bacterial fitness remains poorly understood. In this study, we reveal a striking dual effect of nickel on Sporosarcina pasteurii: while high Ni{superscript 2} concentrations strongly inhibit growth (IC {approx} 637.7 {micro}M), they simultaneously boost specific urease activity up to six-fold. This uncoupling between biomass and enzymatic efficiency highlights a previously overlooked adaptive strategy under metal stress. Using structural bioinformatics and molecular docking, we show that Ure1--the catalytic subunit--exhibits the strongest nickel affinity (-4.3 kcal{middle dot}mol-{superscript 1}), supported by highly conserved active-site residues, whereas accessory proteins UreE and UreG display moderate and weak binding, consistent with their roles in metal delivery and GTP-dependent maturation. In addition, microscopic observations confirmed that calcium carbonate precipitation was most pronounced at intermediate nickel concentrations (approximately 400-1000 {micro}M), whereas higher concentrations ([&ge;]1000-1300 {micro}M) led to reduced mineral formation due to loss viable cells. Taken together, these results indicates that nickel availability controls both urease activation and bacterial fitness, and that an optimal balance is required to maximize biomenerilization efficiency in environmental applications, particularly in biocementation technology.\n\nImportanceUrease-driven biomineralization is widely used in sustainable technologies such as soil stabilization and self-healing concrete. However, optimizing these systems requires a clear understanding of how environmental factors influence enzyme performance. This study shows that nickel, an essential cofactor for urease, plays a dual role by enhancing enzymatic activity while inhibiting bacterial growth at high concentrations. By integrating experimental data with computational analysis, we demonstrate that efficient biomineralization depends on maintaining nickel within an optimal range that balances enzyme activation and microbial viability. These findings provide practical guidance for improving biocementation processes and highlight nickel as a key regulator of urease-based environmental biotechnology applications.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

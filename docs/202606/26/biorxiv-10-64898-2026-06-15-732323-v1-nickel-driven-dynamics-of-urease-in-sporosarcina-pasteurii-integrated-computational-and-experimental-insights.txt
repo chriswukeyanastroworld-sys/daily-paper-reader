@@ -1,0 +1,1552 @@
+Title: Nickel-Driven Dynamics of Urease in Sporosarcina pasteurii: Integrated Computational and Experimental Insights
+
+URL Source: https://www.biorxiv.org/content/10.64898/2026.06.15.732323v1.full.pdf
+
+Number of Pages: 27
+
+Markdown Content:
+1
+
+Nickel-Driven Dynamics of Urease in Sporosarcina pasteurii : Integrated Computational 1
+
+and Experimental Insights 2
+
+3
+
+Salwa Al-Thawadi 4
+
+University of Bahrain, Department of Biology, Sakhir, Kingdom of Bahrain 5
+
+salthawadi@uob.edu.bh 6
+
+ORCID: https://orcid.org/0000-0002-9529-1845 7
+
+8
+
+Abstract 9
+
+Urease is a nickel-dependent enzyme that plays an important role in urea hydrolysis and in a 10 
+
+process named as microbial-induced calcium carbonate precipitation (MICP), which is widely 11 
+
+used in sustainable environmental biotechnology. Despite its ecological importance, urease 12 
+
+powers Biogrout (biocementation), a promising green technology for soil stabilization and 13 
+
+infrastructure repair. Yet, the relationship between nickel availability, enzyme activation, and 14 
+
+bacterial fitness remains poorly understood. In this study, we reveal a striking dual effect of 15 
+
+nickel on Sporosarcina pasteurii : while high Ni²⁺ concentrations strongly inhibit growth (IC₅₀ 16 
+
+≈ 637.7 μM), they simultaneously boost specific urease activity up to six-fold. This uncoupling 17 
+
+between biomass and enzymatic efficiency highlights a previously overlooked adaptive 18 
+
+strategy under metal stress. Using structural bioinformatics and molecular docking, we show 19 
+
+that Ure1—the catalytic subunit—exhibits the strongest nickel affinity (−4.3 kcal·mol⁻¹), 20 
+
+supported by highly conserved active-site residues, whereas accessory proteins UreE and UreG 21 
+
+display moderate and weak binding, consistent with their roles in metal delivery and GTP-22 
+
+dependent maturation. In addition, microscopic observations confirmed that calcium carbonate 23 
+
+precipitation was most pronounced at intermediate nickel concentrations (approximately 400-24 
+
+1000 μM), whereas higher concentrations (≥1000-1300 μM) led to reduced mineral formation 25 
+
+due to loss viable cells. Taken together, these results indicates that nickel availability controls 26 
+
+both urease activation and bacterial fitness, and that an optimal balance is required to maximize 27 
+
+biomenerilization efficiency in environmental applications, particularly in biocementation 28 
+
+technology. 29 
+
+Importance 30 
+
+Urease-driven biomineralization is widely used in sustainable technologies such as soil 31 
+
+stabilization and self-healing concrete. However, optimizing these systems requires a clear 32 
+
+understanding of how environmental factors influence enzyme performance. This study shows 33 
+
+that nickel, an essential cofactor for urease, plays a dual role by enhancing enzymatic activity 34 
+
+while inhibiting bacterial growth at high concentrations. By integrating experimental data with 35 
+
+computational analysis, we demonstrate that efficient biomineralization depends on 36 
+
+maintaining nickel within an optimal range that balances enzyme activation and microbial 37 
+
+viability. These findings provide practical guidance for improving biocementation processes 38 
+
+and highlight nickel as a key regulator of urease-based environmental biotechnology 39 
+
+applications. 40 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+2
+
+Keywords Urease. Sporosarcina pasteurii. Nickel regulation. Enzyme activity. Molecular 41 
+
+docking. Biocementation 42 
+
+43 
+
+1. Introduction 44 
+
+Urease (urea amidohydrolase, EC 3.5.1.5) is a remarkable nickel-dependent enzyme that 45 
+
+catalyzes the breakdown of urea into ammonia/ammonium and carbonate, a reaction that 46 
+
+highlights nitrogen cycling and microbial survival in diverse ecosystems [1,2]. By raising the 47 
+
+local pH via buffering effect of ammonia/ammonium, urease influences soil fertility and nutrient 48 
+
+availability, making it a key player in agriculture and environmental processes [3]. This enzyme 49 
+
+is found across plants, fungi, and bacteria, serving roles that range from nutrient acquisition to 50 
+
+pathogenicity. In medicine, urease is infamous as a virulence factor in Helicobacter pylori ,51 
+
+enabling the bacterium to colonize the acidic gastric environment [4]. In biotechnology, urease 52 
+
+has gained attention for its role in biocementation—a sustainable approach to soil stabilization 53 
+
+and infrastructure repair through microbially induced calcium carbonate precipitation (MICP) 54 
+
+[5,6]. 55 
+
+At the molecular level, urease operates through a highly specialized catalytic mechanism. Its 56 
+
+active site contains a dinuclear nickel center coordinated by histidine residues and a57 
+
+carbamylated lysine, with a bridging hydroxide acting as the nucleophile [7,8]. This architecture 58 
+
+makes nickel indispensable for enzyme activation. Urease maturation depends on accessory 59 
+
+proteins—UreD, UreF, UreG, and UreE—that manage nickel trafficking and insertion into the 60 
+
+catalytic core [9,10]. When nickel is scarce, urease remains inactive due to incomplete assembly; 61 
+
+when nickel is excessive, it becomes toxic, disrupting metal homeostasis and inducing oxidative 62 
+
+stress [11,12]. This delicate balance between cofactor necessity and toxicity is critical for 63 
+
+microbial survival and for engineering applications. 64 
+
+Despite decades of research, we still lack a clear understanding of how nickel availability 65 
+
+regulates urease activity in environmental bacteria such as Sporosarcina pasteurii , a model 66 
+
+organism for biomineralization [13,14]. Most studies focus on pathogenic systems or controlled 67 
+
+laboratory conditions, leaving unanswered questions about thresholds between nickel deficiency, 68 
+
+enzymatic saturation, and metal-induced stress [15,16]. This knowledge gap limits our ability 69 
+
+to optimize urease-driven processes in real-world applications like biocementation and 70 
+
+wastewater treatment, where both microbial resilience and catalytic efficiency are essential 71 
+
+[17,18]. 72 
+
+To address these gaps, this study investigates how varying Ni²⁺ concentrations influence the 73 
+
+growth and urease activity of S. pasteurii . By combining experimental assays with 74 
+
+computational analyses of urease subunits and accessory proteins, we aim to uncover the 75 
+
+structural and functional determinants of nickel interaction. These insights will not only advance 76 
+
+our understanding of urease biology but also provide practical strategies for engineering robust 77 
+
+ureolytic systems in metal-variable environments. 78 
+
+2. Materials and Methods 79 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+3
+
+2.1 Bacterial Strain and Culture Conditions 80 
+
+S. pasteurii was cultured in yeast extract medium supplemented with 0.25M urea and incubated 81 
+
+at 30 oC in a shaker incubator. The urea solution was filter-sterilized separately and aseptically 82 
+
+added to the medium after autoclaving. 83 
+
+84 
+
+2.2 Preparation of Nickel Solutions 85 
+
+A stock solution of NiSO₄·6H₂O was prepared in distilled water and sterilized by filtration. 86 
+
+Final concentrations of 0 (control), 200, 400, 600, 800, 900, 1000, 1100, 1200 and 1300 μM 87 
+
+Ni²⁺ were used in triplicate. The average of the triplicates was calculated. A standard curve 88 
+
+using ammonium chloride (NH₄Cl) was used to quantify ammonia concentration (Appendix 1). 89 
+
+90 
+
+2.3 Urease Activity Assays 91 
+
+2.3.1 Colorimetric Assay (Ammonia Quantification) 92 
+
+93 
+
+initially, urease activity was measured spectrophotometrically using a modified Nessler 94 
+
+Method to measure [3]. Samples were immediately centrifuged to remove cells, and the 95 
+
+resulting supernatant was transferred into a clean tube. Prior to NH 4+ analysis, the sample was 96 
+
+diluted to be in the range of 0-0.5 mM. This diluted sample (2 ml) was mixed with 100 l of 97 
+
+Nessler’s reagent and allowed to react for exactly 1 minute before reading the absorbance at 98 
+
+425 nm. Absorbance values were compared to those derived from ammonium chloride 99 
+
+standards which were treated under the same conditions. 100 
+
+101 
+
+2.3.2 Urease activity and specific urease activity 102 
+
+Urease activity was estimated by quantifying ammonium released from urea using Nessler’s 103 
+
+reagent. One unit of urease activity was defined as the amount of enzyme catalysing the 104 
+
+hydrolysis of 1 μmol urea. min -1 , assuming the release of two moles of ammonium/mole of 105 
+
+urea. Data are presented as mean ± SD (N=3), and statistical significance was evaluated using 106 
+
+one-way ANOVA. 107 
+
+108 
+
+2.3.3 Statistical analysis 109 
+
+Data were analyzed using SPSS version 26. Results are expressed as mean ± standard deviation 110 
+
+(SD). Statistical differences were evaluated using one-way ANOVA. 111 
+
+112 
+
+2.3.4 Calcium carbonate precipitation 113 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+4
+
+A bacterial culture (20 μl) was placed on a microscopic slide, followed by the addition of 20 114 
+
+μl of a 1M cementation solution (equimolar of calcium/urea solution, Ca/U), and gently mixed. 115 
+
+A cover slip was then placed over the mixture, and the edges were sealed with nail polish to 116 
+
+prevent dryness, which could otherwise cause cell inactivation and crystal precipitation due to 117 
+
+dehydration rather than bacterial activity. The slide was subsequently examined under an 118 
+
+optical microscope. 119 
+
+120 
+
+2.3.5 Calcium carbonate precipitation in the presence of Ni +2 
+
+121 
+
+The precipitation of CaCO 3 crystals were examined like in 2.3.2, except Ni +2 was added in 122 
+
+certain samples. Five slides were prepared. Bacteria only, bacteria with 1M equimolar Ca/U, 123 
+
+bacteria with 1M equimolar Ca/U and 3 other samples Ni +2 (100 μM , 500 μM , 1000 μM, 1500 124 μM ) added respectively. 125 
+
+2.4 Protein–protein and protein–chemical interaction context (STITCH) 126 
+
+2.4.1 Targets and identifiers 127 
+
+Urease accessory proteins were defined as UreG (SIMIBI-family GTPase), UreE1/E (Ni²⁺ 128 
+
+metallochaperone variants), and UreE. Gene names were used as primary identifiers for 129 
+
+database queries. 130 
+
+2.4.2 Query and filters 131 
+
+Each target protein was queried in STITCH version 5.0 (https://stitch-db.org; accessed on 15 132 
+
+August 2025) for the organism S. pasteurii . The Network view was retrieved to visualize both 133 
+
+protein–protein and protein–chemical interactions. The minimum required interaction score 134 
+
+was set to high confidence (≥ 0.700) to ensure the reliability of network associations [19]. 135 
+
+Within the curated network, we specifically annotated interactions involving Ni²⁺ ions and 136 
+
+canonical urease-maturation partners (UreE1/UreG/UreE). The resulting interaction networks 137 
+
+were exported as TSV files and further visualized using Cytoscape v3.10 for enhanced 138 
+
+graphical annotation and identification of hub protein [19]. 139 
+
+2.5 Evolutionary conservation analysis (ConSurf) 140 
+
+2.5.1 Inputs 141 
+
+AlphaFold-predicted model of urease accessory proteins- UreG (AF-Q9RP19-F1-model_v4), 142 
+
+UreE1(AF-P41020-F1-model_v4), and UreE (AF-P50049-F1-model_v4) were submitted to 143 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+5
+
+ConSurf (version 2023; https://consurf.tau.ac.il) [ 20]. If only the amino acid sequence was 144 
+
+available, the corresponding FASTA file was provided as input [20]. 145 
+
+2.5.2 Homolog collection and multiple sequence alignment: 146 
+
+ConSurf automatically retrieved homologous sequences from the UniRef90 database using 147 
+
+BLAST and HMMER (BLAST/HMMER), filtered redundancy, and generated a multiple 148 
+
+sequence alignment (MSA) using MAFFT. Runs containing approximately 50–150 non-149 
+
+redundant homologs with adequate coverage were retained. When query coverage or identify 150 
+
+threshold resulted in sparse alignments, parameters were modified iteratively, and the analysis 151 
+
+was rerun [20]. 152 
+
+2.5.3 Rate inference and mapping 153 
+
+Evolutionary conservation scores were estimated using Rate4Site under the JTT substitution 154 
+
+model and subsequently normalized to ConSurf grades (1–9), where 9 indicates maximal 155 
+
+conservation. Residues-specific scores were exported as CSV files, and conservation grades 156 
+
+were mapped onto AlphaFold models for display. Highly conserved surface clusters (grades 157 
+
+8–9) were evaluated as probable metal-binding or functionally relevant sites and were utilized 158 
+
+to guide docking box development in subsequent structural investigation [20]. 159 
+
+2.6 Molecular docking of Ni²⁺ to urease proteins (DockThor) 160 
+
+2.6.1 Rationale and biochemical context 161 
+
+Urease catalysis requires two Ni²⁺ ions coordinated at its catalytic center, while accessory 162 
+
+proteins assure precise metal delivery. UreE operates as a high-affinity metallochaperone, 163 
+
+buffering and transferring Ni²⁺, whereas UreG allows GTP-dependent delivery inside the 164 
+
+Ure(G/F/D/H) complexes. These known biochemical roles guided the selection of docking 165 
+
+regions, which were on Histidine-rich motifs and experimentally or evolutionarily conserved 166 
+
+metal-binding pockets for UreE, and highly conserved surface clusters for UreG that were 167 
+
+found through ConSurf analysis [7, 21,10]. 168 
+
+AlphaFold or PDB-derived structures of URE and UreG were visually inspected in UCSF 169 
+
+ChimeraX and PyMOL . Missing side chains and loops were reconstructed using 170 
+
+MODELLER . Protonation states were assigned for pH 7.0–7.4, and Histidine tautomeric 171 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+6
+
+forms were manually adjusted near putative metal-binding residues. Crystallographic waters 172 
+
+were removed except when conserved at potential metal sites. For analyses involving structural 173 
+
+urease subunit, the carbamylated Lysine in the catalytic center was retained if it could be 174 
+
+resolved. The final receptor models were energy-minimized and saved in PDB format for 175 
+
+docking in DockThor [7, 21,10]. 176 
+
+Docking simulations were carried out using the DockThor-VS web server 177 
+
+(https://dockthor.lncc.br/v2; access on 15 August 2025) [22-24]. The docking protocol utilized 178 
+
+a rigid receptor model alongside a genetic-algorithm-based search strategy implemented by 179 
+
+DockThor . The MMFF94S force-field was used to measure energy during pose prediction and 180 
+
+the DockTScore empirical/ML scoring functions to rank ligand-protein binding affinities. 181 
+
+Docking grids were automatically centered on the putative Ni²⁺-binding regions that were 182 
+
+found through biochemical and conservation studies. These regions usually spanned 20-25 Å 183 
+
+around the identified pocket. During docking runs, the Ni²⁺ ion was treated as the ligand, which 184 
+
+made it possible to investigate its coordination environment. For each target, at least three 185 
+
+independent docking replicates were done, and the top 10 poses were retained and clustered 186 
+
+based on a root-mean-square deviation (RMSD) of 2.0 Å or less. The lowest-energy 187 
+
+representative pose from the largest cluster was selected for downstream structural and 188 
+
+energetic interpretation [22-24]. 189 
+
+2.6.2 Physicochemical property analysis (ExPASy ProtParam) 190 
+
+To evaluate the physicochemical characteristics of (UreG, UreE1/E, and UreE), amino acid 191 
+
+sequences in FASTA format were retrieved from the UniProt database (accessed on 16 August 192 
+
+2025) and analyzed using the ExPASy ProtParam tool (https://web.expasy.org/protparam/) 193 
+
+[25]. 194 
+
+ProtParam was used to compute key parameters including molecular weight, theoretical 195 
+
+isoelectric point (pI), instability index, aliphatic index, and grand average of hydropathicity 196 
+
+(GRAVY ). These descriptors were used to infer the overall stability, hydrophobicity, and 197 
+
+solubility tendencies of each protein, providing a comparative physicochemical profile among 198 
+
+the urease accessory components [25]. 199 
+
+3. Results 200 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+7
+
+3.1 Effect of different concentrations of Ni 2+ on bacterial growth, activity and specific 201 
+
+activity 202 
+
+Exposure to increase concentrations of Ni²⁺ resulted in a concentration-dependent inhibition of 203 
+
+bacterial growth, as measured by OD 600 (Figure 1). The growth decreased progressively from 204 
+
+the control to the highest tested Ni²⁺ concentration (1100-1300 μM), indicated a clear toxic 205 
+
+effect of nickel on cellular proliferation. 206 
+
+In contrast, urease activity and specific urease activity increased with rising Ni²⁺ concentration, 207 
+
+reaching their highest values at elevated Ni²⁺ levels (Figure 1). This trend was observed despite 208 
+
+the marked reduction in biomass, suggesting differential sensitivity of growth and enzymatic 209 
+
+activity to Ni²⁺ stress. 210 
+
+Despite reduced growth, ammonium concentrations remained relatively stable across treatment, 211 
+
+decreasing only slightly from 0.093 ± 0.06 mM in the control to 0.072 ± 0.001 mM at 1300 212 
+
+μM Ni 2+ . This suggests that ureolytic activity was maintained even under conditions of nickel-213 
+
+induced growth stress (Table 1) 214 
+
+Bacterial growth, measured as optical density at 600 nm (OD 600 ), exhibited a clear 215 
+
+concentration-dependent decrease with increasing Ni²⁺levels (Figure 1). The highest growth 216 
+
+was observed in the control (0 μM Ni²⁺), while a pronounced reduction occurred between 400 217 
+
+and 600 μM. at Ni²⁺concentrations ≥ 1000 μM, bacterial growth was strongly inhibited, 218 
+
+approaching minimal OD 600 values. One-way ANOVA confirmed that Ni²⁺concentration had a 219 
+
+highly significant effect on bacterial growth (p < 0.001) (Table 2). 220 
+
+Total urease activity showed comparatively moderate variation across the tested 221 
+
+Ni²⁺concentrations (Figure 1). While a slight decline in activity was detected at higher Ni²⁺ 222 
+
+levels. The magnitude of change was substantially lower than that observed for bacterial growth. 223 
+
+Statistical analysis indicated a significant effect of Ni²⁺ concentration on urease activity (p < 224 
+
+0.05) (Tale 2) 225 
+
+In contrast to growth inhibition, specific urease activity increased progressively with increasing 226 
+
+Ni²⁺ concentration (Figure 1). The highest specific activity values were recorded at 1000-1300 227 
+
+μM Ni²⁺, despite severe suppression of bacterial growth. One-way ANOVA revealed a highly 228 
+
+significant effect of Ni²⁺ concentration on specific urease activity (p < 0.001) (Table 2). 229 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+8
+
+230 
+
+Fig. 1 Combined effect of Ni²⁺ concentration (0-1300 μM) on bacterial growth of S. pasteurii ,231 
+
+urease activity (mM NH +4 produced), and specific urease activity (mM NH +4 produced. OD -1 ). 232 
+
+Bacterial growth (OD 600 ) is presented on the left y-axis, while urease activity and specific 233 
+
+urease activity are shown on the right y-axis. Growth data were fitted using a four-parameter 234 
+
+logistic model to estimate the IC 50 value. Values represent mean ± SD of three replicates (n=3). 235 
+
+Table 1. Effect of Ni²⁺ concentration (μM) on growth, urease activity and specific urease 236 
+
+activity 237 
+
+Ni²⁺ (μM) Growth OD600 (Mean± SD) Urease activity (mM NH +4 produced) (Mean± SD) Specific urease activity (mM NH +4
+
+produce/OD) (Mean± SD) 0 1.383 ± 0.015 0.093 ± 0.006 0.067 ± 0.003 200 1.053 ± 0.012 0.085 ± 0.003 0.081 ± 0.003 400 0.777 ± 0.021 0.080 ± 0.001 0.103 ± 0.002 600 0.553 ± 0.042 0.082 ± 0.003 0.149 ± 0.004 800 0.427 ± 0.006 0.080 ± 0.004 0.188 ± 0.004 900 0.347 ± 0.025 0.080 ± 0.005 0.232 ± 0.008 
+
+1000 0.277 ± 0.015 0.076 ± 0.004 0.275 ± 0.006 
+
+1100 0.223 ± 0.006 0.074 ± 0.003 0.333 ± 0.006 
+
+1200 0.213 ± 0.006 0.073 ± 0.004 0.344 ± 0.010 
+
+1300 0.183 ± 0.015 0.072 ± 0.004 0.396 ± 0.018 
+
+238 
+
+Total urease activity, expressed as U.ml -1 , showed a modest decrease with increasing N 2+ 239 
+
+concentration, consistent with reduced cell density. In contrast, normalization of urease activity 240 
+
+to biomass revealed a pronounced increase in specific urease activity with increasing N 2+ 
+
+241 
+
+availability (Table 1, Appendix 2). 242 
+
+Specific urease activity increased nearly six-fold, from (2.34±0.15)×10 -5 U OD -1 in the absence 243 
+
+of N 2+ to (1.37± 0.11)×10 -4 U.OD -1 at 1300 μM N 2+ . One way ANOVA confirmed that the effect 244 
+
+of N 2+ concentration on specific urease activity was highly significant (p <0.001) (Table 1, 245 
+
+Appendix 2). 246    
+
+> 00.05 0.1 0.15 0.2 0.25 0.3 0.35 00.2 0.4 0.6 0.8 11.2 1.4 1.6 0200 400 600 800 900 1000110012001300 mM NH  +4 produce mM NH  +4 produce.OD  -1 OD 600 nm [Ni 2+ ] μM OD Urease activity
+> sp urease activity
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+9
+
+Table 2 One- way ANOVA for the effect of Ni²⁺ concentrations 247 
+
+Parameter Source of variation df F value P value Significance 
+
+Growth (OD600) Between groups 9 145.32 < 0.001 Significant 
+
+Within the groups 20 
+
+Urease activity Between groups 9 2.67 < 0.05 Significant 
+
+Within group 20 
+
+Specific urease activity Between groups 9 178.45 < 0.001 Highly significant 
+
+Within the groups 20 
+
+248 
+
+3.2 IC 50 Model Parameters for Ni²⁺–Induced Growth Inhibition 249 
+
+The fitted 4PL model adequately described the experimental data, yielding biologically 250 
+
+meaningful estimates for upper and lower asymptotes, Hill slope, and IC 50 (Table 3). The 251 
+
+confidence interval around the IC 50 indicates good model stability and supports the robustness 252 
+
+of the estimated inhibitory concentration. 253 
+
+Growth inhibition data were normalized to the untreated control (100%) and fitted using a four-254 
+
+parameter logistic (4PL) dose-response model (Appendix 3). The estimated IC 50 value for 255 
+
+growth inhibition was 637.73 μM Ni²⁺, with a 95% confidence interval (CI) calculated from 256 
+
+the fitted model. 257 
+
+Table 3 Four-parameter logistic (4PL) model parameters describing the effect of Ni²⁺ concentration on bacterial 258 
+
+growth. 259 
+
+Parameter Estimate Unit Description 
+
+Top ~100 % Maximum normalized growth (control) 
+
+Bottom ~0 -5 % Minimal growth at high Ni ²⁺ concentration 
+
+IC 50 637.73 μM Ni ²⁺ Ni ²⁺ concentration causing 50% growth inhibition 
+
+Hill slope >1 — Steepness of dose -response curve 
+
+95% Cl (IC 50 ) Report form model μM Confidence interval of IC 50 
+
+Note: Growth values were normalized to the untreated control prior to model fitting. 260 
+
+3.3 Microscopic examination 261 
+
+3.3.1 precipitation of the calcium carbonate nuclei 262 Light microscopic examinaƟon revealed the rapid formaƟon of white calcium carbonate nuclei 263 within the first few minutes of the precipitaƟon process (Figure 2). The bacterial cells 264 maintained a predominantly spherical morphology while acƟvely hydrolyzing urea, resulƟng 265 in ammonium producƟon and a concomitant increase in pH to approximately 9.2. under these 266 alkaline condiƟons, carbonate ions reacted with calcium ions, leading to the precipitaƟon of 267 CaCO₃. The early stages of nucleaƟon were directly observed microscopically and are 268 documented in Supplementary Video 1. 269 270 Further microscopic analysis showed that the iniƟal nucleaƟon sites appeared as unstable fine 271 seed-like parƟcles emerging from void regions within the medium. These nuclei remained 272 suspended and exhibited dynamic movement before gradually interacƟng and aggregaƟng 273 with adjacent parƟcles. Over Ɵme, the individual nuclei interconnected, forming as organized 274 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+10 network structure (Figure; Supplementary video 2). Time-lapse imaging demonstrated a clear 275 progression from dispersed micro-nuclei (Figure 3A) to a conƟnuous interconnected mineral 276 structure. The precipitaƟon of CaCO₃ was further confirmed by EDS analysis (Figure 2b). 277 
+
+278 
+
+Fig. 2 Light microscopic examination of the formation of CaCO 3 nuclei (in dash circle) in the 279 
+
+presence of 1 M Ca/U, (a) a few minutes after initiation of the reaction at pH 9.2 and (b) EDS 280 
+
+after 24h, confirming the elemental composition with CaCO 3.281 
+
+282 Figure 4 demonstrates the effect of increasing Ni² ⁺ concentraƟons (0-1500 μM) on CaCO₃ 283 precipitaƟon by S. pasteurii aŌer 1 h and 24 h of incubaƟon. In the absence of Ni² ⁺, visible 284 CaCO₃ precipitates were observed as early as 1h and became more pronounced aŌer 24 h. at 285 lower Ni² ⁺ concentraƟons (100-500 μM), CaCO₃ formaƟon was sƟll evident, although with 286 reduced density and slower development compared to the control. In contrast, higher Ni² ⁺287 concentraƟons (≥1000 μM) resulted in noƟceably diminished precipitaƟon at both Ɵme points, 288 with fewer and smaller mineral aggregates observed. 289 
+
+290 
+
+(a) (b) (c) 
+
+(a) (b) 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+11 
+
+Fig. 3 Time-lapse imaging (A-L) of S. pasteurii producing CaCO 3 under the microscope 100X 291 
+
+taken from 6h movie. These images were converted to movie for clarity (Supplementary video 292 
+
+2) 293 
+
+294 
+
+(j) (l) (k) (d) (g) (e) (f) (h) (i) 
+
+(which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint 12 
+
+Treatment/Duration 1 h 24 h 
+
+Bacteria only Bacteria and Ca/U Bacteria, Ca/U, 100 μM Bacteria, Ca/U, 500 μM Bacteria, Ca/U, 1000 μM Bacteria, Ca/U, 1500 μM 
+
+Fig. 4 Light microscope images of S . pasteurii producing CaCO 3 after 1 h and 24 h from CaCO 3295 
+
+precipitation (0- 1500 μM Ni 2+ ). 296 
+
+3.4 Protein–Protein Interaction (PPI) Network Analysis 297 
+
+To elucidate the functional associations of urease proteins in S. pasteurii , the urease subunits 298 
+
+UreA, UreB, UreC, UreD, UreE, and UreG were analyzed using the STITCH database. The 299 
+
+predicted protein–protein interaction (PPI) network was constructed and further visualized 300 
+
+using Cytoscape. 301 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+13 
+
+The resulting PPI network showed that a highly interconnected cluster among all six urease 302 
+
+subunits (). The urease enzyme complex’s main catalytic core was made up UreA (α-subunit), 303 
+
+UreB (β-subunit), and UreC (γ-subunit). These structural subunits exhibited robust interactions 304 
+
+with the accessory proteins UreD, UreE, and UreG, which are recognized as crucial for nickel 305 
+
+incorporation and activation of the enzyme. UreD had strong interactions with UreC and UreE, 306 
+
+consistent with its role as a scaffold protein in the maturation process. UreE acted as a nickel-307 
+
+binding chaperone, linking the catalytic core to UreG. UreG, a GTPase, showed expected 308 
+
+associations with UreE and UreD, highlighting its involvement in energy-dependent nickel 309 
+
+delivery. 310 
+
+The Cytoscape visualization showed a dense and modular interaction network, with edges 311 
+
+(functional associations) tightly connecting nodes (proteins). This showed how the urease 312 
+
+operon worked together. The overall topology showed that the urease system in S. pasteurii 313 
+
+operates as a cohesive multi-protein complex, where the catalytic subunits and accessory 314 
+
+proteins interact in a sequential and cooperative manner to achieve enzymatic activation. The 315 
+
+overall topology revealed that the urease system in S. pasteurii functions as a single multi-316 
+
+protein complex, with catalytic subunits and accessory proteins interacting in a sequential and 317 
+
+cooperative way. This organization is necessary because adding nickel and activating enzymes 318 
+
+are required in a certain order: first, accessory proteins stabilize and deliver metal ions, 319 
+
+followed by catalytic subunits come together to form an active enzyme. These coordinated 320 
+
+interactions ensure efficiency, prevent misfolding or incorrect metal loading, and ultimately 321 
+
+guarantee the precise regulation of urease activity. 322 
+
+Topological analysis of the network showed that UreC exhibited the highest degree centrality, 323 
+
+acting as the major hub protein (Figure 5). The clustering coefficient was high, indicating 324 
+
+strong interconnectivity among urease proteins. No isolated nodes were detected, confirming 325 
+
+that all six proteins are functionally interlinked within the same operon system. 326 
+
+327 
+
+328 
+
+329 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+14 
+
+330 
+
+331 
+
+332 
+
+333 
+
+334 
+
+Fig. 5 Protein-protein interaction (PPI) network of urease proteins using the Stitch database 335 
+
+and visualised through Cytoscape .336 
+
+3.5 Predicted Physicochemical Properties of Urease Proteins 337 
+
+The physicochemical characteristics of the urease proteins from S. pasteurii were predicted 338 
+
+using Expasy’s ProtParam tool. Parameters analyzed included amino acid length, theoretical 339 
+
+isoelectric point (pI), molecular weight (MW), instability index, aliphatic index, and the grand 340 
+
+average of hydropathicity ( GRAVY ). 341 
+
+As summarized in Table 4, the proteins varied greatly in their size, stability, and hydrophobicity. 342 
+
+Among these, URE1 (P41020), the biggest subunit with 642 amino acids, revealed a molecular 343 
+
+weight of 69.96 kDa, and was expected to be stable (instability index 36.11). Its negative 344 
+
+GRAVY value (−0.226) indicates an overall hydrophilic character. UREG (Q9RP19), with 294 345 
+
+amino acids, had the greatest instability index (47.3), suggesting structural instability compared 346 
+
+with other subunits. In contrast, UREE (P50049), the smallest protein (147 amino acids), has 347 
+
+lowest GRAVY score (−0.684), showing strong hydrophilicity, along with a high aliphatic 348 
+
+index of 88.76, which suggests potential thermostability. 349 
+
+Overall, these findings suggest that urease proteins display complementary physicochemical 350 
+
+properties, with catalytic subunits are relatively stable and moderately hydrophilic, some 351 
+
+accessory proteins are more hydrophilic but less stable, consistent with their distinct yet 352 
+
+cooperative roles in enzyme assembly and activity. 353 
+
+354 
+
+355 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+15 
+
+Table 4 Predicted physicochemical parameters of urease proteins by Expasy’s ProtParam tool. 356 
+
+UNIPROT ID Amino acids Theoretical PI Molecular weight MW (kDa) Instability index score Grand average of hydropathicity (GRAVY) Aliphatic index Q9RP19|(UREG) 294 4.93 33195.58 47.3 -0.386 80.99 P41020 (URE1) 642 5.27 69957.92 36.11 -0.226 84.19 P50049 (UREE) 147 5.09 17401.80 34.15 -0.684 88.76 
+
+3.6 Evolutionary Conservation of Urease Proteins 357 
+
+To assess the degree of evolutionary conservation, the amino acid sequences of urease proteins 358 
+
+UreG, Ure1, and UreE from S. pasteurii were analyzed using the ConSurf analysis. 359 
+
+conservation scale ranged from 1 (highly variable) to 9 (highly conserved), with predicted roles 360 
+
+distinguishing between functionality important and structurally stabilizing residues. 361 
+
+structural/functional roles of residues were predicted using a neural network–based algorithm. 362 
+
+The analysis revealed distinct conservation profiles among the three proteins, that UreG has a 363 
+
+number of conserved buried residues (s), which shows that it is a structural protein that 364 
+
+maintains the integrity of the urease accessory complex. A moderate proportion of exposed 365 
+
+variable residues (e), which suggests that some surface areas are flexible. Predicted functional 366 
+
+residues (f), that were highly conserved and accessible were found mostly around the GTP-367 
+
+binding site, supporting its role as a GTPase essential for nickel incorporation (Figure 6). 368 
+
+369 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+16 
+
+Fig. 6 Distinct conservation profiles of urease accessory proteins UreG as a structurally 370 
+
+conserved component. 371 
+
+Ure1, the catalytic subunit, had strongly conserved residues around the active site, which is in 372 
+
+line with their important role in urea hydrolysis (Figure 7). UreG's GTP-binding motifs were 373 
+
+conserved, but the rest of the sequence was moderately variable, which is what you would 374 
+
+expect from an accessory chaperone protein. UreE, although smaller, showed high 375 
+
+conservation in residues associated with nickel-binding, while its surface-exposed regions were 376 
+
+more variable. 377 
+
+ConSurf analysis shows that evolutionary pressure maintains catalytic and metal-binding 378 
+
+residues the same in all urease proteins. However, surface regions and flexible loops could be 379 
+
+able to handle more sequence divergence. This pattern reflects the balance between conserved 380 
+
+functional roles and structural adaptability across different urease subunits. 381 
+
+Ure1, the biggest catalytic subunit, had a lot of highly conserved residues (scoring 8–9) across 382 
+
+the sequence. Several residues were identified as functional (f) and exposed, aligning with their 383 
+
+catalytic involvement inside the active site. The existence of both buried conserved residues (s) 384 
+
+and exposed variable sites (e) suggests that while the catalytic core is evolutionarily limited, 385 
+
+whereas peripheral regions permit flexibility, potentially facilitating interactions with 386 
+
+accessory proteins. UreE had strong conservation patterns, with most residues falling into the 387 
+
+conserved range (7–9). A lot of them were thought to be functional exposed residues (f), 388 
+
+aligning with its role as a nickel-binding chaperone. It is believed that the conserved exposed 389 
+
+residues are likely involved in metal ion coordination, while buried conserved residues stabilize 390 
+
+the overall fold. Compared with UreG, UreE showed fewer variable regions, emphasizing its 391 
+
+functional indispensability in nickel transfer. 392 
+
+Together, these findings demonstrate that while UreG and UreE are primarily involved in 393 
+
+urease maturation and metal delivery, their conserved functional residues highlight important 394 
+
+catalytic-support roles. Meanwhile, Ure1, as the main catalytic subunit, exhibits the highest 395 
+
+degree of conservation across its active core, underscoring its essential enzymatic role (Figure 396 
+
+8). 397 
+
+398 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+17 
+
+399 
+
+400 
+
+Fig. 7 Conservation Mapping of UreE1 reveals highly conserved catalytic residue and 401 
+
+structural variability Across the Sequence. 402 
+
+403 
+
+404 
+
+405 
+
+406 
+
+Fig. 8 UreE the main catalytic subunit in urease. 407 
+
+(which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint 18 
+
+3.7 Molecular Docking of Urease Proteins with Nickel Ions 408 
+
+Molecular docking analysis was performed using the DockThor online server to investigate 409 
+
+the binding affinity of urease proteins UreG, Ure1, and UreE from S. pasteurii with nickel ions 410 
+
+(Ni²⁺). Docking scores (kcal/mol) were calculated for five predicted binding cavities in each 411 
+
+protein, and the results are summarized in Table 5 and illustrated in Figures 9-13. 412 
+
+All three proteins exhibited negative binding energies, indicating favourable interactions with 413 
+
+Ni²⁺. Ure1, the catalytic subunit, consistently demonstrated the most favourable binding, with 414 
+
+scores ranging from −2.7 to −4.3 kcal/mol, the lowest observed in Cavity 1. This aligns with 415 
+
+its requirement for nickel ions at active site to perform catalysis. In contrast, UreE showed 416 
+
+moderate binding affinities (−2.4 to 3.1 kcal/mol), with its best interaction in Cavity 1, 417 
+
+consistent with its role as a nickel-binding chaperone. UreG displayed weaker and more 418 
+
+variable binding (−1.8 to −2.9 kcal/mol), with its highest affinity detected in Cavity 5. This 419 
+
+pattern reflects its indirect role in Nickle coordination, functioning primarily as GTPase that 420 
+
+assists the maturation of the urease complex. 421 
+
+Overall, the docking results support the functional hierarchy of nickel utilization in urease 422 
+
+proteins: Ure 1 shows the strongest requirement and binding for nickel at its catalytic core, 423 
+
+while UreE and UreG facilitate nickel acquisition and delivery as accessory factors, ensuring 424 
+
+efficient enzyme maturation. 425 
+
+426 
+
+427 
+
+428 
+
+429 
+
+430 
+
+431 
+
+432 
+
+433 
+
+Fig. 9 Molecular docking of urease protein (UreG) from S. pasteurii with Ni²⁺ ions; (a): All 434 
+
+cavities and (b): Highest docking score. 435 
+
+(a) (b) 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+19 
+
+436 
+
+437 
+
+438 
+
+439 
+
+440 
+
+441 
+
+442 
+
+443 
+
+444 
+
+445 
+
+446 
+
+Fig. 10 Molecular docking of urease protein (UrE1) from S. pasteurii with Ni²⁺ ions, (a): All 447 
+
+cavities and (b): Highest docking score. 448 
+
+449 
+
+450 
+
+451 
+
+452 
+
+453 
+
+454 
+
+455 
+
+456 
+
+457 
+
+458 
+
+459 
+
+460 
+
+461 
+
+Fig. 11 Molecular docking of urease protein (UReE) from S. pasteurii with Ni²⁺ ions; (a): All 462 
+
+cavities and (b): Docking score. 463 
+
+464 
+
+465 
+
+466 
+
+(a) (b) (a) (a) 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+20 
+
+467 
+
+Fig. 12 Docking scores (kcal/mol) for the five predicted binding cavities of the urease-realted 468 
+
+proteins UreG, Ure1, and UreE from S. pasteurii coordinated nickel ions. 469 
+
+470 
+
+Fig. 13 Most energetically favorable proteins from docking scores. 471 
+
+472 
+
+(which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint 21  
+
+> Table 5 DockThor-predicted docking scores (kcal/mol) for urease proteins with nickel ions.
+
+473                        
+
+> Protein /Cavity Cavity 1 Cavity 2 Cavity 3 Cavity 4 Cavity 5 Best Score (Autodock Vina, kcal/mol) UreE -3.1 -2.8 -2.5 -2.2 -2.3 -3.1 Ure1 -2.3 -2.4 -2.7 -2.7 -2.9 -4.3 Urged -4.3 -2.6 -2.1 -2.8 -2.1 -2.9
+
+474 
+
+4. Discussion: 475 
+
+In S. pasteurii , urease activity and bacterial growth are both significantly influenced by nickel 476 
+
+availability. The current findings demonstrate a dual regulatory function, serving as a necessary 477 
+
+cofactor for urease maturation while also having detrimental effects on cellular development 478 
+
+at high concentrations. The classical heavy-metal stress response in bacteria, where excess 479 
+
+nickel disrupts membrane integrity, displaces essential metal ions, and induces oxidative 480 
+
+damage, is reflected in the concentration-dependent inhibition of growth with an IC 50 of 637.7 481 
+
+μM [12,26,27]. The ureolytic bacteria's adaptability to nickel-rich microenvironments, where 482 
+
+effective nickel handling systems and urease maturation pathways are highly established, is 483 
+
+consistent with the comparatively high tolerance observed here. 484 
+
+In contrast to growth inhibition, specific urease activity increased markedly with rising Ni²⁺ 485 
+
+concentrations and reached its maximum between 900 and 1020 μM. This uncoupling between 486 
+
+biomass production and enzymatic efficiency highlights the absolute dependence of urease on 487 
+
+nickel for catalytic activation. Urease is synthesized in an inactive apo-form and requires 488 
+
+precise insertion of two Ni²⁺ ions into its active site to become functional [7,10]. At low nickel 489 
+
+availability, incomplete metal loading limits enzyme activation, whereas increased Ni²⁺ 490 
+
+concentration promotes full maturation of urease and sharply enhances its catalytic efficiency. 491 
+
+Similar patterns have been reported in other ureolytic organisms, including H. pylori and K. 492 
+
+aerogenes , where nickel supplementation elevates urease activity even when growth is not 493 
+
+significantly stimulated [28,29]. 494 
+
+The observation that total urease activity remains relatively stable across a broad nickel range, 495 
+
+despite declining biomass, further supports the concept of metabolic prioritization of urease 496 
+
+under nickel stress. Fewer cells are present, yet each cell contains a higher proportion of fully 497 
+
+activated enzyme. This behavior suggests that urease is maintained as a high-priority metabolic 498 
+
+function, reflecting its importance in nitrogen metabolism, pH regulation, and environmental 499 
+
+adaptation. Comparable prioritization has been reported for other nickel-dependent enzymes 500 
+
+and metalloprotein systems [15,30]. 501 
+
+The non-linear relationship between ammonium production and nickel concentration also 502 
+
+indicates the existence of an optimal nickel window. Maximum ureolytic output occurred at 503 
+
+intermediate Ni²⁺ levels, while both deficiency and excess resulted in reduced performance. 504 
+
+Such bell-shaped responses are characteristic of metalloenzymes whose activity depends on a 505 
+
+balance between metal availability and toxicity [17,27]. This finding has direct implications 506 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+22 
+
+for the optimization of urease-based biotechnologies, demonstrating that increasing nickel 507 
+
+concentration beyond a threshold does not translate into enhanced system performance. 508 
+
+The PPI network analysis highlights the highly coordinated nature of urease maturation. Strong 509 
+
+connectivity between the catalytic subunits (UreA, UreB, and UreC) and the accessory proteins 510 
+
+(UreD, UreE, and UreG) reflects the sequential and interdependent pathway required for nickel 511 
+
+delivery and enzyme activation [9,10]. The central role of UreC as a hub protein is consistent 512 
+
+with its structural and catalytic importance and has also been reported in recent network-based 513 
+
+analyses of urease systems [31,32, 33]. 514 
+
+Physicochemical and evolutionary analyses further support this functional hierarchy. Ure1 515 
+
+displayed the highest stability and conservation at its catalytic and metal-binding residues, 516 
+
+underscoring its role as the rigid scaffold that coordinates the dinuclear nickel center [7,8]. 517 
+
+UreE showed properties typical of metallochaperones, including hydrophilicity and 518 
+
+conservation of histidine-rich motifs for transient nickel binding [34]. UreG, a SIMIBI-family 519 
+
+GTPase, exhibited greater instability and conserved P-loop motifs, consistent with its 520 
+
+regulatory role in energy-dependent nickel transfer [21,35]. 521 
+
+Docking results, while semi-quantitative, align well with these functional assignments. Ure1 522 
+
+showed the strongest relative affinity for Ni²⁺, UreE exhibited intermediate affinity suitable for 523 
+
+metal trafficking, and UreG displayed weaker interactions, reflecting its indirect role in nickel 524 
+
+handling. Similar binding hierarchies have been reported in recent computational studies on 525 
+
+urease maturation systems [22,32]. These findings reinforce the concept that nickel regulation 526 
+
+is distributed across a coordinated protein network rather than being confined to the catalytic 527 
+
+enzyme alone. 528 
+
+A particularly important extension of the present work is the microscopic examination of 529 
+
+calcium carbonate precipitation, which provides direct visual evidence linking Ni²⁺-regulated 530 
+
+urease activity to biomineralization efficiency. Under conditions containing urea and calcium, 531 
+
+abundant CaCO₃ nucleation and crystal growth were observed around bacterial cells, 532 
+
+confirming the classical mechanism of microbially induced calcium carbonate precipitation 533 
+
+(MICP). At low to moderate Ni²⁺ concentrations (100–1000 μM), where specific urease activity 534 
+
+was maximal, dense crystal networks were formed, indicating rapid carbonate supersaturation 535 
+
+and efficient mineral nucleation. In contrast, at higher Ni²⁺ levels (≥1000–15000 μM), crystal 536 
+
+formation was markedly reduced or absent, reflecting the combined impact of metal toxicity 537 
+
+and reduced microbial viability, despite the persistence of elevated urease activity on a per-cell 538 
+
+basis. 539 
+
+These findings are fully consistent with the pioneering biocementation work of Al-Thawadi, 540 
+
+who demonstrated that ureolytic bacteria act both as biochemical catalysts and as physical 541 
+
+nucleation templates for CaCO₃ formation, leading to nanoscale calcite particles that 542 
+
+progressively consolidate soil matrices [36,3]. The present study extends this framework by 543 
+
+identifying nickel as a key upstream regulator of this process through its control over urease 544 
+
+maturation and catalytic efficiency. Thus, Ni²⁺ indirectly governs not only enzyme activity but 545 
+
+also the kinetics and morphology of mineral precipitation. 546 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+23 
+
+Moreover, the formation of extensive crystal networks at optimal nickel concentrations 547 
+
+supports the concept that effective biocementation depends on a delicate balance between 548 
+
+enzymatic activation and microbial viability. While high Ni²⁺ levels enhance urease activity per 549 
+
+unit biomass, they simultaneously suppress cell growth, leading to a net reduction in total 550 
+
+carbonate yield. This highlights that successful MICP systems must optimize metal availability 551 
+
+to sustain both active enzyme populations and sufficient microbial biomass. 552 
+
+From an applied perspective, these results have direct implications for soil stabilization, self-553 
+
+healing concrete, and subsurface sealing technologies. Maintaining nickel concentrations 554 
+
+within an optimal operational window is essential for maximizing carbonate production while 555 
+
+preserving long-term system stability. This conclusion complements and strengthens the 556 
+
+biocementation strategies originally proposed by Al-Thawadi and co-workers and provides a 557 
+
+quantitative biochemical foundation for refining urease-driven engineering applications 558 
+
+[3,6,36,37]. 559 
+
+Overall, this study demonstrates that nickel is not merely a passive cofactor for urease but a 560 
+
+key regulatory factor of a tightly integrated metalloprotein network that controls enzymatic 561 
+
+activity, microbial fitness, and biomineralization efficiency. The integration of growth kinetics, 562 
+
+enzyme assays, docking, PPI analysis, evolutionary conservation, and microscopic mineral 563 
+
+observations provides a comprehensive framework for understanding and optimizing nickel-564 
+
+dependent urease systems in both environmental and biotechnological contexts. 565 
+
+566 
+
+Conclusions 567 
+
+Nickel availability is a decisive factor in controlling urease performance in S. pasteurii , shaping 568 
+
+outcomes at both molecular and physiological levels. Our findings reveal that optimal Ni²⁺ 569 
+
+concentrations enable precise assembly of the dinuclear nickel center, driving peak urease 570 
+
+activity, while excessive levels compromise bacterial viability, with an IC₅₀ of 637.7 μM 571 
+
+marking a critical threshold. These biochemical dynamics translate directly into 572 
+
+biomineralization behavior: when nickel is well-balanced, dense and stable CaCO₃ crystals 573 
+
+form; when toxicity prevails, microbial activity declines and crystal formation deteriorates. 574 
+
+Computational insights further highlight a coordinated hierarchy among urease-related proteins, 575 
+
+underscoring the complexity of nickel handling during enzyme maturation. 576 
+
+Collectively, this work establishes nickel as a central regulator of urease-driven processes and 577 
+
+provides a mechanistic framework for optimizing microbial biomineralization in engineered 578 
+
+environments. For practical applications such as biocementation and soil stabilization, success 579 
+
+depends on striking the right balance—enough nickel to activate urease, but not so much that 580 
+
+it undermines microbial health. 581 
+
+Acknowledgements The author expresses sincere appreciation to Dr. Qamar Abass Solangi 582 
+
+for his extensive support and guidance in the bioinformatics analyses carried out in this work. 583 
+
+Deep gratitude is also extended to Mrs. Batool Abdulwahab for her technical assistance 584 
+
+throughout the experimental procedure. The experimental design, data collection, analysis, and 585 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+24 
+
+interpretation were performed entirely by the author. AI-assisted tools were uses solely for 586 
+
+language editing and proofreading, with no involvement in scientific content generation. 587 
+
+Funding The author declares that no funds or grants were received for the preparation of this 588 
+
+manuscript. 589 
+
+Conflict of interest The author has no relevant financial or non-financial interests to disclose. 590 
+
+Supplementary Material Legends 591 
+
+Supplementary Video 1. 592 
+
+Real-time microscopic examination of early CaCO 3 nucleation during urease-driven 593 
+
+precipitation by S. pasteurii. The video captures the initial formation of fine CaCO 3 nuclei and 594 
+
+their dynamic motion within the medium shortly after reaction initiation under alkaline 595 
+
+conditions. 596 
+
+Supplementary Video 2. 597 
+
+Time-lapse recording of CaCO 3 crystal development and aggregation by S. pasteurii . The video 598 
+
+illustrated the progression from dispersed micro-nuclei to interconnected mineral structures 599 
+
+over time (rhombohedral crystals). Highlighting the dynamic process of biomineralization. 600 
+
+References 601 
+
+1 Mobley, H.L.T., Island, M.D., Hausinger, R.P.: Molecular biology of microbial ureases. 602 
+
+Microbiol. Rev. 59(3), 451–480 (1995). https://doi.org/10.1128/mr.59.3.451-480.1995 603 
+
+2 Krajewska, B.: Ureases I: Functional, catalytic, and kinetic properties—A review. J. Mol. 604 
+
+Catal. B: Enzym. 59(1–3), 9–21 (2009). https://doi.org/10.1016/j.molcatb.2009.01.003 605 
+
+3 Al-Thawadi, S., Cord-Ruwisch, R., Bououdina, M.: Consolidation of sand particles by 606 
+
+nanoparticles of calcite after concentrating ureolytic bacteria in situ . Int. J. Green Nano., 607 
+
+2012. 4(1):28-36. DOI:10.1080/19430892.2012.654741 608 
+
+4 Mobley, H.L.T., Hausinger, R.: Microbial ureases: Significance, regulation, and molecular 609 
+
+characterization. Micro rev. 53. 85-108 (1989). 10.1128/MMBR.53.1.85-108.1989. 610 
+
+5 Achal, V., Mukherjee, A., Reddy, M.S.: Microbial concrete: A sustainable approach to 611 
+
+enhance the durability of building structures. Journal of Materials in Civil Engineering, 612 
+
+27 (10), 04015014 (2015). https://doi.org/10.1061/(ASCE)MT.1943-5533.0001270 613 
+
+6 DeJong, J. ., Mortensen, B.M., Martinez, B.C., Nelson, D.C.: Bio-mediated soil improvement. 614 
+
+Ecol. Eng., 42 (2), 197–210. (2020)https://doi.org/10.1016/j.ecoleng.2020.03.019 615 
+
+7 Mazzei, L., Musiani, F., Ciurli, S.: The structure-based reaction mechanism of urease, a 616 
+
+nickel-dependent enzyme. J.Biol. Inorg. Chem. 25 (6), 829–845 (2020). 617 
+
+https://doi.org/10.1007/s00775-020-01808-w 618 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+25 
+
+8 Saito, T., & Takano, Y. (2022). QM/MM molecular dynamics simulations reveal the catalytic 619 
+
+mechanism of urease. Journal of Physical Chemistry B, 126 (10), 2087–2097. 620 
+
+https://doi.org/10.1021/acs.jpcb.1c10200 621 
+
+9 Mulrooney, S.B., Hausinger, R.P., 2003. Nickel uptake and utilization by microorganisms. 622 
+
+FEMS Microbiol Rev. 27(2-3):239-61. doi: 10.1016/S0168-6445(03)00042-1. PMID: 623 
+
+12829270. 624 
+
+10 Carter, E. L., Flugga, N., Boer, J. L., Mulrooney, S. B., & Hausinger, R. P. (2019). The 625 
+
+maturation pathway of nickel urease. Inorganics, 7(7), 85. 626 
+
+https://doi.org/10.3390/inorganics7070085 627 
+
+11 Zambelli, B., Musiani, F., Benini, S., & Ciurli, S. (2011). Chemistry of Ni²⁺ in urease: 628 
+
+Sensing, trafficking, and catalysis. Accounts of Chemical Research, 44 (7), 520–530. 629 
+
+https://doi.org/10.1021/ar100004u 630 
+
+12 Zhou, W., Li, D., & Ren, J. (2024). Nickel-induced oxidative stress and urease inhibition in 631 
+
+soil bacteria. Environmental Microbiology Reports, 16 (3), 256–268. 632 
+
+https://doi.org/10.1111/1758-2229.13012 633 
+
+13 Chen, X., Zhang, L., Liu, W., & Wu, H. (2025). A novel urease gene structure of 634 
+
+Sporosarcina pasteurii with double operons. Microbial Cell Factories, 24 (1), 187. 635 
+
+https://doi.org/10.1186/s12934-025-02578-9 636 
+
+14 Pei, D., Liu, Z., Wu, W., & Hu, B. (2021). Transcriptome analyses reveal the utilization of 637 
+
+nitrogen sources and related metabolic mechanisms of Sporosarcina pasteurii . PLoS ONE, 638 
+
+16 (2), e0246818. https://doi.org/10.1371/journal.pone.0246818 639 
+
+15 Reardon, P. N., & Wang, H. (2022). Nickel bioavailability regulates urease-mediated 640 
+
+microbial mineralization in engineered systems. Environmental Science & Technology, 641 
+
+56 (14), 10210–10220. https://doi.org/10.1021/acs.est.2c01153 642 
+
+16 Martin, P., Lapanje, A., & Štrus, J. (2020). Microbial community dynamics and urease 643 
+
+activity in soil amended with urea and nickel. Applied Soil Ecology, 153 , 103638. 644 
+
+https://doi.org/10.1016/j.apsoil.2020.103638 645 
+
+17 Krajewska, B. (2022). Urease and ureolytic bacteria in calcium carbonate biomineralization: 646 
+
+Recent advances and future prospects. Applied Microbiology and Biotechnology, 106 (6), 647 
+
+2285–2302. https://doi.org/10.1007/s00253-022-11872-2 648 
+
+18 Fang, J., Huang, X., Liu, Z., & Zhang, X. (2022). Microbial urease activity and its 649 
+
+application in wastewater treatment: A review. Environmental Science and Pollution 650 
+
+Research, 29 (18), 27030–27047. https://doi.org/10.1007/s11356-021-17849-z 651 
+
+19 Kuhn, M., Szklarczyk, D., Pletscher-Frankild, S., et al. (2016). STITCH 5: Augmenting 652 
+
+protein–chemical interaction networks with tissue and affinity data. Nucleic Acids 653 
+
+Research, 44 (D1), D380–D384. https://doi.org/10.1093/nar/gkv1277 654 
+
+20 Ashkenazy, H., Abadi, S., Martz, E., Chay, O., Mayrose, I., Pupko, T., & Ben-Tal, N. (2016). 655 
+
+ConSurf 2016: An improved methodology to estimate and visualize evolutionary 656 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+26 
+
+conservation in macromolecules. Nucleic Acids Research, 44 (W1), W344–W350. 657 
+
+https://doi.org/10.1093/nar/gkw408 658 
+
+21 Fong, Y. H., Wong, H. C., Yuen, M. H., Lau, P. H., Chen, Y. W., & Ng, W. L. (2013). 659 
+
+Structure of the UreG/UreF/UreH complex reveals how urease accessory proteins facilitate 660 
+
+nickel delivery. PLoS Biology, 11 (9), e1001678. 661 
+
+https://doi.org/10.1371/journal.pbio.1001678 662 
+
+22 Santos, K. B., Guedes, I. A., Karl, A. L. M., & Dardenne, L. E. (2024). DockThor-VS: A 663 
+
+free platform for receptor–ligand virtual screening. Journal of Molecular Biology, 436 (15), 664 
+
+168145. https://doi.org/10.1016/j.jmb.2024.168145 665 
+
+23 Guedes, I. A., Barreto, A. M., Marinho, D., et al. (2021). New machine-learning and 666 
+
+physics-based scoring functions (DockTScore) for docking. Scientific Reports, 11 , 5543. 667 
+
+https://doi.org/10.1038/s41598-021-82410-1 668 
+
+24 DockThor portal (v2). National Laboratory for Scientific Computing (LNCC), Brazil. 669 
+
+https://dockthor.lncc.br/v2 (accessed 18 Sept 2025). (dockthor.lncc.br). 670 
+
+25 Gasteiger, E., Hoogland, C., Gattiker, A., Duvaud, S., Wilkins, M. R., Appel, R. D., & 671 
+
+Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In J. M. 672 
+
+Walker (Ed.), The Proteomics Protocols Handbook (pp. 571–607). Humana Press. 673 
+
+https://doi.org/10.1385/1-59259-890-0:571 674 
+
+26 Das, K.K., Das, S.N., Dhundasi, S.A., 2008. Nickel, its adverse health effects and oxidative 675 
+
+stress. Indian J Med Res 128, 412-425, 676 
+
+20122013201420152016201720182019202020212022202320242025 677 
+
+27 Hausinger, R. P., & Zambelli, B. (2022). Nickel and urease: Essential coordination in 678 
+
+catalysis and regulation. Metallomics, 14 (3), mfac005. 679 
+
+https://doi.org/10.1093/mtomcs/mfac005 680 
+
+28 Benini, S., Rypniewski, W. R., Wilson, K. S., Miletti, S., Ciurli, S., & Mangani, S. (2020). 681 
+
+A new proposal for urease mechanism based on crystal structures of the native and inhibited 682 
+
+enzyme from Bacillus pasteurii . Journal of Biological Inorganic Chemistry, 25 (3), 373– 683 
+
+390. https://doi.org/10.1007/s00775-020-01808-w 684 
+
+29 Huynh, T. Q., Nguyen, L. T., & Tran, D. P. (2023). Regulation of nickel-dependent urease 685 
+
+maturation in Helicobacter pylori . Frontiers in Microbiology, 14 , 112245. 686 
+
+https://doi.org/10.3389/fmicb.2023.112245 687 
+
+30 Rabinovich, A., Di, R., Lindert, S., & Heckman, J. 2024. Nickel and Soil Fertility: Review 688 
+
+of Benefits to Environment and Food Security. Environments , 11 (8), 177. 689 
+
+https://doi.org/10.3390/environments11080177 690 
+
+31 Zhu, J., Shen, D., Xie, J., Tang, C., Jin, B., & Wu, S. (2021). Mechanism of urea 691 
+
+decomposition catalyzed by Sporosarcina pasteurii urease based on quantum chemical 692 
+
+calculations. Molecular Simulation, 47 (16), 1335–1348. 693 
+
+https://doi.org/10.1080/08927022.2021.1924789 694 
+
+> (which was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission. The copyright holder for this preprint this version posted June 19, 2026. ;https://doi.org/10.64898/2026.06.15.732323 doi: bioRxiv preprint
+
+27 
+
+32 Carosella, N., Brock, K.P., Zambelli, B., Musiani, F., Sander, C. and Ciurli, S.: Functional 695 
+
+contacts for activation of urease from Helicobacter pylori: an integrated approach using 696 
+
+evolutionary couplings, in-cell enzymatic assays, and computational docking. Front. Chem. 697 
+
+Biol 2:1243564 (2023). doi: 10.3389/fchbi.2023.1243564 698 
+
+33 Feng, T., Miao, P.; Zheng, B.; Li, W.; Sukkaew, E.; Chen, Y.; Wang, J., Peng, Y.; Zheng,W.; 699 
+
+Bingnian, Z.: Soil urease activity is mediated more by ureC microbial diversity in wet 700 
+
+regions than dry regions: Key roles of generalist-abundant and -rare species. Funct. Ecol. 701 
+
+39:2015–2028 (2025). DOI: 10.1111/1365-2435.70093 702 
+
+34 Merloni, A., & Ciurli, S. (2014). Nonredox nickel enzymes: Structure and reactivity. 703 
+
+Chemical Reviews, 114 (8), 4206–4228. https://doi.org/10.1021/cr400396e 704 
+
+35 Zambelli, B., Mazzei, L., Ciurli, S., 2020. Chapter Eight - Intrinsic disorder in the nickel-705 
+
+dependent urease network. Editor(s): Vladimir N. Uversky, Progress in Molecular Biology 706 
+
+and Translational Science, Academic Press, Volume 174, Pages 307-330. 707 
+
+https://doi.org/10.1016/bs.pmbts.2020.05.004. 708 
+
+36 Al-Thawadi, S.M., 2011. Ureolytic bacteria and calcium carbonate formation as a 709 
+
+mechanism of strength enhancement of sand . J. Adv. Sci Eng Res. 710 
+
+202220232024 201320142015201620172018201920202021 .711 
+
+37 Shivaprakash, S. H., & Burns, S. E. (2025). Microbial interactions during carbonate 712 
+
+biomineralization via the urea hydrolysis pathway. Acta Geotechnica, 20 , 3929–3950. 713 
+
+https://doi.org/10.1007/s11440-025-02609-8 714

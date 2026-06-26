@@ -6,31 +6,29 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-25
-- 运行时间：2026-06-25 21:50:27 UTC
+- 最新运行日期：2026-06-26
+- 运行时间：2026-06-26 21:24:12 UTC
 - 运行状态：成功
-- 本次总论文数：3
-- 精读区：2
-- 速读区：1
+- 本次总论文数：2
+- 精读区：0
+- 速读区：2
 
 ### 今日简报（AI）
-今日聚焦生态修复与再生医学双突破，精读满分珊瑚模块和颅骨皮肤骨骼同步再生研究，速递一项食品脂质分析工具。
-珊瑚定居模块设计为大规模珊瑚礁恢复给出可复制路径，皮肤骨骼同步再生则一次解决颅骨全层缺损两大难题。
-下步可留意这些实验室方案如何走向实地投放与临床转化。
-- 详情：[/202606/25/README](/202606/25/README)
+今日速览两篇交叉前沿研究：物理信息建模用于木材热分析，以及镍驱动巴氏芽孢杆菌脲酶动力机制的计算与实验整合。
+最值得关注物理引导的木材热响应预测，和镍离子精准调控脲酶活性的新见解。
+建议进一步探索这类计算模型在材料处理与生物催化工程中的应用潜力。
+- 详情：[/202606/26/README](/202606/26/README)
 
 ### 精读区论文标签
-1. [Coral settlement module designs for scalable reef restoration](/202606/25/biorxiv-10-64898-2026-06-24-733534-v1-coral-settlement-module-designs-for-scalable-reef-restoration)  
-   标签：评分：10.0/10、query:mdd-regen
-   evidence：用于海洋人工礁生态恢复的珊瑚附着模块设计
-2. [Simultaneous regeneration of skin and bone in full-thickness cranial composite defects](/202606/25/biorxiv-10-64898-2026-06-16-732662-v1-simultaneous-regeneration-of-skin-and-bone-in-full-thickness-cranial-composite-defects)  
-   标签：评分：8.0/10、query:mdd-regen
-   evidence：描述了一种'材料驱动的3D打印复合支架'用于组织再生，直接体现材料驱动设计原则。
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [From molecular lipidomics to interpretable food lipid profiles: the Lipid Food Profile module in LipidOne](/202606/25/biorxiv-10-64898-2026-06-15-732299-v1-from-molecular-lipidomics-to-interpretable-food-lipid-profiles-the-lipid-food-profile-module-in-lipidone)  
-   标签：评分：7.0/10、query:mdd-regen
-   evidence：提供一种脂质组学数据分析工具，可用于表征三文鱼基材料的脂质谱。
+1. [Physics-Informed Modeling for Wood Thermal Analysis and Prediction](/202606/26/2606.23402v1-physics-informed-modeling-for-wood-thermal-analysis-and-prediction)  
+   标签：评分：6.0/10、query:mdd-regen
+   evidence：物理信息深度学习用于木材热性能预测，适用于生物基材料的材料驱动设计
+2. [Nickel-Driven Dynamics of Urease in Sporosarcina pasteurii: Integrated Computational and Experimental Insights](/202606/26/biorxiv-10-64898-2026-06-15-732323-v1-nickel-driven-dynamics-of-urease-in-sporosarcina-pasteurii-integrated-computational-and-experimental-insights)  
+   标签：评分：6.0/10、query:mdd-regen
+   evidence：微生物诱导碳酸钙沉淀（MICP）是生态土壤稳定技术，可应用于构建生物容忍性人工礁体材料
 
 
 <div class="dpr-home-promo-card">
