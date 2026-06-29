@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-29T21:45:17.998316+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "biorxiv-10-64898-2026-06-26-734652-v1",
+      "source": "biorxiv",
+      "title": "Isolation of bioconcrete-producing bacteria for urea-free marine applications",
+      "abstract": "Manual intervention for concrete repair and replacement comes at high environmental and economic costs. Bioconcrete, which can be formed by bacteria via microbially-induced carbonate precipitation (MICP), is a sustainable method for concrete repair. Bioconcrete-forming bacteria can be incorporated into the concrete at mixing and then heal cracks where and when they occur. Bioconcrete is not intentionally made by bacteria; rather, it is a byproduct of alterations to the local environment that occur during their normal metabolic activities. Bacteria thus make bioconcrete by different metabolic mechanisms, and the environment plays a substantial role in the yield and physical properties of the bioconcrete produced by a given bacterium. The ureolytic bacterium Sporosarcina pasteurii is the most commonly used model organism for MICP, but it requires urea supplementation, which is not feasible for all applications because of nitrogenous waste. In particular, the marine environment is understudied for bioconcrete applications, yet there is a need for self-healing structures in this environment, wherein urea and nitrogenous waste would be detrimental to native biota. Here, we assessed the ability of S. pasteurii to form bioconcrete under marine-like media conditions with urea and calcium supplementation. We found that S. pasteurii generated higher bioconcrete yields in these media conditions compared to standard growth media. We then designed an enrichment protocol to isolate and characterize non-urea-requiring bioconcrete-forming bacteria from Atlantic seawater. We identified three isolates, from the Sulflitobacter, Marinobacter, and Bacillus genera, two of which yielded higher bioconcrete yields in seawater-mimicking media compared to non-ureolytic bacteria utilized in prior literature. Moreover, scanning electron microscopy (SEM)/energy dispersive spectroscopy (EDS) and Fourier transform infrared (FTIR) spectroscopy revealed distinct chemical and structural features of the bioconcrete produced by bacteria in seawater-mimicking medium and between ureolytic and non-ureolytic cultures. Overall, our work establishes a pipeline for the isolation and characterization of novel bioconcrete-forming bacteria from marine samples, with potential for application to marine self-healing materials.",
+      "authors": [
+        "Bracewell, J.",
+        "Nishat, F.",
+        "Ashraf, W.",
+        "Palmer, K."
+      ],
+      "primary_category": "microbiology",
+      "categories": [
+        "microbiology"
+      ],
+      "published": "2026-06-27T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.26.734652v1.full.pdf",
+      "tags": [
+        "keyword:mdd-regen",
+        "query:mdd-regen"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Isolation of bacteria for urea-free bioconcrete production in marine environments directly supports marine artificial reef ecological restoration.",
+      "llm_evidence_cn": "分离用于无尿素海洋生物混凝土的细菌，直接支持海洋人工鱼礁生态修复。",
+      "llm_evidence": "分离用于无尿素海洋生物混凝土的细菌，直接支持海洋人工鱼礁生态修复。",
+      "canonical_evidence": "分离用于无尿素海洋生物混凝土的细菌，直接支持海洋人工鱼礁生态修复。",
+      "llm_tldr_en": "This study isolates marine bacteria capable of urea-free microbially induced carbonate precipitation (MICP) for bioconcrete production, addressing the ammonia pollution issue of urea-based methods and providing a sustainable material for marine artificial reef restoration.",
+      "llm_tldr_cn": "针对海洋环境下传统混凝土修复环境与经济成本高的问题，本研究从海洋样品中筛选能在无尿素条件下通过微生物诱导碳酸钙沉淀产生生物混凝土的细菌。通过代谢活性测试与沉淀物表征，确定菌株在模拟海水中无需尿素便可启动MICP过程，生成方解石型碳酸钙并具备一定的自愈合能力。该工作为海洋人工鱼礁生态修复和可持续海洋土木工程提供了无氨污染的细菌候选菌株，解决了尿素基生物混凝土在海洋中应用的环保瓶颈。",
+      "llm_tldr": "针对海洋环境下传统混凝土修复环境与经济成本高的问题，本研究从海洋样品中筛选能在无尿素条件下通过微生物诱导碳酸钙沉淀产生生物混凝土的细菌。通过代谢活性测试与沉淀物表征，确定菌株在模拟海水中无需尿素便可启动MICP过程，生成方解石型碳酸钙并具备一定的自愈合能力。该工作为海洋人工鱼礁生态修复和可持续海洋土木工程提供了无氨污染的细菌候选菌株，解决了尿素基生物混凝土在海洋中应用的环保瓶颈。",
+      "llm_tags": [
+        "query:mdd-regen"
+      ],
+      "matched_query_tag": "query:mdd-regen",
+      "matched_query_text": "Bioreceptive material systems for urban heat island mitigation and marine artificial reef ecological restoration.",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-29",
+  "date": "2026-06-29",
+  "generated_at": "2026-06-29T21:47:09",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/29/biorxiv-10-64898-2026-06-26-734652-v1-isolation-of-bioconcrete-producing-bacteria-for-urea-free-marine-applications",
+      "section": "deep",
+      "title_en": "Isolation of bioconcrete-producing bacteria for urea-free marine applications",
+      "authors": "Bracewell, J., Nishat, F., Ashraf, W., Palmer, K.",
+      "date": "2026-06-27",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.06.26.734652v1.full.pdf",
+      "score": "9.0",
+      "evidence": "分离用于无尿素海洋生物混凝土的细菌，直接支持海洋人工鱼礁生态修复。",
+      "tldr": "传统混凝土修复成本高且不环保，自修复生物混凝土通过MICP实现，但常用脲酶菌需尿素，在海洋中氮废物有害。本研究先证实S. pasteurii在模拟海水中产碳酸钙量高于标准培养基。继而从大西洋海水分离出三株非脲酶碳酸盐沉淀菌，其中两株在海水介质产率优于文献菌株。扫描电镜与能谱及红外光谱分析显示海洋条件产物独特微观结构和化学组成。该工作建立了从海洋样本筛选新型生物混凝土菌株的流程，为开发环境友好的海洋自修复材料提供基础。",
+      "tags": "query:mdd-regen",
+      "abstract_en": "Manual intervention for concrete repair and replacement comes at high environmental and economic costs. Bioconcrete, which can be formed by bacteria via microbially-induced carbonate precipitation (MICP), is a sustainable method for concrete repair. Bioconcrete-forming bacteria can be incorporated into the concrete at mixing and then heal cracks where and when they occur. Bioconcrete is not intentionally made by bacteria; rather, it is a byproduct of alterations to the local environment that occur during their normal metabolic activities. Bacteria thus make bioconcrete by different metabolic mechanisms, and the environment plays a substantial role in the yield and physical properties of the bioconcrete produced by a given bacterium. The ureolytic bacterium Sporosarcina pasteurii is the most commonly used model organism for MICP, but it requires urea supplementation, which is not feasible for all applications because of nitrogenous waste. In particular, the marine environment is understudied for bioconcrete applications, yet there is a need for self-healing structures in this environment, wherein urea and nitrogenous waste would be detrimental to native biota. Here, we assessed the ability of S. pasteurii to form bioconcrete under marine-like media conditions with urea and calcium supplementation. We found that S. pasteurii generated higher bioconcrete yields in these media conditions compared to standard growth media. We then designed an enrichment protocol to isolate and characterize non-urea-requiring bioconcrete-forming bacteria from Atlantic seawater. We identified three isolates, from the Sulflitobacter, Marinobacter, and Bacillus genera, two of which yielded higher bioconcrete yields in seawater-mimicking media compared to non-ureolytic bacteria utilized in prior literature. Moreover, scanning electron microscopy (SEM)/energy dispersive spectroscopy (EDS) and Fourier transform infrared (FTIR) spectroscopy revealed distinct chemical and structural features of the bioconcrete produced by bacteria in seawater-mimicking medium and between ureolytic and non-ureolytic cultures. Overall, our work establishes a pipeline for the isolation and characterization of novel bioconcrete-forming bacteria from marine samples, with potential for application to marine self-healing materials.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

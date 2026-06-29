@@ -1,0 +1,1220 @@
+Title: Isolation of bioconcrete-producing bacteria for urea-free marine applications
+
+URL Source: https://www.biorxiv.org/content/10.64898/2026.06.26.734652v1.full.pdf
+
+Number of Pages: 36
+
+Markdown Content:
+11
+
+Isolation of bioconcrete-producing bacteria for urea-free marine applications 1
+
+2
+
+3
+
+Jennifer Bracewell 1, Farzana Nishat 2, Warda Ashraf 2, and Kelli Palmer 1*4
+
+Department of Biological Sciences, University of Texas at Dallas; Department of Civil 5
+
+Engineering, University of Texas at Arlington 6
+
+7
+
+8
+
+*Corresponding author 9
+
+10 
+
+Contact information: 11 
+
+12 
+
+Kelli Palmer 13 
+
+Department of Biological Sciences, BSB12 14 
+
+The University of Texas at Dallas 15 
+
+Richardson, Texas 75080 16 
+
+Ph: 972-883-6014 17 
+
+Email: kelli.palmer@utdallas.edu 18 
+
+19 
+
+20 
+
+21 
+
+22 
+
+23 
+
+24 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+22
+
+Abstract 25 
+
+26 
+
+Manual intervention for concrete repair and replacement comes at high environmental and 27 
+
+economic costs. Bioconcrete, which can be formed by bacteria via microbially-induced 28 
+
+carbonate precipitation (MICP), is a sustainable method for concrete repair. Bioconcrete-forming 29 
+
+bacteria can be incorporated into the concrete at mixing and then heal cracks where and when 30 
+
+they occur. Bioconcrete is not intentionally made by bacteria; rather, it is a byproduct of 31 
+
+alterations to the local environment that occur during their normal metabolic activities. Bacteria 32 
+
+thus “make” bioconcrete by different metabolic mechanisms, and the environment plays a 33 
+
+substantial role in the yield and physical properties of the bioconcrete produced by a given 34 
+
+bacterium. The ureolytic bacterium Sporosarcina pasteurii is the most commonly used model 35 
+
+organism for MICP, but it requires urea supplementation, which is not feasible for all applications 36 
+
+because of nitrogenous waste. In particular, the marine environment is understudied for 37 
+
+bioconcrete applications, yet there is a need for self-healing structures in this environment, 38 
+
+wherein urea and nitrogenous waste would be detrimental to native biota. Here, we assessed 39 
+
+the ability of S. pasteurii to form bioconcrete under marine-like media conditions with urea and 40 
+
+calcium supplementation. We found that S. pasteurii generated higher bioconcrete yields in 41 
+
+these media conditions compared to standard growth media. We then designed an enrichment 42 
+
+protocol to isolate and characterize non-urea-requiring bioconcrete-forming bacteria from 43 
+
+Atlantic seawater. We identified three isolates, from the Sulflitobacter , Marinobacter , and 44 
+
+Bacillus genera, two of which yielded higher bioconcrete yields in seawater-mimicking media 45 
+
+compared to non-ureolytic bacteria utilized in prior literature. Moreover, scanning electron 46 
+
+microscopy (SEM)/energy dispersive spectroscopy (EDS) and Fourier transform infrared (FTIR) 47 
+
+spectroscopy revealed distinct chemical and structural features of the bioconcrete produced by 48 
+
+bacteria in seawater-mimicking medium and between ureolytic and non-ureolytic cultures. 49 
+
+Overall, our work establishes a pipeline for the isolation and characterization of novel 50 
+
+bioconcrete-forming bacteria from marine samples, with potential for application to marine self-51 
+
+healing materials. 52 
+
+53 
+
+54 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+33
+
+Introduction 55 
+
+With the need to reduce global CO 2 emissions, bioconcrete is increasingly researched 56 
+
+as a sustainable alternative to manual concrete repair and replacement arising due to structure 57 
+
+degradation via cracking. Bioconcrete, also commonly called microbially induced carbonate 58 
+
+precipitation (MICP), is a byproduct of normal bacterial metabolic activities that produce suitable 59 
+
+environmental conditions to precipitate calcium carbonate (1). Several bacterial metabolic 60 
+
+activities contribute to creating optimum conditions for bioconcrete formation. Among the most 61 
+
+studied are urease activity, carbonic anhydrase activity, and denitrification (1–3). A specific 62 
+
+bacterium may use one or more of these as part of its normal metabolic activities. These 63 
+
+mechanisms result in changes in the local environment around the bacterial cell that increase 64 
+
+the local pH, calcium, and carbonate concentration, thus allowing the bacterial cell surface to 65 
+
+act as a nucleation site for calcium carbonate, or bioconcrete, precipitation (1,4). 66 
+
+Urease activity is the most extensively studied mechanism for bioconcrete production, 67 
+
+owing to its rapid and plentiful production of bioconcrete. The ureolytic mechanism of MICP 68 
+
+starts with urea degradation by the enzyme urease, producing ammonia and carbon dioxide. 69 
+
+Ammonia raises the local pH, promoting the formation of bicarbonate from carbon dioxide. The 70 
+
+calcium from a calcium precursor, such as calcium acetate or calcium chloride, is attracted to 71 
+
+the negatively charged cell surface. Together, these increase the local concentrations of calcium 72 
+
+and bicarbonate around the cell’s surface, allowing the cell surface to act as a nucleation site for 73 
+
+the precipitation of calcium carbonate (5). 74 
+
+Similar to urease activity, the carbonic anhydrase mechanism for bioconcrete production 75 
+
+relies on an alkaline pH to precipitate calcium carbonate. Carbonic anhydrase is a widespread 76 
+
+enzyme, with all three major classes found in prokaryotes. Carbonic anhydrases reversibly 77 
+
+catalyze the conversion of CO 2 to HCO 3-, both of which can be used by the cell for metabolic or 78 
+
+transport purposes (6). As a byproduct of these activities, bicarbonate can accumulate or be 79 
+
+transported outside of the cell where the presence of calcium allows the precipitation of calcium 80 
+
+carbonate. 81 
+
+Apart from these mechanisms, several other factors impact bioconcrete production, such 82 
+
+as the choice of microbe and that microbe’s specific metabolic abilities, availability of 83 
+
+nutrients/minerals, culture or growth conditions (such as temperature and oxygenation), quantity 84 
+
+of bacteria used, and bacterial metabolic state (vegetative vs dormant/endospore) (3,7). The 85 
+
+culture medium provides nutrients and energy sources, influencing bacterial growth. In addition, 86 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+44
+
+the supplementation of urea and/or calcium precursor impacts the amount and morphology of 87 
+
+calcium carbonate produced by the bacteria (8). With sufficient levels of the appropriate 88 
+
+nutrients, bacterial cells can actively (vegetatively) replicate. In contrast, bacterial endospores 89 
+
+are dormant, metabolically inactive cells that can withstand extreme environmental pressures 90 
+
+such as high heat, pressure, and desiccation that usually kill vegetative bacteria (9). The 91 
+
+hardiness of bacterial endospores allows them to survive their incorporation into concrete during 92 
+
+mixing and pouring. Also, the ability to remain dormant in the concrete for long periods of time 93 
+
+ensures the bacteria remain viable when the concrete later cracks (10). Once the concrete 94 
+
+cracks, there is an ingress of water and nutrients that allows the endospores within the crack to 95 
+
+germinate back into a vegetative state. The resumption of normal metabolic activity facilitates 96 
+
+bioconcrete formation and aids in the healing of cracks (11). The Gram-positive endospore-97 
+
+forming bacterium Sporosarcina pasteurii is the most commonly used model organism for 98 
+
+bioconcrete production due to its high urease activity, which improves its bioconcrete yield, and 99 
+
+its endospore-forming ability, which allows its incorporation into concrete mixtures (4). 100 
+
+The marine environment is not a commonly researched application environment for 101 
+
+bioconcrete, although there is a need for sustainable repair of marine structures (12). The 102 
+
+marine environment presents several challenges that do not apply to terrestrial bioconcrete. 103 
+
+One is that the high salinity of the environment can greatly impact bacterial growth (13), 104 
+
+especially for soil microorganisms like S. pasteurii (14). Another is that urea, and the ammonium 105 
+
+resulting from urease activity, may be detrimental to marine life. This is particularly relevant for 106 
+
+the construction of self-healing artificial coral reef structures or other structures to support 107 
+
+marine recolonization or food production (for e.g., oyster beds). The use of bioconcrete by non-108 
+
+urease producing organisms may make underwater concrete structures more sustainable in the 109 
+
+long term due to self-healing capabilities, reducing the need for human intervention for repair or 110 
+
+replacement. 111 
+
+Since bioconcrete is a byproduct of normal metabolic activity, bacteria must actively use 112 
+
+these pathways for its production. And, because different bacteria may respond differently to the 113 
+
+same environment (for our study, the marine environment), it is important to test and compare 114 
+
+different strains to identify the most suitable candidate for a specific environment or application. 115 
+
+Here, we tested the ability of S. pasteurii to form bioconcrete under culture conditions mimicking 116 
+
+non-marine and marine settings, all of which required the addition of urea. We then designed 117 
+
+and implemented an enrichment culture method to isolate novel, non-urea-dependent 118 
+
+bioconcrete-forming bacteria from seawater collected from the Atlantic coast of the United 119 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+55
+
+States. We identified these bacteria by whole genome sequencing and analysis and quantified 120 
+
+their ability to form bioconcrete in a non-urea-dependent manner under marine-mimicking 121 
+
+culture conditions. Overall, our study establishes a pipeline for the isolation and characterization 122 
+
+of novel bioconcrete-forming bacteria from seawater. 123 
+
+124 
+
+Materials and Methods 125 
+
+Bacterial strains and culture methods. Bacteria used in this study are shown in Table 126 
+
+1 along with the media used for their routine culture. Growth media used include Lysogeny 127 
+
+Broth (LB; 10 g/L tryptone, 5 g/L yeast extract, and 10 g/L sodium chloride), ATCC medium 1376 128 
+
+(Bacillus pasteurii NH 4-YE medium), and ATCC medium 2029 (nutrient agar, pH 9.0). For agar 129 
+
+cultures, liquid media were supplemented with 15 g/L agar, with the exception of 20 g/L agar for 130 
+
+ATCC medium 1376. Artificial sea medium (ASM) and artificial reef medium (ARM) were 131 
+
+comprised of 35.96 g/L Instant Ocean Sea or Reef Salt, respectively, and 5 g/L tryptone and 1 132 
+
+g/L yeast extract. Sporulation medium was comprised of ASM supplemented with 5 mg/L 133 
+
+MnSO 4, based on a medium described previously for B. toyonensis spore cultivation (15). For S. 134 
+
+pasteurii cultures, media were supplemented with 20 g/L urea, resulting in modified LB (LBU) 135 
+
+and modified ASM and ARM (ASMU and ARMU). For bioconcrete quantification cultures, media 136 
+
+were supplemented with 10 g/L calcium acetate, resulting in modified ASM and ARM (referred to 137 
+
+here as ASMCa and ARMCa). For S. pasteurii bioconcerete quantification cultures, LBU, ASMU, 138 
+
+and ARMU were supplemented with 10 g/L calcium acetate (referred to here as LBCaU, 139 
+
+ASMCaU, and ARMCaU). The sources of the chemicals used in this study are shown in Table 140 
+
+S1 . A comparison of the medium components present in the base versions of the bioconcrete 141 
+
+quantification media is shown in Table S2 .142 
+
+For modified LB media (LBCaU or LBU), the base LB medium was made as a separate 143 
+
+2X solution and sterilized by autoclaving at 121°C for 20 minutes. Solutions containing urea 144 
+
+and/or calcium acetate in water were made at 2X concentrations and filter sterilized by vacuum 145 
+
+filtration with a 0.22 μm filter to avoid precipitation after autoclaving. The two 2X solutions were 146 
+
+then aseptically combined, resulting in sterile liquid media for use. The modified artificial sea 147 
+
+and reef media and the sporulation medium were filter sterilized to achieve sterility. All other 148 
+
+media were sterilized by autoclaving at 121°C for 20 minutes. 149 
+
+Agar cultures were incubated at room temperature at ~21°C. Routine overnight broth 150 
+
+cultures were inoculated with a single colony each from a fresh streak plate. Broth cultures were 151 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+66
+
+incubated at 30°C with shaking at 150 rpm. Bacterial cultures were cryopreserved by mixing 750 152 
+
+μL sterile 50% glycerol with 750 μL of overnight broth culture with storage at -80 °C. 153 
+
+Bacterial isolation from seawater. Seawater was collected in sterile 50 mL conical 154 
+
+tubes on June 9 th , 2023 at GPS coordinates 41.370941, -71.497279 and shipped on ice to 155 
+
+Richardson, TX. Once received, cryopreserved freezer stocks were created as described 156 
+
+above, using seawater as the “culture”. To screen for bacteria that produce bioconcrete, the 157 
+
+stocks then were used to inoculate ARM broth cultures which were then used as inocula for 15 158 
+
+mL ARMCa bioconcrete quantification cultures. After 15 days of incubation, cultures with visually 159 
+
+observable bioconcrete production were cryopreserved as above, and the remaining culture 160 
+
+was used for bioconcrete quantification. The population that produced the most bioconcrete (by 161 
+
+dried precipitation weight) was streaked on ASM agar for single colony isolation, yielding 6 162 
+
+isolates, which were cryopreserved as above. 163 
+
+Gram staining . Gram staining was performed using the BD Gram Stain Kit and 164 
+
+following the protocol published by the American Society for Microbiology (16). 165 
+
+Sporulation test. Isolates were cultured overnight in ASM, pelleted, resuspended in 166 
+
+sporulation medium, and cultured for one week to test sporulation capabilities. Ability to 167 
+
+sporulate was initially evaluated by phase-contrast microscopy by examining cultures for phase-168 
+
+bright spots. Endospores were visualized under bright field microscopy after staining using the 169 
+
+Shaeffer-Fulton method (17), with modifications as previously recommended (18). Briefly, a few 170 
+
+microliters of liquid culture were dried on a glass slide before heat fixing. The slides were put in 171 
+
+an empty Petri dish, with a small square of paper towel placed over the slide. The paper towel 172 
+
+was saturated with malachite green solution (0.25 mg/mL), and the lid was put on the Petri dish. 173 
+
+The closed dish was left to saturate at room temperature for 30 minutes. Then, the slide was 174 
+
+rinsed with water, counterstained 30 seconds with safranin, and rinsed again. The slide was 175 
+
+visualized after drying. 176 
+
+DNA isolation and genome sequencing. DNA was isolated from overnight bacterial 177 
+
+cultures as performed previously (19), except that 80 mg/mL lysozyme was used. Illumina 178 
+
+sequencing was performed by Seqcenter (Pittsburgh, PA). Illumina reads were assembled into 179 
+
+contigs using the De Novo Assembly tool on CLC Genomics Workbench with default 180 
+
+parameters. Genome assemblies were annotated using RAST (20–22), and an annotated 16S 181 
+
+rRNA gene was used for preliminary taxonomic assignment using NCBI BLAST to identify the 182 
+
+closest species. Among the isolates, 3 species were identified, and one isolate of each species 183 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+77
+
+was submitted to NCBI for genome sequence archiving, additional taxonomic analysis, and 184 
+
+annotation. The Whole Genome Shotgun project for Marinobacter sp. SBS5 has been deposited 185 
+
+at DDBJ/ENA/GenBank under the accession JBLWAZ000000000. The Whole Genome Shotgun 186 
+
+project for Sulfitobacter sp. SBS6 has been deposited at DDBJ/ENA/GenBank under the 187 
+
+accession JBLWBA000000000. The Whole Genome Shotgun project for Bacillus sp. SBS7 has 188 
+
+been deposited at DDBJ/ENA/GenBank under the accession JBLWBB000000000. 189 
+
+Bioconcrete quantification protocol. Bioconcrete production by bacterial cultures was 190 
+
+quantified at various timepoints over 16 days ( S. pasteurii at days 1, 6, and 16; B. toyonensis ,191 
+
+Ahb. pseudofirmus and the sea isolates at day 16) using a protocol modified from Reeksting et 192 
+
+al. (23). All quantifications were performed in three independent biological replicates. A step-by-193 
+
+step numbered version of this protocol is shown in Supplemental Text S1 .194 
+
+Overnight cultures were grown in the routine medium specified in Table 1 for the specific 195 
+
+bacterium. The optical density of the culture was measured at 600 nm (OD 600 ) using a Thermo 196 
+
+Scientific GENESYS 30 Visible Spectrophotometer. These readings were used to calculate the 197 
+
+volume of the overnight culture required to inoculate the bioconcrete quantification medium to a 198 
+
+starting OD 600 of 0.001. For S. pasteurii , 50 mL of bioconcrete quantification medium was 199 
+
+inoculated with the calculated amount of the overnight culture and incubated. After 2 hours, 15 200 
+
+mL culture was aliquoted into 50 mL centrifuge tubes. Since the other bacterial species in this 201 
+
+study were analyzed at only one timepoint, this step was omitted for them. Instead, 15 mL of 202 
+
+quantification medium was inoculated directly in a 50 mL centrifuge tube. For all bacteria, the 203 
+
+lids of the 50 mL tubes were taped in place one half turn from being completely shut to allow 204 
+
+consistent oxygenation throughout the experiment. The tubes were incubated until their 205 
+
+timepoint for quantification. A tube was removed for quantification at the timepoint 1, 6, and/or 206 
+
+16 days after inoculation and vortexed thoroughly. The pH was measured by dripping 30 μL of 207 
+
+culture onto pH strips (Fisher Brand). Serial dilutions were performed (1:10 dilutions in sterile 208 
+
+phosphate buffered saline) to calculate the viable cell count, or colony forming units (CFU)/mL, 209 
+
+remaining in the culture. These dilutions were plated using the track dilution method described 210 
+
+by Jett et al. (24). The colonies were typically counted after 3 days to calculate CFU/mL in the 211 
+
+bioconcrete culture. The rest of the culture, still in the 50 mL centrifuge tube, was then 212 
+
+centrifuged at 980 x g for 4 minutes (Sorvall RC 6+ Centrifuge with F13S-14x50cy rotor), and 213 
+
+the supernatant was aspirated. The pellet was washed with 40 mL of autoclaved deionized 214 
+
+water, resuspended by vortexing the pellet, recentrifuged, and the supernatant was aspirated. 215 
+
+The pellet was washed in this manner a total of three times. After washing, the pellet was 216 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+88
+
+resuspended in 1 mL autoclaved deionized water and transferred using a wide-bore pipette tip 217 
+
+to a pre-weighed 1.5 mL microcentrifuge tube to dry. The tube was left open but covered with a 218 
+
+Kim Wipe (Science Brand) to allow for evaporation and dried at 55°C for ≥2 days. Finally, the 219 
+
+Kim Wipe was removed, and the tube with the dry bioconcrete was weighed. The weight of the 220 
+
+empty tube was subtracted to yield the weight of the precipitated bioconcrete. Each experiment 221 
+
+was paired with a control tube of uninoculated media that underwent the same protocol to 222 
+
+monitor for contamination or measurable abiotic precipitation during the experiment. 223 
+
+SEM/EDS analysis of collected bioconcrete. Scanning electron microscopy (SEM) was 224 
+
+done on a Zeiss EVO LS 15 at the University of Texas at Dallas Imaging Core. Energy 225 
+
+dispersive spectroscopy (EDS) was performed using an Oxford EDS detector at the University 226 
+
+of Texas at Dallas Imaging Core. Bioconcrete samples were affixed to 12 mm aluminum stubs 227 
+
+(Electron Microscopy Sciences, 12.7 mm diameter, 3 mm pin, 12 mm total high, cat #75500) 228 
+
+using double-sided carbon tape (Electron Microscopy Sciences, 8 mm wide, cat #77816). To 229 
+
+prepare each sample, a small dash of the dried bioconcrete powder was placed on a piece of 230 
+
+parafilm and then resuspended in water using a micropipette which was also used to transfer 231 
+
+the resuspended sample to double-sided carbon tape that was already affixed to the aluminum 232 
+
+stub. Prior to imaging, the prepared samples were kept at 75°C for ≥2 hours to dry and to 233 
+
+reduce outgassing while under vacuum. 234 
+
+Fourier Transform Infrared (FTIR) spectroscopy . FTIR was performed using a Nicolet iS5 235 
+
+spectrometer operating in Attenuated Total Reflection (ATR) mode. For each specimen, 32 236 
+
+scans were collected at a spectral resolution of 4 cm ⁻¹ over the wavenumber range of 400–4000 237 
+
+cm ⁻¹. The signal-to-noise ratio was maintained below 3:1 throughout the measurements. 238 
+
+239 
+
+Results 240 
+
+Establishing the protocol used for bioconcrete quantification in this study. We 241 
+
+based our bioconcrete quantification protocol around one previously published by Reeksting et 242 
+
+al. (23). We chose S. pasteurii as the reference organism for bioconcrete quantification because 243 
+
+it is one of the best studied bioconcrete-producing organisms due to its alkalophilicity, high 244 
+
+urease activity, and ability to form bacterial spores (4). We began our study by converting the 245 
+
+protocol published by Reeksting et al. (23), to numbered form and performing bioconcrete 246 
+
+precipitation assays per that protocol. Our results are shown in Figure S1 and Dataset S1 ;247 
+
+Dataset S1 shows raw bioconcrete precipitation weights, pH values, and CFU/mL values for all 248 
+
+independent experimental replicates. We did not achieve the ~6 g/L bioconcrete precipitation 249 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+99
+
+weight expected for S. pasteruii culture in LBCaU medium, as obtained by Reeksting et al. (23), 250 
+
+instead achieving only ~3-4 g/L, and our bioconcrete yields were also variable across 251 
+
+independent experimental replicates. We then made changes to the protocol to improve yield 252 
+
+and reproducibility in our hands ( Supplemental Text S1 and see Discussion for consideration 253 
+
+of factors that contributed to yield and variability). Using this modified protocol, we achieved the 254 
+
+expected amount of bioconcrete precipitation for S. pasteurii , with low variability across 255 
+
+independent experimental replicates ( Figure S1) . The modified protocol was implemented for all 256 
+
+following bioconcrete experiments in this study. 257 
+
+Robust production of compositionally distinct bioconcrete by S. pasteurii in 258 
+
+media mimicking seawater and reef, supplemented with urea and calcium. In the artificial 259 
+
+sea and reef media supplemented with urea and calcium (ASMCaU and ARMCaU, 260 
+
+respectively), bioconcrete yields from S. pasteurii at the day 16 timepoint were at least 1.5 g/L 261 
+
+higher than those obtained with modified LB medium ( Figure 1A) . Because S. pasteurii 262 
+
+produced more bioconcrete in ASMCaU than in modified lab medium, it could be a promising 263 
+
+bacterium for special-use marine or other high salt applications where the inclusion of urea in 264 
+
+the concrete mix and the release of urease waste products is environmentally acceptable. 265 
+
+Figure 1B shows bioconcrete collected from the S. pasteurii cultures. We observed 266 
+
+changes in the color and coarseness of the bioconcrete grains in the macro scale when different 267 
+
+culture media were used. SEM analysis shows that the bioconcrete was mainly spherical and 268 
+
+agglomerated in morphology, with a range from a few micrometers to ≥20 micrometers ( Figure 269 
+
+2). The EDS results of the samples verified the bioconcrete to be calcium carbonate ( Figure 2 ). 270 
+
+A difference in morphology was observed in the bioconcrete precipitated in ASMCaU and 271 
+
+ARMCaU compared to each other and to the standard lab medium ( Figure 2 , panels C, E, and 272 
+
+A, respectively). Compared to the very smooth, spherical, bioconcrete formed in the modified 273 
+
+lab medium, the bioconcrete formed in the ASMCaU showed much smaller and less rounded 274 
+
+spherical grains that were still very clustered ( Figure 2C ), while the grains precipitated in the 275 
+
+ARMCaU showed more flaky, agglomerated spheres ( Figure 2E ). Of note, the bioconcrete 276 
+
+precipitated in ASMCaU and ARMCaU had small amounts (2.9-4.4%) of magnesium detected 277 
+
+by EDS. The presence of magnesium may impact structurally relevant properties of the 278 
+
+bioconcrete, which should be evaluated in the future. 279 
+
+Figure 3 presents the FTIR spectra of bioconcrete produced by S. pasteurii cultivated in 280 
+
+the different media. Carbonate ions exhibit four characteristic vibrational modes: symmetric 281 
+
+stretching ( ν1) near 1080 cm -1 , out-of-plane bending ( ν2) between 850 and 880 cm -1 , asymmetric 282 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+10 10 
+
+stretching ( ν3) within the range of 1400–1500 cm -1 , and in-plane bending ( ν4) between 690 and 283 
+
+760 cm -1 (25,26). Among these vibrational modes, the ν4 region is particularly useful for 284 
+
+distinguishing calcium carbonate polymorphs as calcite, vaterite, and aragonite exhibit 285 
+
+characteristic absorption bands in this region, whereas significant peak overlap occurs in the 286 
+
+other vibrational modes. 287 
+
+A broad absorption band observed between 1400 and 1500 cm -1 in all S. pasteurii -288 
+
+produced bioconcrete samples suggests the presence of metastable calcium carbonate phases, 289 
+
+including vaterite and amorphous calcium carbonate. To further identify the carbonate 290 
+
+polymorphs, the ν4 region (690–760 cm -1 ) was examined in detail ( Figure 3B ). Calcite is 291 
+
+typically characterized by an absorption band near 713 cm -1 , whereas vaterite exhibits a 292 
+
+characteristic peak around 745 cm -1 . Aragonite can be identified by the simultaneous presence 293 
+
+of bands near 700 and 713 cm -1 (25,26). 294 
+
+The bioconcrete produced by S. pasteurii in LBCaU medium exhibited a broad 295 
+
+absorption band approximately at 745 cm -1 , indicating the predominance of vaterite. This 296 
+
+spectral feature was detected from day 1 and remained largely unchanged throughout the 16-297 
+
+day incubation period. In contrast, samples produced in ASMCaU and ARMCaU media 298 
+
+displayed two distinct absorption bands at approximately 700 and 713 cm -1 , confirming the 299 
+
+formation of aragonite. The presence of calcite cannot be ruled out in these samples because 300 
+
+its characteristic peak overlaps with the aragonite band at 713 cm -1 .301 
+
+Overall, these results verify that marine-relevant growth media impact the yield, 302 
+
+morphology and composition of bioconcrete produced by S. pasteurii .303 
+
+Enrichment culture method to identify bacterial candidates for urea-free marine 304 
+
+bioconcrete applications. Urea supplementation and urease activity for bioconcrete 305 
+
+production increases nitrogen levels, which is detrimental to marine environments (27,28). 306 
+
+Additionally, using bacteria native to the environment where bioconcrete will be implemented 307 
+
+may help ensure that the bacteria are adapted to and will be metabolically active in that 308 
+
+environment. To identify organisms suitable for urea-free marine bioconcrete applications, we 309 
+
+designed an enrichment culture strategy using seawater as inoculum. As depicted in Figure 4 ,310 
+
+to enrich for bioconcrete-forming organisms, we first quantified the bioconcrete produced by 311 
+
+cultures inoculated with seawater. These bioconcrete-producing consortia were cryopreserved 312 
+
+after a 15 day enrichment, and the preserved stock that had produced the most bioconcrete by 313 
+
+weight during the experiment was then struck to isolation. By selecting the highest performing 314 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+11 11 
+
+consortia to isolate bacteria from, we narrowed down the number of isolates to where we could 315 
+
+easily test their independent bioconcrete production in pure cultures. 316 
+
+We used genomic DNA sequencing to obtain preliminary species assignments for the 6 317 
+
+isolates obtained from the highest performing enrichment culture. Analysis of the 16S rRNA 318 
+
+genes of the sea isolates identified by initial genome annotations (by RAST; 20–22) revealed 319 
+
+there to be 3 different species among the isolates, with the closest relatives being Sulfitobacter 320 
+
+pontiacus (two of the isolates, both with 99.79% identity to members of this species, one called 321 
+
+S. sp. SBS6 hereafter), Marinobacter litoralis (three of the isolates, with 99.80, 99.87, and 322 
+
+99.87% identities, one called M. sp. SBS5 hereafter), and Bacillus sanguinis (one of the 323 
+
+isolates, with 100% identity, called B. sp. SBS7 hereafter). Genome sequences for the three 324 
+
+named isolates (one representing each species) were submitted to Genbank for formal 325 
+
+annotation and species verification. Table S3 shows the assembly quantity, contig number, and 326 
+
+other features of the genome assemblies. The closest relatives for these isolates were identified 327 
+
+with higher resolution by percent average nucleotide identity comparison with genome 328 
+
+sequences of type strains as part of the Genbank automated pipeline ( Table 2 ). While Bacillus 329 
+
+species are commonly associated with MICP and bioconcrete production, to our knowledge, the 330 
+
+Marinobacter and Sulfitobacter genera have not. 331 
+
+The three isolates were additionally evaluated by Gram staining and cell morphological 332 
+
+analysis using phase contrast microscopy ( Table 2 ). Of our three isolates, SBS7 is the only 333 
+
+endospore-former as verified by sporulation in sporulation medium. Endospores from SBS7 334 
+
+were visible under bright field microscopy after staining using the Shaeffer-Fulton method (17) 335 
+
+and were phase-bright under phase contrast microscopy ( Figure 5 ). 336 
+
+Bioconcrete precipitation by non-ureolytic strains in ASM supplemented with 337 
+
+calcium. We compared the bioconcrete precipitation yielded by the three seawater isolates and 338 
+
+two additional non-ureolytic strains, each cultured in ASM supplemented with calcium (ASMCa) 339 
+
+for 16 days. For the additional strains, we chose Alkalihalophilus pseudofirmus because it is a 340 
+
+commonly studied nonureolytic bioconcrete-forming organism (3,29) that is also alkalophilic, 341 
+
+halophilic, and forms endospores (30). We also chose B. toyonensis, which has been isolated 342 
+
+from the sea environment (15) and is also non-ureolytic, alkalitolerant, halotolerant, and 343 
+
+endospore-forming (31). We compared these bioconcrete yields with that produced by S. 344 
+
+pasteurii in the same medium for the same time, with the exception that urea was added to the 345 
+
+medium (note that the S. pastuerii data from Figure 1 are replotted in Figure 6 for ease of 346 
+
+comparison). As previously reported (23,32), we observed that S. pastuerii could not be cultured 347 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+12 12 
+
+in medium lacking urea, except in the case of media holdover, as reported by Ma et al. in 2020 348 
+
+(32), which allows for slight growth in media without urea. 349 
+
+The other bacteria tested for bioconcrete production in ASMCa did not produce as much 350 
+
+bioconcrete yield as S. pasteurii after 16 days, but two of the sea isolates, M. sp. SBS5 and B. 351 
+
+sp. SBS7, performed better than Ahb. pseudofirmus and B. toyonensis in the artificial sea 352 
+
+medium, as can be seen in Figure 6A . In the urea-free cultures, the pH increased to 7-8 while 353 
+
+the control media stayed at pH 6-7. The calculated CFU/mL for each bacterium plated at day 16 354 
+
+of the experiments showed cell counts of ~10 4 for Ahb. pseudofirmus , ~10 5 for S. pasteurii , B. 355 
+
+toyonensis and SBS6, ~10 6 for SBS5, and ~10 7 for SBS7 ( Dataset S1 ), indicating enhanced 356 
+
+survival of SBS7 in bioconcrete cultures relative to the other endospore-forming bacteria in this 357 
+
+study. 358 
+
+A representative image of the bioconcrete produced by the non-ureolytic strains is 359 
+
+presented in Figure 6B . The bioconcrete produced by S. pasteurii in the same media but with 360 
+
+added urea is also shown for ease of comparison. This image showcases the wide range of 361 
+
+bioconcrete morphologies that different bacterial strains can produce. SEM analysis of this 362 
+
+bioconcrete is shown in Figure 7 (again with the comparable S. pasteurii data for ease of 363 
+
+comparison). In general, the bioconcrete produced by the non-ureolytic strains is much coarser 364 
+
+and in larger “chunks” than that produced by S. pasteurii . EDS analysis verified that this 365 
+
+bioconcrete is calcium carbonate. The EDS results also show much lower amounts of 366 
+
+magnesium was incorporated into the non-ureolytically produced bioconcrete than the 367 
+
+bioconcrete produced by S. pasteurii (Dataset S1 ). 368 
+
+Figure 8 shows the FTIR spectra of bioconcrete produced by non-ureolytic bacterial 369 
+
+strains cultured in ASMCa medium after 16 days of incubation. Similar to the samples produced 370 
+
+by S. pasteurii , a broad absorption band was observed in the 1400–1500 cm -1 region, indicating 371 
+
+the presence of metastable calcium carbonate phases, with clear split peaks observed for Ahb. 372 
+
+pseudofirmus and S. sp. SBS6. 373 
+
+Detailed investigation of the ν4 region (690–760 cm -1 ) revealed notable differences 374 
+
+among the bacterial strains ( Figure 8B ). Bioconcrete produced by Abh. pseudofirmus exhibited 375 
+
+a broad peak around 745 cm ⁻¹, indicating the presence of vaterite. A similar spectral feature was 376 
+
+observed for S. sp. SBS6; however, a minor shoulder near 713 cm -1 suggested the coexistence 377 
+
+of a small amount of calcite. In contrast, bioconcrete produced by B. toyonensis , M. sp. SBS5, 378 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+13 13 
+
+and B. sp. SBS7 displayed a dominant absorption band near 713 cm ⁻¹, characteristic peak of 379 
+
+calcite, accompanied by a weak shoulder around 745 cm -1 attributable to vaterite. 380 
+
+A notable distinction between ureolytic and non-ureolytic bacterial systems was the 381 
+
+absence of aragonite-specific absorption bands in the bioconcrete produced by non-ureolytic 382 
+
+bacteria. Unlike the S. pasteurii samples, no clear evidence of aragonite formation was detected 383 
+
+in these specimens. 384 
+
+Altogether, these results show that morphology and composition of bioconcrete varies 385 
+
+with the bacterial species and their growth conditions. 386 
+
+Discussion 387 
+
+In this study, we analyzed bioconcrete production by model and “wild” bioconcrete-388 
+
+forming bacteria in culture media mimicking the sea and reef environments. Our goal was to 389 
+
+identify bacteria that could effectively produce bioconcrete in a urea-independent manner, thus 390 
+
+we designed and employed an enrichment culture-based protocol to identify promising 391 
+
+candidates from seawater. 392 
+
+Our initial step in this work was to reproduce a previously reported method for 393 
+
+bioconcrete quantification (23). That prior work also utilized S. pasteurii as a control, 394 
+
+establishing a baseline by which we could compare bioconcrete yields across their group and 395 
+
+ours. We believe there were several steps that resulted in a loss of bioconcrete or that 396 
+
+introduced variation among replicates in our hands; to address these, we added modifications to 397 
+
+the protocol. First, the amount of bacteria used to inoculate the quantification cultures 398 
+
+significantly influences the bioconcrete yield (33). We thus standardized our inoculation of 399 
+
+bioconcrete cultures to an OD 600nm to 0.001, which likely helped lower the variability we initially 400 
+
+observed across biological replicates. Second, the use of standard glass flasks for culturing 401 
+
+introduces a point of loss, as a substantial quantity of bioconcrete produced during the protocol 402 
+
+adheres to the walls and bottom of the flask and thus cannot be fully quantified. Even thoroughly 403 
+
+mixing the culture at quantification timepoints does not remove the adhered bioconcrete; it 404 
+
+requires scraping off for complete recovery. Thus, we utilized polypropylene 50 mL conicals for 405 
+
+bioconcrete cultures, with an individual conical for each timepoint to be analyzed (i.e., no repeat 406 
+
+sampling from a single culture vessel). Also, we observed that centrifugation for 2 minutes was 407 
+
+insufficient to fully form the bioconcrete pellet, especially for cultures that make finer grains. 408 
+
+Removing supernatant prior to fully forming the pellet also causes a loss in the amount of 409 
+
+bioconcrete able to be quantified, and this loss would differ by the morphology of the 410 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+14 14 
+
+bioconcrete itself. Increasing the centrifugation time to 4 minutes helped achieve a more stable 411 
+
+pellet for washing. Notably, centrifuged bioconcrete does not form a settled-enough pellet for 412 
+
+typical decanting. We removed the supernatant instead by vacuum aspiration to prevent losing 413 
+
+some of the bioconcrete pellet during each wash step. Finally, due to the high static charge, the 414 
+
+dried bioconcrete should be resuspended in water then transferred to the vessel that it will be 415 
+
+weighed in before drying. This ensures that all the produced bioconcrete can be quantified. With 416 
+
+these modifications, we were able to greatly reduce the loss of the bioconcrete yield as seen in 417 
+
+Figure S1 where the amount recovered increased from ~3.3 g/L to 6 g/L, the expected yield. At 418 
+
+the same time, we improved the reproducibility of our results by reducing the variation among 419 
+
+biological replicates. This is important because reproducibility is crucial when the quantity 420 
+
+produced is being used as a measure to distinguish various bacterial species in order to identify 421 
+
+top bioconcrete formers. 422 
+
+We used an environmental sample (seawater) as inoculum to identify high bioconcrete-423 
+
+producing consortia, then isolated top performers from the consortia that precipitated the most 424 
+
+bioconcrete, all without including urea. Our approach varies from the recent literature. Many 425 
+
+recent studies focus on isolating bacteria first (generally with urea in the medium), testing them 426 
+
+for ureolytic activity, and, typically, then choosing the most ureolytic isolates to test for 427 
+
+bioconcrete-forming abilities (2,23,34–42). Some deviations from this include Kakad and 428 
+
+Shede’s study in 2023 performing an enrichment culture in media containing calcium before 429 
+
+isolating the bacteria from their samples, and Ekprasert et al. in 2020 isolating non-ureolytic 430 
+
+bacteria by streaking to isolation colonies that made bioconcrete crystals (43,44). Enrichment 431 
+
+cultures that allow early elimination of non- or low-producing bioconcrete formers, such as what 432 
+
+we present here, may allow more expedient isolation of better-performing bacteria from various 433 
+
+environments. Additionally, prior researchers studying bioconcrete production in marine 434 
+
+environments designed an artificial seawater recipe with expensive ingredients (45,46); our 435 
+
+media used here are inexpensive and straightforward to produce. 436 
+
+Due to the higher yield of bioconcrete by the sea isolates B. sp. SBS7 and M. sp. SBS5 437 
+
+in comparison to the other non-ureolytic bacteria studied, these isolates may be more promising 438 
+
+candidates for bioconcrete application in the sea environment than the commonly studied S. 439 
+
+pasteurii and Ahb. pseudofirmus . Due to its ability to sporulate and its higher viable cell count at 440 
+
+the end of the 16 day experiment, B. sp. SBS7 is especially promising, as sporulation will allow 441 
+
+it to withstand the stresses of incorporation into a concrete structure as well as lie dormant until 442 
+
+the structure cracks; also, with more viable cells, there likely can be more healing. As the field of 443 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+15 15 
+
+marine bioconcrete develops, a safety framework would help establish the suitability of different 444 
+
+seawater bacterial isolates for industrial and field applications. Of note, the non-ureolytic control 445 
+
+species used here, B. toyonensis , has a history of safety evaluation because of its use as an 446 
+
+animal feed additive (Toyocerin®; 47–49). 447 
+
+S. pasteurii produces bioconcrete very quickly owing to its high ureolytic activity. 448 
+
+Conversely, the non-ureolytic organisms presented here produced bioconcrete on a relatively 449 
+
+much slower scale - 16 days to the 1 day of S. pasteurii . The speed of production therefore can 450 
+
+impact the application for which each of these bacteria may be suited for. Slower production 451 
+
+may allow for deeper crack healing (inside-out healing) and typically has the benefit of not 452 
+
+requiring urea or producing ammonia. Faster healing may be better for sealing the surface 453 
+
+quickly to prevent the ingress of harmful ions, but at the expense of requiring urea and 454 
+
+potentially poor healing of deeper cracks. For our application of a submerged reef substrate, we 455 
+
+posit that the slower mechanism would prove for better healing and longevity of the reef 456 
+
+substrate, without requiring urea that may negatively impact the reef colonizers. This requires 457 
+
+further investigation. 458 
+
+Our sea isolates form bioconcrete on the timeline of weeks rather than days, and we did 459 
+
+not enrich for ureolytic or denitrification activity while culturing them. Carbonic anhydrases are 460 
+
+nearly ubiquitous in cellular organisms, but vary in quantity and activity across species (50). We 461 
+
+hypothesize that our seawater isolates use their carbonic anhydrase activities to produce 462 
+
+bioconcrete in the culture conditions used here. Browsing their genome annotations in NCBI 463 
+
+shows that all three seawater isolates are predicted to encode at least two carbonic anhydrases, 464 
+
+with SBS7 predicted to encode four. Future work will be required to determine the exact 465 
+
+mechanism(s) underlying the urea-free production of bioconcrete by these isolates. It follows 466 
+
+that with the bioconcrete enrichment protocol detailed here, we may actually be enriching for 467 
+
+isolates with higher carbonic anhydrase activity over others in the consortium. This higher 468 
+
+activity may be due to the presence of more carbonic anhydrase genes/classes of carbonic 469 
+
+anhydrase, higher transcriptional activity, faster enzymes/substrate turnover, or some 470 
+
+combination of these. We propose that further study of these possible factors may enable the 471 
+
+discovery of useful strains for carbon-negative, urea-free bioconcrete production. 472 
+
+Acknowledgements. This material is based upon work supported by the U.S. National 473 
+
+Science Foundation under Grant No. 2318123. Any opinions, findings, and conclusions or 474 
+
+recommendations expressed in this material are those of the author(s) and do not necessarily 475 
+
+reflect the views of the National Science Foundation. This work was additionally supported by 476 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+16 16 
+
+the Cecil H. and Ida Green Chair in Systems Biology Science to K.P. We gratefully acknowledge 477 
+
+Dr. Matthew Ramsey for providing the seawater used in our experiments. We gratefully 478 
+
+acknowledge the Olympus Discovery Center and the Imaging Core facility at UT-Dallas for 479 
+
+providing equipment and support. 480 
+
+481 
+
+482 
+
+.CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint 17 17 
+
+References Cited. 
+
+1. Hoffmann TD, Reeksting BJ, Gebhard S. Bacteria-induced mineral precipitation: a mechanistic review. Microbiology. 2021 Apr 19;167(4). doi:10.1099/mic.0.001049 2. Bansal R, Dhami NK, Mukherjee A, Reddy MS. Biocalcification by halophilic bacteria for remediation of concrete structures in marine environment. J Ind Microbiol Biotechnol. 2016 Nov 1;43(11):1497–505. doi:10.1007/s10295-016-1835-6 3. Basit Ehsan Khan M, Dias-da-Costa D, Shen L. Factors affecting the self-healing performance of bacteria-based cementitious composites: A review. Constr Build Mater. 2023 Jun;384:131271. doi:10.1016/j.conbuildmat.2023.131271 4. Wu Y, Li H, Li Y. Biomineralization Induced by Cells of Sporosarcina pasteurii: Mechanisms, Applications and Challenges. Microorganisms. 2021 Nov 21;9(11):2396. doi:10.3390/microorganisms9112396 5. Ghosh T, Bhaduri S, Montemagno C, Kumar A. Sporosarcina pasteurii can form nanoscale calcium carbonate crystals on cell surface. Achal V, editor. PLOS ONE. 2019 Jan 30;14(1):e0210339. doi:10.1371/journal.pone.0210339 6. Smith KS, Ferry JG. Prokaryotic carbonic anhydrases. FEMS Microbiol Rev. 2000 Oct;24(4):335–66. doi:10.1111/j.1574-6976.2000.tb00546.x 7. Sandalci I, Tezer MM, Basaran Bundur Z. Immobilization of Bacterial Cells on Natural Minerals for Self-Healing Cement-Based Materials. Front Built Environ. 2021 Apr 13;7:655935. doi:10.3389/fbuil.2021.655935 8. Gorospe CM, Han SH, Kim SG, Park JY, Kang CH, Jeong JH, et al. Effects of different calcium salts on calcium carbonate crystal formation by Sporosarcina pasteurii KCTC 3558. Biotechnol Bioprocess Eng. 2013 Sep;18(5):903–8. doi:10.1007/s12257-013-0030-0 9. Nicholson WL, Munakata N, Horneck G, Melosh HJ, Setlow P. Resistance of Bacillus 
+
+Endospores to Extreme Terrestrial and Extraterrestrial Environments. Microbiol Mol Biol Rev. 2000 Sep;64(3):548–72. doi:10.1128/MMBR.64.3.548-572.2000 10. Justo-Reinoso I, Reeksting BJ, Heath A, Gebhard S, Paine K. Evaluation of Cyclic Healing Potential of Bacteria-Based Self-Healing Cementitious Composites. Sustainability. 2022 Jun 3;14(11):6845. doi:10.3390/su14116845 11. Yunus B, Schlangen E, Jonkers HM. Bio-Based Self-Healing Mortar. The International Journal of Integrated Engineering. 2019 Vol. 11. 2019;11(9). 
+
+https://doi.org/10.30880/ijie.2019.11.09.026 12. Rincon LF, Moscoso YM, Hamami AEA, Matos JC, Bastidas-Arteaga E. Degradation Models and Maintenance Strategies for Reinforced Concrete Structures in Coastal Environments under Climate Change: A Review. Buildings. 2024 Feb 20;14(3):562. doi:10.3390/buildings14030562 13. Lew S, Glińska-Lewczuk K, Burandt P, Kulesza K, Kobus S, Obolewski K. Salinity as a Determinant Structuring Microbial Communities in Coastal Lakes. Int J Environ Res Public Health. 2022 Apr 11;19(8):4592. doi:10.3390/ijerph19084592 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+18 18 
+
+14. Yan N, Marschner P, Cao W, Zuo C, Qin W. Influence of salinity and water content on soil microorganisms. Int Soil Water Conserv Res. 2015 Dec;3(4):316–23. doi:10.1016/j.iswcr.2015.11.003 15. Luo J Chang, Long H, Zhang J, Zhao Y, Sun L. Characterization of a Deep Sea Bacillus toyonensis Isolate: Genomic and Pathogenic Features. Front Cell Infect Microbiol. 2021 Mar 10;11:629116. doi:10.3389/fcimb.2021.629116 16. Smith AC, Hussey MA. Gram Stain Protocols. American Society for Microbiology; 2005. 17. Schaeffer AB, Fulton MD. A Simplified Method of Staining Endospores. Science. 1933 Feb 17;77(1990):194–194. doi:10.1126/science.77.1990.194 18. Hussey M, Zayaitz A. Endospore Stain Protocol. Am Soc Microbiol. 2007 Sep. doi:10.1002/aris.1440400118 19. Adams HM, Li X, Mascio C, Chesnel L, Palmer KL. Mutations Associated with Reduced Surotomycin Susceptibility in Clostridium difficile and Enterococcus Species. Antimicrob Agents Chemother. 2015 Jul;59(7):4139–47. doi:10.1128/AAC.00526-15 20. Aziz RK, Bartels D, Best AA, DeJongh M, Disz T, Edwards RA, et al. The RAST Server: Rapid Annotations using Subsystems Technology. BMC Genomics. 2008 Dec;9(1):75. doi:10.1186/1471-2164-9-75 21. Brettin T, Davis JJ, Disz T, Edwards RA, Gerdes S, Olsen GJ, et al. RASTtk: A modular and extensible implementation of the RAST algorithm for building custom annotation pipelines and annotating batches of genomes. Sci Rep. 2015 Feb 10;5(1):8365. doi:10.1038/srep08365 22. Overbeek R, Olson R, Pusch GD, Olsen GJ, Davis JJ, Disz T, et al. The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST). Nucleic Acids Res. 2014 Jan;42(D1):D206–14. doi:10.1093/nar/gkt1226 23. Reeksting BJ, Hoffmann TD, Tan L, Paine K, Gebhard S. In-Depth Profiling of Calcite Precipitation by Environmental Bacteria Reveals Fundamental Mechanistic Differences with Relevance to Application. Appl Environ Microbiol. 2020;86(7). 24. Jett BD, Hatter KL, Huycke MM, Gilmore MS. Simplified Agar Plate Method for Quantifying Viable Bacteria. BioTechniques. 1997 Oct;23(4):648–50. doi:10.2144/97234bm22 25. Nishat FM, Borno IB, Tahsin A, Ashraf W. New insights into the interaction between seawater and CO 2-activated calcium silicate composites. Cem Concr Compos. 2025 Mar;157:105929. doi:10.1016/j.cemconcomp.2025.105929 26. Khan RI, Ashraf W, Olek J. Amino acids as performance-controlling additives in carbonation-activated cementitious materials. Cem Concr Res. 2021 Sep;147:106501. doi:10.1016/j.cemconres.2021.106501 27. D’Angelo C, Wiedenmann J. Impacts of nutrient enrichment on coral reefs: new perspectives and implications for coastal management and reef survival. Curr Opin Environ Sustain. 2014 Apr;7:82–93. doi:10.1016/j.cosust.2013.11.029 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+19 19 
+
+28. Akinnawo SO. Eutrophication: Causes, consequences, physical, chemical and biological techniques for mitigation strategies. Environ Chall. 2023 Aug;12:100733. doi:10.1016/j.envc.2023.100733 29. Jonkers HM, Schlangen E. Self-healing of cracked concrete: A bacterial approach. InHigh-Performance Concrete, Brick-Masonry and Environmental Aspects 2007 Jun 17 (pp. 1821-1826). CRC Press. 30. Joshi A, Thite S, Karodi P, Joseph N, Lodha T. Alkalihalobacterium elongatum gen. nov. sp. nov.: An Antibiotic-Producing Bacterium Isolated From Lonar Lake and Reclassification of the Genus Alkalihalobacillus Into Seven Novel Genera. Front Microbiol. 2021 Oct 11;12:722369. doi:10.3389/fmicb.2021.722369 31. Jiménez G, Urdiain M, Cifuentes A, López-López A, Blanch AR, Tamames J, et al. Description of Bacillus toyonensis sp. nov., a novel species of the Bacillus cereus group, and pairwise genome comparisons of the species of the group by means of ANI calculations. Syst Appl Microbiol. 2013 Sep;36(6):383–91. doi:10.1016/j.syapm.2013.04.008 32. Ma L, Pang AP, Luo Y, Lu X, Lin F. Beneficial factors for biomineralization by ureolytic bacterium Sporosarcina pasteurii . Microb Cell Factories. 2020 Dec;19(1):12. doi:10.1186/s12934-020-1281-z 33. Erdmann N, Strieth D. Influencing factors on ureolytic microbiologically induced calcium carbonate precipitation for biocementation. World J Microbiol Biotechnol. 2023 Feb;39(2):61. doi:10.1007/s11274-022-03499-8 34. Wang X, Li C, He J. A highly effective strain screened from soil and applied in cementing fine sand based on MICP-bonding technology. J Biotechnol. 2022 May;350:55–66. doi:10.1016/j.jbiotec.2022.03.016 35. Abudoleh SM, Al Mahayreh A, Al Frejat A, Al Hulaisy F, Hamdan SO. Bioconcrete Development Using Calcite-Precipitating Bacteria Isolated From Different Sources in Jordan. Chastre C, Mendonça P, editors. MATEC Web Conf. 2019;278:01011. doi:10.1051/matecconf/201927801011 36. Wei S, Cui H, Jiang Z, Liu H, He H, Fang N. Biomineralization processes of calcite induced by bacteria isolated from marine sediments. Braz J Microbiol. 2015 Jun;46(2):455–64. doi:10.1590/S1517-838246220140533 37. Ahmad NAH, Husin NB, Mohd Noh NI, Zakaria Z. Enhancing biocement precipitation potential of locally isolated soil ureolytic bacteria using seawater. Mater Today Proc. 2024;96:73–7. doi:10.1016/j.matpr.2023.11.011 38. Mengistu DM, Mamo AN, Gemeda MT. Isolation and characterization of calcite precipitating bacteria from soda lakes that have the capability to produce biocement for self-healing concretes. Constr Build Mater. 2023 Dec;408:133510. doi:10.1016/j.conbuildmat.2023.133510 39. Krishnapriya S, Venkatesh Babu DL, G. PA. Isolation and identification of bacteria to improve the strength of concrete. Microbiol Res. 2015 May;174:48–55. doi:10.1016/j.micres.2015.03.009 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+20 20 
+
+40. Otiniano NM, Farfán-Córdova M, Cabeza JG, Cabanillas-Chirinos L. Isolation and selection of spore-forming bacilli with potential for self-healing of concrete. Sci Rep. 2024 Nov 8;14(1):27223. doi:10.1038/s41598-024-77241-9 41. Zulaika E, Utomo MAP, Pangestu AS, Alami NH, Shovitri M, Prasetyo EN, et al. Novel carbonatogenic bacterial strain isolated from limestone quarry in East Java, Indonesia to improve concrete performance: Novel bioconcrete bacteria from East Java Limestone Mining. Biodiversitas J Biol Divers. 2021 Aug 29;22(9). doi:10.13057/biodiv/d220935 42. M. Ghorpade N, Bhat P. R. Studies on isolation and characterization of calcium carbonate bio-precipitating bacteria. Int J Res Eng Innov. 2019;3(5):310–20. doi:10.36037/IJREI.2019.3505 43. Kakad P, Shede P. Calcium carbonate precipitation by Paenibacillus fonticola and 
+
+Sporosarcina luteola for its potential application in bio concrete. Ecol Environ Conserv. 2023;29(suppl):161–70. doi:10.53550/EEC.2023.v29i06s.026 44. Ekprasert J, Fongkaew I, Chainakun P, Kamngam R, Boonsuan W. Investigating mechanical properties and biocement application of CaCO 3 precipitated by a newly-isolated 
+
+Lysinibacillus sp. WH using artificial neural networks. Sci Rep. 2020 Sep 30;10(1):16137. doi:10.1038/s41598-020-73217-7 45. Zhan Q, Dong W, Fu C, Wang A, Yi H, Pan Z. The self-healing of marine concrete cracks based on the synergistic effect of microorganisms and inorganic minerals. J Build Eng. 2022 Dec;61:105210. doi:10.1016/j.jobe.2022.105210 46. Palin D, Wiktor V, Jonkers H. A Bacteria-Based Self-Healing Cementitious Composite for Application in Low-Temperature Marine Environments. Biomimetics. 2017 Jul 14;2(3):13. doi:10.3390/biomimetics2030013 47. Scientific Opinion on the safety and efficacy of Toyocerin® ( Bacillus toyonensis ) as a feed additive for chickens for fattening, weaned piglets, pigs for fattening, sows for reproduction, cattle for fattening and calves for rearing and for rabbits for fattening. EFSA J. (2014;12(7):3766). doi:10.2903/j.efsa.2014.3766 48. Williams LD, Burdock GA, Jiménez G, Castillo M. Literature review on the safety of Toyocerin®, a non-toxigenic and non-pathogenic Bacillus cereus var. toyoi preparation. Regul Toxicol Pharmacol. 2009 Nov;55(2):236–46. doi:10.1016/j.yrtph.2009.07.009 49. Abdulmawjood A, Herrmann J, Riede S, Jimenez G, Becker A, Breves G. Evaluation of enterotoxin gene expression and enterotoxin production capacity of the probiotic strain Bacillus toyonensis BCT-7112T. Natarajaseenivasan K, editor. PLOS ONE. 2019 Apr 25;14(4):e0214536. doi:10.1371/journal.pone.0214536 50. Smith KS, Jakubzick C, Whittam TS, Ferry JG. Carbonic anhydrase is an ancient enzyme widespread in prokaryotes. Proc Natl Acad Sci. 1999 Dec 21;96(26):15184–9. doi:10.1073/pnas.96.26.15184 51. Yoon JH, Lee KC, Weiss N, Kho YH, Kang KH, Park YH. Sporosarcina aquimarina sp. nov., a bacterium isolated from seawater in Korea, and transfer of Bacillus globisporus (Larkin and Stokes 1967), Bacillus psychrophilus (Nakamura 1984) and Bacillus pasteurii (Chester 1898) to the genus Sporosarcina as Sporosarcina globispora comb. nov., Sporosarcina 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+21 21 
+
+psychrophila comb. nov. and Sporosarcina pasteurii comb. nov., and emended description of the genus. Int J Syst Evol Microbiol. 52. Sharon B, Ebraimzadeh T, Dahl H, Avadhanam N, Rajendran D, Abaragu A, et al. Genome sequences of seven bacterial isolates collected from soil as part of a microbiology lab course. Putonti C, editor. Microbiol Resour Announc. 2024 Jan 17;13(1):e00357-23. doi:10.1128/MRA.00357-23 53. Takami H, Krulwich TA. Reidentification of facultatively alkaliphilic Bacillus firmus OF4 as 
+
+Bacillus pseudofirmus OF4. Extremophiles 2000 Feb;4(1):19-22. doi: 10.1007/s007920050003. 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+22 22 
+
+Table 1. Bacterial strains used in this study. 
+
+Organism Strain Formerly classified as 
+
+Routine broth medium a
+
+Routine agar medium a
+
+Bioconcrete quantification media a
+
+References for strains 
+
+Sporosarcina pasteurii 
+
+ATCC 11859 
+
+Bacillus pasteurii LBU ATCC medium 1376 LBCaU, ASMCaU, ARMCaU 51 
+
+Bacillus toyonensis 
+
+UTDF19-29B - LB ASM ASMCa 52 
+
+Alkalihalophilus pseudofirmus 
+
+ATCC 700159 
+
+Bacillus pseudofirmus ;
+
+Bacillus firmus 
+
+ASM ATCC medium 2029 ASMCa 30, 53 
+
+Marinobacter 
+
+sp. SBS5 - ASM ASM ASMCa This work 
+
+Sulfitobacter 
+
+sp. SBS6 - ASM ASM ASMCa This work 
+
+Bacillus sp. SBS7 - ASM ASM ASMCa This work 
+
+> a
+
+See the Materials and Methods section for media compositions and naming conventions. 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+23 23 
+
+Table 2. Characteristics of the three seawater isolates used for bioconcrete quantification studies. 
+
+Isolate: Marinobacter sp. 
+
+SBS5 
+
+Sulfitobacter sp. 
+
+SBS6 
+
+Bacillus sp. SBS7 
+
+NCBI Best Match a Marinobacter litoralis 
+
+(87.41%) 
+
+Sulfitobacter 
+
+pontiacus (97.54%) 
+
+Bacillus albus 
+
+(98.01%) 16S rRNA sequence identity b
+
+Marinobacter litoralis Sulfitobacter 
+
+pontiacus 
+
+Bacillus sanguinis 
+
+Cellular morphology Rods Cocci, some with filamentous extrusions Rods Gram staining result Gram-negative Gram-negative Gram-positive Endospore formation No No Yes 
+
+> a
+
+Best taxonomic match based on whole genome average nucleotide identity (ANI) analysis performed by NCBI after automated genome annotation. The percent ANI for the best match type-strain is shown in parentheses . 
+
+> b
+
+Highest nucleotide identity match identified by NCBI BLASTn analysis. 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+.CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint Table S1. Manufacturer and catalog numbers of chemicals used in media from this study. 
+
+Chemical Manufacturer Catalog Number 
+
+Tryptone Fisher BioReagents BP1421-500 Yeast Extract Bacto 212750 Sodium Chloride Fisher BioReagents BP358-212 Instant Ocean Sea Salt Instant Ocean Spectrum Brands SS3-50 Instant Ocean Reef Crystals Reef Salt Instant Ocean Spectrum Brands RC3-50 Urea Fisher BioReagents BP169-500 Calcium acetate hydrate, 99% Alfa Aesar A14947 
+
+> .CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint
+
+Table S2. Comparison of ingredients in the base media used for bioconcrete quantification. 
+
+LB ASM ARM 
+
+Tryptone 10 g 5 g 5 g Yeast Extract 5 g 1 g 1 g NaCl 10 g - -Instant Ocean Sea Salt - 35.95 g -Instant Ocean Reef Crystals Reef Salt - - 35.95 g Distilled Water 1L 1L 1L 
+
+.CC-BY-NC-ND 4.0 International license available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprint this version posted June 27, 2026. ;https://doi.org/10.64898/2026.06.26.734652 doi: bioRxiv preprint Table S3. Features of the sea isolates’ genome assemblies. 
+
+Strain Taxonomic Assignment 
+
+BioSample Accession No. 
+
+Total No. of Trimmed Reads 
+
+Average Read N50 (bp) 
+
+GenBank Shotgun Accession No. 
+
+No. of Contigs 
+
+Total Length (bp) 
+
+GC Content (%) 
+
+Read Depth (x) 
+
+SBS5 
+
+Marinobacter 
+
+litoralis SAMN46955694 8965394 383.8346 977546 JBLWAZ000000000 23 3431475 54.11 SBS6 
+
+Sulfitobacter 
+
+pontiacus SAMN46955695 8538680 363.1783 801843 JBLWBA000000000 25 3456783 60.31 SBS7 
+
+Bacillus 
+
+albus SAMN46955696 7603091 195.7637 230882 JBLWBB000000000 80 5710970 35.12 Supplemental File S1. General bioconcrete quan/fica/on protocol for 1 (or 3) /mepoint(s), modified from Reeks/ng et al, 2020, Applied and Environmental Microbiology 
+
+(hAps://doi.org/10.1128/AEM.02739-19). 
+
+1. Streak bacteria on appropriate agar medium. 2. Use a single colony to inoculate overnight broth cultures. 3. Inoculate 15 mL medium in 50 mL centrifuge tube to achieve a star/ng OD 600 =0.001. If analyzing mul/ple /mepoints, inoculate 50 mL media to achieve a star/ng OD 600 =0.001 in a glass flask and incubate 2 hours before aliquo/ng 15 mL into three 50 mL centrifuge tubes. a. Completely close lids of centrifuge tubes, mark straight down the lid/side, then open half a turn (mark on lid now rotated 180° from mark on side) and tape in place to ensure consistent oxygena/on of cultures. 4. Incubate un/l the /mepoint(s). 5. Remove one tube from the incubator at the /mepoint for quan/fica/on. 6. Vortex to mix thoroughly. 7. Use 30 μL of culture to test pH via pH strip 8. Do 1:10 serial dilu/ons of culture, plate them on appropriate agar medium, and incubate to calculate CFU/mL. 9. Centrifuge the remaining culture at 780 x g for 4 minutes. 10. Aspirate the supernatant. 11. Wash with 40 mL autoclaved water. 12. Aspirate the supernatant. 13. Repeat wash and aspira/on steps 2 more /mes (for 3 total washes). 14. Pre-weigh 1.5 mL microcentrifuge tube. 15. Resuspend bioconcrete pellet using 1 mL autoclaved water and transfer using wide-bore pipeAe /p to pre-weighted 1.5 mL microcentrifuge tube a. Cucng the /p of a normal pipeAe /p achieves a wide-bore /p. 16. Cover tube with Kim wipe and incubate at 55°C for at least 2 days 17. Remove tube from incubator, uncover and close tube, weigh. 18. Subtract pre-weighted tube amount to calculate the weight of the bioconcrete.
