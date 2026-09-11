@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-10T22:19:47.786410+00:00",
-  "updated_date": "20260910",
+  "generated_at": "2026-09-11T21:52:14.355646+00:00",
+  "updated_date": "20260911",
   "carryover_days": 9,
   "tag_states": {
     "mdd-regen": {
-      "updated_date": "20260910",
+      "updated_date": "20260911",
       "carryover_days": 9,
       "items": []
     }
